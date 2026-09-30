@@ -1,0 +1,65 @@
+# Decisions
+
+Every point where the calculation had more than one reasonable option: what was considered, what was chosen and why. "COD24" is the official COD database for HighScore (May 2024).
+
+| Topic | Options considered | Chosen | Why | Details |
+|---|---|---|---|---|
+| Coincident reflections that are not symmetry-equivalent | count one (COD24); add all | add all | a measured line contains every reflection at that angle; COD24 lines are up to 40% low | [coincident-reflections.md](differences/coincident-reflections.md) |
+| Atom types that are not elements (36 CIFs) | first letters (COD24); leave the atoms out; resolve where certain and leave out the rest; resolve where certain and skip the rest | resolve where certain (6 CIFs), correct from the publication or the CIF's own statements (27), leave dummy atoms out (2), skip the rest (1) | wrong elements or missing atoms give wrong patterns | [atom-types.md](differences/atom-types.md) |
+| CIFs that only their publication can complete (57; 5 more whose COD24 entry comes from unusable data are reproduced as COD24 has them, marked) | skip; build as deposited; correct from the article, CIF unchanged | correct from the article, with citation, entry marked; every entry of the official database is kept, so the database holds COD24's entries and the newer ones | a correct pattern where the article gives the missing information | [corrections.md](corrections.md) |
+| Modulated structures (284 CIFs with a superspace model) | basic structure, main lines only (COD24); superspace calculation with satellites | superspace calculation; composites, functions specific to JANA and CIFs whose own listed structure factors are not reproduced stay the basic structure, as in COD24 (86) | the modulation changes the main lines and adds satellites; the calculation reproduces the refinement program's own structure factors | [modulated.md](differences/modulated.md) |
+| Cyanide pseudo-atom `CN` (4 CIFs) | skip; carbon only (COD24); C and N on one site; split along the 3-fold axis | C and N at the site, origin choice 1 for the three K₂M(CN)₄ | Wyckoff's supplement describes the cyanide group as one spherical scatterer; the result matches Dickinson's split model (COD 1010081) | [cyanide.md](differences/cyanide.md) |
+| Dummy atoms (438 CIFs) | count as atoms (COD24); leave out of pattern and formula | leave out, keep flagged in the structure record | they mark centroids or atoms with unknown positions | [dummy-atoms.md](differences/dummy-atoms.md) |
+| Physically invalid anisotropic tensors (~2,800 CIFs) | use as given (COD24); replace by the isotropic value; skip the CIF | replace by the isotropic value | a negative mean-square displacement amplifies intensities | [invalid-adp.md](differences/invalid-adp.md) |
+| Settings gemmi does not know (82 CIFs) | skip; standardise from the CIF's operations | standardise when spglib finds exactly the listed group (81); skip otherwise (1) | the operations define the structure; the check guards against inconsistent CIFs | [non-standard-settings.md](differences/non-standard-settings.md) |
+| Symmetry stated twice, disagreeing (operations or Hall symbol against the H-M symbol; 1,833 CIFs, 119 of them with different structures) | the first source gemmi can match (earlier builds: the symbol when the operations' setting is unknown); always the operations; the operations, checked against the CIF's density and formula | the operations (else the Hall symbol); the symbol only if the operations contradict the CIF's formula (or density) and the symbol does not (9); skip if neither fits (8) | the operations define the structure; 102 CIFs had doubled or misplaced atoms | [non-standard-settings.md](differences/non-standard-settings.md) |
+| Cells that do not fit their space group (324 CIFs; 42 badly, e.g. 89.0° in an orthorhombic cell) | keep as published; constrain to the crystal system as COD24 does (exact angles, a = b, a = b = c); constrain small deviations and skip large ones; skip all | constrain as COD24 does | follows COD; with the published cell, symmetry-equivalent reflections fall at different angles | below |
+| Atoms without displacement parameters | U = 0; B = 0.5 Å² (HighScore's default) | B = 0.5 Å² | COD24 patterns match B = 0.5 Å² in 119 of 123 such CIFs (`dev/default_b_check.py`), and the structure records already store it | below |
+| Symmetry images of an atom close to each other (near a special position) | merge within 0.4 Å (gemmi) or 0.5 Å (cctbx); merge only rounding-level distances; follow the CIF's site-symmetry statement and occupancy | merge below 0.01 Å; between 0.01 and 0.4 Å follow the CIF's statement, else merge only if occupancy × distinct positions > 1.01 (a margin for rounded occupancies); images connected by steps below the distance merge as a whole | across all COD, authors state split (disordered) atoms for 99% of such sites at 0.2–0.4 Å; merging lost about 10,000 atoms | below |
+| Atoms exactly on a special position that the CIF states as general (site-symmetry order 1, as SHELXL writes for a negative PART; 1,770 sites in 554 CIFs) | one atom (cctbx, the CIF definition of occupancy); every image counted, as stated; decided by the CIF's density or formula | one atom, unless that contradicts the CIF's formula (or density) and counting the images does not (141 CIFs) | with the statement taken literally, 90 CIFs disagree with their own formula; with the images merged, 141 do | below |
+| Anomalous dispersion f′, f″ | Cromer–Liberman (gemmi); Chantler (NIST); International Tables Vol. C; Sasaki | Cromer–Liberman | the tables agree on f″; f′ of heavy atoms differs by up to 0.9 electrons between them, about 2% of \|F\|², with no single reference value | README, Calculation model |
+| Form factors | neutral atoms; ions from the type symbol | neutral atoms | charges in COD type symbols are often formal, not refined | README, Calculation model |
+| Friedel pairs with anomalous scattering | \|F(h)\|² of one reflection; average of \|F(h)\|² and \|F(−h)\|² | average | both fall on the same powder line | README, Calculation model |
+| Reflections of zero intensity in line merging | keep; leave out | leave out | otherwise they join two real lines and the pattern depends on how the cell is described | README, Calculation model |
+
+## Patterns, metadata and structure records
+
+Decisions from building the format, most of them matching COD24 after comparing with it.
+
+| Topic | Options considered | Chosen | Why | Same as COD24 |
+|---|---|---|---|---|
+| Lorentz-polarisation | powder (1 + cos²2θ)/(sin²θ cos θ); single-crystal (1 + cos²2θ)/sin 2θ, suggested in a review | powder | the patterns are powder patterns; the official patterns match it | yes |
+| Pattern range and size | lines up to 90° 2θ, 140° if fewer than 10; at most 203 lines; 0.005° chained merging | as COD24 | decoded from the official databases | yes |
+| Space-group setting stored | as published; reference setting (standard axes, origin choice 2, hexagonal axes for R) | reference setting | HighScore reads a bare Hermann–Mauguin symbol in that setting | yes |
+| Cell within the reference setting | the matrix of the change of setting as tabulated (e.g. P2₁/n → P2₁/c with c′ = c − a, β ≈ 125–151°; P2₁/a with an acute β; published databases up to 2026-09 built so); the reduced cell, as COD24 | as COD24: triclinic Niggli-reduced (tolerance 10⁻³ V^⅔ Å²); monoclinic β ≥ 90°, shortest a + c, then a, among the cells that keep the symbol (e.g. c′ = c + 2a for P2₁/c, c′ = c + a for C2/c, a and c exchanged for P2₁); orthorhombic axes permuted, where the symbol allows it, to the shortest a, then b | the same lattice, pattern, density and I/Ic either way; the stored cell and hkl labels are what users compare with other databases. Measured against COD24 on all shared entries: 75,195 monoclinic, 12,293 orthorhombic and 6,468 triclinic cells differed; on a sample of 16,600 entries after the change, 99.97%, 99.9% and 98.2% agree (the rest: near-ties, and COD24 storing a CIF's own axes under the reference symbol, e.g. 4003235, 1010649) | yes |
+| Subfiles | organic if a C–H contact is shorter than 1.25 Å, else inorganic; mineral if the CIF gives a mineral name; metallic if the compound contains no non-metal, with Ge and Sb counted as metals and D as a non-metal | as described | measured against COD24 on 2,298 entries: inorganic, organic and mineral agree 100%; the metallic differences (Ge, Sb, D) were then aligned | yes |
+| Occupancy above 1 in structure records (old CIFs sometimes give H counts) | as published; clamped to 1 | clamped to 1 in the structure record; the pattern uses the published value | HighScore's limits for the parameter; COD24 does the same | yes |
+| Biso in structure records | 8π²U_iso or B_iso when given; else the equivalent of the anisotropic tensor; else 0.5 Å² | as described | HighScore needs an isotropic value for every atom | the 0.5 Å² default, yes; the other cases not compared |
+| Parameter limits in structure records | one set; per HighScore version | per version | the 3.x and 4.x records use different limits | yes |
+| Atom coordinates in structure records | as published (in the reference setting); moved onto special positions | as published | faithful to the CIF; HighScore applies site symmetry itself | positions can differ by a symmetry-equivalent choice |
+| Text in HighScore 3.x records (Windows-1252) | replace every non-Latin-1 character by `?`; transliterate first | transliterate (e.g. accents removed), then `?` | keeps names and authors readable | — |
+
+## Cells that do not fit their space group
+
+`dev/metric_scan.py` finds 324 COD CIFs whose cell changes under their own symmetry operations: 233 by less than 10⁻³ (e.g. 89.99° or a and b differing by 0.001 Å from an unconstrained refinement), 49 by up to 10⁻², and 42 by more (e.g. 89.0° in an orthorhombic cell, 90° instead of 120° in a hexagonal one). COD24 contains 38 of the 42 and stores all of them constrained: angles exactly 90° or 120°, a := b for tetragonal, trigonal and hexagonal cells, a := b := c for cubic ones. hsrdb-tools does the same (`setting.constrain_cell`).
+
+## Atoms without displacement parameters
+
+`dev/default_b_check.py` takes CIFs whose atoms have no displacement parameters and compares COD24's patterns with ours calculated with U = 0 and with B = 0.5 Å². B = 0.5 Å² matched COD24 better in 119 of 123 CIFs (median line difference about 0.1 against 5–30 on the 0–1000 scale).
+
+## Atoms near special positions
+
+`dev/near_special.py` lists every site in COD whose symmetry images lie between 0.001 and 0.6 Å apart, with what the CIF states (`_atom_site_site_symmetry_order`, or `_atom_site_symmetry_multiplicity`, which SHELXL fills with the site-symmetry order). Images are grouped as they would merge: connected by steps shorter than 0.4 Å, so four images on a square of side 0.36 Å form one group although its diagonal is 0.51 Å. `dev/near_special_summary.py` counts, by the largest distance within the group, how often authors state a special position or a general (split) one, for groups whose distinct positions could not all be occupied (occupancy × positions > 1.01) and for the others:
+
+| Largest distance in the group below | occupancy × positions > 1.01: special / general / no statement | otherwise: special / general / no statement |
+|---|---|---|
+| 0.02 Å | 203 / 10 / 72 | 112 / 163 / 54 |
+| 0.05 Å | 272 / 5 / 66 | 115 / 421 / 100 |
+| 0.1 Å | 219 / 8 / 79 | 93 / 716 / 116 |
+| 0.2 Å | 41 / 10 / 125 | 29 / 2,058 / 374 |
+| 0.4 Å | 6 / 40 / 574 | 90 / 6,281 / 1,611 |
+| above 0.4 Å (chains of short steps) | 0 / 4 / 26 | 14 / 96 / 233 |
+
+Sites whose images all lie within 0.01 Å (about 13,000 with a statement, 97% of them special) are rounded coordinates of a special position and are always one atom. Above, sites whose images could all be occupied are almost always split atoms, and sites whose images could not all be occupied are mostly stated special up to 0.1 Å. Between 0.2 and 0.4 Å the few authors who state something mostly call such sites general although the images would then be over-occupied; the CIF's statement decides there, and without one the site is one atom, since atoms closer than 0.4 Å with a total occupancy above 1 cannot all be present. The rule follows these statistics where a CIF states nothing, and the CIF's own statement where it does.
+
+Images within 0.01 Å are one atom even when the CIF states a lower site symmetry: 1,770 such sites in 554 CIFs, 595 of them in negative disorder parts (SHELXL `PART -1`, where each image is refined as a separate atom). `dev/stated_general_check.py` builds both readings and compares them with each CIF's formula × Z (else its density): of the 551 CIFs where the two readings differ, both agree in 233, only one atom per position in 90, only separate images in 141, neither in 86 (1 has neither formula nor density). The images are therefore counted separately only where that alone reproduces the CIF's composition (build report: "images … counted separately").

@@ -1,0 +1,17 @@
+# data and build outputs
+*.hsrdb
+*.7z
+*.log
+cifs/
+cod-mirror/
+legacy/
+out/
+scratch/
+# Python
+__pycache__/
+*.egg-info/
+.venv/
+# macOS
+.DS_Store
+# local notes
+plans/

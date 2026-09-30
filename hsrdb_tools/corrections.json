@@ -1,0 +1,4476 @@
+{
+ "1544611": {
+  "source": "Nakagawa, Kihara and Fujinami, Journal of Mineralogical and Petrological Sciences 100, 247-259 (2005), https://doi.org/10.2465/jmps.100.247",
+  "note": "the cage sites M (guest molecules such as CH4, N2, CO2) were refined with spherical stand-in atoms, F in the pentagondodecahedral M12 and Mg in the tetrakaidecahedral M14 cages (p. 251); they scatter as refined but are left out of formula and density, which are those of the SiO2 framework; population densities at 84 C: M12 0.77, M14 0.98 (p. 251)",
+  "sites": {
+   "M12": {
+    "species": {
+     "F": 0.77
+    },
+    "stand_in": true
+   },
+   "M14": {
+    "species": {
+     "Mg": 0.98
+    },
+    "stand_in": true
+   }
+  }
+ },
+ "1544612": {
+  "source": "Nakagawa, Kihara and Fujinami, Journal of Mineralogical and Petrological Sciences 100, 247-259 (2005), https://doi.org/10.2465/jmps.100.247",
+  "note": "the cage sites M (guest molecules such as CH4, N2, CO2) were refined with spherical stand-in atoms, F in the pentagondodecahedral M12 and Mg in the tetrakaidecahedral M14 cages (p. 251); they scatter as refined but are left out of formula and density, which are those of the SiO2 framework; the article gives no population densities for -50 C, so the CIF's 1.0 is kept",
+  "sites": {
+   "M1": {
+    "species": {
+     "Mg": 1.0
+    },
+    "stand_in": true
+   },
+   "M2": {
+    "species": {
+     "Mg": 1.0
+    },
+    "stand_in": true
+   },
+   "M3": {
+    "species": {
+     "Mg": 1.0
+    },
+    "stand_in": true
+   },
+   "M12": {
+    "species": {
+     "F": 1.0
+    },
+    "stand_in": true
+   }
+  }
+ },
+ "1544613": {
+  "source": "Nakagawa, Kihara and Fujinami, Journal of Mineralogical and Petrological Sciences 100, 247-259 (2005), https://doi.org/10.2465/jmps.100.247",
+  "note": "the cage sites M (guest molecules such as CH4, N2, CO2) were refined with spherical stand-in atoms, F in the pentagondodecahedral M12 and Mg in the tetrakaidecahedral M14 cages (p. 251); they scatter as refined but are left out of formula and density, which are those of the SiO2 framework; at 60 C fixed at the 25 C population densities M14(1) 0.85, M14(2) 1.04, M14(3) 0.92, M12 0.73 (p. 251 and Table 3)",
+  "sites": {
+   "M1": {
+    "species": {
+     "Mg": 0.85
+    },
+    "stand_in": true
+   },
+   "M2": {
+    "species": {
+     "Mg": 1.04
+    },
+    "stand_in": true
+   },
+   "M3": {
+    "species": {
+     "Mg": 0.92
+    },
+    "stand_in": true
+   },
+   "M12": {
+    "species": {
+     "F": 0.73
+    },
+    "stand_in": true
+   }
+  }
+ },
+ "1544625": {
+  "source": "Nishio-Hamane, Minakawa, Yamaura, Oyama, Ohnishi and Shimobayashi, Journal of Mineralogical and Petrological Sciences 109, 74-78 (2014), https://doi.org/10.2465/jmps.131020b",
+  "note": "the tourmaline sites are typed X, Y, Z and T; the refinement fixed their occupancies at the cation assignment of Table 3 (p. 76): X 0.62 Ca + 0.28 Na, Y (Fe1.58 Al0.81 Mg0.55 Ti0.06)/3, Z (Al5.81 Fe0.14 Mg0.05)/6, T (Si5.15 Al0.85)/6; H1 fixed at 0.56 (p. 75), 1.0 in the CIF",
+  "sites": {
+   "X": {
+    "species": {
+     "Ca": 0.62,
+     "Na": 0.28
+    }
+   },
+   "Y": {
+    "species": {
+     "Fe": 0.5267,
+     "Al": 0.27,
+     "Mg": 0.1833,
+     "Ti": 0.02
+    }
+   },
+   "Z": {
+    "species": {
+     "Al": 0.9683,
+     "Fe": 0.0233,
+     "Mg": 0.0083
+    }
+   },
+   "T": {
+    "species": {
+     "Si": 0.8583,
+     "Al": 0.1417
+    }
+   },
+   "H1": {
+    "occupancy_factor": 0.56
+   }
+  }
+ },
+ "1545186": {
+  "source": "Perez, de Resende, Salim and Schmal, The Journal of Physical Chemistry C 121, 2755-2761 (2017), https://doi.org/10.1021/acs.jpcc.6b11111",
+  "note": "site SPS of type SASH is the FullProf spherical-shell scatterer the article uses for the water layer lining the supercages (pp. 2758-2760): centred at 3/8,3/8,3/8, radius 4.2 A, its atoms scattering as n f(q) sin(qR)/(qR) (FullProf SASH); NaY.300H2O at 323 K: Zs = 1601 electrons per cell (Table 3), taken as 160.1 H2O (Zs/10, p. 2760); the shell is not an atom and is left out of the structure record",
+  "sites": {
+   "SPS": {
+    "shell": {
+     "radius": 4.2,
+     "per_cell": {
+      "O": 160.1,
+      "H": 320.2
+     }
+    }
+   }
+  }
+ },
+ "1545415": {
+  "source": "Perez, de Resende, Salim and Schmal, The Journal of Physical Chemistry C 121, 2755-2761 (2017), https://doi.org/10.1021/acs.jpcc.6b11111",
+  "note": "site SPS of type SASH is the FullProf spherical-shell scatterer the article uses for the water layer lining the supercages (pp. 2758-2760): centred at 3/8,3/8,3/8, radius 4.2 A, its atoms scattering as n f(q) sin(qR)/(qR) (FullProf SASH); dehydrated NaY: Zs = 69 electrons per cell (Table 3), taken as 6.9 H2O (Zs/10, p. 2760); the shell is not an atom and is left out of the structure record",
+  "sites": {
+   "SPS": {
+    "shell": {
+     "radius": 4.2,
+     "per_cell": {
+      "O": 6.9,
+      "H": 13.8
+     }
+    }
+   }
+  }
+ },
+ "1545416": {
+  "source": "Perez, de Resende, Salim and Schmal, The Journal of Physical Chemistry C 121, 2755-2761 (2017), https://doi.org/10.1021/acs.jpcc.6b11111",
+  "note": "site SPS of type SASH is the FullProf spherical-shell scatterer the article uses for the water layer lining the supercages (pp. 2758-2760): centred at 3/8,3/8,3/8, radius 4.2 A, its atoms scattering as n f(q) sin(qR)/(qR) (FullProf SASH); NaY.300H2O at 183 K: Zs = 1014 electrons per cell (Table 3), taken as 101.4 H2O (Zs/10, p. 2760); the shell is not an atom and is left out of the structure record",
+  "sites": {
+   "SPS": {
+    "shell": {
+     "radius": 4.2,
+     "per_cell": {
+      "O": 101.4,
+      "H": 202.8
+     }
+    }
+   }
+  }
+ },
+ "1545417": {
+  "source": "Perez, de Resende, Salim and Schmal, The Journal of Physical Chemistry C 121, 2755-2761 (2017), https://doi.org/10.1021/acs.jpcc.6b11111",
+  "note": "site SPS of type SASH is the FullProf spherical-shell scatterer the article uses for the water layer lining the supercages (pp. 2758-2760): centred at 3/8,3/8,3/8, radius 4.2 A, its atoms scattering as n f(q) sin(qR)/(qR) (FullProf SASH); NaY.150H2O: Zs = 491 electrons per cell (Table 3), taken as 49.1 H2O (Zs/10, p. 2760); the shell is not an atom and is left out of the structure record",
+  "sites": {
+   "SPS": {
+    "shell": {
+     "radius": 4.2,
+     "per_cell": {
+      "O": 49.1,
+      "H": 98.2
+     }
+    }
+   }
+  }
+ },
+ "1546291": {
+  "source": "Momma, Ikeda, Nishikubo, Takahashi, Honma, Takada, Furukawa, Nagase and Kudoh, Nature Communications 2, 196 (2011), https://doi.org/10.1038/ncomms1196",
+  "note": "the framework sites T1-T5 are typed T (tetrahedral site); their composition is (Si134.52 Al1.64) per 136 T sites (Methods, chemical analysis; the CIF's formula agrees), i.e. Si 0.9891 + Al 0.0121 on each",
+  "sites": {
+   "T1": {
+    "species": {
+     "Si": 0.9891,
+     "Al": 0.0121
+    }
+   },
+   "T2": {
+    "species": {
+     "Si": 0.9891,
+     "Al": 0.0121
+    }
+   },
+   "T3": {
+    "species": {
+     "Si": 0.9891,
+     "Al": 0.0121
+    }
+   },
+   "T4": {
+    "species": {
+     "Si": 0.9891,
+     "Al": 0.0121
+    }
+   },
+   "T5": {
+    "species": {
+     "Si": 0.9891,
+     "Al": 0.0121
+    }
+   }
+  }
+ },
+ "1549188": {
+  "source": "Ye, Barrio, Ceolin, Qureshi, Negrier, Rietveld and Tamarit, CrystEngComm 20, 2729-2732 (2018), https://doi.org/10.1039/C8CE00271A",
+  "note": "site C of type SpHS is the orientationally disordered C60 molecule of C60.2CBrClH2 at 333 K, refined in FullProf as 60 C atoms spread evenly over a sphere of radius 3.59 A at the 1a position (Experimental and Results); it scatters as 60 f_C(q) sin(qR)/(qR) and is left out of the structure record",
+  "sites": {
+   "C": {
+    "shell": {
+     "radius": 3.59,
+     "per_cell": {
+      "C": 60
+     }
+    }
+   }
+  }
+ },
+ "1563539": {
+  "source": "Uvarov, Shenawi-Khalil and Popov, Journal of Solid State Chemistry 183, 1484-1489 (2010), https://doi.org/10.1016/j.jssc.2010.04.028",
+  "note": "the site OH of type OH- is the hydroxyl oxygen of the HSiO4 groups, sharing the 12i position with O3; the refinement left the hydrogen atoms out (p. 1486: their coordinates could not be obtained from the X-ray data): OH- = O",
+  "types": {
+   "OH-": {
+    "O": 1
+   }
+  }
+ },
+ "1569813": {
+  "source": "Rizzo, Bosi, Tempesta and Agrosi, Crystals 13, 1290 (2023), https://doi.org/10.3390/cryst13081290",
+  "note": "type OiI is oxygen refined with the O2- scattering factor: the refinement instructions embedded in the CIF define SFAC OII with the International Tables coefficients of O2- (sum 10 electrons), all anion sites O1-O8 carry it and the CIF's formula writes oxygen as Oi; read as O (neutral-atom form factors, as for every entry)",
+  "types": {
+   "OiI": {
+    "O": 1
+   }
+  }
+ },
+ "1569815": {
+  "source": "Rizzo, Bosi, Tempesta and Agrosi, Crystals 13, 1290 (2023), https://doi.org/10.3390/cryst13081290",
+  "note": "type OiI is oxygen refined with the O2- scattering factor: the refinement instructions embedded in the CIF define SFAC OII with the International Tables coefficients of O2- (sum 10 electrons), all anion sites O1-O8 carry it and the CIF's formula writes oxygen as Oi; read as O (neutral-atom form factors, as for every entry)",
+  "types": {
+   "OiI": {
+    "O": 1
+   }
+  }
+ },
+ "1569816": {
+  "source": "Rizzo, Bosi, Tempesta and Agrosi, Crystals 13, 1290 (2023), https://doi.org/10.3390/cryst13081290",
+  "note": "type OiI is oxygen refined with the O2- scattering factor: the refinement instructions embedded in the CIF define SFAC OII with the International Tables coefficients of O2- (sum 10 electrons), all anion sites O1-O8 carry it and the CIF's formula writes oxygen as Oi; read as O (neutral-atom form factors, as for every entry)",
+  "types": {
+   "OiI": {
+    "O": 1
+   }
+  }
+ },
+ "2000974": {
+  "source": "Simon, Delage, Saux, Chulia, Najid and Rigaud, Acta Crystallographica C 48, 726-728 (1992), https://doi.org/10.1107/S0108270191012581",
+  "note": "the CIF's Hall symbol P 2 2ab names P21212, its H-M symbol P212121; the article confirms P212121. The ethanol of crystallization has no published coordinates (the article lists only the 33 atoms of ursolic acid) and is missing, as in the CIF and in COD24",
+  "spacegroup": "P 21 21 21"
+ },
+ "2001219": {
+  "source": "Nishihata, Sawada, Kasatani and Terauchi, Acta Crystallographica C49, 1939-1941 (1993), https://doi.org/10.1107/S0108270193004937",
+  "note": "the CIF gives no occupancies and a Hall symbol (P 2n -2a) without the inversion of its space group P m c n; the article refines the Br and C atoms as split atoms, two positions symmetric about the mirror at x = 0.25 with equal probability, with Co, N(1) and N(2) on the mirror (p. 1940; P m c n, Table 1, p. 1941)",
+  "spacegroup": "P m c n",
+  "sites": {
+   "Br(1)": {
+    "occupancy_factor": 0.5
+   },
+   "Br(2)": {
+    "occupancy_factor": 0.5
+   },
+   "Br(3)": {
+    "occupancy_factor": 0.5
+   },
+   "Br(4)": {
+    "occupancy_factor": 0.5
+   },
+   "C(1)": {
+    "occupancy_factor": 0.5
+   },
+   "C(2)": {
+    "occupancy_factor": 0.5
+   },
+   "C(3)": {
+    "occupancy_factor": 0.5
+   },
+   "C(4)": {
+    "occupancy_factor": 0.5
+   },
+   "C(5)": {
+    "occupancy_factor": 0.5
+   },
+   "C(6)": {
+    "occupancy_factor": 0.5
+   },
+   "C(7)": {
+    "occupancy_factor": 0.5
+   },
+   "C(8)": {
+    "occupancy_factor": 0.5
+   }
+  }
+ },
+ "2003591": {
+  "source": "Conole, Clough and Whiting, Acta Crystallographica C51, 1056-1059 (1995), https://doi.org/10.1107/S0108270194014198",
+  "note": "the row Cen is the centroid of the phenyl ring (p. 1057), not an atom; without a type column its label reads as cerium: left out",
+  "sites": {
+   "Cen": {
+    "omit": true
+   }
+  }
+ },
+ "2003764": {
+  "source": "Baenziger, Burton and Tortelli, Acta Crystallographica C51, 1663-1665 (1995), https://doi.org/10.1107/S0108270195002125",
+  "note": "space group Fddd (p. 1663), origin choice 2 as the CIF's Hall symbol -F 2uv 2vw states (the CIF lists only 4 of the 32 operations); O(1) is the disordered O/F site of the acyl fluoride group, refined as a single O atom (p. 1664): O 0.5 + F 0.5",
+  "spacegroup": "F d d d:2",
+  "sites": {
+   "O(1)": {
+    "species": {
+     "O": 0.5,
+     "F": 0.5
+    }
+   }
+  }
+ },
+ "2004310": {
+  "source": "Ladjeroud, Balegroune, Guehria, Benziada and Triki, Acta Crystallographica C51, 2459-2461 (1995), https://doi.org/10.1107/S0108270195007980",
+  "note": "ST1, ST2 are the refinement's fictitious atom ST = 3/5 Nb + 2/5 Ti (total Nb/Ti disorder) and OF1-OF3 the mixed anion OF = 3/4 O + 1/4 F (p. 2459); without a type column their labels read as sulfur and oxygen",
+  "sites": {
+   "ST1": {
+    "species": {
+     "Nb": 0.6,
+     "Ti": 0.4
+    }
+   },
+   "ST2": {
+    "species": {
+     "Nb": 0.6,
+     "Ti": 0.4
+    }
+   },
+   "OF1": {
+    "species": {
+     "O": 0.75,
+     "F": 0.25
+    }
+   },
+   "OF2": {
+    "species": {
+     "O": 0.75,
+     "F": 0.25
+    }
+   },
+   "OF3": {
+    "species": {
+     "O": 0.75,
+     "F": 0.25
+    }
+   }
+  }
+ },
+ "2004555": {
+  "source": "Yuge and Iwamoto, Acta Crystallographica C52, 575-580 (1996), https://doi.org/10.1107/S0108270195011899",
+  "note": "the site ON (type ON) holds both ends of the 2-aminoethanol ligand, which a twofold axis makes equivalent: 'The N and O atoms of the mea ligand are crystallographically equivalent; this atom is denoted ON' (p. 575), refined with a mixed N/O scattering factor: ON = 1/2 N + 1/2 O",
+  "sites": {
+   "ON": {
+    "species": {
+     "N": 0.5,
+     "O": 0.5
+    }
+   }
+  }
+ },
+ "2004556": {
+  "source": "Yuge and Iwamoto, Acta Crystallographica C52, 575-580 (1996), https://doi.org/10.1107/S0108270195011899",
+  "note": "the site ON (type ON) holds both ends of the 2-aminoethanol ligand, which a twofold axis makes equivalent: 'The N and O atoms of the mea ligand are crystallographically equivalent; this atom is denoted ON' (p. 575), refined with a mixed N/O scattering factor: ON = 1/2 N + 1/2 O",
+  "sites": {
+   "ON": {
+    "species": {
+     "N": 0.5,
+     "O": 0.5
+    }
+   }
+  }
+ },
+ "2004899": {
+  "source": "Lu, Tahirov, Liu, Chung, Huang and Hong, Acta Crystallographica C52, 1093-1095 (1996), https://doi.org/10.1107/S0108270195016519",
+  "note": "space group Pmcn (p. 1094), as the CIF's symbol states (its Hall symbol -P 2n -21 names P m c 21); the uncoordinated SCN- anion is statistically disordered (pp. 1093-1094) over its two images across the mirror at x = 3/4: S(2), N(4), C(8) at half occupancy (the CIF gives no occupancies)",
+  "spacegroup": "P m c n",
+  "sites": {
+   "S(2)": {
+    "occupancy_factor": 0.5
+   },
+   "N(4)": {
+    "occupancy_factor": 0.5
+   },
+   "C(8)": {
+    "occupancy_factor": 0.5
+   }
+  }
+ },
+ "2005933": {
+  "source": "Beddoes, Dinsmore, Helliwell, Garner and Joule, Acta Crystallographica C53, 213-215 (1997), https://doi.org/10.1107/S0108270196013571",
+  "note": "space group C2/m (p. 214; the CIF's symbol P 1 2/m 1 misses the centring, its operations are those of C2/m); the CIF gives the atoms on the mirror (y = 0) occupancy 0.5, the site-multiplicity factor of the refinement program, not a chemical occupancy: x 2; the water O2 and its H2b off the mirror are half occupied as refined (p. 214)",
+  "spacegroup": "C 1 2/m 1",
+  "sites": {
+   "Co1": {
+    "occupancy_factor": 2
+   },
+   "S1": {
+    "occupancy_factor": 2
+   },
+   "S2": {
+    "occupancy_factor": 2
+   },
+   "O1": {
+    "occupancy_factor": 2
+   },
+   "N1": {
+    "occupancy_factor": 2
+   },
+   "N2": {
+    "occupancy_factor": 2
+   },
+   "N3": {
+    "occupancy_factor": 2
+   },
+   "N4": {
+    "occupancy_factor": 2
+   },
+   "N5": {
+    "occupancy_factor": 2
+   },
+   "N6": {
+    "occupancy_factor": 2
+   },
+   "C1": {
+    "occupancy_factor": 2
+   },
+   "C2": {
+    "occupancy_factor": 2
+   },
+   "C3": {
+    "occupancy_factor": 2
+   },
+   "C4": {
+    "occupancy_factor": 2
+   },
+   "C5": {
+    "occupancy_factor": 2
+   },
+   "C6": {
+    "occupancy_factor": 2
+   },
+   "C7": {
+    "occupancy_factor": 2
+   },
+   "C8": {
+    "occupancy_factor": 2
+   },
+   "C9": {
+    "occupancy_factor": 2
+   },
+   "C10": {
+    "occupancy_factor": 2
+   },
+   "C11": {
+    "occupancy_factor": 2
+   },
+   "C12": {
+    "occupancy_factor": 2
+   },
+   "C13": {
+    "occupancy_factor": 2
+   },
+   "H1": {
+    "occupancy_factor": 2
+   },
+   "H2a": {
+    "occupancy_factor": 2
+   },
+   "H4": {
+    "occupancy_factor": 2
+   },
+   "H9b": {
+    "occupancy_factor": 2
+   },
+   "H10": {
+    "occupancy_factor": 2
+   },
+   "H11a": {
+    "occupancy_factor": 2
+   },
+   "H12a": {
+    "occupancy_factor": 2
+   },
+   "H13": {
+    "occupancy_factor": 2
+   }
+  }
+ },
+ "2017919": {
+  "source": "Czerwinski, Valenzuela, Afonine, Dauter and Dauter, Acta Crystallographica C66, o585-o588 (2010), https://doi.org/10.1107/S0108270110044136",
+  "note": "the sites of types IS4, IS5 and IS9 are the interatomic scatterers (IAS) with which the article's second refinement (PHENIX) models bonding electron density between atoms (pp. o585-o586), not atoms; their PHENIX form factors are not in the CIF; left out, which gives the independent-atom model used for every entry",
+  "omit_types": [
+   "IS4",
+   "IS5",
+   "IS9"
+  ]
+ },
+ "2019464": {
+  "source": "Schmetterer, Flandorfer and Effenberger, Acta Crystallographica C70, 348-350 (2014), https://doi.org/10.1107/S2053229614003660",
+  "note": "the sites of type M hold Ni, Cu and Zn, which the refinement does not tell apart (similar scattering power, footnote 1 on p. 348); each M site keeps its refined occupancy with the analysed composition Cu1.04 Ni5.20 Zn4.16 (Table 1, the CIF's formula): M = Ni0.5 Cu0.1 Zn0.4",
+  "sites": {
+   "M": {
+    "species": {
+     "Ni": 0.2,
+     "Cu": 0.04,
+     "Zn": 0.16
+    }
+   },
+   "M1": {
+    "species": {
+     "Ni": 0.405,
+     "Cu": 0.081,
+     "Zn": 0.324
+    }
+   },
+   "M2": {
+    "species": {
+     "Ni": 0.37,
+     "Cu": 0.074,
+     "Zn": 0.296
+    }
+   },
+   "M3": {
+    "species": {
+     "Ni": 0.405,
+     "Cu": 0.081,
+     "Zn": 0.324
+    }
+   },
+   "M4": {
+    "species": {
+     "Ni": 0.24,
+     "Cu": 0.048,
+     "Zn": 0.192
+    }
+   }
+  }
+ },
+ "2100388": {
+  "source": "Yashima and Tsunekawa, Acta Crystallographica B62, 161-164 (2006), https://doi.org/10.1107/S0108768105030570",
+  "note": "the cation site has type M; its label is Zr0.994Hf0.006, and the CIF's formula (Hf0.006 O1.968 Zr0.994) and atom-type list (Zr4+, Hf4+) agree",
+  "sites": {
+   "Zr0.994Hf0.006": {
+    "species": {
+     "Zr": 0.994,
+     "Hf": 0.006
+    }
+   }
+  }
+ },
+ "2100389": {
+  "source": "Yashima and Tsunekawa, Acta Crystallographica B62, 161-164 (2006), https://doi.org/10.1107/S0108768105030570",
+  "note": "the cation site has type M and label Zr",
+  "sites": {
+   "Zr": {
+    "species": {
+     "Zr": 1.0
+    }
+   }
+  }
+ },
+ "2100940": {
+  "source": "Helliwell, Kaucic, Cheetham, Harding, Kariuki and Rizkallah, Acta Crystallographica B49, 413-420 (1993), https://doi.org/10.1107/S0108768192009005",
+  "note": "space group Fddd with the origin at -1 (Table 2; the CIF's symbol F d d d {origin @ -1}, while its Hall symbol F 2uv 2vw lacks the inversion); the disordered isopropylamine template: site occupancy 0.25 for N, 0.50 for C (Table 3 footnote); the CIF gives none",
+  "spacegroup": "F d d d:2",
+  "sites": {
+   "N(1)": {
+    "occupancy_factor": 0.25
+   },
+   "C(1)": {
+    "occupancy_factor": 0.5
+   },
+   "C(2)": {
+    "occupancy_factor": 0.5
+   }
+  }
+ },
+ "2100941": {
+  "source": "Helliwell, Kaucic, Cheetham, Harding, Kariuki and Rizkallah, Acta Crystallographica B49, 413-420 (1993), https://doi.org/10.1107/S0108768192009005",
+  "note": "space group Fddd with the origin at -1 (Table 2; the CIF's symbol F d d d {origin @ -1}, while its Hall symbol F 2uv 2vw lacks the inversion); the disordered isopropylamine template: site occupancy 0.25 for N, 0.50 for C (Table 3 footnote); the CIF gives none",
+  "spacegroup": "F d d d:2",
+  "sites": {
+   "N(1)": {
+    "occupancy_factor": 0.25
+   },
+   "C(1)": {
+    "occupancy_factor": 0.5
+   },
+   "C(2)": {
+    "occupancy_factor": 0.5
+   }
+  }
+ },
+ "2101194": {
+  "source": "Darovsky, Keserashvili, Harlow and Mutikainen, Acta Crystallographica B50, 582-588 (1994), https://doi.org/10.1107/S0108768194004192",
+  "note": "space group P4/nnc, origin choice 2 as the CIF's symbol states (its Hall symbol -P 4a 2b reads as P4/nbm); the lanthanide is distributed over two sites, occupancy Nd1 0.720, Nd2 0.280 (Table 2 footnote); the CIF gives none",
+  "spacegroup": "P 4/n n c:2",
+  "sites": {
+   "Nd1": {
+    "occupancy_factor": 0.72
+   },
+   "Nd2": {
+    "occupancy_factor": 0.28
+   }
+  }
+ },
+ "2101195": {
+  "source": "Darovsky, Keserashvili, Harlow and Mutikainen, Acta Crystallographica B50, 582-588 (1994), https://doi.org/10.1107/S0108768194004192",
+  "note": "space group P4/nnc, origin choice 2 as the CIF's symbol states (its Hall symbol -P 4a 2b reads as P4/nbm); the lanthanide is distributed over two sites, occupancy Pr1 0.741, Pr2 0.259 (Table 2 footnote); the CIF gives none",
+  "spacegroup": "P 4/n n c:2",
+  "sites": {
+   "Pr1": {
+    "occupancy_factor": 0.741
+   },
+   "Pr2": {
+    "occupancy_factor": 0.259
+   }
+  }
+ },
+ "2101850": {
+  "source": "Rae, Craig, Dance, Scudder, Dean, Kmetic, Payne and Vittal, Acta Crystallographica B53, 457-465 (1997), https://doi.org/10.1107/S0108768196015819",
+  "note": "the space group C 1 1 21/d (a non-standard setting of P21/c) comes without operations; the eight true equivalent positions of the ordered structure are those of Table 4 (p. 463); the coordinates of Table 2 describe that ordered structure",
+  "operations": [
+   "x,y,z",
+   "1/4-x,1/4-y,1/2+z",
+   "1/2-x,1/2-y,-z",
+   "1/4+x,1/4+y,1/2-z",
+   "1/2+x,1/2+y,z",
+   "3/4-x,3/4-y,1/2+z",
+   "-x,-y,-z",
+   "3/4+x,3/4+y,1/2-z"
+  ]
+ },
+ "2101903": {
+  "source": "Sui, Liao, Kuo, Zou and Hovmoeller, Acta Crystallographica B53, 587-595 (1997), https://doi.org/10.1107/S0108768197000220",
+  "note": "the sites TM(1)-TM(14) are transition-metal sites, 'TM = transition metal, Fe or Cr' (Table 1), not assigned; each holds the alloy's Fe:Cr = 2:1 (Al12Fe2Cr, the CIF's formula); without a type column their labels read as thulium",
+  "sites": {
+   "TM(1)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   },
+   "TM(2)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   },
+   "TM(3)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   },
+   "TM(4)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   },
+   "TM(5)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   },
+   "TM(6)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   },
+   "TM(7)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   },
+   "TM(8)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   },
+   "TM(9)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   },
+   "TM(10)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   },
+   "TM(11)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   },
+   "TM(12)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   },
+   "TM(13)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   },
+   "TM(14)": {
+    "species": {
+     "Fe": 0.6667,
+     "Cr": 0.3333
+    }
+   }
+  }
+ },
+ "2103713": {
+  "source": "Onoda, Shi, Leithe-Jasper and Tanaka, Acta Crystallographica B 57, 449-457 (2001), https://doi.org/10.1107/S0108768101006607",
+  "note": "a commensurate composite crystal (Sc2C and B1/3C2/3 subsystems, r = 9/7); the CIF gives only the averages of the first superspace model (Table 4) in the Sc2C subcell, with the B1/3C2/3 layer in the wrong lattice, and no symmetry; the article's three-dimensional superstructure of Table 7 (pp. 455-456, second model, RF 0.0524): P3m1, A = 23.710, c = 6.703 A, 24 Sc, 12 C and 37 M = B1/3C2/3 sites; Table 7 gives no displacement parameters: U_iso from Table 4 (Sc U_eq 0.00775, C 0.0089, B1/3C2/3 0.0093 A^2)",
+  "cell": [
+   23.71,
+   23.71,
+   6.703,
+   90,
+   90,
+   120
+  ],
+  "spacegroup": "P 3 m 1",
+  "sites": {
+   "Sc": {
+    "omit": true
+   },
+   "C": {
+    "omit": true
+   },
+   "B1/3C2/3": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "Sc1",
+    "xyz": [
+     0.3333,
+     -0.3333,
+     0.2725
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc2",
+    "xyz": [
+     0.0447,
+     -0.0447,
+     0.3556
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc3",
+    "xyz": [
+     -0.0922,
+     0.0922,
+     0.3056
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc4",
+    "xyz": [
+     0.191,
+     -0.191,
+     0.3267
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc5",
+    "xyz": [
+     -0.2395,
+     0.2395,
+     0.3044
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc6",
+    "xyz": [
+     -0.3825,
+     0.3825,
+     0.3352
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc7",
+    "xyz": [
+     0.4778,
+     -0.4778,
+     0.3627
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc8",
+    "xyz": [
+     0.047,
+     0.2351,
+     0.3215
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc9",
+    "xyz": [
+     0.0463,
+     0.387,
+     0.3346
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc10",
+    "xyz": [
+     -0.0914,
+     0.245,
+     0.2865
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc11",
+    "xyz": [
+     0.3385,
+     -0.1829,
+     0.3068
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc12",
+    "xyz": [
+     -0.3858,
+     0.0921,
+     0.3416
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc13",
+    "xyz": [
+     -0.3333,
+     0.3333,
+     0.6751
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc14",
+    "xyz": [
+     -0.0518,
+     0.0518,
+     0.7118
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc15",
+    "xyz": [
+     0.0955,
+     -0.0955,
+     0.6849
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc16",
+    "xyz": [
+     -0.1889,
+     0.1889,
+     0.6377
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc17",
+    "xyz": [
+     0.2416,
+     -0.2416,
+     0.6613
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc18",
+    "xyz": [
+     0.3789,
+     -0.3789,
+     0.6453
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc19",
+    "xyz": [
+     -0.4746,
+     0.4746,
+     0.7213
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc20",
+    "xyz": [
+     -0.0538,
+     -0.244,
+     0.6547
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc21",
+    "xyz": [
+     -0.0511,
+     -0.3787,
+     0.6837
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc22",
+    "xyz": [
+     0.0935,
+     -0.2395,
+     0.6705
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc23",
+    "xyz": [
+     -0.3271,
+     0.191,
+     0.681
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "Sc24",
+    "xyz": [
+     0.3776,
+     -0.1019,
+     0.7017
+    ],
+    "species": {
+     "Sc": 1
+    },
+    "u_iso": 0.00775
+   },
+   {
+    "label": "C1",
+    "xyz": [
+     0.0,
+     0.0,
+     0.5606
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0089
+   },
+   {
+    "label": "C2",
+    "xyz": [
+     0.14263,
+     -0.14263,
+     0.50061
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0089
+   },
+   {
+    "label": "C3",
+    "xyz": [
+     -0.14294,
+     0.14294,
+     0.445
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0089
+   },
+   {
+    "label": "C4",
+    "xyz": [
+     0.286,
+     -0.286,
+     0.457
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0089
+   },
+   {
+    "label": "C5",
+    "xyz": [
+     -0.2853,
+     0.2853,
+     0.4954
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0089
+   },
+   {
+    "label": "C6",
+    "xyz": [
+     0.42861,
+     -0.42861,
+     0.5138
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0089
+   },
+   {
+    "label": "C7",
+    "xyz": [
+     -0.429,
+     0.42901,
+     0.5276
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0089
+   },
+   {
+    "label": "C8",
+    "xyz": [
+     -0.00056,
+     0.1422,
+     0.5112
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0089
+   },
+   {
+    "label": "C9",
+    "xyz": [
+     -0.0009,
+     0.28545,
+     0.4838
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0089
+   },
+   {
+    "label": "C10",
+    "xyz": [
+     -0.0002,
+     0.4288,
+     0.5454
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0089
+   },
+   {
+    "label": "C11",
+    "xyz": [
+     0.1427,
+     0.4292,
+     0.5053
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0089
+   },
+   {
+    "label": "C12",
+    "xyz": [
+     -0.14261,
+     -0.4282,
+     0.4745
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0089
+   },
+   {
+    "label": "M1",
+    "xyz": [
+     0.0,
+     0.0,
+     0.0801
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M2",
+    "xyz": [
+     0.3333,
+     -0.3333,
+     -0.0947
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M3",
+    "xyz": [
+     -0.3333,
+     0.33333,
+     0.0157
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M4",
+    "xyz": [
+     0.1117,
+     -0.1117,
+     0.0192
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M5",
+    "xyz": [
+     -0.1108,
+     0.1108,
+     -0.05
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M6",
+    "xyz": [
+     0.2215,
+     -0.2215,
+     -0.001
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M7",
+    "xyz": [
+     -0.2229,
+     0.2229,
+     -0.0574
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M8",
+    "xyz": [
+     0.4446,
+     -0.4446,
+     0.0393
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M9",
+    "xyz": [
+     -0.4441,
+     0.4441,
+     0.0521
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M10",
+    "xyz": [
+     0.0007,
+     0.1117,
+     0.0362
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M11",
+    "xyz": [
+     0.0016,
+     0.22311,
+     -0.023
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M12",
+    "xyz": [
+     0.0012,
+     0.3338,
+     0.0004
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M13",
+    "xyz": [
+     0.00019,
+     0.4444,
+     0.0677
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M14",
+    "xyz": [
+     0.1119,
+     0.3334,
+     0.0133
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M15",
+    "xyz": [
+     0.1113,
+     0.4436,
+     0.0282
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M16",
+    "xyz": [
+     0.2215,
+     -0.3329,
+     -0.0423
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M17",
+    "xyz": [
+     0.3332,
+     0.1104,
+     -0.0799
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M18",
+    "xyz": [
+     0.4451,
+     0.1112,
+     -0.0041
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M19",
+    "xyz": [
+     -0.3336,
+     0.2233,
+     0.0072
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M20",
+    "xyz": [
+     -0.0373,
+     0.0374,
+     0.074
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M21",
+    "xyz": [
+     0.0749,
+     -0.0749,
+     0.0364
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M22",
+    "xyz": [
+     -0.14813,
+     0.14813,
+     -0.0756
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M23",
+    "xyz": [
+     0.18493,
+     -0.18493,
+     -0.0153
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M24",
+    "xyz": [
+     -0.2598,
+     0.2598,
+     -0.0267
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M25",
+    "xyz": [
+     0.2961,
+     -0.2961,
+     -0.0658
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M26",
+    "xyz": [
+     -0.3698,
+     0.3698,
+     -0.0093
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M27",
+    "xyz": [
+     0.4072,
+     -0.4072,
+     -0.0108
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M28",
+    "xyz": [
+     -0.48124,
+     0.48124,
+     0.0898
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M29",
+    "xyz": [
+     0.0751,
+     0.2602,
+     -0.0143
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M30",
+    "xyz": [
+     0.075,
+     0.3698,
+     0.0058
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M31",
+    "xyz": [
+     0.0747,
+     0.481,
+     0.0634
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M32",
+    "xyz": [
+     0.1856,
+     0.1491,
+     -0.0113
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M33",
+    "xyz": [
+     0.1853,
+     -0.2951,
+     -0.0127
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M34",
+    "xyz": [
+     0.2956,
+     0.2594,
+     -0.0409
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M35",
+    "xyz": [
+     0.4077,
+     0.1485,
+     -0.0502
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M36",
+    "xyz": [
+     0.40663,
+     0.3697,
+     0.0341
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "M37",
+    "xyz": [
+     -0.3697,
+     0.1496,
+     0.0229
+    ],
+    "species": {
+     "B": 0.333333,
+     "C": 0.666667
+    },
+    "u_iso": 0.0093
+   }
+  ]
+ },
+ "2103919": {
+  "source": "Dusek, Chapuis, Meyer and Petricek, Acta Crystallographica B 59, 337-352 (2003), https://doi.org/10.1107/S0108768103009017",
+  "note": "the CIF gives no symmetry and only the six atoms of the basic structure of the commensurately modulated delta phase at 110 K (superspace group C2/m(alpha0gamma)0s, q = (1/6, 0, 1/3), Table 2, p. 339); the article gives the same structure as its sixfold superstructure, P21/n, a = 19.91, b = 5.237, c = 17.99 A, beta = 119.01 deg, Z = 24 (Table 2, column 2), with all 36 atoms and U_eq (Table 12, p. 349), used here in place of the basic structure. The article does not print the operations: Table 12's coordinates are those of its superspace model (Table 9, t0 = 1/8, p. 343; A = 2a - c, C = 3c) to 0.004 A, whose P21/n has the inversion centre at (1/8, 1/4, 3/8) of this cell; those operations are used",
+  "cell": [
+   19.91,
+   5.237,
+   17.99,
+   90,
+   119.01,
+   90
+  ],
+  "sites": {
+   "Na1": {
+    "omit": true
+   },
+   "Na2": {
+    "omit": true
+   },
+   "Na3": {
+    "omit": true
+   },
+   "C": {
+    "omit": true
+   },
+   "O1": {
+    "omit": true
+   },
+   "O2": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "Na1a",
+    "xyz": [
+     3e-05,
+     0.03491,
+     -0.00021
+    ],
+    "species": {
+     "Na": 1
+    },
+    "u_iso": 0.0092
+   },
+   {
+    "label": "Na1b",
+    "xyz": [
+     0.49742,
+     0.0637,
+     0.16425
+    ],
+    "species": {
+     "Na": 1
+    },
+    "u_iso": 0.0093
+   },
+   {
+    "label": "Na1c",
+    "xyz": [
+     0.99974,
+     0.01155,
+     0.3329
+    ],
+    "species": {
+     "Na": 1
+    },
+    "u_iso": 0.0084
+   },
+   {
+    "label": "Na2a",
+    "xyz": [
+     -0.00038,
+     0.05997,
+     0.16675
+    ],
+    "species": {
+     "Na": 1
+    },
+    "u_iso": 0.0081
+   },
+   {
+    "label": "Na2b",
+    "xyz": [
+     0.49873,
+     0.02327,
+     0.33324
+    ],
+    "species": {
+     "Na": 1
+    },
+    "u_iso": 0.009
+   },
+   {
+    "label": "Na2c",
+    "xyz": [
+     0.99989,
+     -0.05239,
+     0.4991
+    ],
+    "species": {
+     "Na": 1
+    },
+    "u_iso": 0.0088
+   },
+   {
+    "label": "Na3a",
+    "xyz": [
+     0.08609,
+     0.54498,
+     0.27874
+    ],
+    "species": {
+     "Na": 1
+    },
+    "u_iso": 0.0125
+   },
+   {
+    "label": "Na3b",
+    "xyz": [
+     0.58872,
+     0.47163,
+     0.4474
+    ],
+    "species": {
+     "Na": 1
+    },
+    "u_iso": 0.0134
+   },
+   {
+    "label": "Na3c",
+    "xyz": [
+     1.08713,
+     0.42904,
+     0.6101
+    ],
+    "species": {
+     "Na": 1
+    },
+    "u_iso": 0.0121
+   },
+   {
+    "label": "Na3d",
+    "xyz": [
+     -0.08099,
+     0.4396,
+     -0.27468
+    ],
+    "species": {
+     "Na": 1
+    },
+    "u_iso": 0.0125
+   },
+   {
+    "label": "Na3e",
+    "xyz": [
+     0.41465,
+     0.5218,
+     -0.11197
+    ],
+    "species": {
+     "Na": 1
+    },
+    "u_iso": 0.0139
+   },
+   {
+    "label": "Na3f",
+    "xyz": [
+     0.91453,
+     0.5616,
+     0.05597
+    ],
+    "species": {
+     "Na": 1
+    },
+    "u_iso": 0.0118
+   },
+   {
+    "label": "Ca",
+    "xyz": [
+     0.08211,
+     0.55578,
+     0.11039
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0064
+   },
+   {
+    "label": "Cb",
+    "xyz": [
+     0.58224,
+     0.53964,
+     0.27756
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0075
+   },
+   {
+    "label": "Cc",
+    "xyz": [
+     1.08277,
+     0.47325,
+     0.44293
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0071
+   },
+   {
+    "label": "Cd",
+    "xyz": [
+     -0.08294,
+     0.49655,
+     -0.11028
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0076
+   },
+   {
+    "label": "Ce",
+    "xyz": [
+     0.41884,
+     0.56417,
+     0.05564
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0066
+   },
+   {
+    "label": "Cf",
+    "xyz": [
+     0.91759,
+     0.54406,
+     0.22324
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.0069
+   },
+   {
+    "label": "O1a",
+    "xyz": [
+     0.03693,
+     0.36473,
+     0.09896
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0123
+   },
+   {
+    "label": "O1b",
+    "xyz": [
+     0.54969,
+     0.33586,
+     0.28544
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0154
+   },
+   {
+    "label": "O1c",
+    "xyz": [
+     1.06487,
+     0.25633,
+     0.46323
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.012
+   },
+   {
+    "label": "O1d",
+    "xyz": [
+     1.56444,
+     0.22169,
+     0.6264
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0122
+   },
+   {
+    "label": "O1e",
+    "xyz": [
+     2.04989,
+     0.24243,
+     0.77149
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0138
+   },
+   {
+    "label": "O1f",
+    "xyz": [
+     2.53734,
+     0.33359,
+     0.92626
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0115
+   },
+   {
+    "label": "O1g",
+    "xyz": [
+     -0.06464,
+     0.2804,
+     -0.12994
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0146
+   },
+   {
+    "label": "O1h",
+    "xyz": [
+     0.46436,
+     0.3814,
+     0.06108
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0147
+   },
+   {
+    "label": "O1i",
+    "xyz": [
+     0.96338,
+     0.3536,
+     0.23796
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0118
+   },
+   {
+    "label": "O1j",
+    "xyz": [
+     1.46126,
+     0.30882,
+     0.40518
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0144
+   },
+   {
+    "label": "O1k",
+    "xyz": [
+     1.93445,
+     0.20608,
+     0.54412
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0135
+   },
+   {
+    "label": "O1l",
+    "xyz": [
+     2.43402,
+     0.23668,
+     0.70332
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.012
+   },
+   {
+    "label": "O2a",
+    "xyz": [
+     0.14454,
+     0.52303,
+     0.10646
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0111
+   },
+   {
+    "label": "O2b",
+    "xyz": [
+     0.64588,
+     0.52523,
+     0.27575
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0125
+   },
+   {
+    "label": "O2c",
+    "xyz": [
+     1.1458,
+     0.49702,
+     0.43988
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0109
+   },
+   {
+    "label": "O2d",
+    "xyz": [
+     -0.14541,
+     0.5171,
+     -0.1058
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0109
+   },
+   {
+    "label": "O2e",
+    "xyz": [
+     0.35792,
+     0.51566,
+     0.06112
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0124
+   },
+   {
+    "label": "O2f",
+    "xyz": [
+     0.85551,
+     0.51497,
+     0.22787
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.0109
+   }
+  ],
+  "operations": [
+   "x,y,z",
+   "-x+3/4,y+1/2,-z+1/4",
+   "-x+1/4,-y+1/2,-z+3/4",
+   "x+1/2,-y,z+1/2"
+  ]
+ },
+ "2300057": {
+  "source": "Brenner, McCusker and Baerlocher, Journal of Applied Crystallography 35, 243-252 (2002), https://doi.org/10.1107/S0021889802001759",
+  "note": "the CIF gives the symbol ?P? and no displacement parameters; the refinement in P212121 (p. 250, Table 3; Z = 4 by density, one molecule per asymmetric unit), U_iso of Table 3; H atoms were approximated by raised occupancies of their C and N atoms (1.17, 1.33, 1.50 for 1-3 H on C, 1.14 for H on N), here the C or N atom with its H atoms at the same position; O8 (ester oxygen) is typed C in the CIF, O in the article (formula C32H53N3O6)",
+  "spacegroup": "P 21 21 21",
+  "sites": {
+   "C1": {
+    "u_iso": 0.039
+   },
+   "C2": {
+    "u_iso": 0.073,
+    "species": {
+     "C": 1,
+     "H": 1
+    }
+   },
+   "C3": {
+    "u_iso": 0.073,
+    "species": {
+     "C": 1,
+     "H": 1
+    }
+   },
+   "C4": {
+    "u_iso": 0.073,
+    "species": {
+     "C": 1,
+     "H": 1
+    }
+   },
+   "C5": {
+    "u_iso": 0.073,
+    "species": {
+     "C": 1,
+     "H": 1
+    }
+   },
+   "C6": {
+    "u_iso": 0.073,
+    "species": {
+     "C": 1,
+     "H": 1
+    }
+   },
+   "C7": {
+    "u_iso": 0.077,
+    "species": {
+     "C": 1,
+     "H": 2
+    }
+   },
+   "O8": {
+    "u_iso": 0.039,
+    "species": {
+     "O": 1
+    }
+   },
+   "C9": {
+    "u_iso": 0.039
+   },
+   "O10": {
+    "u_iso": 0.039
+   },
+   "C11": {
+    "u_iso": 0.073,
+    "species": {
+     "C": 1,
+     "H": 1
+    }
+   },
+   "C12": {
+    "u_iso": 0.077,
+    "species": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "C13": {
+    "u_iso": 0.073,
+    "species": {
+     "C": 1,
+     "H": 1
+    }
+   },
+   "C14": {
+    "u_iso": 0.077,
+    "species": {
+     "C": 1,
+     "H": 2
+    }
+   },
+   "C15": {
+    "u_iso": 0.073,
+    "species": {
+     "C": 1,
+     "H": 1
+    }
+   },
+   "C16": {
+    "u_iso": 0.077,
+    "species": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "C17": {
+    "u_iso": 0.077,
+    "species": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "N18": {
+    "u_iso": 0.073,
+    "species": {
+     "N": 1,
+     "H": 1
+    }
+   },
+   "C19": {
+    "u_iso": 0.039
+   },
+   "O20": {
+    "u_iso": 0.039
+   },
+   "C21": {
+    "u_iso": 0.073,
+    "species": {
+     "C": 1,
+     "H": 1
+    }
+   },
+   "C22": {
+    "u_iso": 0.077,
+    "species": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "C23": {
+    "u_iso": 0.073,
+    "species": {
+     "C": 1,
+     "H": 1
+    }
+   },
+   "C24": {
+    "u_iso": 0.077,
+    "species": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "N25": {
+    "u_iso": 0.073,
+    "species": {
+     "N": 1,
+     "H": 1
+    }
+   },
+   "C26": {
+    "u_iso": 0.039
+   },
+   "O27": {
+    "u_iso": 0.039
+   },
+   "C28": {
+    "u_iso": 0.073,
+    "species": {
+     "C": 1,
+     "H": 1
+    }
+   },
+   "C29": {
+    "u_iso": 0.077,
+    "species": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "C30": {
+    "u_iso": 0.073,
+    "species": {
+     "C": 1,
+     "H": 1
+    }
+   },
+   "C31": {
+    "u_iso": 0.073,
+    "species": {
+     "C": 1,
+     "H": 1
+    }
+   },
+   "C32": {
+    "u_iso": 0.077,
+    "species": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "C33": {
+    "u_iso": 0.077,
+    "species": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "N34": {
+    "u_iso": 0.073,
+    "species": {
+     "N": 1,
+     "H": 1
+    }
+   },
+   "C35": {
+    "u_iso": 0.039
+   },
+   "O36": {
+    "u_iso": 0.039
+   },
+   "O37": {
+    "u_iso": 0.039
+   },
+   "C38": {
+    "u_iso": 0.039
+   },
+   "C39": {
+    "u_iso": 0.077,
+    "species": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "C40": {
+    "u_iso": 0.077,
+    "species": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "C41": {
+    "u_iso": 0.077,
+    "species": {
+     "C": 1,
+     "H": 3
+    }
+   }
+  }
+ },
+ "2300247": {
+  "source": "Fortes, Wood, Vocadlo et al., Journal of Applied Crystallography 42, 846 (2009), https://doi.org/10.1107/S0021889809027897",
+  "note": "NOT THIS COMPOUND'S STRUCTURE: included only because COD24 contains it. The CIF gives lattice parameters and a placeholder site 'dummy' (flagged dum), no atoms; COD24 read that site as deuterium, and this entry reproduces COD24's model, one D atom at the origin with the CIF's U 0.025 A^2. COD has since flagged the site as a dummy (COD's note in the CIF); the article fits these phases by Le Bail structureless profile refinement and gives no atom positions (section 3)",
+  "sites": {
+   "dummy": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "D1",
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "species": {
+     "D": 1
+    },
+    "u_iso": 0.025
+   }
+  ]
+ },
+ "2300248": {
+  "source": "Fortes, Wood, Vocadlo et al., Journal of Applied Crystallography 42, 846 (2009), https://doi.org/10.1107/S0021889809027897",
+  "note": "NOT THIS COMPOUND'S STRUCTURE: included only because COD24 contains it. The CIF gives lattice parameters and a placeholder site 'dummy' (flagged dum), no atoms; COD24 read that site as deuterium, and this entry reproduces COD24's model, one D atom at the origin with the CIF's U 0.025 A^2. COD has since flagged the site as a dummy (COD's note in the CIF); the article fits these phases by Le Bail structureless profile refinement and gives no atom positions (section 3)",
+  "sites": {
+   "dummy": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "D1",
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "species": {
+     "D": 1
+    },
+    "u_iso": 0.025
+   }
+  ]
+ },
+ "2300253": {
+  "source": "Fortes, Wood, Vocadlo et al., Journal of Applied Crystallography 42, 846 (2009), https://doi.org/10.1107/S0021889809027897",
+  "note": "NOT THIS COMPOUND'S STRUCTURE: included only because COD24 contains it. The CIF gives lattice parameters and a placeholder site 'dummy' (flagged dum), no atoms; COD24 read that site as deuterium, and this entry reproduces COD24's model, one D atom at the origin with the CIF's U 0.025 A^2. COD has since flagged the site as a dummy (COD's note in the CIF); the article fits these phases by Le Bail structureless profile refinement and gives no atom positions (section 3)",
+  "sites": {
+   "dummy": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "D1",
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "species": {
+     "D": 1
+    },
+    "u_iso": 0.025
+   }
+  ]
+ },
+ "2300257": {
+  "source": "Fortes, Wood, Vocadlo et al., Journal of Applied Crystallography 42, 846 (2009), https://doi.org/10.1107/S0021889809027897",
+  "note": "NOT THIS COMPOUND'S STRUCTURE: included only because COD24 contains it. The CIF gives lattice parameters and a placeholder site 'dummy' (flagged dum), no atoms; COD24 read that site as deuterium, and this entry reproduces COD24's model, one D atom at the origin with the CIF's U 0.025 A^2. COD has since flagged the site as a dummy (COD's note in the CIF); symmetry as in COD24: the CIF's symbol I -4 2 d (its listed operations are only the 8 of I -4); the article fits these phases by Le Bail structureless profile refinement and gives no atom positions (section 3)",
+  "sites": {
+   "dummy": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "D1",
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "species": {
+     "D": 1
+    },
+    "u_iso": 0.025
+   }
+  ],
+  "spacegroup": "I -4 2 d"
+ },
+ "4518778": {
+  "source": "Gamo, Phuc, Muto and Matsuda, ACS Applied Energy Materials 4, 6125-6134 (2021), https://doi.org/10.1021/acsaem.1c00927",
+  "note": "the anion site M1 (type M) holds S and Cl in the nominal ratio of Na(3-x)SbS(4-x)Cl(x), as the Rietveld refinements model it (Table 1 for x = 0.05: X = S 0.9875, Cl 0.0125); this CIF is x = 0.03 (Na2.97SbS3.97Cl0.03): M = S 0.9925 + Cl 0.0075",
+  "sites": {
+   "M1@1": {
+    "species": {
+     "S": 0.9925,
+     "Cl": 0.0075
+    }
+   }
+  }
+ },
+ "5000046": {
+  "source": "Fuess, Kratz, Toepel-Schadt and Miehe, Zeitschrift fuer Kristallographie 179, 335-346 (1987), https://doi.org/10.1524/zkri.1987.179.14.335",
+  "note": "in the setting C 1 1 21/d of Table 1 (p. 339) the monoclinic angle 89.84 deg is gamma, not beta as in the CIF, and the operations are those of the symmetry code of Table 3 (p. 341; the CIF lists another d glide, (1/4, 3/4) instead of (-1/4, -1/4)); site populations as interpreted on pp. 340 and 342 from the refined scattering (As site As0.69 S0.31, S site S0.78 As0.22, Fe site Fe), anisotropic U of Table 2",
+  "cell": [
+   6.5456,
+   9.451,
+   5.6492,
+   90,
+   90,
+   89.84
+  ],
+  "operations": [
+   "x,y,z",
+   "x-1/4,y-1/4,-z+1/2",
+   "-x,-y,-z",
+   "-x+1/4,-y+1/4,z-1/2",
+   "x+1/2,y+1/2,z",
+   "x+1/4,y+1/4,-z+1/2",
+   "-x+1/2,-y+1/2,-z",
+   "-x+3/4,-y+3/4,z+1/2"
+  ],
+  "sites": {
+   "Fe1": {
+    "aniso": {
+     "u11": 0.0126,
+     "u22": 0.006,
+     "u33": 0.0047,
+     "u12": 0.0006,
+     "u13": 0.0001,
+     "u23": -0.0007
+    }
+   },
+   "As1": {
+    "species": {
+     "As": 0.69,
+     "S": 0.31
+    },
+    "aniso": {
+     "u11": 0.0057,
+     "u22": 0.007,
+     "u33": 0.0038,
+     "u12": 0.001,
+     "u13": -0.0001,
+     "u23": -0.0004
+    }
+   },
+   "S1": {
+    "species": {
+     "S": 0.78,
+     "As": 0.22
+    },
+    "aniso": {
+     "u11": 0.0057,
+     "u22": 0.0081,
+     "u33": 0.0041,
+     "u12": 0.0008,
+     "u13": 0.0002,
+     "u23": 0.0007
+    }
+   }
+  }
+ },
+ "5900030": {
+  "source": "Binnie and Robertson, Acta Crystallographica 2, 116 (1949), https://doi.org/10.1107/S0365110X49000266",
+  "note": "NOT A CORRECT STRUCTURE: included only because COD24 contains it. The CIF gives the x coordinates of all atoms as unknown ('.'); COD24 read them as 0, and this entry reproduces COD24's model: the CIF's y and z with x = 0 for every atom, B = 0.5 A^2; the article determines only the a-axis projection (y and z, Table 1) and states that the third coordinate was not evaluated for lack of data (p. 119)",
+  "sites": {
+   "Br1": {
+    "omit": true
+   },
+   "Br2": {
+    "omit": true
+   },
+   "N1": {
+    "omit": true
+   },
+   "C1": {
+    "omit": true
+   },
+   "C2": {
+    "omit": true
+   },
+   "C3": {
+    "omit": true
+   },
+   "C4": {
+    "omit": true
+   },
+   "C5": {
+    "omit": true
+   },
+   "C6": {
+    "omit": true
+   },
+   "N2": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "Br1",
+    "xyz": [
+     0.0,
+     0.228,
+     0.216
+    ],
+    "species": {
+     "Br": 1
+    }
+   },
+   {
+    "label": "Br2",
+    "xyz": [
+     0.0,
+     0.461,
+     0.387
+    ],
+    "species": {
+     "Br": 1
+    }
+   },
+   {
+    "label": "N1",
+    "xyz": [
+     0.0,
+     0.383,
+     0.249
+    ],
+    "species": {
+     "N": 1
+    }
+   },
+   {
+    "label": "C1",
+    "xyz": [
+     0.0,
+     0.45,
+     0.183
+    ],
+    "species": {
+     "C": 1
+    }
+   },
+   {
+    "label": "C2",
+    "xyz": [
+     0.0,
+     0.016,
+     0.347
+    ],
+    "species": {
+     "C": 1
+    }
+   },
+   {
+    "label": "C3",
+    "xyz": [
+     0.0,
+     0.079,
+     0.398
+    ],
+    "species": {
+     "C": 1
+    }
+   },
+   {
+    "label": "C4",
+    "xyz": [
+     0.0,
+     0.153,
+     0.443
+    ],
+    "species": {
+     "C": 1
+    }
+   },
+   {
+    "label": "C5",
+    "xyz": [
+     0.0,
+     0.223,
+     0.484
+    ],
+    "species": {
+     "C": 1
+    }
+   },
+   {
+    "label": "C6",
+    "xyz": [
+     0.0,
+     0.212,
+     0.011
+    ],
+    "species": {
+     "C": 1
+    }
+   },
+   {
+    "label": "N2",
+    "xyz": [
+     0.0,
+     0.11,
+     0.052
+    ],
+    "species": {
+     "N": 1
+    }
+   }
+  ]
+ },
+ "5910081": {
+  "source": "Wyckoff, The Structure of Crystals, Supplement for 1930-1934 to the Second Edition (1935), pp. 15 and 49, https://archive.org/details/structureofcryst030914mbp",
+  "note": "the cyanide group given as one atom CN is a single, spherically disordered scatterer (p. 15: the CN group functions geometrically as a single atom; p. 49: separate C and N positions could not be established): C and N at the CN site; the coordinates are in origin choice 1 of F d -3 m (as in COD 1010079-1010081), not origin choice 2 as the file states, which would put 16 metal atoms in the cell instead of 8",
+  "spacegroup": "F d -3 m:1",
+  "types": {
+   "CN": {
+    "C": 1,
+    "N": 1
+   }
+  }
+ },
+ "5910114": {
+  "source": "Wyckoff, The Structure of Crystals, Supplement for 1930-1934 to the Second Edition (1935), pp. 15 and 49, https://archive.org/details/structureofcryst030914mbp",
+  "note": "the cyanide group given as one atom CN is a single, spherically disordered scatterer (p. 15: the CN group functions geometrically as a single atom; p. 49: separate C and N positions could not be established): C and N at the CN site; the coordinates are in origin choice 1 of F d -3 m (as in COD 1010079-1010081), not origin choice 2 as the file states, which would put 16 metal atoms in the cell instead of 8",
+  "spacegroup": "F d -3 m:1",
+  "types": {
+   "CN": {
+    "C": 1,
+    "N": 1
+   }
+  }
+ },
+ "5910129": {
+  "source": "Wyckoff, The Structure of Crystals, Supplement for 1930-1934 to the Second Edition (1935), pp. 15 and 49, https://archive.org/details/structureofcryst030914mbp",
+  "note": "the cyanide group given as one atom CN is a single, spherically disordered scatterer (p. 15: the CN group functions geometrically as a single atom; p. 49: separate C and N positions could not be established): C and N at the CN site",
+  "types": {
+   "CN": {
+    "C": 1,
+    "N": 1
+   }
+  }
+ },
+ "5910134": {
+  "source": "Wyckoff, The Structure of Crystals, Supplement for 1930-1934 to the Second Edition (1935), pp. 15 and 49, https://archive.org/details/structureofcryst030914mbp",
+  "note": "the cyanide group given as one atom CN is a single, spherically disordered scatterer (p. 15: the CN group functions geometrically as a single atom; p. 49: separate C and N positions could not be established): C and N at the CN site; the coordinates are in origin choice 1 of F d -3 m (as in COD 1010079-1010081), not origin choice 2 as the file states, which would put 16 metal atoms in the cell instead of 8",
+  "spacegroup": "F d -3 m:1",
+  "types": {
+   "CN": {
+    "C": 1,
+    "N": 1
+   }
+  }
+ },
+ "5910139": {
+  "source": "Wyckoff, The Structure of Crystals, Supplement for 1930-1934 (1935), https://archive.org/details/structureofcryst030914mbp",
+  "note": "Cb is columbium, the former name of niobium: the compilation lists the element Cb as body-centred cubic with a = 3.294 A (p. 9; niobium metal) and indexes 'Niobium. See Columbium'; KCbO3 (p. 54) is potassium niobate of the CaTiO3 type",
+  "types": {
+   "Cb": {
+    "Nb": 1
+   }
+  }
+ },
+ "6000208": {
+  "source": "Helmholdt, Sonneveld and Schenk, Zeitschrift fuer Kristallographie 213, 596-598 (1998), https://doi.org/10.1524/zkri.1998.213.11.596",
+  "note": "the CIF gives no atoms and the symbol Pmn2 for Pmn21 (p. 596); the final refinement of Table 2 (p. 597): the acetate ion lies on the mirror plane x = 0, coordinates y and z with B; H atoms not located; the CIF's cell is the article's (Guinier data, p. 596)",
+  "spacegroup": "P m n 21",
+  "add": [
+   {
+    "label": "Na1",
+    "xyz": [
+     0,
+     0.5976,
+     0.0088
+    ],
+    "species": {
+     "Na": 1
+    },
+    "u_iso": 0.07599
+   },
+   {
+    "label": "C1",
+    "xyz": [
+     0,
+     0.2934,
+     0.0318
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.09752
+   },
+   {
+    "label": "C2",
+    "xyz": [
+     0,
+     0.1452,
+     0.087
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.08739
+   },
+   {
+    "label": "O1",
+    "xyz": [
+     0,
+     0.373,
+     0.2183
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.06713
+   },
+   {
+    "label": "O2",
+    "xyz": [
+     0,
+     0.3358,
+     -0.1951
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.10892
+   }
+  ]
+ },
+ "6000286": {
+  "source": "Blake, Battle, Sloan, Vente, Darriet and Weill, Chemistry of Materials 11, 1551-1558 (1999), https://doi.org/10.1021/cm9807844",
+  "note": "the CIF gives no atoms and a cell that does not fit its trigonal space group; the refined structure (model a) of Table 1 (p. 1553): P3c1, a = 10.14055, c = 21.65993 A, Ir/Cu mixed octahedral and trigonal-prismatic sites (Ir fraction as given, Cu the rest; in the prisms 3 x Cu10-12 + Ir10-12 = 1)",
+  "cell": [
+   10.14055,
+   10.14055,
+   21.65993,
+   90,
+   90,
+   120
+  ],
+  "spacegroup": "P 3 c 1",
+  "add": [
+   {
+    "label": "Ba1",
+    "xyz": [
+     0.0,
+     0.354,
+     0.016
+    ],
+    "species": {
+     "Ba": 1
+    },
+    "u_iso": 0.009
+   },
+   {
+    "label": "Ba2",
+    "xyz": [
+     0.321,
+     0.333,
+     0.112
+    ],
+    "species": {
+     "Ba": 1
+    },
+    "u_iso": 0.008
+   },
+   {
+    "label": "Ba3",
+    "xyz": [
+     0.997,
+     0.326,
+     0.209
+    ],
+    "species": {
+     "Ba": 1
+    },
+    "u_iso": 0.013
+   },
+   {
+    "label": "Ba4",
+    "xyz": [
+     0.333,
+     0.32,
+     0.311
+    ],
+    "species": {
+     "Ba": 1
+    },
+    "u_iso": 0.012
+   },
+   {
+    "label": "Ba5",
+    "xyz": [
+     0.996,
+     0.337,
+     0.413
+    ],
+    "species": {
+     "Ba": 1
+    },
+    "u_iso": 0.021
+   },
+   {
+    "label": "Ir1",
+    "xyz": [
+     0,
+     0,
+     0.146
+    ],
+    "species": {
+     "Ir": 0.818,
+     "Cu": 0.182
+    },
+    "u_iso": 0.005
+   },
+   {
+    "label": "Ir2",
+    "xyz": [
+     0,
+     0,
+     0.267
+    ],
+    "species": {
+     "Ir": 1.0
+    },
+    "u_iso": 0.007
+   },
+   {
+    "label": "Ir3",
+    "xyz": [
+     0,
+     0,
+     0.39
+    ],
+    "species": {
+     "Ir": 0.818,
+     "Cu": 0.182
+    },
+    "u_iso": 0.034
+   },
+   {
+    "label": "Ir4",
+    "xyz": [
+     0.333333,
+     0.666667,
+     0.061
+    ],
+    "species": {
+     "Ir": 1.0
+    },
+    "u_iso": 0.004
+   },
+   {
+    "label": "Ir5",
+    "xyz": [
+     0.333333,
+     0.666667,
+     0.178
+    ],
+    "species": {
+     "Ir": 0.818,
+     "Cu": 0.182
+    },
+    "u_iso": 0.008
+   },
+   {
+    "label": "Ir6",
+    "xyz": [
+     0.333333,
+     0.666667,
+     0.439
+    ],
+    "species": {
+     "Ir": 0.818,
+     "Cu": 0.182
+    },
+    "u_iso": 0.021
+   },
+   {
+    "label": "Ir7",
+    "xyz": [
+     0.666667,
+     0.333333,
+     0.092
+    ],
+    "species": {
+     "Ir": 0.818,
+     "Cu": 0.182
+    },
+    "u_iso": 0.045
+   },
+   {
+    "label": "Ir8",
+    "xyz": [
+     0.666667,
+     0.333333,
+     0.349
+    ],
+    "species": {
+     "Ir": 0.818,
+     "Cu": 0.182
+    },
+    "u_iso": 0.0
+   },
+   {
+    "label": "Ir9",
+    "xyz": [
+     0.666667,
+     0.333333,
+     0.473
+    ],
+    "species": {
+     "Ir": 1.0
+    },
+    "u_iso": 0.014
+   },
+   {
+    "label": "Ir10",
+    "xyz": [
+     0,
+     0,
+     0.028
+    ],
+    "species": {
+     "Ir": 0.364
+    },
+    "u_iso": 0.008
+   },
+   {
+    "label": "Ir11",
+    "xyz": [
+     0.333333,
+     0.666667,
+     0.297
+    ],
+    "species": {
+     "Ir": 0.364
+    },
+    "u_iso": 0.008
+   },
+   {
+    "label": "Ir12",
+    "xyz": [
+     0.666667,
+     0.333333,
+     0.241
+    ],
+    "species": {
+     "Ir": 0.364
+    },
+    "u_iso": 0.008
+   },
+   {
+    "label": "Cu10",
+    "xyz": [
+     0.927,
+     0,
+     0.015
+    ],
+    "species": {
+     "Cu": 0.212
+    },
+    "u_iso": 0.0
+   },
+   {
+    "label": "Cu11",
+    "xyz": [
+     0.396,
+     0.666667,
+     0.312
+    ],
+    "species": {
+     "Cu": 0.212
+    },
+    "u_iso": 0.0
+   },
+   {
+    "label": "Cu12",
+    "xyz": [
+     0.613,
+     0.333333,
+     0.219
+    ],
+    "species": {
+     "Cu": 0.212
+    },
+    "u_iso": 0.0
+   },
+   {
+    "label": "O1",
+    "xyz": [
+     0.326,
+     0.502,
+     0.005
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.009
+   },
+   {
+    "label": "O2",
+    "xyz": [
+     0.672,
+     0.18,
+     0.031
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.012
+   },
+   {
+    "label": "O3",
+    "xyz": [
+     0.997,
+     0.146,
+     0.087
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.022
+   },
+   {
+    "label": "O4",
+    "xyz": [
+     0.34,
+     0.825,
+     0.122
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.006
+   },
+   {
+    "label": "O5",
+    "xyz": [
+     0.817,
+     0.335,
+     0.147
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.03
+   },
+   {
+    "label": "O6",
+    "xyz": [
+     0.842,
+     0.002,
+     0.211
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.01
+   },
+   {
+    "label": "O7",
+    "xyz": [
+     0.331,
+     0.51,
+     0.237
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.013
+   },
+   {
+    "label": "O8",
+    "xyz": [
+     0.002,
+     0.157,
+     0.326
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.005
+   },
+   {
+    "label": "O9",
+    "xyz": [
+     0.826,
+     0.335,
+     0.299
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.021
+   },
+   {
+    "label": "O10",
+    "xyz": [
+     0.852,
+     0.998,
+     0.445
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.009
+   },
+   {
+    "label": "O11",
+    "xyz": [
+     0.331,
+     0.497,
+     0.398
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.016
+   },
+   {
+    "label": "O12",
+    "xyz": [
+     0.665,
+     0.177,
+     0.412
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.009
+   }
+  ]
+ },
+ "6000339": {
+  "source": "Moreau, Gladyshevskii, Galez, Peigneux and Korzhik, Journal of Alloys and Compounds 284, 104-107 (1999), https://doi.org/10.1016/S0925-8388(98)00750-6",
+  "note": "the CIF gives no atoms; its symbol P-4-h(10)g(2)dcba is the Wyckoff sequence of P-4 (tP48); the structure of Table 2 (p. 105), neutron powder column (metal positions from the X-ray single-crystal refinement), Pb(3) half occupied (footnote d), B(Pb) 1.1, B(W) 2.1, B(O) 2.0 A^2 (footnote b)",
+  "spacegroup": "P -4",
+  "add": [
+   {
+    "label": "Pb1",
+    "xyz": [
+     0.26,
+     0.251,
+     0.752
+    ],
+    "species": {
+     "Pb": 1
+    },
+    "u_iso": 0.01393
+   },
+   {
+    "label": "Pb2",
+    "xyz": [
+     0,
+     0.5,
+     0.497
+    ],
+    "species": {
+     "Pb": 1
+    },
+    "u_iso": 0.01393
+   },
+   {
+    "label": "Pb3",
+    "xyz": [
+     0.5,
+     0.5,
+     0
+    ],
+    "species": {
+     "Pb": 0.5
+    },
+    "u_iso": 0.01393
+   },
+   {
+    "label": "Pb4",
+    "xyz": [
+     0,
+     0,
+     0
+    ],
+    "species": {
+     "Pb": 1
+    },
+    "u_iso": 0.01393
+   },
+   {
+    "label": "W1",
+    "xyz": [
+     0.259,
+     0.252,
+     0.25
+    ],
+    "species": {
+     "W": 1
+    },
+    "u_iso": 0.0266
+   },
+   {
+    "label": "W2",
+    "xyz": [
+     0,
+     0.5,
+     0.001
+    ],
+    "species": {
+     "W": 1
+    },
+    "u_iso": 0.0266
+   },
+   {
+    "label": "W3",
+    "xyz": [
+     0.5,
+     0.5,
+     0.5
+    ],
+    "species": {
+     "W": 1
+    },
+    "u_iso": 0.0266
+   },
+   {
+    "label": "W4",
+    "xyz": [
+     0,
+     0,
+     0.5
+    ],
+    "species": {
+     "W": 1
+    },
+    "u_iso": 0.0266
+   },
+   {
+    "label": "O1",
+    "xyz": [
+     0.034,
+     0.183,
+     0.571
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.02533
+   },
+   {
+    "label": "O2",
+    "xyz": [
+     0.049,
+     0.67,
+     0.082
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.02533
+   },
+   {
+    "label": "O3",
+    "xyz": [
+     0.061,
+     0.3,
+     0.332
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.02533
+   },
+   {
+    "label": "O4",
+    "xyz": [
+     0.203,
+     0.056,
+     0.161
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.02533
+   },
+   {
+    "label": "O5",
+    "xyz": [
+     0.291,
+     0.452,
+     0.154
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.02533
+   },
+   {
+    "label": "O6",
+    "xyz": [
+     0.331,
+     0.555,
+     0.419
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.02533
+   },
+   {
+    "label": "O7",
+    "xyz": [
+     0.452,
+     0.197,
+     0.332
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.02533
+   },
+   {
+    "label": "O8",
+    "xyz": [
+     0.542,
+     0.183,
+     0.069
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.02533
+   }
+  ]
+ },
+ "6000447": {
+  "source": "Malchus and Jansen, Acta Crystallographica B 54, 494-502 (1998), https://doi.org/10.1107/S0108768197018351",
+  "note": "the CIF gives no atoms and the symbol F; the cubic high-temperature phase at 473 K is described by the model of Table 7 (p. 499), Fm-3m, with which the article calculates its powder pattern (Table 8): ordered tetramethylammonium, the sulfate oxygen spread over 32f and 24e (site occupancy factors 0.04167 of 192 = 1/4 and 1/3 of the sites); no displacement parameters given",
+  "spacegroup": "F m -3 m",
+  "add": [
+   {
+    "label": "S1",
+    "xyz": [
+     0,
+     0,
+     0
+    ],
+    "species": {
+     "S": 1
+    }
+   },
+   {
+    "label": "N1",
+    "xyz": [
+     0.25,
+     0.25,
+     0.25
+    ],
+    "species": {
+     "N": 1
+    }
+   },
+   {
+    "label": "O1",
+    "xyz": [
+     0.076,
+     0.076,
+     0.076
+    ],
+    "species": {
+     "O": 0.25
+    }
+   },
+   {
+    "label": "O2",
+    "xyz": [
+     0,
+     0,
+     0.132
+    ],
+    "species": {
+     "O": 0.333333
+    }
+   },
+   {
+    "label": "C1",
+    "xyz": [
+     0.328,
+     0.328,
+     0.328
+    ],
+    "species": {
+     "C": 1
+    }
+   },
+   {
+    "label": "H1",
+    "xyz": [
+     0.27145,
+     0.38455,
+     0.38455
+    ],
+    "species": {
+     "H": 1
+    }
+   }
+  ]
+ },
+ "6000663": {
+  "source": "Pivan, Achak, Louer and Louer, Chemistry of Materials 6, 827-830 (1994), https://doi.org/10.1021/cm00042a021",
+  "note": "the CIF gives no atoms and the symbol P43-n for P-43n (p. 827: absences hhl, l = 2n+1, the non-centrosymmetric group); the Rietveld structure of Table 3 (p. 829), 15 atoms, B(Ge) 0.9, B(S) 1.6, overall B(C, N) 0.47 A^2; S1 z = -0.0058 (the minus sign lost in print; Ge1-S1 2.24 A as in Table 3); H atoms not located",
+  "spacegroup": "P -4 3 n",
+  "add": [
+   {
+    "label": "Ge1",
+    "xyz": [
+     0.3165,
+     0.4314,
+     0.0616
+    ],
+    "species": {
+     "Ge": 1
+    },
+    "u_iso": 0.0114
+   },
+   {
+    "label": "Ge2",
+    "xyz": [
+     0.0658,
+     0.0658,
+     0.0658
+    ],
+    "species": {
+     "Ge": 1
+    },
+    "u_iso": 0.0114
+   },
+   {
+    "label": "S1",
+    "xyz": [
+     0.2494,
+     0.3677,
+     -0.0058
+    ],
+    "species": {
+     "S": 1
+    },
+    "u_iso": 0.02026
+   },
+   {
+    "label": "S2",
+    "xyz": [
+     0.3765,
+     0.3613,
+     0.1201
+    ],
+    "species": {
+     "S": 1
+    },
+    "u_iso": 0.02026
+   },
+   {
+    "label": "S3",
+    "xyz": [
+     0.3826,
+     0.5,
+     0.0
+    ],
+    "species": {
+     "S": 1
+    },
+    "u_iso": 0.02026
+   },
+   {
+    "label": "S4",
+    "xyz": [
+     0.0,
+     0.1316,
+     0.0
+    ],
+    "species": {
+     "S": 1
+    },
+    "u_iso": 0.02026
+   },
+   {
+    "label": "S5",
+    "xyz": [
+     0.1313,
+     0.1313,
+     0.1313
+    ],
+    "species": {
+     "S": 1
+    },
+    "u_iso": 0.02026
+   },
+   {
+    "label": "N1",
+    "xyz": [
+     0.337,
+     0.337,
+     0.337
+    ],
+    "species": {
+     "N": 1
+    },
+    "u_iso": 0.00595
+   },
+   {
+    "label": "N2",
+    "xyz": [
+     0.417,
+     0.35,
+     0.834
+    ],
+    "species": {
+     "N": 1
+    },
+    "u_iso": 0.00595
+   },
+   {
+    "label": "C1",
+    "xyz": [
+     0.413,
+     0.311,
+     0.322
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.00595
+   },
+   {
+    "label": "C2",
+    "xyz": [
+     0.295,
+     0.295,
+     0.295
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.00595
+   },
+   {
+    "label": "C3",
+    "xyz": [
+     0.425,
+     0.338,
+     0.91
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.00595
+   },
+   {
+    "label": "C4",
+    "xyz": [
+     0.349,
+     0.347,
+     0.825
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.00595
+   },
+   {
+    "label": "C5",
+    "xyz": [
+     0.443,
+     0.412,
+     0.825
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.00595
+   },
+   {
+    "label": "C6",
+    "xyz": [
+     0.45,
+     0.301,
+     0.79
+    ],
+    "species": {
+     "C": 1
+    },
+    "u_iso": 0.00595
+   }
+  ]
+ },
+ "6000756": {
+  "source": "Le Fur, de Villars, Tortelier and Pivan, International Journal of Inorganic Materials 3, 9-15 (2001), https://doi.org/10.1016/S1466-6049(00)00100-8",
+  "note": "the CIF gives no atoms, the symbol Pmn2 for Pmn21 and the abstract's c = 14.7040 A; the cell of Table 1 (c = 14.4840 A, V = 1401.2 A^3, Dx 3.56), with which the coordinates of Table 2 reproduce the distances of Table 3; (P,V) site with the occupancy factors of Table 2 (P 0.22, V 0.28 of the mirror site: P 0.44, V 0.56); O14 z = 0.962 from its distances V1-O14 2.016 and (P,V)-O14 1.644 A in Table 3, Table 2 repeating O13's z; U_eq as isotropic U; H not located",
+  "cell": [
+   13.5505,
+   7.1404,
+   14.484,
+   90,
+   90,
+   90
+  ],
+  "spacegroup": "P m n 21",
+  "add": [
+   {
+    "label": "Rb1",
+    "xyz": [
+     0.0,
+     0.8701,
+     0.2632
+    ],
+    "species": {
+     "Rb": 1
+    },
+    "u_iso": 0.0289
+   },
+   {
+    "label": "Rb2",
+    "xyz": [
+     0.25379,
+     0.6597,
+     0.10078
+    ],
+    "species": {
+     "Rb": 1
+    },
+    "u_iso": 0.0294
+   },
+   {
+    "label": "Rb3",
+    "xyz": [
+     0.5,
+     0.6391,
+     0.2733
+    ],
+    "species": {
+     "Rb": 1
+    },
+    "u_iso": 0.0278
+   },
+   {
+    "label": "Rb4",
+    "xyz": [
+     0.26051,
+     0.1485,
+     0.92722
+    ],
+    "species": {
+     "Rb": 1
+    },
+    "u_iso": 0.0309
+   },
+   {
+    "label": "V1",
+    "xyz": [
+     0.1296,
+     0.405,
+     0.3395
+    ],
+    "species": {
+     "V": 1
+    },
+    "u_iso": 0.0165
+   },
+   {
+    "label": "V2",
+    "xyz": [
+     0.0,
+     0.4935,
+     0.0246
+    ],
+    "species": {
+     "V": 1
+    },
+    "u_iso": 0.0123
+   },
+   {
+    "label": "V3",
+    "xyz": [
+     0.0,
+     0.9933,
+     0.0053
+    ],
+    "species": {
+     "V": 1
+    },
+    "u_iso": 0.0123
+   },
+   {
+    "label": "V4",
+    "xyz": [
+     0.372,
+     0.0993,
+     0.1867
+    ],
+    "species": {
+     "V": 1
+    },
+    "u_iso": 0.0162
+   },
+   {
+    "label": "P1",
+    "xyz": [
+     0.1492,
+     0.211,
+     0.1452
+    ],
+    "species": {
+     "P": 1
+    },
+    "u_iso": 0.0123
+   },
+   {
+    "label": "P2",
+    "xyz": [
+     0.0,
+     0.1075,
+     0.5289
+    ],
+    "species": {
+     "P": 1
+    },
+    "u_iso": 0.0199
+   },
+   {
+    "label": "PV3",
+    "xyz": [
+     0.5,
+     0.4796,
+     0.0243
+    ],
+    "species": {
+     "P": 0.44,
+     "V": 0.56
+    },
+    "u_iso": 0.0167
+   },
+   {
+    "label": "P4",
+    "xyz": [
+     0.1482,
+     0.7085,
+     0.8834
+    ],
+    "species": {
+     "P": 1
+    },
+    "u_iso": 0.0118
+   },
+   {
+    "label": "O1",
+    "xyz": [
+     0.0,
+     0.2053,
+     0.9651
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.018
+   },
+   {
+    "label": "O2",
+    "xyz": [
+     0.105,
+     0.0329,
+     0.1004
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.017
+   },
+   {
+    "label": "O3",
+    "xyz": [
+     0.1063,
+     0.5312,
+     0.9283
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.017
+   },
+   {
+    "label": "O4",
+    "xyz": [
+     0.1013,
+     0.3869,
+     0.1047
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.02
+   },
+   {
+    "label": "O5",
+    "xyz": [
+     0.1332,
+     0.1992,
+     0.2492
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.018
+   },
+   {
+    "label": "O6",
+    "xyz": [
+     0.2602,
+     0.2228,
+     0.124
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.018
+   },
+   {
+    "label": "O7",
+    "xyz": [
+     0.3705,
+     0.3023,
+     0.2782
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.016
+   },
+   {
+    "label": "O8",
+    "xyz": [
+     0.0,
+     0.7071,
+     0.0671
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.015
+   },
+   {
+    "label": "O9",
+    "xyz": [
+     0.2395,
+     0.2766,
+     0.4047
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.02
+   },
+   {
+    "label": "O10",
+    "xyz": [
+     0.1022,
+     0.8861,
+     0.924
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.017
+   },
+   {
+    "label": "O11",
+    "xyz": [
+     0.0,
+     0.1447,
+     0.428
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.038
+   },
+   {
+    "label": "O12",
+    "xyz": [
+     0.5,
+     0.3415,
+     0.1087
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.031
+   },
+   {
+    "label": "O13",
+    "xyz": [
+     0.0,
+     0.4595,
+     0.3033
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.028
+   },
+   {
+    "label": "O14",
+    "xyz": [
+     0.3988,
+     0.4723,
+     0.962
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.028
+   },
+   {
+    "label": "O15",
+    "xyz": [
+     0.4038,
+     0.9946,
+     0.0628
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.023
+   },
+   {
+    "label": "O16",
+    "xyz": [
+     0.3152,
+     0.929,
+     0.235
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.023
+   },
+   {
+    "label": "O17",
+    "xyz": [
+     0.5,
+     0.0367,
+     0.2266
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.018
+   },
+   {
+    "label": "O18",
+    "xyz": [
+     0.1861,
+     0.575,
+     0.2891
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.025
+   },
+   {
+    "label": "O19",
+    "xyz": [
+     0.5,
+     0.6969,
+     0.0831
+    ],
+    "species": {
+     "O": 1
+    },
+    "u_iso": 0.027
+   }
+  ]
+ },
+ "7012100": {
+  "source": "He, Craig and Colbran, Dalton Transactions, 4224 (2002), https://doi.org/10.1039/b207406k",
+  "note": "the sites OW/Cl1-3 are water oxygen or chloride; the CIF's own atom-type descriptions give their scattering: OW/Cl1 0.90 O + 0.10 Cl, OW/Cl2 0.75 O + 0.25 Cl, OW/Cl3 0.85 O + 0.15 Cl (with Cl2 at 0.5 the one Cl- and the 2.5 H2O of the formula)",
+  "sites": {
+   "OW/Cl1": {
+    "species": {
+     "O": 0.9,
+     "Cl": 0.1
+    }
+   },
+   "OW/Cl2": {
+    "species": {
+     "O": 0.75,
+     "Cl": 0.25
+    }
+   },
+   "OW/Cl3": {
+    "species": {
+     "O": 0.85,
+     "Cl": 0.15
+    }
+   }
+  }
+ },
+ "7012620": {
+  "source": "Montilla, Rosa, Prevett, Aviles, Nunes da Ponte, Masi and Mealli, Dalton Transactions, 2170-2176 (2003), https://doi.org/10.1039/b212386j",
+  "note": "types CO and SI are cobalt and silicon written in capitals; the CIF's formula (C10 H13 I4 O2 S) splits them into C, O, S and I, so they could not be checked against it; the compound is (eta5-Me3SiC5H4)Co(CO)I2.0.5I2, empirical formula C9H13CoI3OSi (Table 1)",
+  "types": {
+   "CO": {
+    "Co": 1
+   },
+   "SI": {
+    "Si": 1
+   }
+  }
+ },
+ "7027327": {
+  "source": "Jacobsen, Heinze, Llamazares, Schmalle, Artus and Berke, Journal of the Chemical Society, Dalton Transactions, 1717-1727 (1999), https://doi.org/10.1039/a901384i",
+  "note": "RE1 and RE2 are the two rhenium atoms of the dinuclear cation V+, [Re(NO)2(PiPr3)2{ONRe(NO)(PiPr3)2H}]+ (p. 1717); without a type column and with Re missing from the CIF's formula (C68 H97 B F24 N4 O4 P4, which lacks Re2) their labels could not be checked",
+  "sites": {
+   "RE1": {
+    "species": {
+     "Re": 1
+    }
+   },
+   "RE2": {
+    "species": {
+     "Re": 1
+    }
+   }
+  }
+ },
+ "7201135": {
+  "source": "Ikeda, Kayamori and Mizukami, Journal of Materials Chemistry 19, 5518-5525 (2009), https://doi.org/10.1039/b905415d",
+  "note": "virtual atoms of the Rietveld refinement (p. 5524, Table 4) as their atoms: CE = CH2, CH = CH3, WO = H2O, OH = OH; CE carbons are the ones bonded to N (1.44-1.48 A)",
+  "types": {
+   "CE": {
+    "C": 1,
+    "H": 2
+   },
+   "CH": {
+    "C": 1,
+    "H": 3
+   },
+   "WO": {
+    "O": 1,
+    "H": 2
+   },
+   "OH": {
+    "O": 1,
+    "H": 1
+   }
+  }
+ },
+ "7201136": {
+  "source": "Ikeda, Kayamori and Mizukami, Journal of Materials Chemistry 19, 5518-5525 (2009), https://doi.org/10.1039/b905415d",
+  "note": "virtual atoms of the Rietveld refinement (p. 5524, Table 5) as their atoms: C1 = CH2 (A), C2-C6 = CH3 (B), the OH- anion site OH = O + H (C), silanol O8/O8b typed OH = O + H. By geometry C2 is also bonded to N and C6, i.e. CH2 in diethyldimethylammonium; the refined model (Table 5) is followed",
+  "sites": {
+   "C1": {
+    "group": {
+     "C": 1,
+     "H": 2
+    }
+   },
+   "C2": {
+    "group": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "C3": {
+    "group": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "C4": {
+    "group": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "C5": {
+    "group": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "C6": {
+    "group": {
+     "C": 1,
+     "H": 3
+    }
+   },
+   "OH": {
+    "group": {
+     "O": 1,
+     "H": 1
+    }
+   }
+  },
+  "types": {
+   "OH": {
+    "O": 1,
+    "H": 1
+   }
+  }
+ },
+ "7232188": {
+  "source": "Ye, Barrio, Ceolin, Qureshi, Negrier, Rietveld and Tamarit, CrystEngComm 21, 1180-1185 (2019), https://doi.org/10.1039/C8CE02150C",
+  "note": "site C of type SpHS is the orientationally disordered C60 molecule of C60.2CBrCl2H at room temperature, refined in FullProf as 60 C atoms spread evenly over a sphere of radius 3.59 A at the 1a position (Experimental and Results); it scatters as 60 f_C(q) sin(qR)/(qR) and is left out of the structure record",
+  "sites": {
+   "C": {
+    "shell": {
+     "radius": 3.59,
+     "per_cell": {
+      "C": 60
+     }
+    }
+   }
+  }
+ },
+ "9002229": {
+  "source": "Guggenheim and Zhan, American Mineralogist 84, 1415-1421 (1999), https://www.degruyterbrill.com/document/doi/10.2138/am-1999-0920/html",
+  "note": "interlayer sites cannot be told apart as cation or oxygen and hold on average half an atom (pp. 1416-1418): each is modelled as 0.25 of the interlayer cations Mg1.98 Al0.69 Cr0.23 Fe0.08 Ni0.02 (per 3) and 0.25 O; O1 U33 0.084 instead of 0.684, which contradicts the article's own Ueq of 0.035 (Table 1); stacking intergrowth as refined (p. 1417): four tetrahedral sites of 15% occupancy (Si0.76 Al0.24, as the main T sites) and occupancy x 1.15 for the octahedral cations, apical O and OH",
+  "sites": {
+   "I1": {
+    "species": {
+     "Mg": 0.165,
+     "Al": 0.0575,
+     "Cr": 0.019167,
+     "Fe": 0.006667,
+     "Ni": 0.001667,
+     "O": 0.25
+    }
+   },
+   "I2": {
+    "species": {
+     "Mg": 0.165,
+     "Al": 0.0575,
+     "Cr": 0.019167,
+     "Fe": 0.006667,
+     "Ni": 0.001667,
+     "O": 0.25
+    }
+   },
+   "I3": {
+    "species": {
+     "Mg": 0.165,
+     "Al": 0.0575,
+     "Cr": 0.019167,
+     "Fe": 0.006667,
+     "Ni": 0.001667,
+     "O": 0.25
+    }
+   },
+   "I4": {
+    "species": {
+     "Mg": 0.165,
+     "Al": 0.0575,
+     "Cr": 0.019167,
+     "Fe": 0.006667,
+     "Ni": 0.001667,
+     "O": 0.25
+    }
+   },
+   "I5": {
+    "species": {
+     "Mg": 0.165,
+     "Al": 0.0575,
+     "Cr": 0.019167,
+     "Fe": 0.006667,
+     "Ni": 0.001667,
+     "O": 0.25
+    }
+   },
+   "I6": {
+    "species": {
+     "Mg": 0.165,
+     "Al": 0.0575,
+     "Cr": 0.019167,
+     "Fe": 0.006667,
+     "Ni": 0.001667,
+     "O": 0.25
+    }
+   },
+   "O1": {
+    "aniso": {
+     "u33": 0.084
+    },
+    "occupancy_factor": 1.15
+   },
+   "Mg1": {
+    "occupancy_factor": 1.15
+   },
+   "Al1_1": {
+    "occupancy_factor": 1.15
+   },
+   "Mg2": {
+    "occupancy_factor": 1.15
+   },
+   "Al2_1": {
+    "occupancy_factor": 1.15
+   },
+   "O2": {
+    "occupancy_factor": 1.15
+   },
+   "O-H6": {
+    "occupancy_factor": 1.15
+   }
+  },
+  "add": [
+   {
+    "label": "T3",
+    "xyz": [
+     0.231,
+     0.833,
+     0.2
+    ],
+    "species": {
+     "Si": 0.114,
+     "Al": 0.036
+    }
+   },
+   {
+    "label": "T4",
+    "xyz": [
+     0.194,
+     0.677,
+     0.217
+    ],
+    "species": {
+     "Si": 0.114,
+     "Al": 0.036
+    }
+   },
+   {
+    "label": "T5",
+    "xyz": [
+     0.543,
+     0.443,
+     0.2
+    ],
+    "species": {
+     "Si": 0.114,
+     "Al": 0.036
+    }
+   },
+   {
+    "label": "T6",
+    "xyz": [
+     0.008,
+     0.056,
+     0.256
+    ],
+    "species": {
+     "Si": 0.114,
+     "Al": 0.036
+    }
+   }
+  ],
+  "scattering_only": true
+ },
+ "9002230": {
+  "source": "Guggenheim and Zhan, American Mineralogist 84, 1415-1421 (1999), https://www.degruyterbrill.com/document/doi/10.2138/am-1999-0920/html",
+  "note": "interlayer sites cannot be told apart as cation or oxygen and hold on average half an atom (pp. 1416-1418): each is modelled as 0.25 of the interlayer cations Mg1.98 Al0.69 Cr0.23 Fe0.08 Ni0.02 (per 3) and 0.25 O (monoclinic form, sites X1-X4 = I1-I4); stacking intergrowth as refined (p. 1417): three tetrahedral sites of 10% occupancy (Si0.76 Al0.24) and occupancy x 1.10 for the octahedral cations, apical O and OH",
+  "sites": {
+   "X1": {
+    "species": {
+     "Mg": 0.165,
+     "Al": 0.0575,
+     "Cr": 0.019167,
+     "Fe": 0.006667,
+     "Ni": 0.001667,
+     "O": 0.25
+    }
+   },
+   "X2": {
+    "species": {
+     "Mg": 0.165,
+     "Al": 0.0575,
+     "Cr": 0.019167,
+     "Fe": 0.006667,
+     "Ni": 0.001667,
+     "O": 0.25
+    }
+   },
+   "X3": {
+    "species": {
+     "Mg": 0.165,
+     "Al": 0.0575,
+     "Cr": 0.019167,
+     "Fe": 0.006667,
+     "Ni": 0.001667,
+     "O": 0.25
+    }
+   },
+   "X4": {
+    "species": {
+     "Mg": 0.165,
+     "Al": 0.0575,
+     "Cr": 0.019167,
+     "Fe": 0.006667,
+     "Ni": 0.001667,
+     "O": 0.25
+    }
+   },
+   "Mg1": {
+    "occupancy_factor": 1.1
+   },
+   "Al1": {
+    "occupancy_factor": 1.1
+   },
+   "Mg2": {
+    "occupancy_factor": 1.1
+   },
+   "Al2": {
+    "occupancy_factor": 1.1
+   },
+   "O1": {
+    "occupancy_factor": 1.1
+   },
+   "OH4": {
+    "occupancy_factor": 1.1
+   }
+  },
+  "add": [
+   {
+    "label": "T2",
+    "xyz": [
+     0.235,
+     0.5,
+     0.202
+    ],
+    "species": {
+     "Si": 0.076,
+     "Al": 0.024
+    }
+   },
+   {
+    "label": "T3",
+    "xyz": [
+     0.211,
+     0.358,
+     0.227
+    ],
+    "species": {
+     "Si": 0.076,
+     "Al": 0.024
+    }
+   },
+   {
+    "label": "T4",
+    "xyz": [
+     0.496,
+     0.543,
+     0.227
+    ],
+    "species": {
+     "Si": 0.076,
+     "Al": 0.024
+    }
+   }
+  ],
+  "scattering_only": true
+ },
+ "_comment": "Corrections applied to specific COD CIFs after reading them; the CIF files are not changed. Each entry cites the publication it comes from. sites: per atom_site label, 'species' replaces the atom by atoms of these elements and absolute occupancies at the same position, 'group' by the atoms of a group scatterer (each with the site's occupancy), 'occupancy_factor' multiplies the occupancy, 'aniso' replaces tensor components (U, CIF convention). 'u_iso': the published isotropic U (A^2) of a site the CIF gives none for. 'stand_in': true when the species only stand in for the scattering of something else (e.g. guest molecules refined as single atoms); they do not count in formula, density, I/Ic and element lists. types: per type symbol, a group as above. add: atoms the CIF lacks, with label, fractional xyz, species and u_iso (A^2; without it B = 0.5). cell: the article's a, b, c, alpha, beta, gamma where the CIF's cell contradicts it. scattering_only: the occupancy factors and added atoms model scattering only (e.g. an intergrowth of shifted layers) and do not count in formula, density and I/Ic. spacegroup: the setting the coordinates are in, replacing the CIF's symbol and operations. operations: the symmetry operations given in the article, standardised with spglib. omit_types: type symbols of sites that are no atoms (e.g. interatomic scatterers for bonding density), left out. A site's 'omit': true: the row is no atom (e.g. a ring centroid without a type) and is left out. A site's 'shell': {radius, per_cell}: the site is the centre of atoms spread evenly over a sphere (FullProf SPHS/SASH), scattering as n f(q) sin(qR)/(qR); counted in the composition, not in the structure record."
+}

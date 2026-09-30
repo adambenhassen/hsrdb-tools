@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hsrdb-tools"
+version = "0.1.0"
+description = "Build HighScore (.hsrdb) reference databases from Crystallography Open Database CIF files"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["gemmi>=0.7", "numpy>=1.24", "spglib>=2.0"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+hsrdb-tools = "hsrdb_tools.__main__:main"
+
+[tool.setuptools]
+packages = ["hsrdb_tools"]
+
+[tool.setuptools.package-data]
+hsrdb_tools = ["*.json", "*.sql"]
