@@ -251,10 +251,12 @@ def operations_3d(block):
 
 
 def states_modulation(block):
-    """Whether the CIF describes its structure as modulated (a modulation dimension or wave vectors)."""
+    """Whether the CIF describes its structure as modulated (a modulation dimension, wave vectors or a superspace
+    group)."""
     dim = _num(block.find_value("_cell_modulation_dimension"))
     q = block.find("_cell_wave_vector_", ["x"])
-    return bool(dim and dim > 0) or any(_num(r[0]) for r in q)
+    ssg = block.find_value("_space_group_ssg_name")
+    return bool(dim and dim > 0) or any(_num(r[0]) for r in q) or ssg not in (None, "?", ".")
 
 
 def composite(block):

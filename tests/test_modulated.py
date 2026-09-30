@@ -368,3 +368,16 @@ def test_rounded_commensurate_wave_vector_is_read_as_its_fraction(tmp_path):
     assert max(x.d for x in rounded.lines) <= 12.0 + 1e-9  # the supercell 3a
     assert [round(x.d, 6) for x in rounded.lines] == [round(x.d, 6) for x in exact.lines]
     np.testing.assert_allclose([x.intensity for x in rounded.lines], [x.intensity for x in exact.lines], rtol=1e-6)
+
+
+def test_superspace_symbol_without_operations_gives_the_basic_group(tmp_path):
+    """COD 2105669-71: only the symbol Cmca(00g)s00 and the atoms of the basic structure, no operations, no waves:
+    built in the basic group Cmca, noted as an average structure with the satellites missing."""
+    head = HEAD.split("_cell_modulation_dimension")[0]
+    cif = (head + "_space_group_ssg_name Cmca(00\\g)s00\n_symmetry_space_group_name_H-M 'Cmca(00\\g)s00'\n"
+           "loop_\n_atom_site_label\n_atom_site_type_symbol\n_atom_site_fract_x\n_atom_site_fract_y\n"
+           "_atom_site_fract_z\n_atom_site_occupancy\n_atom_site_U_iso_or_equiv\n"
+           f"Cu1 Cu 0 0 0 1 {U}\nO1 O 0.25 0.1 0.2 1 {U}\n").format(cod=1234567)
+    e = build(tmp_path, cif)
+    assert e.sg_number == 64 and e.modulated is None
+    assert "only the average structure" in e.modulation and "satellites missing" in e.modulation

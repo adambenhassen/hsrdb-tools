@@ -224,9 +224,11 @@ def constrain_cell(st):
 
 
 def normalise_symbol(hm):
-    """Hermann-Mauguin symbol as gemmi reads it, for two notations seen in COD: a cell-choice qualifier on the
-    short symbol ('C2:b1') and an origin written out ('F d d d {origin @ -1 @ d d d}', origin choice 2)."""
+    """Hermann-Mauguin symbol as gemmi reads it, for three notations seen in COD: a cell-choice qualifier on the
+    short symbol ('C2:b1'), an origin written out ('F d d d {origin @ -1 @ d d d}', origin choice 2) and a
+    superspace-group symbol ('Cmca(00\\g)s00', COD 2105669), whose basic space group precedes the wave vector."""
     hm = re.sub(r"\s*\{\s*origin\s*@\s*-1\b[^}]*\}\s*$", ":2", hm)
+    hm = re.sub(r"^\s*([^()]+?)\s*\([^()]*\)\s*[0stqh]+\s*$", r"\1", hm)
     if ":" in hm:
         base, qualifier = (t.strip() for t in hm.split(":", 1))
         g = gemmi.find_spacegroup_by_name(base)

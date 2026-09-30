@@ -1679,6 +1679,28 @@
    }
   ]
  },
+ "2103856": {
+  "source": "Woike, Petricek, Dusek, Hansen, Fertey, Lecomte, Arakcheeva, Chapuis, Imlau and Pankrath, Acta Crystallographica B 59, 28-35 (2003), https://doi.org/10.1107/S0108768102021341",
+  "note": "the CIF gives the symbol X4bm and the average structure of a (3+2)-dimensionally modulated structure (superspace group P4bm(pp1/2, p-p1/2), Table 1); X is the centring vector (0, 0, 1/2, 1/2, 1/2) of the cell doubled along c (p. 31), so the average structure has the operations of P4bm plus the translation c/2; the CIF's atoms are that average structure (Table 2, p. 31, with the final occupancies). The modulation parameters were deposited, not published: pattern of the average structure, satellites missing",
+  "operations": [
+   "x,y,z",
+   "-x,-y,z",
+   "-y,x,z",
+   "y,-x,z",
+   "x+1/2,-y+1/2,z",
+   "-x+1/2,y+1/2,z",
+   "y+1/2,x+1/2,z",
+   "-y+1/2,-x+1/2,z",
+   "x,y,z+1/2",
+   "-x,-y,z+1/2",
+   "-y,x,z+1/2",
+   "y,-x,z+1/2",
+   "x+1/2,-y+1/2,z+1/2",
+   "-x+1/2,y+1/2,z+1/2",
+   "y+1/2,x+1/2,z+1/2",
+   "-y+1/2,-x+1/2,z+1/2"
+  ]
+ },
  "2103919": {
   "source": "Dusek, Chapuis, Meyer and Petricek, Acta Crystallographica B 59, 337-352 (2003), https://doi.org/10.1107/S0108768103009017",
   "note": "the CIF gives no symmetry and only the six atoms of the basic structure of the commensurately modulated delta phase at 110 K (superspace group C2/m(alpha0gamma)0s, q = (1/6, 0, 1/3), Table 2, p. 339); the article gives the same structure as its sixfold superstructure, P21/n, a = 19.91, b = 5.237, c = 17.99 A, beta = 119.01 deg, Z = 24 (Table 2, column 2), with all 36 atoms and U_eq (Table 12, p. 349), used here in place of the basic structure. The article does not print the operations: Table 12's coordinates are those of its superspace model (Table 9, t0 = 1/8, p. 343; A = 2a - c, C = 3c) to 0.004 A, whose P21/n has the inversion centre at (1/8, 1/4, 3/8) of this cell; those operations are used",

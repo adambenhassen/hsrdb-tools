@@ -45,6 +45,6 @@ Where the superspace model cannot be evaluated, the entry is the basic structure
 - **CIFs whose own structure factors are not reproduced** (3 CIFs): where a CIF lists the structure factors its refinement calculated and the calculation here differs from them by more than 1% (R), a convention of the refinement is not followed; the entry is the basic structure.
 - **Incomplete or ambiguous modulation data** (18 CIFs): wave vectors that do not identify their waves, a wave written without its wave number, a (3+3)-dimensional modulation.
 
-CIFs that state a modulation but give only the average structure (25) are stored as that structure, noted "satellites missing".
+CIFs that state a modulation but give only the average structure (25) are stored as that structure, noted "satellites missing". A CIF that gives only a superspace-group symbol and no operations (`Cmca(00γ)s00`, COD 2105669–2105671) is stored in the basic space group the symbol begins with (`setting.normalise_symbol`); COD 2103856 (`X4bm`) is built from its article, whose centring vector gives the average structure's symmetry ([corrections](../corrections.md)).
 
 Tests: `tests/test_modulated.py` (Bessel-function satellites of a displacement wave, sinc satellites of a crenel, occupancy waves, sawtooth = Legendre order 1, symmetry images and special positions against explicit atoms, commensurate structure against its explicit supercell, centred basic cell stored primitive).
