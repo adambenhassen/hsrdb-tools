@@ -24,7 +24,9 @@ JANA lists the structure factors it calculated for the observed main and satelli
 
 JANA writes the occupancy of an atom confined to a crenel interval as its average over the modulation; some CIFs give the value within the interval instead. The reading that reproduces the CIF's formula × Z, else its density, is used (14 CIFs within the interval); an atom confined only by a sawtooth function is given with the value within its interval (COD 4002590, where Na and Mn alternate on one site).
 
-Against the basic structure, COD24's model, the modulation changes a main line by 10 or more on the 0–1000 scale in 147 of the 198 entries (50 or more in 73), and the strongest satellite line reaches 10 or more in 138 (50 or more in 70). Examples:
+Against the basic structure, COD24's model, the modulation changes a main line by 10 or more on the 0–1000 scale in 147 of the first 198 entries (50 or more in 73), and the strongest satellite line reaches 10 or more in 138 (50 or more in 70). Examples:
+
+Four more entries (2102484, 2103882, 2103920, 6000092) are built from the superspace model their article gives, as a [correction](../corrections.md); they bring the total to 202. The figures above, and the comparison with the structure factors listed in the CIFs, are those of the first 198.
 
 | COD | Compound | Largest main-line change | Strongest satellite | Agreement with the CIF's structure factors |
 |---|---|---|---|---|
