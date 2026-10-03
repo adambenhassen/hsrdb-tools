@@ -81,7 +81,7 @@ Customize → Manage Databases → Add HighScore Database, select the file, then
 | HighScore | Status |
 |---|---|
 | 4.x and later (`--hs4`) | opened and used for search-match in HighScore 4.7 |
-| 3.x (`--hs3`) | patterns opened in HighScore 3.x; structure records follow the official 2014 format but have not yet been opened in 3.x |
+| 3.x (`--hs3`) | patterns opened in HighScore 3.x; structure records follow the official HighScore 3 format but have not yet been opened in 3.x |
 | Plus (Rietveld, Convert Pattern to Phase) | structure records not yet tested |
 
 Reports from HighScore Plus and 3.x users are welcome.
