@@ -1,6 +1,6 @@
 # The HighScore `.hsrdb` reference database format
 
-Decoded from the official COD databases for HighScore (COD Oct 2014 for 3.x, COD24 for 4.x/5.x). Everything is little-endian. HighScore labels these files "HighScore(Plus) V3.X database" in both cases; the differences are listed per version.
+Decoded from the official COD databases for HighScore (one per HighScore generation). Everything is little-endian. HighScore labels these files "HighScore(Plus) V3.X database" in both cases; the differences are listed per version.
 
 ## Container
 
