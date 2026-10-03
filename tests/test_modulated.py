@@ -381,3 +381,25 @@ def test_superspace_symbol_without_operations_gives_the_basic_group(tmp_path):
     e = build(tmp_path, cif)
     assert e.sg_number == 64 and e.modulated is None
     assert "only the average structure" in e.modulation and "satellites missing" in e.modulation
+
+
+def test_superspace_model_from_a_correction(tmp_path, monkeypatch):
+    """A CIF that gives only the basic structure, completed by a correction with the article's superspace model as
+    msCIF items (COD 2102484, 2103920): the same entry as the CIF that contains the model itself."""
+    model = ("_cell_modulation_dimension 1\nloop_\n_space_group_symop_ssg_operation_algebraic\nx1,x2,x3,x4\n"
+             "-x1,-x2,-x3,-x4\nloop_\n_cell_wave_vector_seq_id\n_cell_wave_vector_x\n_cell_wave_vector_y\n"
+             "_cell_wave_vector_z\n1 0.3 0 0\n" + displace("Cu1 x 1 0 0.02\nCu1 y 1 0.01 0\nCu1 z 1 0 0\n"))
+    full = build(tmp_path, text(f"Cu1 Cu 0.1 0.2 0.3 1 {U}\nO1 O 0.3 0.1 0.2 1 {U}",
+                                displace("Cu1 x 1 0 0.02\nCu1 y 1 0.01 0\nCu1 z 1 0 0\n"), group=P_1), "full.cif")
+    basic = text(f"Cu1 Cu 0.1 0.2 0.3 1 {U}\nO1 O 0.3 0.1 0.2 1 {U}", group=P_1)
+    basic = basic.replace("_cell_modulation_dimension 1\n", "").replace(
+        basic[basic.index("loop_\n_space_group_symop_ssg"):basic.index("loop_\n_atom_site_label")], "")
+    fixes = {"1234567": {"source": "s", "note": "n", "superspace": model}}
+    monkeypatch.setattr(entry, "_corrections", lambda: fixes)
+    e = build(tmp_path, basic, "basic.cif")
+    assert e.modulated is not None and "Corrected from the publication" in e.comment
+    assert [(round(x.d, 8), round(x.intensity, 6)) for x in e.lines] == \
+        [(round(x.d, 8), round(x.intensity, 6)) for x in full.lines]
+    fixes["1234567"]["superspace"] = "loop_\n_x\n"  # not CIF: an error, not a silent basic structure
+    with pytest.raises(ValueError, match="superspace"):
+        build(tmp_path, basic, "bad.cif")

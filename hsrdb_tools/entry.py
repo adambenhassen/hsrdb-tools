@@ -2,6 +2,7 @@
 
 import json
 import math
+import os
 import re
 from dataclasses import dataclass, field
 from functools import lru_cache
@@ -104,7 +105,7 @@ MIN_UEQ = 1e-4  # Å²; a smaller equivalent value of an invalid tensor is no di
 # U33 of -0.0001 pass); the factor keeps values exactly at the margin on the valid side despite rounding
 ADP_MARGIN = 1e-4 * (1 + 1e-6)
 _FIX_KEYS = {"source", "note", "sites", "types", "add", "spacegroup", "operations", "scattering_only", "omit_types",
-             "cell"}
+             "cell", "superspace"}
 _SITE_KEYS = {"species", "group", "occupancy_factor", "aniso", "u_iso", "stand_in", "shell", "omit"}
 
 
@@ -147,6 +148,8 @@ def _check_fix(cod_id, fix):
             raise ValueError(f"corrections.json: COD {cod_id}: add needs label, xyz, species (and u_iso >= 0): "
                              f"{extra!r}")
         elements(extra["species"], f"add {extra['label']}")
+    if "superspace" in fix:
+        _superspace_block(cod_id, fix["superspace"])
     cell = fix.get("cell")
     if cell is not None and not (len(cell) == 6 and all(v > 0 for v in cell) and all(v < 180 for v in cell[3:])):
         raise ValueError(f"corrections.json: COD {cod_id}: cell must be a, b, c, alpha, beta, gamma: {cell!r}")
@@ -156,6 +159,33 @@ def _check_fix(cod_id, fix):
         from .setting import _is_group
         if not _is_group([gemmi.Op(o) for o in fix["operations"]]):
             raise ValueError(f"corrections.json: COD {cod_id}: the operations do not form a group")
+
+
+def _superspace_block(cod_id, text):
+    """The msCIF items of a correction's superspace model as a CIF block; ValueError unless it parses and holds
+    wave vectors or superspace operations."""
+    try:
+        blk = gemmi.cif.read_string("data_superspace\n" + text).sole_block()
+    except (RuntimeError, ValueError) as e:
+        raise ValueError(f"corrections.json: COD {cod_id}: superspace is not CIF: {e}") from e
+    if not (blk.find_values("_cell_wave_vector_x") or blk.find_values("_space_group_symop_ssg_operation_algebraic")):
+        raise ValueError(f"corrections.json: COD {cod_id}: superspace gives no wave vectors or superspace operations")
+    return blk
+
+
+def _merge_items(block, extra):
+    """The items and loops of extra written into block, replacing items and loops with the same tags (in memory;
+    the CIF file is not changed)."""
+    for item in extra:
+        if item.pair is not None:
+            block.set_pair(*item.pair)
+        elif item.loop is not None:
+            tags = list(item.loop.tags)
+            prefix = os.path.commonprefix(tags)
+            prefix = prefix[:prefix.rindex("_") + 1]
+            loop = block.init_loop(prefix, [t[len(prefix):] for t in tags])
+            for r in range(item.loop.length()):
+                loop.add_row([item.loop[r, c] for c in range(item.loop.width())])
 
 
 def _apply_corrections(st, cod_id):
@@ -176,7 +206,8 @@ def _apply_corrections(st, cod_id):
     group as above. "omit_types": type symbols of sites that are no atoms (e.g. interatomic scatterers for bonding
     density), left out. "add": atoms the CIF lacks, each with label, xyz and species. "spacegroup": the setting the
     coordinates are really in (e.g. "F d -3 m:1"); "operations": the symmetry operations, for a setting only the
-    article lists. Either replaces every symmetry statement of the CIF. "scattering_only": the occupancy factors
+    article lists. "superspace" (applied in _from_cif, before this): msCIF items with the article's superspace model
+    (operations, wave vectors, Fourier waves) for a CIF that gives only the basic structure. Either replaces every symmetry statement of the CIF. "scattering_only": the occupancy factors
     and added atoms model scattering (e.g. an intergrowth of shifted layers) but are not atoms of the compound:
     weight 1/factor and 0. A label or type the CIF does not have is a KeyError: the file is wrong."""
     fix = _corrections().get(str(cod_id))
@@ -702,6 +733,9 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
     if "cell" in fix:  # the article's cell where the CIF's contradicts it
         _check_fix(cod_id, fix)
         cell_values = [float(v) for v in fix["cell"]]
+    if "superspace" in fix:  # the article's superspace model, for a CIF that gives only the basic structure
+        _check_fix(cod_id, fix)
+        _merge_items(block, _superspace_block(cod_id, fix["superspace"]))
     try:
         st = gemmi.make_small_structure_from_block(block)
     except RuntimeError as e:
