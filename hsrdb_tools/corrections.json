@@ -69754,6 +69754,68 @@
    }
   ]
  },
+ "6000784": {
+  "source": "Gobichon, Auffredic and Louer, Solid State Ionics 93, 51-64 (1997), https://doi.org/10.1016/S0167-2738(96)00498-5",
+  "note": "the CIF gives no atoms; the Rietveld structure of LaONO3, Table 4 (p. 61). The article prints the space group as P4/mmm (p. 60), but the coordinates are in P4/nmm, origin choice 2: the structure is of matlockite (PbFCl) type and isostructural with YONO3, whose coordinates were the starting model (pp. 60-61), and in P4/mmm the La sites would lie 2.06 A apart (La8N8O20 per cell); each nitrate group occupies two mean positions at 90 deg to each other (p. 61): O3 at half occupancy; the one overall temperature factor refined is not printed: B = 0.5 A2",
+  "spacegroup": "P 4/n m m:2",
+  "add": [
+   {
+    "label": "La",
+    "xyz": [
+     0.25,
+     0.25,
+     0.8698
+    ],
+    "species": {
+     "La": 1.0
+    }
+   },
+   {
+    "label": "O1",
+    "xyz": [
+     0.25,
+     0.25,
+     0.491
+    ],
+    "species": {
+     "O": 1.0
+    }
+   },
+   {
+    "label": "O2",
+    "xyz": [
+     0.25,
+     0.75,
+     0.0
+    ],
+    "species": {
+     "O": 1.0
+    }
+   },
+   {
+    "label": "N",
+    "xyz": [
+     0.25,
+     0.25,
+     0.375
+    ],
+    "species": {
+     "N": 1.0
+    }
+   },
+   {
+    "label": "O3",
+    "xyz": [
+     0.016,
+     0.75,
+     0.71
+    ],
+    "species": {
+     "O": 0.5
+    }
+   }
+  ]
+ },
  "7012100": {
   "source": "He, Craig and Colbran, Dalton Transactions, 4224 (2002), https://doi.org/10.1039/b207406k",
   "note": "the sites OW/Cl1-3 are water oxygen or chloride; the CIF's own atom-type descriptions give their scattering: OW/Cl1 0.90 O + 0.10 Cl, OW/Cl2 0.75 O + 0.25 Cl, OW/Cl3 0.85 O + 0.15 Cl (with Cl2 at 0.5 the one Cl- and the 2.5 H2O of the formula)",
