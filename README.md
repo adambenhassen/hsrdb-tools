@@ -88,7 +88,7 @@ Reports from HighScore Plus and 3.x users are welcome.
 
 ## How close is it to the official databases?
 
-A full build from COD (September 2026) gives 533,900 entries: every entry of the official COD24 database and 22,317 newer ones. 1,224 CIFs are skipped, mostly because they contain no atom coordinates (1,013) or no usable symmetry (162); none of them is in COD24.
+A full build from COD (October 2026) gives 533,931 entries: every entry of the official COD24 database and 22,348 newer ones. 1,225 CIFs are skipped, mostly because they contain no atom coordinates (1,014) or no usable symmetry (162); none of them is in COD24.
 
 Every entry of both databases passes `dev/audit_database.py` (valid peak lists, consistent metadata, element filters, and structure records that decode and re-encode identically). All 511,583 entries of the official COD24 database were compared:
 
@@ -139,11 +139,11 @@ Other known differences:
 
 ## Skipped CIFs
 
-A CIF is skipped when no correct pattern can be calculated from it. Every skipped CIF is listed with its reason in the build report (`<name>.skipped.tsv`); [docs/SKIPPED.md](docs/SKIPPED.md) lists those of the COD build with a download link each (`dev/skipped_md.py` writes it from the report). For COD (September 2026):
+A CIF is skipped when no correct pattern can be calculated from it. Every skipped CIF is listed with its reason in the build report (`<name>.skipped.tsv`); [docs/SKIPPED.md](docs/SKIPPED.md) lists those of the COD build with a download link each (`dev/skipped_md.py` writes it from the report). For COD (October 2026):
 
 | Reason | CIFs | Details |
 |---|---|---|
-| No atom coordinates | 1,013 | the CIF has a cell and symmetry but no atom positions (structure not determined, or coordinates only in the paper). Five CIFs of this kind whose official COD24 entries were built from unusable data (2300247, 2300248, 2300253, 2300257, 5900030) are included as COD24 has them, marked as not correct structures ([corrections](docs/corrections.md)) |
+| No atom coordinates | 1,014 | the CIF has a cell and symmetry but no atom positions (structure not determined, or coordinates only in the paper). Five CIFs of this kind whose official COD24 entries were built from unusable data (2300247, 2300248, 2300253, 2300257, 5900030) are included as COD24 has them, marked as not correct structures ([corrections](docs/corrections.md)) |
 | No symmetry information | 152 | neither symmetry operations nor a Hall or Hermann–Mauguin symbol; nearly all are empty entries from papers of 1926–1962, the rest modulated or composite structures whose superspace model the CIF lacks |
 | Invalid or ambiguous symbol, no operations | 10 | e.g. `Pbc2`, `?P?`, `unknown`, `P21 or P21/m`: cell-only entries (three are COD duplicates of built entries) and modulated structures without their superspace model, each checked against its article ([corrections](docs/corrections.md)) |
 | Symmetry operations that do not fit the structure | 1 | COD 2100427 |
