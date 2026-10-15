@@ -1,10 +1,10 @@
 # Skipped CIFs
 
-1,225 COD CIFs from which no correct pattern can be calculated. The README explains each reason.
+1,227 COD CIFs from which no correct pattern can be calculated. The README explains each reason.
 
 | Reason | CIFs |
 |---|---|
-| No atom coordinates | 1,014 |
+| No atom coordinates | 1,016 |
 | No usable symmetry | 162 |
 | No valid unit cell | 46 |
 | Atom type that is not an element | 2 |
@@ -815,6 +815,9 @@
 | 3000653 | No atom coordinates |  | [3000653.cif](https://www.crystallography.net/cod/3000653.cif) |
 | 3000654 | No atom coordinates |  | [3000654.cif](https://www.crystallography.net/cod/3000654.cif) |
 | 3000655 | No atom coordinates |  | [3000655.cif](https://www.crystallography.net/cod/3000655.cif) |
+| 3000656 | No atom coordinates |  | [3000656.cif](https://www.crystallography.net/cod/3000656.cif) |
+| 3000657 | No atom coordinates |  | [3000657.cif](https://www.crystallography.net/cod/3000657.cif) |
+| 3000658 | No atom coordinates |  | [3000658.cif](https://www.crystallography.net/cod/3000658.cif) |
 | 4030775 | No atom coordinates |  | [4030775.cif](https://www.crystallography.net/cod/4030775.cif) |
 | 4030776 | No atom coordinates |  | [4030776.cif](https://www.crystallography.net/cod/4030776.cif) |
 | 4030831 | No atom coordinates |  | [4030831.cif](https://www.crystallography.net/cod/4030831.cif) |
@@ -1024,7 +1027,6 @@
 | 6000772 | No atom coordinates |  | [6000772.cif](https://www.crystallography.net/cod/6000772.cif) |
 | 6000776 | No atom coordinates |  | [6000776.cif](https://www.crystallography.net/cod/6000776.cif) |
 | 6000782 | No atom coordinates |  | [6000782.cif](https://www.crystallography.net/cod/6000782.cif) |
-| 6000784 | No atom coordinates |  | [6000784.cif](https://www.crystallography.net/cod/6000784.cif) |
 | 7052472 | No atom coordinates |  | [7052472.cif](https://www.crystallography.net/cod/7052472.cif) |
 | 1000195 | No usable symmetry | no symbol, no operations | [1000195.cif](https://www.crystallography.net/cod/1000195.cif) |
 | 1001067 | No usable symmetry | no symbol, no operations | [1001067.cif](https://www.crystallography.net/cod/1001067.cif) |

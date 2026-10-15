@@ -88,7 +88,7 @@ Reports from HighScore Plus and 3.x users are welcome.
 
 ## How close is it to the official databases?
 
-A full build from COD (October 2026) gives 533,931 entries: every entry of the official COD24 database and 22,348 newer ones. 1,225 CIFs are skipped, mostly because they contain no atom coordinates (1,014) or no usable symmetry (162); none of them is in COD24.
+A full build from COD (October 2026) gives 533,939 entries: every entry of the official COD24 database and 22,356 newer ones. 1,227 CIFs are skipped, mostly because they contain no atom coordinates (1,016) or no usable symmetry (162); none of them is in COD24.
 
 Every entry of both databases passes `dev/audit_database.py` (valid peak lists, consistent metadata, element filters, and structure records that decode and re-encode identically). All 511,583 entries of the official COD24 database were compared:
 
@@ -126,7 +126,7 @@ Where hsrdb-tools deliberately does something different from the official COD24 
 | [Dummy atoms](docs/differences/dummy-atoms.md) (`calc_flag dum`: ring centroids, atoms with unknown positions; 438 CIFs) | counted as atoms (extra H, C or N in the formula) | not scattering and not in formula, density or element filters; kept, flagged, in the structure record | a dummy atom is a geometric point, not an atom |
 | [Physically invalid anisotropic tensors](docs/differences/invalid-adp.md) (about 2,800 CIFs) | used as given | replaced by the isotropic value | a tensor with a negative mean-square displacement gives unphysical intensities |
 | [Modulated structures](docs/differences/modulated.md) (202 CIFs) | the basic structure: main lines only, as if every atom sat at its average position | main and satellite lines from the CIF's superspace model; the structure factors agree with those the refinement program lists in the CIF (30 CIFs, R at most 0.9%) | the modulation changes a main line by 10/1000 or more in 147 of the first 198 and gives satellites of 10/1000 or more in 138, which a measured pattern shows |
-| [Corrections from publications](docs/corrections.md) (499 CIFs) | CIF as deposited: interlayer sites as iodine (COD 9002229), virtual atoms as cerium and tungsten (7201135) | the article's model, with the CIF file unchanged and the entry marked | the article states what the CIF leaves out |
+| [Corrections from publications](docs/corrections.md) (500 CIFs) | CIF as deposited: interlayer sites as iodine (COD 9002229), virtual atoms as cerium and tungsten (7201135) | the article's model, with the CIF file unchanged and the entry marked | the article states what the CIF leaves out |
 | [Non-standard settings](docs/differences/non-standard-settings.md) (81 CIFs, e.g. `B 1 21/d 1`, supercells) | 29 of them included, 5 with a wrong space group | all standardised from the CIF's own symmetry operations with spglib | see [Skipped CIFs](#skipped-cifs) |
 | COD content | May 2024 | the mirror you build from; about 30% of entries with large differences are CIFs COD revised after May 2024 | newer data |
 
@@ -143,7 +143,7 @@ A CIF is skipped when no correct pattern can be calculated from it. Every skippe
 
 | Reason | CIFs | Details |
 |---|---|---|
-| No atom coordinates | 1,014 | the CIF has a cell and symmetry but no atom positions (structure not determined, or coordinates only in the paper). Five CIFs of this kind whose official COD24 entries were built from unusable data (2300247, 2300248, 2300253, 2300257, 5900030) are included as COD24 has them, marked as not correct structures ([corrections](docs/corrections.md)) |
+| No atom coordinates | 1,016 | the CIF has a cell and symmetry but no atom positions (structure not determined, or coordinates only in the paper). Five CIFs of this kind whose official COD24 entries were built from unusable data (2300247, 2300248, 2300253, 2300257, 5900030) are included as COD24 has them, marked as not correct structures ([corrections](docs/corrections.md)) |
 | No symmetry information | 152 | neither symmetry operations nor a Hall or Hermann–Mauguin symbol; nearly all are empty entries from papers of 1926–1962, the rest modulated or composite structures whose superspace model the CIF lacks |
 | Invalid or ambiguous symbol, no operations | 10 | e.g. `Pbc2`, `?P?`, `unknown`, `P21 or P21/m`: cell-only entries (three are COD duplicates of built entries) and modulated structures without their superspace model, each checked against its article ([corrections](docs/corrections.md)) |
 | Symmetry operations that do not fit the structure | 1 | COD 2100427 |
