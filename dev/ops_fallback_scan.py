@@ -3,11 +3,12 @@
 python dev/ops_fallback_scan.py LIST [-j N] > out.tsv    (LIST: one CIF path per line)
 
 A CIF can state its symmetry three ways: listed operations (S), a Hall symbol (H) and a Hermann-Mauguin symbol (M).
-gemmi takes the first it can match to a table setting and ignores the others, e.g. a Hall symbol with a change of
-basis that no table setting has, next to a standard H-M symbol. Per CIF where the sources give different operation
-sets (compared exactly, translations modulo 1), or gemmi finds no group: the three sources, the number of
-operations of each, whether the listed operations form a group, gemmi's choice, and whether the listed operations
-are a known group with a shifted origin (setting.identify_shifted).
+gemmi matches each source only to its tabulated settings. By default it keeps listed operations it cannot match,
+but replaces a Hall symbol it cannot match (e.g. one with a change of basis that no table setting has) with the H-M
+symbol next to it. Per CIF where the sources give different operation sets (compared exactly, translations
+modulo 1), or gemmi finds no group: the three sources, the number of operations of each, whether the listed
+operations form a group, gemmi's choice, and whether the listed operations are a known group with a shifted origin
+(setting.identify_shifted).
 """
 
 import argparse
