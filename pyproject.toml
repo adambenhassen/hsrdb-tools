@@ -9,7 +9,7 @@ description = "Build HighScore (.hsrdb) reference databases from Crystallography
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
-dependencies = ["gemmi>=0.7", "numpy>=1.24", "spglib>=2.0"]
+dependencies = ["gemmi>=0.7", "numpy>=1.24", "spglib>=2.7"]  # spglib.error is new in 2.7
 
 [project.optional-dependencies]
 test = ["pytest"]
