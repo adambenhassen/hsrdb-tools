@@ -96,7 +96,7 @@ class Entry:
 
 @lru_cache(maxsize=None)
 def _corrections():
-    return json.loads(Path(__file__).with_name("corrections.json").read_text())
+    return json.loads(Path(__file__).with_name("corrections.json").read_text(encoding="utf-8"))
 
 
 _ANISO = ("u11", "u22", "u33", "u12", "u13", "u23")

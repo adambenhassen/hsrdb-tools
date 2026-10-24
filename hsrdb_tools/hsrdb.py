@@ -27,7 +27,7 @@ def create(path, target="hs4", db_id="CIFDB"):
         raise FileExistsError(path)
     db = sqlite3.connect(path)
     db.execute("pragma page_size = 1024")
-    db.executescript(TARGETS[target][1].read_text())
+    db.executescript(TARGETS[target][1].read_text(encoding="utf-8"))
     db.executemany("insert into Properties(Key, Value) values (?, ?)",
                    [("NoOfPatterns", "0"), ("ReferenceCodePrefixes", ""), ("ID", db_id)])
     db.executemany("insert into Subfiles(ID, SubFile) values (?, ?)", list(enumerate(SUBFILES)))

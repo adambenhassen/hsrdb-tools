@@ -26,7 +26,7 @@ TEMPLATE_FILES = {phase.HS4.version: "templates.json", phase.HS3.version: "templ
 
 @lru_cache(maxsize=None)
 def _templates(version=phase.HS4.version):
-    return json.loads(Path(__file__).with_name(TEMPLATE_FILES[version]).read_text())
+    return json.loads(Path(__file__).with_name(TEMPLATE_FILES[version]).read_text(encoding="utf-8"))
 
 
 def _trv(kind, name, value=None, esd=0.0, version=phase.HS4.version):

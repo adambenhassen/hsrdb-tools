@@ -57,7 +57,7 @@ N1 N 0.301 0.402 0.067 0.025
 @pytest.fixture
 def nacl(tmp_path):
     p = tmp_path / "1234567.cif"
-    p.write_text(NACL)
+    p.write_text(NACL, encoding="utf-8")
     return entry.from_cif(p)
 
 
@@ -104,7 +104,7 @@ def test_database(tmp_path, nacl, target):
 
 def test_reference_setting_keeps_pattern(tmp_path):
     p = tmp_path / "mono.cif"
-    p.write_text(MONO)
+    p.write_text(MONO, encoding="utf-8")
     st = gemmi.read_small_structure(str(p))
     ref, changed = setting.to_reference(st)
     assert changed and ref.spacegroup.hm == "P 1 21/c 1"

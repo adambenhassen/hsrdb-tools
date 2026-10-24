@@ -46,7 +46,7 @@ NACL_ATOMS = "Na1 Na+ 0 0 0 1 0.012\nCl1 Cl- 0.5 0.5 0.5 1 0.011\n"
 
 def build(tmp_path, text, name="1234567.cif"):
     p = tmp_path / name
-    p.write_text(text)
+    p.write_text(text, encoding="utf-8")
     return entry.from_cif(p)
 
 
@@ -886,7 +886,7 @@ def test_corrections_from_publications(tmp_path, monkeypatch):
     o1 = next(s for s in e.structure.sites if s.label == "O1")
     assert o1.aniso.u33 == pytest.approx(0.03) and o1.aniso.u11 == pytest.approx(0.011)
     assert "Corrected from the publication: test fixes (A. Author" in e.comment and e.correction
-    assert (tmp_path / "1234567.cif").read_text() == text  # the CIF itself is not changed
+    assert (tmp_path / "1234567.cif").read_text(encoding="utf-8") == text  # the CIF itself is not changed
     fixes["1234567"]["sites"]["Missing"] = {"occupancy_factor": 0.5}
     with pytest.raises(KeyError):
         build(tmp_path, text, name="again.cif")
