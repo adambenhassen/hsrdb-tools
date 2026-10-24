@@ -174,8 +174,9 @@ Four CIFs from Wyckoff's 1931 compilation give cyanide as one pseudo-atom `CN`. 
 ## Development
 
 ```
-pip install -e '.[test]'
+pip install -e '.[test]' ruff==0.17.2
 pytest
+ruff check hsrdb_tools tests dev
 ```
 
 The tests cover the formats, space-group settings, pattern calculation, the command line (including interrupted and resumed builds), and regressions for problems found in full COD runs. `tests/data/cod/` holds real COD CIFs, one or more per difficult case, with their stored output in `expected.json`: a change that alters the output of any of them fails `tests/test_cod_regression.py`. If the change is intended, `python dev/update_expected.py` rewrites the file and lists what moved, for review with the change.

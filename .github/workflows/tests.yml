@@ -2,20 +2,52 @@ name: tests
 
 on:
   push:
+    branches: [master]
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  pytest:
+  lint:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+      - run: pip install ruff==0.17.2
+      - run: ruff check hsrdb_tools tests dev
+
+  pytest:
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.12", "3.13", "3.14"]
+        os: [ubuntu-latest]
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        deps: [latest]
+        include:
+          # the lowest versions pyproject.toml allows
+          - os: ubuntu-latest
+            python-version: "3.10"
+            deps: minimum
+          # HighScore runs on Windows
+          - os: windows-latest
+            python-version: "3.12"
+          - os: windows-latest
+            python-version: "3.14"
+          - os: macos-latest
+            python-version: "3.12"
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
+      - if: matrix.deps == 'minimum'
+        run: pip install gemmi==0.7.0 numpy==1.24.4 spglib==2.7.0
       - run: pip install ".[test]"
-      - run: pytest -q
+      # fail on file I/O that depends on the platform's default encoding (cp1252 on Windows)
+      - run: python -X warn_default_encoding -m pytest -q -W error::EncodingWarning

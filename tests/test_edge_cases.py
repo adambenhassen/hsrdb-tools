@@ -157,7 +157,7 @@ def test_anisotropic_tensors_rotate_with_symmetry():
     st = gemmi.make_small_structure_from_block(gemmi.cif.read_string(ANISO_P422).sole_block())
     im = sites.unit_cell_images(st)
     orth = np.array(st.cell.orth.mat.tolist())
-    for op, x, u in zip(st.spacegroup.operations(), im.xyz, im.ucart):
+    for op, u in zip(st.spacegroup.operations(), im.ucart):
         r = np.array(op.rot) / gemmi.Op.DEN
         c = orth @ r @ np.linalg.inv(orth)
         u0 = sites.ucif_to_cart(st.sites[0].aniso, st.cell)

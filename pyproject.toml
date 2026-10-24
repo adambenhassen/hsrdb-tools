@@ -28,3 +28,18 @@ hsrdb_tools = ["*.json", "*.sql"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B"]
+ignore = [
+    "B905",  # zip() without strict=: the lengths match by construction
+    "E731",  # small lambdas assigned to names
+    "E741",  # l for an index of a reflection hkl
+]
+
+[tool.ruff.lint.per-file-ignores]
+"dev/**" = ["E401", "E402", "E701", "E702"]  # one-off scripts: compact style
