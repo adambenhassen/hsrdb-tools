@@ -90,9 +90,12 @@ def _num(v):
     if s in ("", "?", "."):
         return None
     try:
-        return float(re.sub(r"\([^)]*\)", "", s))
+        x = float(re.sub(r"\([^)]*\)", "", s))
     except ValueError:
         raise ModulationError(f"not a number: {s!r}") from None
+    if not math.isfinite(x):  # 'nan', 'inf': no CIF number
+        raise ModulationError(f"not a number: {s!r}")
+    return x
 
 
 def _op(text, n):
@@ -188,7 +191,10 @@ def _waves(block, d):
             cols = [tags.index(f"{pre}{i + 1}_coeff") for i in range(d)]
         except (StopIteration, ValueError):
             raise ModulationError("incomplete Fourier wave vector list") from None
-        return {lp[r, seq]: np.array([int(_num(lp[r, c])) for c in cols]) for r in range(lp.length())}
+        coeffs = [[_num(lp[r, c]) for c in cols] for r in range(lp.length())]
+        if any(v is None for row in coeffs for v in row):
+            raise ModulationError("Fourier wave vector coefficients that are not numbers")
+        return {lp[r, seq]: np.array([int(v) for v in row]) for r, row in enumerate(coeffs)}
     return None
 
 
@@ -212,7 +218,10 @@ def _explicit_waves(block, q):
     grid = np.stack(np.meshgrid(*[np.arange(-4, 5)] * d, indexing="ij"), -1).reshape(-1, d)
     out = {}
     for r in range(lp.length()):
-        vec = np.array([_num(lp[r, tags.index(f"_atom_site_fourier_wave_vector_{'xyz'[i]}")]) for i in listed])
+        vec = [_num(lp[r, tags.index(f"_atom_site_fourier_wave_vector_{'xyz'[i]}")]) for i in listed]
+        if None in vec:
+            raise ModulationError("Fourier wave vector components that are not numbers")
+        vec = np.array(vec)
         key = lp[r, seq]
         i = int(key) - 1 if key.isdigit() else -1
         if 0 <= i < d and np.allclose(q[i, listed], vec, atol=1e-4):
@@ -253,10 +262,13 @@ def operations_3d(block):
 def states_modulation(block):
     """Whether the CIF describes its structure as modulated (a modulation dimension, wave vectors or a superspace
     group)."""
-    dim = _num(block.find_value("_cell_modulation_dimension"))
-    q = block.find("_cell_wave_vector_", ["x"])
     ssg = block.find_value("_space_group_ssg_name")
-    return bool(dim and dim > 0) or any(_num(r[0]) for r in q) or ssg not in (None, "?", ".")
+    try:
+        dim = _num(block.find_value("_cell_modulation_dimension"))
+        q = any(_num(r[0]) for r in block.find("_cell_wave_vector_", ["x"]))
+    except ModulationError:  # a value that is not a number (1/3) still states a modulation
+        return True
+    return bool(dim and dim > 0) or q or ssg not in (None, "?", ".")
 
 
 def composite(block):
@@ -354,17 +366,27 @@ def read(block, st, rows, shift=(0.0, 0.0, 0.0)):
         x = _num(v)
         return 0.0 if x is None else x
 
+    def axis(v):
+        s = gemmi.cif.as_string(v).lower()
+        if s not in ("x", "y", "z"):
+            raise ModulationError(f"displacement axis {s or v!r}")
+        return "xyz".index(s)
+
+    def element(v):  # of a displacement-parameter tensor
+        s = gemmi.cif.as_string(v).lower()
+        if s not in _IJ:
+            raise ModulationError(f"displacement tensor element {s or v!r}")
+        return _IJ[s]
+
     for r in _terms(block, "_atom_site_displace_Fourier_", ["axis", "wave_vector_seq_id"], ["cos", "sin"]):
         for a in each(r[0]):
-            a.disp.append(("xyz".index(gemmi.cif.as_string(r[1]).lower()), wave(gemmi.cif.as_string(r[2])),
-                           value(r[3]), value(r[4])))
+            a.disp.append((axis(r[1]), wave(gemmi.cif.as_string(r[2])), value(r[3]), value(r[4])))
     for r in _terms(block, "_atom_site_occ_Fourier_", ["wave_vector_seq_id"], ["cos", "sin"]):
         for a in each(r[0]):
             a.occf.append((wave(gemmi.cif.as_string(r[1])), value(r[2]), value(r[3])))
     for r in _terms(block, "_atom_site_U_Fourier_", ["tens_elem", "wave_vector_seq_id"], ["cos", "sin"]):
         for a in each(r[0]):
-            a.uf.append((_IJ[gemmi.cif.as_string(r[1]).lower()], wave(gemmi.cif.as_string(r[2])), value(r[3]),
-                         value(r[4])))
+            a.uf.append((element(r[1]), wave(gemmi.cif.as_string(r[2])), value(r[3]), value(r[4])))
     for r in _loop(block, "_atom_site_occ_special_func_", ["atom_site_label", "crenel_c", "crenel_w"]):
         if _num(r[1]) is not None:
             for a in each(r[0]):
@@ -384,12 +406,11 @@ def read(block, st, rows, shift=(0.0, 0.0, 0.0)):
     for pre in ("_jana_atom_site_displace_legendre_", "_atom_site_displace_legendre_"):
         for r in _loop(block, pre, ["atom_site_label", "axis", "param_order", "param_coeff"]):
             for a in each(r[0]):
-                a.legendre_disp.append(("xyz".index(gemmi.cif.as_string(r[1]).lower()), int(value(r[2])),
-                                        value(r[3])))
+                a.legendre_disp.append((axis(r[1]), int(value(r[2])), value(r[3])))
     for r in _loop(block, "_jana_atom_site_u_legendre_", ["atom_site_label", "tens_elem", "param_order",
                                                             "param_coeff"]):
         for a in each(r[0]):
-            a.legendre_u.append((_IJ[gemmi.cif.as_string(r[1]).lower()], int(value(r[2])), value(r[3])))
+            a.legendre_u.append((element(r[1]), int(value(r[2])), value(r[3])))
     for r in _loop(block, "_jana_atom_site_occ_legendre_", ["atom_site_label", "param_order", "param_coeff"]):
         for a in each(r[0]):
             a.legendre_occ.append((int(value(r[1])), value(r[2])))
@@ -405,7 +426,7 @@ def read(block, st, rows, shift=(0.0, 0.0, 0.0)):
     for a in atoms:
         if (a.legendre_disp or a.legendre_u or a.legendre_occ or a.sawtooth is not None) and a.crenel is None:
             raise ModulationError("Legendre or sawtooth functions without crenel interval")
-        if a.crenel is not None and not 0 < a.crenel[1] <= 1:
+        if a.crenel is not None and not (a.crenel[1] is not None and 0 < a.crenel[1] <= 1):
             raise ModulationError(f"crenel width {a.crenel[1]}")
         if a.crenel is not None and d != 1:
             raise ModulationError("crenel functions in more than one internal dimension")
@@ -467,7 +488,9 @@ def _samples(model, a, W, w, nmax=0, smax=0.0):
         lo, hi = MIN_POINTS[model.d], MAX_POINTS[model.d]
         if a.crenel is not None:
             c, width = a.crenel
-            n = min(hi, max(lo, math.ceil(4 * top[0] * width) + 16))
+            n = max(lo, math.ceil(4 * top[0] * width) + 16)
+            if n > hi:
+                raise ModulationError(f"the crenel interval needs {n} quadrature points (more than {hi})")
             x, gw = np.polynomial.legendre.leggauss(n)
             return (c + width * x / 2)[:, None], gw * width / 2
         # the midpoint rule over a period with n points is exact for frequencies below n
@@ -585,14 +608,15 @@ def _order_indices(d, k):
 def _reflections(model, m, dmin, seen=None):
     """(h, k, l, m) for the given satellite indices m (n, d) with d >= dmin in the CIF's cell; for a commensurate
     structure only those whose scattering vector is not in seen (updated)."""
-    rc = model.cell.reciprocal()
-    astar = np.array([rc.a, rc.b, rc.c])
+    # |h_i + shift_i| = |S . a_i| <= |S| |a_i|: the bound is the axis length (equal to 1/|a*_i| only when a_i is
+    # perpendicular to the other two axes)
+    axes = np.array([model.cell.a, model.cell.b, model.cell.c])
     gstar = np.array(model.cell.reciprocal_metric_tensor().as_mat33().tolist())
     smax = 1 / dmin
     shift = m @ model.q
     out = []
     for mv, sh in zip(m, shift):
-        hmax = np.ceil(smax / astar + np.abs(sh)).astype(int) + 1
+        hmax = np.ceil(smax * axes + np.abs(sh)).astype(int) + 1
         hkl = np.stack(np.meshgrid(*[np.arange(-x, x + 1) for x in hmax], indexing="ij"), -1).reshape(-1, 3)
         S = hkl + sh
         s2 = np.einsum("ni,ij,nj->n", S, gstar, S)
@@ -624,8 +648,9 @@ def _canonical(model, H):
 
 def _intensities_f2(model, H, wavelength):
     """|F|^2 for superspace indices H, each set of symmetry-equivalent reflections calculated once (and remembered
-    for the Cu Ka1 wavelength across calls)."""
-    keys = _canonical(model, H)
+    for the Cu Ka1 wavelength across calls). Not for a commensurate structure: its section t0 is in general not
+    invariant under every superspace operation, so reflections related by one need not have equal |F|."""
+    keys = None if model.t0 is not None else _canonical(model, H)
     if keys is None:
         return np.abs(structure_factors(model, H, wavelength)) ** 2
     uniq, first, inverse = np.unique(keys, return_index=True, return_inverse=True)
@@ -638,8 +663,10 @@ def _intensities_f2(model, H, wavelength):
 
 
 def _commensurate_order(model):
-    """Largest satellite order needed to reach every distinct scattering vector of a commensurate structure."""
-    return max(Fraction(float(x)).limit_denominator(1000).denominator for x in model.q.ravel())
+    """Largest satellite order needed to reach every distinct scattering vector of a commensurate structure: m q_i
+    repeats modulo the lattice after n_i, the least common multiple of q_i's denominators (12 for q = (1/3, 1/4, 0)),
+    so |m_i| up to n_i // 2 reaches every residue."""
+    return max(math.lcm(*(Fraction(float(x)).limit_denominator(1000).denominator for x in q)) // 2 for q in model.q)
 
 
 def calculate(model, basis, cell, dmin, wavelength=pattern.CU_KA1):
@@ -731,7 +758,7 @@ def agreement(model, block):
     or F^2_calc for the observed main and satellite reflections), with the CIF's own f' and f'', neutron
     scattering lengths or electron form factors, and twin domains: R = sum |k F2 - F2_cif| / sum F2_cif, k
     fitted, over all, main and satellite reflections. None if the CIF lists no such values (or its twin law does
-    not map the wave vectors)."""
+    not map the wave vectors); R None, with the reason as "skipped", if they cannot be compared."""
     idx = ["index_h", "index_k", "index_l"] + [f"index_m_{i + 1}" for i in range(model.d)]
     for fc in ("F_squared_calc", "F_calc"):
         t = block.find("_refln_", idx + [fc])
@@ -740,7 +767,7 @@ def agreement(model, block):
     else:
         return None
     rows = [[t[i][j] for j in range(len(idx) + 1)] for i in range(len(t))]
-    rows = [r for r in rows if _num(r[-1]) is not None]
+    rows = [r for r in rows if all(_num(x) is not None for x in r)]
     if len(rows) < 10:
         return None
     H = np.array([[int(_num(x)) for x in r[:-1]] for r in rows])
@@ -749,7 +776,10 @@ def agreement(model, block):
     dispersion, lengths = {}, {}
     for r in _loop(block, "_atom_type_", ["symbol", "?scat_dispersion_real", "?scat_dispersion_imag",
                                                       "?scat_length_neutron"]):
-        el = re.match(r"[A-Za-z]+", gemmi.cif.as_string(r[0])).group(0).capitalize()
+        symbol = re.match(r"[A-Za-z]+", gemmi.cif.as_string(r[0]))
+        if not symbol:  # '?' or a code: names no element
+            continue
+        el = symbol.group(0).capitalize()
         if _num(r[1]) is not None:
             dispersion[el] = complex(_num(r[1]), _num(r[2]) or 0.0)
         if _num(r[3]) is not None:
@@ -759,6 +789,8 @@ def agreement(model, block):
         els = {a.element for a in model.atoms}
         coefs = {el: np.array(gemmi.Element(el).c4322.get_coefs()) for el in els}
         lengths = {el: (lambda s2, c=c: np.exp(-np.outer(s2, c[5:])) @ c[:5]) for el, c in coefs.items()}
+    if lengths and not {a.element for a in model.atoms} <= set(lengths):  # no check possible: say so in the entry
+        return {"R": None, "skipped": "neutron scattering lengths for only some of the elements"}
     twins = _loop(block, "_twin_individual_", ["mass_fraction_refined"] + [
         f"twin_matrix_{i}{j}" for i in (1, 2, 3) for j in (1, 2, 3)])
     twins = [[_num(x) for x in r] for r in twins if all(_num(x) is not None for x in r)] or [[1, 1, 0, 0, 0, 1, 0, 0, 0, 1]]

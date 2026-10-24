@@ -841,7 +841,7 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
         try:
             lines, imax, order, left = _modulated_pattern(modulated, atoms, dummy, shell_sites, basis, st.cell)
             check = superspace.agreement(modulated, block)  # the refinement's own structure factors, if listed
-            if check and not check["R"] <= superspace.AGREEMENT_LIMIT:
+            if check and check["R"] is not None and not check["R"] <= superspace.AGREEMENT_LIMIT:
                 raise superspace.ModulationError(f"the structure factors the CIF lists are not reproduced (R "
                                                  f"{check['R']:.3f})")
         except superspace.ModulationError as e:
@@ -853,7 +853,10 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
             kind = ("commensurately modulated structure: pattern of its supercell" if modulated.t0 is not None
                     else f"modulated structure: pattern with satellites up to order {order}")
             modulation = (kind + (f" (superspace group {modulated.ssg})" if modulated.ssg else "")
-                          + (f"; reproduces the structure factors the CIF lists (R {check['R']:.4f})" if check else "")
+                          + (f"; reproduces the structure factors the CIF lists (R {check['R']:.4f})"
+                             if check and check["R"] is not None else
+                             f"; the structure factors the CIF lists are not compared ({check['skipped']})"
+                             if check else "")
                           + ("; crenel occupancies read as the values within the intervals (the CIF's formula or "
                              "density)" if inside else "")
                           + (f"; higher orders left out (their strongest reflection {left:.3g} of 1000)" if left else "")

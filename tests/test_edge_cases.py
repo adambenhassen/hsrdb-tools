@@ -1251,3 +1251,9 @@ def test_data_block_name_gives_the_cod_id(tmp_path):
     assert build(tmp_path, text).cod_id == 1234567
     named = text.replace("data_1234567", "data_nacl")  # a block name that is no id: the tag gives it
     assert build(tmp_path, named, name="n.cif").cod_id == 7654321
+
+
+@pytest.mark.parametrize("item", ["_cell_wave_vector_x 1/3", "_cell_modulation_dimension one"])
+def test_value_that_is_not_a_number_still_states_a_modulation(tmp_path, item):
+    e = build(tmp_path, cif(NACL_ATOMS, extra=item))
+    assert "gives only the average structure" in e.modulation

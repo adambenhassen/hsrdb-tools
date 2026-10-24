@@ -2,6 +2,7 @@
 
 import math
 
+import gemmi
 import numpy as np
 import pytest
 
@@ -63,7 +64,7 @@ def assert_basic(e, reason):
 
 def build(tmp_path, cif, name="1234567.cif"):
     p = tmp_path / name
-    p.write_text(cif)
+    p.write_text(cif, encoding="utf-8")
     return entry.from_cif(p)
 
 
@@ -170,6 +171,42 @@ def test_commensurate_equals_explicit_supercell(tmp_path):
     assert [round(x.d, 9) for x in mod.lines] == [round(x.d, 9) for x in ref.lines]
     np.testing.assert_allclose([x.intensity for x in mod.lines], [x.intensity for x in ref.lines], rtol=1e-9)
     # per basic cell against per supercell: |F|^2 and the cell volume both double, so I/Ic agrees
+    assert mod.iic == pytest.approx(ref.iic, rel=1e-9)
+
+
+def test_commensurate_section_breaks_superspace_symmetry(tmp_path):
+    """P222(a00), q = a*/3, section t0 = 0.1: the section is not invariant under the operations with x4 -> -x4,
+    so reflections related by them are not equivalent in the supercell and cannot share |F|^2. Explicit supercell
+    3a: each image R xbar + L of the atom carries the displacement R u(eps v), v = t0 + q.(R xbar + L)."""
+    t0, xbar, n = 0.1, (0.13, 0.2, 0.3), 3
+    wx, wy = (0.03, 0.02), (0.03, 0.01)  # cos and sin amplitudes along x and y
+    ops = [((1, 1, 1), 1), ((1, -1, -1), 1), ((-1, 1, -1), -1), ((-1, -1, 1), -1)]  # diagonal R, eps
+    p222 = ("\n".join(",".join(("-" if r < 0 else "") + c for r, c in zip(R, "xyz")) for R, _ in ops),
+            "\n".join(",".join(("-" if r < 0 else "") + c for r, c in zip(R + (e,), ("x1", "x2", "x3", "x4")))
+                      for R, e in ops))
+    tail = displace(f"Cu1 x 1 {wx[0]} {wx[1]}\nCu1 y 1 {wy[0]} {wy[1]}\nCu1 z 1 0 0\n") + "".join(
+        f"_jana_cell_commen_supercell_matrix_{i}_{j} {n if i == j == 1 else int(i == j)}\n"
+        for i in (1, 2, 3) for j in (1, 2, 3)) + f"_jana_cell_commen_t_section_1 {t0}\n"
+    mod = build(tmp_path, text(f"Cu1 Cu {xbar[0]} {xbar[1]} {xbar[2]} 1 {U}", tail, group=p222, q=1 / n), "m.cif")
+
+    def wave(w, v):
+        return w[0] * math.cos(2 * math.pi * v) + w[1] * math.sin(2 * math.pi * v)
+
+    atoms = []
+    for R, eps in ops:
+        for lx in range(n):
+            x = R[0] * xbar[0] + lx
+            v = t0 + x / n
+            atoms.append((x + R[0] * wave(wx, eps * v), R[1] * xbar[1] + R[1] * wave(wy, eps * v), R[2] * xbar[2]))
+    supercell = ("data_1234568\n_cod_database_code 1234568\n_journal_name_full 'Test Journal'\n_journal_year 2020\n"
+                 f"_cell_length_a {4.0 * n}\n_cell_length_b 5.0\n_cell_length_c 6.0\n_cell_angle_alpha 90\n"
+                 "_cell_angle_beta 90\n_cell_angle_gamma 90\n_symmetry_space_group_name_H-M 'P 1'\nloop_\n"
+                 "_atom_site_label\n_atom_site_type_symbol\n_atom_site_fract_x\n_atom_site_fract_y\n"
+                 "_atom_site_fract_z\n_atom_site_occupancy\n_atom_site_U_iso_or_equiv\n"
+                 + "".join(f"Cu{k} Cu {x / n} {y} {z} 1 {U}\n" for k, (x, y, z) in enumerate(atoms)))
+    ref = build(tmp_path, supercell, "1234568.cif")
+    assert [round(x.d, 9) for x in mod.lines] == [round(x.d, 9) for x in ref.lines]
+    np.testing.assert_allclose([x.intensity for x in mod.lines], [x.intensity for x in ref.lines], rtol=1e-9)
     assert mod.iic == pytest.approx(ref.iic, rel=1e-9)
 
 
@@ -403,3 +440,99 @@ def test_superspace_model_from_a_correction(tmp_path, monkeypatch):
     fixes["1234567"]["superspace"] = "loop_\n_x\n"  # not CIF: an error, not a silent basic structure
     with pytest.raises(ValueError, match="superspace"):
         build(tmp_path, basic, "bad.cif")
+
+
+@pytest.mark.parametrize("cell", [(40, 40, 10, 90, 90, 120), (30, 10, 12, 90, 125, 90), (9, 11, 13, 70, 80, 100)])
+def test_reflection_range_covers_oblique_cells(cell):
+    """Every main and first-order reflection with d >= dmin, also where an axis is longer than 1/|a*| (hexagonal,
+    monoclinic with a large beta, triclinic)."""
+    model = superspace.Modulated(gemmi.UnitCell(*cell), np.array([[0.31, 0.12, 0.0]]), [], [], "")
+    gstar = np.array(model.cell.reciprocal_metric_tensor().as_mat33().tolist())
+    dmin, n = 1.0, 45  # beyond the longest axis (40 A) times 1/dmin
+    hkl = np.stack(np.meshgrid(*[np.arange(-n, n + 1)] * 3, indexing="ij"), -1).reshape(-1, 3)
+    for m in (0, 1, -1):
+        S = hkl + m * model.q[0]
+        s2 = np.einsum("ni,ij,nj->n", S, gstar, S)
+        want = {tuple(h) + (m,) for h in hkl[(s2 <= 1 / dmin**2) & (s2 > 1e-12)]}
+        got = {tuple(int(x) for x in h) for h in superspace._reflections(model, np.array([[m]]), dmin)}
+        assert got == want
+
+
+def test_commensurate_satellites_of_mixed_denominators(tmp_path):
+    """q = (1/3, 1/4, 0): the satellites m q repeat only after lcm(3, 4) = 12, so orders up to 4 (the largest
+    denominator) miss some; the pattern must equal the explicit supercell 3a x 4b. The large amplitude makes the
+    satellites of order 5 to 7 strong enough to be lines."""
+    A, t0, xbar = 0.15, 0.1, (0.13, 0.2, 0.3)
+    tail = displace(f"Cu1 x 1 {A} 0.01\nCu1 y 1 0 0\nCu1 z 1 0 0\n") + "".join(
+        f"_jana_cell_commen_supercell_matrix_{i}_{j} {(3, 4, 1)[i - 1] if i == j else 0}\n"
+        for i in (1, 2, 3) for j in (1, 2, 3)) + f"_jana_cell_commen_t_section_1 {t0}\n"
+    cif = text(f"Cu1 Cu {xbar[0]} {xbar[1]} {xbar[2]} 1 {U}", tail).replace("1 0.3 0 0\n", "1 0.333333 0.25 0\n")
+    mod = build(tmp_path, cif, "m.cif")
+    rows = []
+    for lx in range(3):
+        for ly in range(4):
+            v = t0 + (xbar[0] + lx) / 3 + (xbar[1] + ly) / 4
+            u = A * math.cos(2 * math.pi * v) + 0.01 * math.sin(2 * math.pi * v)
+            rows.append(f"Cu{len(rows)} Cu {(xbar[0] + lx + u) / 3} {(xbar[1] + ly) / 4} {xbar[2]} 1 {U}\n")
+    supercell = ("data_1234568\n_cod_database_code 1234568\n_journal_name_full 'Test Journal'\n_journal_year 2020\n"
+                 "_cell_length_a 12.0\n_cell_length_b 20.0\n_cell_length_c 6.0\n_cell_angle_alpha 90\n"
+                 "_cell_angle_beta 90\n_cell_angle_gamma 90\n_symmetry_space_group_name_H-M 'P 1'\nloop_\n"
+                 "_atom_site_label\n_atom_site_type_symbol\n_atom_site_fract_x\n_atom_site_fract_y\n"
+                 "_atom_site_fract_z\n_atom_site_occupancy\n_atom_site_U_iso_or_equiv\n" + "".join(rows))
+    ref = build(tmp_path, supercell, "1234568.cif")
+    assert [round(x.d, 9) for x in mod.lines] == [round(x.d, 9) for x in ref.lines]
+    np.testing.assert_allclose([x.intensity for x in mod.lines], [x.intensity for x in ref.lines], rtol=1e-9)
+
+
+def test_wave_vector_coefficient_that_is_not_a_number(tmp_path):
+    """A Fourier wave vector listed with '?' cannot be evaluated: basic structure, not an internal error."""
+    waves = ("loop_\n_atom_site_Fourier_wave_vector_seq_id\n_atom_site_Fourier_wave_vector_q1_coeff\n1 ?\n")
+    e = build(tmp_path, text(f"Cu1 Cu 0.1 0.2 0.3 1 {U}", displace("Cu1 x 1 0 0.03\n") + waves))
+    assert_basic(e, "wave vector coefficients that are not numbers")
+
+
+def test_unreadable_rows_of_the_check_tables_are_ignored(tmp_path):
+    """Rows of the listed structure factors with an index that is not a number, an atom type that does not start
+    with an element symbol, and neutron scattering lengths for only some elements (no check possible) neither
+    stop the build nor fail it."""
+    cif = text(f"Cu1 Cu 0.1 0.2 0.3 1 {U}", displace("Cu1 x 1 0 0.03\nCu1 z 1 0.01 0\n"))
+    model = build(tmp_path, cif, "m.cif").modulated
+    H = [(h, k, l, m) for h in range(3) for k in range(2) for l in range(2) for m in (-1, 0, 1)][1:]
+    f2 = np.abs(superspace.structure_factors(model, H, 0.71073)) ** 2
+    refln = ("_diffrn_radiation_wavelength 0.71073\nloop_\n_refln_index_h\n_refln_index_k\n_refln_index_l\n"
+             "_refln_index_m_1\n_refln_F_squared_calc\n"
+             + "".join(f"{h} {k} {l} {m} {v:.6g}\n" for (h, k, l, m), v in zip(H, 3 * f2)) + "? 0 0 1 5.0\n")
+    types = "loop_\n_atom_type_symbol\n_atom_type_scat_dispersion_real\n_atom_type_scat_dispersion_imag\n? 0.1 0.2\n"
+    e = build(tmp_path, cif + refln + types, "a.cif")
+    assert "reproduces the structure factors the CIF lists (R 0.0000)" in e.modulation
+    neutron = "loop_\n_atom_type_symbol\n_atom_type_scat_length_neutron\nO 5.803\n"
+    e = build(tmp_path, cif + refln + neutron, "b.cif")
+    assert e.modulated is not None and "reproduces" not in e.modulation
+    assert "structure factors the CIF lists are not compared (neutron scattering lengths for only some" in e.modulation
+
+
+def test_crenel_quadrature_beyond_its_limit_is_an_error(tmp_path):
+    """A crenel interval needing more Gauss points than MAX_POINTS raises instead of being under-sampled."""
+    tail = ("loop_\n_atom_site_occ_special_func_atom_site_label\n_atom_site_occ_special_func_crenel_c\n"
+            "_atom_site_occ_special_func_crenel_w\nCu1 0.5 0.4\n")
+    model = build(tmp_path, text(f"Cu1 Cu 0 0 0 0.4 {U}", tail)).modulated
+    W, w = model.ops[0]
+    assert len(superspace._samples(model, model.atoms[0], W, w, nmax=10)[0]) < superspace.MAX_POINTS[1]
+    with pytest.raises(superspace.ModulationError, match="quadrature points"):
+        superspace._samples(model, model.atoms[0], W, w, nmax=10_000)
+
+
+@pytest.mark.parametrize("tail, reason", [
+    ("loop_\n_atom_site_occ_special_func_atom_site_label\n_atom_site_occ_special_func_crenel_c\n"
+     "_atom_site_occ_special_func_crenel_w\nCu1 0.5 ?\n", "crenel width"),
+    (displace("Cu1 ? 1 0.01 0\n"), "axis"),
+    (displace("Cu1 x 1 nan 0\n"), "not a number"),
+    ("loop_\n_atom_site_U_Fourier_atom_site_label\n_atom_site_U_Fourier_tens_elem\n"
+     "_atom_site_U_Fourier_wave_vector_seq_id\n_atom_site_U_Fourier_param_cos\n_atom_site_U_Fourier_param_sin\n"
+     "Cu1 ? 1 0.001 0\n", "tensor element"),
+    (displace("Cu1 x 1 0.01 0\n") + "loop_\n_atom_site_Fourier_wave_vector_seq_id\n_atom_site_Fourier_wave_vector_x\n"
+     "1 ?\n", "components that are not numbers"),
+])
+def test_modulation_values_that_cannot_be_read(tmp_path, tail, reason):
+    """Malformed modulation values give the basic structure with the reason, not an internal error."""
+    assert_basic(build(tmp_path, text(f"Cu1 Cu 0.1 0.2 0.3 1 {U}", tail)), reason)
