@@ -3,7 +3,7 @@ import sqlite3, struct, sys
 from pathlib import Path
 import gemmi, numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from hsrdb_tools import entry, pattern, sites
+from hsrdb_tools import entry, pattern
 
 cod = int(sys.argv[1]) if len(sys.argv) > 1 else 9009599
 f = Path(f"cod-mirror/cif/{str(cod)[0]}/{str(cod)[1:3]}/{str(cod)[3:5]}/{cod}.cif")

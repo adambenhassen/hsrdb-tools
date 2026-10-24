@@ -1,4 +1,4 @@
-"""Summarise dev/verify_cctbx.py output: python dev/verify_summary.py OUT.tsv [N examples]."""
+"""Summarise dev/verify_cctbx.py output: python dev/archive/verify_summary.py OUT.tsv [N examples]."""
 import collections
 import csv
 import sys

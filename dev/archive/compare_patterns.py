@@ -10,7 +10,7 @@ from pathlib import Path
 
 import gemmi
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from hsrdb_tools import pattern  # noqa: E402
 
 DB = sys.argv[1] if len(sys.argv) > 1 else "COD24_HS4x.hsrdb"

@@ -1,6 +1,6 @@
 """Which reading of near-special sites matches the CIF's own formula?
 
-python dev/near_special_formula.py NEAR_SPECIAL.tsv [-j N] > out.tsv
+python dev/archive/near_special_formula.py NEAR_SPECIAL.tsv [-j N] > out.tsv
 For each CIF listed by dev/near_special.py with images between 0.001 and 0.4 A apart: the largest relative
 difference of a non-H element count in the unit cell from _chemical_formula_sum x Z, for each merge rule in
 POLICIES (images closer than the tolerance are one atom; "occ" rules also merge images up to 0.4 A apart when
@@ -16,8 +16,8 @@ from pathlib import Path
 import gemmi
 import numpy as np
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-sys.path.insert(0, str(Path(__file__).resolve().parent))
 from hsrdb_tools import entry  # noqa: E402
 from verify_cctbx import FORMULA  # noqa: E402
 

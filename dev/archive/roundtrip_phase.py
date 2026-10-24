@@ -6,7 +6,7 @@ import sqlite3
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from hsrdb_tools import phase  # noqa: E402
 
 db = sqlite3.connect(f"file:{sys.argv[3] if len(sys.argv) > 3 else 'COD24_HS4x.hsrdb'}?mode=ro", uri=True)

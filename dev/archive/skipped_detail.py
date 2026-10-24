@@ -1,8 +1,6 @@
 """For skipped CIFs present in the official database: what the official entry holds and what the CIF says now."""
 import re, sqlite3, sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from hsrdb_tools import phase
 
 ref = sqlite3.connect("file:COD24_HS4x.hsrdb?mode=ro", uri=True)
 for line in Path(sys.argv[1]).read_text().splitlines()[1:]:

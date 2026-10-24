@@ -1,12 +1,9 @@
 """Why do entries differ from the official database? Sample large intensity outliers and classify them.
 
-python dev/outlier_causes.py OURS.hsrdb [n]   (needs COD24_HS4x.hsrdb and the COD mirror in cod-mirror/cif)
+python dev/archive/outlier_causes.py OURS.hsrdb [n]   (needs COD24_HS4x.hsrdb and the COD mirror in cod-mirror/cif)
 """
 import collections, random, re, sqlite3, sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from compare_databases import groups  # noqa: E402
 
 ours = sqlite3.connect(f"file:{sys.argv[1]}?mode=ro", uri=True)
 ref = sqlite3.connect("file:COD24_HS4x.hsrdb?mode=ro", uri=True)

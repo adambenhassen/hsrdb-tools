@@ -180,11 +180,11 @@ pytest
 
 The tests cover the formats, space-group settings, pattern calculation, the command line (including interrupted and resumed builds), and regressions for problems found in full COD runs. `tests/data/cod/` holds real COD CIFs, one or more per difficult case, with their stored output in `expected.json`: a change that alters the output of any of them fails `tests/test_cod_regression.py`. If the change is intended, `python dev/update_expected.py` rewrites the file and lists what moved, for review with the change.
 
-`dev/` holds the scripts used to decode the format and to check output:
+`dev/` holds the scripts that check output and investigate differences (one-off ones in `dev/archive/`), and `dev/release.sh`, the release pipeline (build, audit, comparison with COD24, cctbx check, packing); [dev/README.md](dev/README.md) lists them with their inputs. The main checks:
 
 - `audit_database.py` checks every entry of a built database
 - `compare_databases.py` compares a built database with an official one
-- the other scripts compare individual fields; most expect the official `COD24_HS4x.hsrdb` in the working directory
+- `verify_cctbx.py` compares calculated patterns with cctbx
 
 ## Data, credits and trademarks
 

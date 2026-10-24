@@ -1,7 +1,7 @@
 """Line-by-line comparison of our pattern and COD24's for outlier entries whose CIF has not changed."""
 import random, re, sqlite3, sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from compare_databases import groups  # noqa: E402
 
 ours = sqlite3.connect(f"file:{sys.argv[1]}?mode=ro", uri=True)

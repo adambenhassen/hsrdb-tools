@@ -1,6 +1,6 @@
 """Count CIFs with physically invalid anisotropic displacement tensors (a negative eigenvalue).
 
-python dev/scan_adp.py CIF_DIR [workers]
+python dev/archive/scan_adp.py CIF_DIR [workers]
 """
 import multiprocessing
 import sys
@@ -9,7 +9,7 @@ from pathlib import Path
 import gemmi
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from hsrdb_tools import sites  # noqa: E402
 
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 # Run dev/verify_cctbx.py over a CIF list in batches, resumably: verify/batches/NNN.tsv per finished batch (NNN = aa, ab, ...).
-# usage (repo root, host with docker): sh dev/verify_batches.sh LIST BATCH_SIZE WORKERS [--db DB]
+# usage (repo root, host with docker): sh dev/archive/verify_batches.sh LIST BATCH_SIZE WORKERS [--db DB]
 set -eu
 list=$1 size=$2 jobs=$3
 shift 3

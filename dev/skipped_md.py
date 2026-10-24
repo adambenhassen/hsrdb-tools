@@ -82,7 +82,8 @@ def main():
         print(f"| {reason} | {n:,} |")
     print("\n| COD id | Reason | Details | CIF |\n|---|---|---|---|")
     for reason, cod, info in sorted(rows, key=lambda r: (-counts[r[0]], r[0], r[1])):
-        print(f"| {cod} | {reason} | {info.replace('|', '\\|')} | [{cod}.cif](https://www.crystallography.net/cod/{cod}.cif) |")
+        text = info.replace("|", "\\|")
+        print(f"| {cod} | {reason} | {text} | [{cod}.cif](https://www.crystallography.net/cod/{cod}.cif) |")
 
 
 if __name__ == "__main__":

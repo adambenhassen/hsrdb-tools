@@ -135,7 +135,7 @@ def read_structures(path):
     try:
         return reader.build_crystal_structures(), ",".join(sorted(removed))
     except Exception:
-        raise error
+        raise error from None
 
 
 def our_choices(xs, path, e):

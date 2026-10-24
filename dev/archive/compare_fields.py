@@ -6,7 +6,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from hsrdb_tools import entry  # noqa: E402
 
 db = sqlite3.connect("file:COD24_HS4x.hsrdb?mode=ro", uri=True)

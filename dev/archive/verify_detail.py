@@ -1,6 +1,6 @@
 """Site-by-site view of one CIF for dev/verify_cctbx.py discrepancies (cctbx environment).
 
-python dev/verify_detail.py CIF
+python dev/archive/verify_detail.py CIF
 """
 import sys
 from pathlib import Path
@@ -8,12 +8,10 @@ from pathlib import Path
 import numpy as np
 from iotbx import cif as icif
 
-import verify_cctbx  # noqa: F401  (applies the site tolerance to the cctbx CIF builder)
-
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-sys.path.insert(0, str(Path(__file__).resolve().parent))
 from hsrdb_tools import entry  # noqa: E402
-import verify_cctbx as v  # noqa: E402
+import verify_cctbx as v  # noqa: E402  (applies the site tolerance to the cctbx CIF builder)
 
 path = sys.argv[1]
 e = entry.from_cif(path)
