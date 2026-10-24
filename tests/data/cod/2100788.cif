@@ -1,0 +1,68 @@
+#------------------------------------------------------------------------------
+#$Date: 2016-02-14 16:26:36 +0200 (Sun, 14 Feb 2016) $
+#$Revision: 176435 $
+#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/2/10/07/2100788.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/. The original data for this entry
+# were provided by IUCr Journals, http://journals.iucr.org/.
+#
+# The file may be used within the scientific community so long as
+# proper attribution is given to the journal article from which the
+# data were obtained.
+#
+data_2100788
+loop_
+_publ_author_name
+'Rae, A. D.'
+'Thompson, J. G.'
+'Withers, R. L.'
+_publ_section_title
+;
+ Structure refinement of commensurately modulated bismuth strontium
+ tantalate, Bi~2~SrTa~2~O~9~
+;
+_journal_issue                   4
+_journal_name_full               'Acta Crystallographica Section B'
+_journal_page_first              418
+_journal_page_last               428
+_journal_paper_doi               10.1107/S0108768192001654
+_journal_volume                  48
+_journal_year                    1992
+_chemical_formula_sum            'Bi2 O9 Sr Ta2'
+_chemical_formula_weight         1011.47
+_symmetry_cell_setting           orthorhombic
+_symmetry_space_group_name_Hall  'p -2 2a'
+_symmetry_space_group_name_H-M   'A 21 a m'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                90
+_cell_formula_units_Z            4
+_cell_length_a                   5.5306(5)
+_cell_length_b                   5.5344(5)
+_cell_length_c                   24.984(2)
+_cell_volume                     764.72(12)
+_diffrn_radiation_type           Mo
+_diffrn_radiation_wavelength     0.7107
+_exptl_absorpt_coefficient_mu    80.68
+_exptl_crystal_density_diffrn    8.785
+_exptl_crystal_F_000             1688
+_cod_data_source_file            al0520.cif
+_cod_data_source_block           al0520a
+_cod_original_cell_volume        764.7
+_cod_original_formula_sum        'Bi2 O9 Sr1 Ta2'
+_cod_database_code               2100788
+loop_
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+Sr -.0220(11) .5054(2) .5000
+Bi -.0486(8) .47320(10) .7007
+Ta -.0137(12) .00220(10) .5849
+O(1) -.013(4) -.0428(17) .5000
+O(2) -.007(3) .0555(14) .6591(3)
+O(3) .218(2) .241(5) .2492(2)
+O(4) .241(3) .2556(19) .5697(3)
+O(5) .263(2) -.2335(15) .5831(3)

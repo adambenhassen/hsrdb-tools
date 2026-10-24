@@ -1,0 +1,48 @@
+#------------------------------------------------------------------------------
+#$Date: 2016-11-16 04:22:44 +0200 (Wed, 16 Nov 2016) $
+#$Revision: 188498 $
+#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/6/00/00/6000092.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/
+#
+# All data on this site have been placed in the public domain by the
+# contributors.
+#
+data_6000092
+loop_
+_publ_author_name
+'Baldinozzi, G.'
+'Calvarin, G.'
+'Sciau, P.'
+'Grebille, D.'
+'Suard, E.'
+_publ_section_title
+;
+ Neutron Rietveld refinement of the incommensurate phase of the ordered
+ perovskite Pb2CoWO6
+;
+_journal_issue                   4
+_journal_name_full               'Acta Crystallographica B'
+_journal_page_first              570
+_journal_page_last               576
+_journal_paper_doi               10.1107/S0108768100000677
+_journal_volume                  56
+_journal_year                    2000
+_chemical_formula_sum            'Co O6 Pb2 W'
+_space_group_name_H-M_alt        I2/m
+_cell_angle_alpha                90.000
+_cell_angle_beta                 90.047
+_cell_angle_gamma                90.000
+_cell_length_a                   7.9602
+_cell_length_b                   5.6779
+_cell_length_c                   5.6967
+_cell_volume                     257.47
+_cod_database_code               6000092
+loop_
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+? ? ? ?

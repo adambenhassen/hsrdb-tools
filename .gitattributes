@@ -1,0 +1,2 @@
+# CIFs and stored outputs of the regression test: byte for byte on every platform (no CRLF on Windows)
+tests/data/** -text

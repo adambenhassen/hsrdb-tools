@@ -1,0 +1,80 @@
+#------------------------------------------------------------------------------
+#$Date: 2025-01-02 16:49:21 +0200 (Thu, 02 Jan 2025) $
+#$Revision: 297042 $
+#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/2/10/13/2101363.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/. The original data for this entry
+# were provided by IUCr Journals, http://journals.iucr.org/.
+#
+# The file may be used within the scientific community so long as
+# proper attribution is given to the journal article from which the
+# data were obtained.
+#
+data_2101363
+loop_
+_publ_author_name
+'Artioli, G.'
+'Rinaldi, R.'
+'Wilson, C. C.'
+'Zanazzi, P. F.'
+_publ_section_title
+;
+ Single-crystal pulsed neutron diffraction of a highly hydrous beryl
+;
+_journal_issue                   5
+_journal_name_full               'Acta Crystallographica Section B'
+_journal_page_first              733
+_journal_page_last               737
+_journal_paper_doi               10.1107/S0108768194014631
+_journal_volume                  51
+_journal_year                    1995
+_chemical_formula_sum            'Al2 Be3 H2 Na O19 Si6'
+_chemical_formula_weight         578.51
+_symmetry_cell_setting           hexagonal
+_symmetry_space_group_name_Hall  '-P 6 2c'
+_symmetry_space_group_name_H-M   'P 6/m c c'
+_cell_angle_alpha                90.0
+_cell_angle_beta                 90.0
+_cell_angle_gamma                120.0
+_cell_formula_units_Z            2
+_cell_length_a                   9.278(2)
+_cell_length_b                   9.278(2)
+_cell_length_c                   9.195(2)
+_cell_volume                     685.5(3)
+_diffrn_ambient_temperature      100
+_diffrn_radiation_probe          neutron
+_diffrn_radiation_type           Mo
+_diffrn_radiation_wavelength     0.71073
+_cod_data_source_file            na0059.cif
+_cod_data_source_block           na0059a
+_cod_original_formula_sum        'H2 Al2 Be3 Na1 O19 Si6'
+_cod_structure_determination_method 'powder diffraction'
+_cod_database_code               2101363
+loop_
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_U_iso_or_equiv
+Si .3860(5) .1123(6) .0 .0062
+Be .5 .0 .25 .0078
+Al .6667 .3333 .25 0.0095
+O1 .3045(4) .2300(5) .0 .0126
+O2 .4956(3) .1421(3) .1451(2) .0087
+O3 .0 .0 .25 .0236
+H1 .0 .0 .146(4) .0273
+H2 .0 .097 .255 .0273
+Na .0 .0 .0 .0213
+loop_
+_cod_changelog_entry_id
+_cod_changelog_entry_author
+_cod_changelog_entry_date
+_cod_changelog_entry_text
+1 'Vaitkus, Antanas' 2025-01-02T16:45:56+02:00
+;
+ Added the '_diffrn_ambient_temperature', '_diffrn_radiation_probe' and
+ '_cod_structure_determination_method' data items after consulting the original
+ publication.
+;

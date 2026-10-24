@@ -25,3 +25,6 @@ version = {attr = "hsrdb_tools.__version__"}
 
 [tool.setuptools.package-data]
 hsrdb_tools = ["*.json", "*.sql"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

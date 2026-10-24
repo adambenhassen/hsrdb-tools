@@ -1,0 +1,176 @@
+#------------------------------------------------------------------------------
+#$Date: 2016-02-16 22:30:59 +0200 (Tue, 16 Feb 2016) $
+#$Revision: 176467 $
+#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/4/30/27/4302713.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/
+#
+# All data on this site have been placed in the public domain by the
+# contributors.
+#
+data_4302713
+loop_
+_publ_author_name
+'Tae-Soo You'
+'Sven Lidin'
+'Olivier Gourdon'
+'Yaqiao Wu'
+'Gordon J. Miller'
+_publ_section_title
+;
+To What Extent Does the Zintl-Klemm Formalism Work? The
+Eu(Zn1-xGex)2 Series
+;
+_journal_name_full               'Inorganic Chemistry'
+_journal_page_first              6380
+_journal_page_last               6390
+_journal_paper_doi               10.1021/ic900628k
+_journal_volume                  48
+_journal_year                    2009
+_chemical_formula_sum            'Eu Ge1.5 Zn0.5'
+_chemical_formula_weight         293.5
+_chemical_name_systematic        ' ?'
+_space_group_ssg_name            P-3m1(00\g)000
+_symmetry_cell_setting           trigonal
+_symmetry_space_group_name_H-M   'P -3 m 1'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                120
+_cell_formula_units_Z            1
+_cell_length_a                   4.2349
+_cell_length_b                   4.2349
+_cell_length_c                   4.5891
+_cell_modulation_dimension       1
+_cell_volume                     71.276
+_computing_publication_material
+'Jana2006 (Petricek, Dusek & Palatinus, 2006)'
+_computing_structure_refinement
+'Jana2006 (Petricek, Dusek & Palatinus, 2006)'
+_diffrn_ambient_temperature      293
+_diffrn_measurement_device       'four-cycle diffractometer'
+_diffrn_measurement_device_type  'IPDS Stoe'
+_diffrn_measurement_method       '??integration method??'
+_diffrn_radiation_monochromator  graphite
+_diffrn_radiation_source         'X-ray tube'
+_diffrn_radiation_type           'Mo K\a'
+_diffrn_radiation_wavelength     0.71073
+_exptl_absorpt_coefficient_mu    41.248
+_exptl_absorpt_correction_T_max  1.000
+_exptl_absorpt_correction_T_min  1.000
+_exptl_absorpt_correction_type   none
+_exptl_crystal_density_diffrn    6.8363
+_exptl_crystal_F_000             63
+_refine_ls_extinction_coef       2403
+_refine_ls_extinction_method     'B-C type 2 (Becker & Coppens, 1974)'
+_refine_ls_goodness_of_fit_gt    2.81
+_refine_ls_goodness_of_fit_ref   2.31
+_refine_ls_number_parameters     12
+_refine_ls_number_reflns         409
+_refine_ls_R_factor_all          0.1211
+_refine_ls_R_factor_gt           0.0633
+_refine_ls_shift/su_max          0.0319
+_refine_ls_shift/su_mean         0.0100
+_refine_ls_structure_factor_coef F
+_refine_ls_weighting_details     w=1/(\s^2^(F)+0.0001F^2^)
+_refine_ls_weighting_scheme      sigma
+_refine_ls_wR_factor_gt          0.0582
+_refine_ls_wR_factor_ref         0.0656
+_reflns_number_gt                222
+_reflns_number_total             409
+_reflns_threshold_expression     I>3\s(I)
+_cod_data_source_file            ic900628k_si_001_6.cif
+_cod_data_source_block           Eu1Zn0.5Ge1.5
+_cod_depositor_comments
+;
+The following automatic conversions were performed:
+'_exptl_absorpt_correction_type' value 'None' changed to 'none' according
+to '/home/saulius/struct/CIF-dictionaries/cif_core.dic' dictionary named
+'cif_core.dic' version 2.4.1 from 2010-06-29.
+
+Automatic conversion script
+Id: cif_fix_enum 1527 2010-12-29 10:47:43Z saulius 
+;
+_cod_original_cell_volume        71.27618
+_cod_original_formula_sum        'Eu1 Ge1.5 Zn0.5'
+_cod_database_code               4302713
+loop_
+_space_group_symop_ssg_id
+_space_group_symop_ssg_operation_algebraic
+1 x1,x2,x3,x4
+2 -x2,x1-x2,x3,x4
+3 -x1+x2,-x1,x3,x4
+4 x2,x1,-x3,-x4
+5 x1-x2,-x2,-x3,-x4
+6 -x1,-x1+x2,-x3,-x4
+7 -x1,-x2,-x3,-x4
+8 x2,-x1+x2,-x3,-x4
+9 x1-x2,x1,-x3,-x4
+10 -x2,-x1,x3,x4
+11 -x1+x2,x2,x3,x4
+12 x1,x1-x2,x3,x4
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_adp_type
+_atom_site_U_iso_or_equiv
+_atom_site_symmetry_multiplicity
+_atom_site_occupancy
+_atom_site_calc_flag
+_atom_site_refinement_flags
+_atom_site_disorder_assembly
+_atom_site_disorder_group
+Eu Eu 0 0 0 Uani 0.0139(4) 1 0.5 d . . .
+Ge Ge 0.333333 0.666667 0.4889(14) Uani 0.0226(11) 2 0.5 d . . .
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Eu Eu 0.0128(4) 0.0128(4) 0.0162(6) 0.0064(2) 0 0
+Ge Ge 0.0119(6) 0.0119(6) 0.044(3) 0.0059(3) 0 0
+loop_
+_atom_site_displace_Fourier_atom_site_label
+_atom_site_displace_Fourier_axis
+_atom_site_displace_Fourier_wave_vector_seq_id
+_atom_site_displace_Fourier_param_cos
+_atom_site_displace_Fourier_param_sin
+Eu x 1 0 0
+Eu y 1 0 0
+Eu z 1 0 0.0182(8)
+Ge x 1 0 0
+Ge y 1 0 0
+Ge z 1 0.066(5) 0.097(3)
+loop_
+_atom_site_Fourier_wave_vector_seq_id
+_atom_site_Fourier_wave_vector_x
+_atom_site_Fourier_wave_vector_y
+_atom_site_Fourier_wave_vector_z
+1 0.00000 0.00000 0.21997
+loop_
+_atom_site_occ_special_func_atom_site_label
+_atom_site_occ_special_func_crenel_c
+_atom_site_occ_special_func_crenel_w
+Ge 0.178(8) 1
+loop_
+_atom_type_symbol
+_atom_type_scat_dispersion_real
+_atom_type_scat_dispersion_imag
+_atom_type_scat_source
+Eu -0.158 3.668 'International Tables Vol C Tables  4.2.6.8 and 6.1.1.1'
+Zn 0.284 1.430 'International Tables Vol C Tables  4.2.6.8 and 6.1.1.1'
+Ge 0.155 1.800 'International Tables Vol C Tables  4.2.6.8 and 6.1.1.1'
+loop_
+_cell_wave_vector_seq_id
+_cell_wave_vector_x
+_cell_wave_vector_y
+_cell_wave_vector_z
+1 0.00000 0.00000 0.21997

@@ -1,0 +1,75 @@
+#------------------------------------------------------------------------------
+#$Date: 2015-10-11 18:14:01 +0300 (Sun, 11 Oct 2015) $
+#$Revision: 165868 $
+#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/1/53/75/1537595.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/
+#
+# All data on this site have been placed in the public domain by the
+# contributors.
+#
+data_1537595
+loop_
+_publ_author_name
+'Lukaszewicz, K.'
+_publ_section_title
+;
+ Crystal structure of alpha-Ni2 P2 O7
+;
+_journal_name_full
+;
+Bulletin de l'Academie Polonaise des Sciences, Serie des Sciences Chimiques
+;
+_journal_page_first              47
+_journal_page_last               51
+_journal_volume                  15
+_journal_year                    1967
+_chemical_formula_sum            'Ni2 O7 P2'
+_chemical_name_systematic        'Ni2 (P2 O7)'
+_space_group_IT_number           14
+_symmetry_space_group_name_Hall  '-P 2ybc (1/2*x,y,-1/2*x+z)'
+_symmetry_space_group_name_H-M   'P 1 21/c 1 (2*a+c,b,c)'
+_cell_angle_alpha                90
+_cell_angle_beta                 104.94
+_cell_angle_gamma                90
+_cell_formula_units_Z            8
+_cell_length_a                   13.093
+_cell_length_b                   8.275
+_cell_length_c                   8.974
+_cell_volume                     939.417
+_citation_journal_id_ASTM        BAPCAQ
+_cod_data_source_file            Lukaszewicz_BAPCAQ_1967_1869.cif
+_cod_data_source_block           Ni2O7P2
+_cod_original_cell_volume        939.4174
+_cod_database_code               1537595
+loop_
+_symmetry_equiv_pos_as_xyz
+x,y,z
+-x,y+1/2,-z+1/2
+-x,-y,-z
+x,-y-1/2,z-1/2
+x+1/2,y,z+1/2
+-x+1/2,y+1/2,-z+1
+-x+1/2,-y,-z+1/2
+x+1/2,-y-1/2,z
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_U_iso_or_equiv
+P1 P+5 0.4705 0.7294 0.2134 1 0.0
+O6 O-2 0.2611 0.4128 0.1063 1 0.0
+O2 O-2 0.1874 0.7256 0.1379 1 0.0
+Ni1 Ni+2 0.3479 0.0563 0.0246 1 0.0
+O7 O-2 0.4427 0.8909 0.1332 1 0.0
+O5 O-2 0.4883 0.5895 0.1067 1 0.0
+P2 P+5 0.2348 0.2727 0.2007 1 0.0
+Ni2 Ni+2 0.1156 0.9253 0.0054 1 0.0
+O4 O-2 0.2248 0.105 0.1227 1 0.0
+O3 O-2 0.4392 0.2423 0.139 1 0.0
+O1 O-2 0.1233 0.3378 0.2199 1 0.0

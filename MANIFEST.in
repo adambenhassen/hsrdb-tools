@@ -1,0 +1,3 @@
+# the sdist carries the tests with their data, so that they run from it
+graft tests
+global-exclude __pycache__ *.py[cod]

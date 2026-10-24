@@ -1,0 +1,348 @@
+#------------------------------------------------------------------------------
+#$Date: 2016-02-14 16:26:36 +0200 (Sun, 14 Feb 2016) $
+#$Revision: 176435 $
+#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/2/01/49/2014900.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/. The original data for this entry
+# were provided by IUCr Journals, http://journals.iucr.org/.
+#
+# The file may be used within the scientific community so long as
+# proper attribution is given to the journal article from which the
+# data were obtained.
+#
+data_2014900
+loop_
+_publ_author_name
+'Palatinus, Luk\'a\<s'
+'Sch\"onleber, Andreas'
+'van Smaalen, Sander'
+_publ_section_title
+;
+ The twofold superstructure of titanium(III) oxybromide at <i>T</i> =
+ 17.5 K
+;
+_journal_issue                   5
+_journal_name_full               'Acta Crystallographica Section C'
+_journal_page_first              i47
+_journal_page_last               i48
+_journal_paper_doi               10.1107/S010827010500867X
+_journal_volume                  61
+_journal_year                    2005
+_chemical_formula_iupac          'Ti1 O1 Br1'
+_chemical_formula_moiety         'Ti1 O1 Br1'
+_chemical_formula_sum            'Br O Ti'
+_chemical_formula_weight         143.8
+_chemical_name_common            Titanium(III)-oxybromide
+_chemical_name_systematic
+;
+titanium(III) oxybromide
+;
+_space_group_crystal_system      monoclinic
+_symmetry_cell_setting           monoclinic
+_symmetry_space_group_name_Hall  'P -2x 2xabv'
+_symmetry_space_group_name_H-M   'P 21/m 1 1'
+_cell_angle_alpha                90.00(2)
+_cell_angle_beta                 90
+_cell_angle_gamma                90
+_cell_formula_units_Z            4
+_cell_length_a                   3.7852(12)
+_cell_length_b                   6.9366(9)
+_cell_length_c                   8.501(3)
+_cell_measurement_reflns_used    24
+_cell_measurement_temperature    17.5
+_cell_measurement_theta_max      23.014
+_cell_measurement_theta_min      10.040
+_cell_volume                     223.21(11)
+_computing_cell_refinement       DIF4
+_computing_data_collection       'DIF4 (Eichhorn, 1996)'
+_computing_data_reduction
+'REDUCE (Eichhorn, 1991) and JANA2000 (Petricek <i>et al.</i>, 2000)'
+_computing_molecular_graphics    'DIAMOND (Brandenburg, 1999)'
+_computing_publication_material  JANA2000
+_computing_structure_refinement  JANA2000
+_computing_structure_solution    'program (reference)?'
+_diffrn_ambient_temperature      17.5
+_diffrn_measured_fraction_theta_full 0.937
+_diffrn_measured_fraction_theta_max 0.897
+_diffrn_measurement_device_type  'Huber four-circle diffractometer'
+_diffrn_measurement_method       'Profile data with \w scans'
+_diffrn_radiation_monochromator  'double-crystal flat Si(111)'
+_diffrn_radiation_source         synchrotron
+_diffrn_radiation_type           synchrotron
+_diffrn_radiation_wavelength     0.5
+_diffrn_reflns_av_R_equivalents  0.0542
+_diffrn_reflns_av_sigmaI/netI    0.0046
+_diffrn_reflns_limit_h_max       5
+_diffrn_reflns_limit_h_min       -5
+_diffrn_reflns_limit_k_max       3
+_diffrn_reflns_limit_k_min       -9
+_diffrn_reflns_limit_l_max       0
+_diffrn_reflns_limit_l_min       -10
+_diffrn_reflns_number            989
+_diffrn_reflns_reduction_process
+'data processed with the program Reduce (Eichorn, 1991)'
+_diffrn_reflns_theta_full        19.27
+_diffrn_reflns_theta_max         20.48
+_diffrn_reflns_theta_min         1.69
+_diffrn_standards_decay_%        0
+_diffrn_standards_interval_time  90
+_diffrn_standards_number         3
+_exptl_absorpt_coefficient_mu    8.354
+_exptl_absorpt_correction_T_max  0.9776
+_exptl_absorpt_correction_T_min  0.4746
+_exptl_absorpt_correction_type   gaussian
+_exptl_absorpt_process_details   '(Jana2000; Petricek <i>et al.</i>, 2000)'
+_exptl_crystal_colour            'translucent light brown'
+_exptl_crystal_density_diffrn    4.2772
+_exptl_crystal_density_method    'not measured'
+_exptl_crystal_description       platelet
+_exptl_crystal_F_000             260
+_exptl_crystal_size_max          0.27
+_exptl_crystal_size_mid          0.13
+_exptl_crystal_size_min          0.002
+_refine_diff_density_max         0.53
+_refine_diff_density_min         -0.57
+_refine_ls_extinction_coef       0.09(2)
+_refine_ls_extinction_method
+'B-C type 1 Gaussian isotropic (Becker & Coppens, 1974)'
+_refine_ls_goodness_of_fit_ref   1.03
+_refine_ls_hydrogen_treatment    none
+_refine_ls_number_constraints    0
+_refine_ls_number_parameters     21
+_refine_ls_number_reflns         416
+_refine_ls_number_restraints     0
+_refine_ls_R_factor_all          0.0233
+_refine_ls_R_factor_gt           0.0182
+_refine_ls_shift/su_max          0.0001
+_refine_ls_shift/su_mean         0
+_refine_ls_structure_factor_coef F
+_refine_ls_weighting_details     w=1/[\s^2^(F)+0.0004F^2^]
+_refine_ls_weighting_scheme      sigma
+_refine_ls_wR_factor_gt          0.0268
+_refine_ls_wR_factor_ref         0.0287
+_reflns_number_gt                336
+_reflns_number_total             416
+_reflns_threshold_expression     I>3\s(I)
+_cod_data_source_file            sk1825.cif
+_cod_data_source_block           I
+_cod_depositor_comments
+;
+The following automatic conversions were performed:
+
+'_exptl_absorpt_correction_type' value 'Gaussian' changed to
+'gaussian' according to
+/home/saulius/struct/CIF-dictionaries/cif_core.dic dictionary named
+'cif_core.dic' version 2.4.1 from 2010-06-29.
+
+Automatic conversion script
+Id: cif_fix_values 1715 2011-07-08 13:25:40Z adriana 
+;
+_cod_original_cell_volume        223.21(10)
+_cod_original_formula_sum        'Br1 O1 Ti1'
+_cod_database_code               2014900
+_cod_database_fobs_code          2014900
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 x,y,z
+2 1/2+x,3/4-y,-z
+3 1/2-x,3/4-y,-z
+4 -x,y,z
+loop_
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_U_iso_or_equiv
+_atom_site_adp_type
+_atom_site_calc_flag
+_atom_site_refinement_flags
+_atom_site_occupancy
+_atom_site_disorder_assembly
+_atom_site_disorder_group
+_atom_site_type_symbol
+Ti1 0 0.25414(8) 0.11268(8) 0.00280(18) Uani d . 1 . . Ti
+Ti2 0 0.74586(8) 0.10897(7) 0.00280(18) Uani d . 1 . . Ti
+Br1 0 -0.00149(4) 0.32743(4) 0.00364(13) Uani d . 1 . . Br
+Br2 0 0.50149(4) 0.33158(4) 0.00364(13) Uani d . 1 . . Br
+O1 0 0.0025(2) -0.0486(3) 0.0040(6) Uani d . 1 . . O
+O2 0 0.4975(2) -0.0534(3) 0.0040(6) Uani d . 1 . . O
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+_atom_site_aniso_type_symbol
+Ti1 0.0020(3) 0.0020(3) 0.0045(3) 0 0 0 Ti
+Ti2 0.0020(3) 0.0020(3) 0.0045(3) 0 0 0 Ti
+Br1 0.0050(2) 0.0017(2) 0.0042(2) 0 0 0 Br
+Br2 0.0050(2) 0.0017(2) 0.0042(2) 0 0 0 Br
+O1 0.0033(11) 0.0021(10) 0.0066(9) 0 0 0 O
+O2 0.0033(11) 0.0021(10) 0.0066(9) 0 0 0 O
+loop_
+_atom_type_symbol
+_atom_type_scat_dispersion_real
+_atom_type_scat_dispersion_imag
+_atom_type_scat_source
+Ti 0.176 0.230 'International Tables Vol C Tables  4.2.6.8 and 6.1.1.1'
+O 0.004 0.003 'International Tables Vol C Tables  4.2.6.8 and 6.1.1.1'
+Br 0.262 1.356 'International Tables Vol C Tables  4.2.6.8 and 6.1.1.1'
+loop_
+_diffrn_standard_refln_index_h
+_diffrn_standard_refln_index_k
+_diffrn_standard_refln_index_l
+0 -4 -4
+-2 -8 0
+0 0 -4
+loop_
+_geom_angle_atom_site_label_1
+_geom_angle_atom_site_label_2
+_geom_angle_atom_site_label_3
+_geom_angle_site_symmetry_1
+_geom_angle_site_symmetry_3
+_geom_angle
+_geom_angle_publ_flag
+Ti1 Br2 Ti2 . . 84.53(2) yes
+Ti1 Br1 Ti2 . 1_545 87.51(2) yes
+Ti1 O2 Ti2 . . 101.39(9) yes
+Ti1 O1 Ti2 . 1_545 104.91(10) yes
+Ti1 O1 Ti2 . 2_555 99.05(6) yes
+Ti2 O1 Ti2 1_545 2_555 99.32(6) yes
+Ti2 O1 Ti2 2_455 2_555 149.63(13) yes
+Ti1 O2 Ti1 . 2_555 99.25(6) yes
+Ti1 O2 Ti1 2_455 2_555 150.17(13) yes
+Ti1 O2 Ti2 2_555 . 99.52(6) yes
+Ti1 O1 Ti2 . 2_455 99.05(6) no
+Ti2 O1 Ti2 1_545 2_455 99.32(6) no
+Ti2 O1 Ti2 2_455 1_545 99.32(6) no
+Ti2 O1 Ti2 2_555 1_545 99.32(6) no
+Ti2 O1 Ti2 2_555 2_455 149.63(13) no
+Ti1 O2 Ti1 2_555 . 99.25(6) no
+Ti1 O2 Ti1 . 2_455 99.25(6) no
+Ti1 O2 Ti1 2_455 . 99.25(6) no
+Ti1 O2 Ti1 2_555 2_455 150.17(13) no
+Ti1 O2 Ti2 2_455 . 99.52(6) no
+Br1 Ti1 Br2 . . 86.84(2) no
+Br1 Ti1 O1 . . 83.98(6) no
+Br1 Ti1 O2 . . 174.08(6) no
+Br1 Ti1 O2 . 2_455 100.40(6) no
+Br1 Ti1 O2 . 2_555 100.40(6) no
+Br2 Ti1 O1 . . 170.82(6) no
+Br2 Ti1 O2 . . 87.24(6) no
+Br2 Ti1 O2 . 2_455 101.13(6) no
+Br2 Ti1 O2 . 2_555 101.13(6) no
+O1 Ti1 O2 . . 101.94(8) no
+O1 Ti1 O2 . 2_455 80.60(6) no
+O1 Ti1 O2 . 2_555 80.60(6) no
+O2 Ti1 O2 . 2_455 80.75(6) no
+O2 Ti1 O2 . 2_555 80.75(6) no
+O2 Ti1 O2 2_455 . 80.75(6) no
+O2 Ti1 O2 2_455 2_555 150.17(10) no
+O2 Ti1 O2 2_555 . 80.75(6) no
+O2 Ti1 O2 2_555 2_455 150.17(10) no
+Br1 Ti2 Br2 1_565 . 85.19(2) no
+Br1 Ti2 O1 1_565 1_565 83.61(6) no
+Br1 Ti2 O1 1_565 2_455 100.75(6) no
+Br1 Ti2 O1 1_565 2_555 100.75(6) no
+Br1 Ti2 O2 1_565 . 172.04(6) no
+Br2 Ti2 O1 . 1_565 168.80(6) no
+Br2 Ti2 O1 . 2_455 101.47(6) no
+Br2 Ti2 O1 . 2_555 101.47(6) no
+Br2 Ti2 O2 . . 86.85(6) no
+O1 Ti2 O1 1_565 2_455 80.68(6) no
+O1 Ti2 O1 1_565 2_555 80.68(6) no
+O1 Ti2 O2 1_565 . 104.35(8) no
+O1 Ti2 O1 2_455 1_565 80.68(6) no
+O1 Ti2 O1 2_455 2_555 149.63(10) no
+O1 Ti2 O2 2_455 . 80.83(6) no
+O1 Ti2 O1 2_555 1_565 80.68(6) no
+O1 Ti2 O1 2_555 2_455 149.63(10) no
+O1 Ti2 O2 2_555 . 80.83(6) no
+Ti1 O1 O1 . 2_445 108.92(8) no
+Ti1 O1 O1 . 2_545 108.92(8) no
+Ti1 O1 O2 . 2_455 45.49(4) no
+Ti1 O1 O2 . 2_555 45.49(4) no
+Ti2 O1 O1 1_545 2_445 45.37(4) no
+Ti2 O1 O1 1_545 2_545 45.37(4) no
+Ti2 O1 O2 1_545 2_455 108.62(8) no
+Ti2 O1 O2 1_545 2_555 108.62(8) no
+Ti2 O1 O1 2_455 2_445 53.95(4) no
+Ti2 O1 O1 2_455 2_545 139.02(8) no
+Ti2 O1 O2 2_455 2_455 53.56(4) no
+Ti2 O1 O2 2_455 2_555 138.96(8) no
+Ti2 O1 O1 2_555 2_445 139.02(8) no
+Ti2 O1 O1 2_555 2_545 53.95(4) no
+Ti2 O1 O2 2_555 2_455 138.96(8) no
+Ti2 O1 O2 2_555 2_555 53.56(4) no
+O1 O1 O1 2_445 2_545 88.22(7) no
+O1 O1 O2 2_445 2_455 80.39(5) no
+O1 O1 O2 2_445 2_555 143.66(11) no
+O1 O1 O1 2_545 2_445 88.22(7) no
+O1 O1 O2 2_545 2_455 143.66(11) no
+O1 O1 O2 2_545 2_555 80.39(5) no
+O2 O1 O2 2_455 2_555 88.62(7) no
+O2 O1 O2 2_555 2_455 88.62(7) no
+Ti1 O2 O1 . 2_455 106.60(8) no
+Ti1 O2 O1 . 2_555 106.60(8) no
+Ti1 O2 O2 . 2_455 45.71(4) no
+Ti1 O2 O2 . 2_555 45.71(4) no
+Ti1 O2 O1 2_455 2_455 53.91(4) no
+Ti1 O2 O1 2_455 2_555 139.55(8) no
+Ti1 O2 O2 2_455 2_455 53.54(4) no
+Ti1 O2 O2 2_455 2_555 139.48(8) no
+Ti1 O2 O1 2_555 2_455 139.55(8) no
+Ti1 O2 O1 2_555 2_555 53.91(4) no
+Ti1 O2 O2 2_555 2_455 139.48(8) no
+Ti1 O2 O2 2_555 2_555 53.54(4) no
+Ti2 O2 O1 . 2_455 45.61(4) no
+Ti2 O2 O1 . 2_555 45.61(4) no
+Ti2 O2 O2 . 2_455 106.31(8) no
+Ti2 O2 O2 . 2_555 106.31(8) no
+O1 O2 O1 2_455 2_555 88.62(7) no
+O1 O2 O2 2_455 2_455 78.79(5) no
+O1 O2 O2 2_455 2_555 141.69(11) no
+O1 O2 O1 2_555 2_455 88.62(7) no
+O1 O2 O2 2_555 2_455 141.69(11) no
+O1 O2 O2 2_555 2_555 78.79(5) no
+O2 O2 O2 2_455 2_555 88.98(7) no
+O2 O2 O2 2_555 2_455 88.98(7) no
+loop_
+_geom_bond_atom_site_label_1
+_geom_bond_atom_site_label_2
+_geom_bond_site_symmetry_1
+_geom_bond_site_symmetry_2
+_geom_bond_distance
+_geom_bond_publ_flag
+Ti1 Ti2 . . 3.4110(8) yes
+Ti1 Ti2 . 1_545 3.5259(8) yes
+Ti1 Ti1 . 1_455 3.7852(13) yes
+Ti2 Ti2 . 1_455 3.7852(13) yes
+Ti1 Ti1 . 2_455 3.1723(7) yes
+Ti1 Ti2 . 2_455 3.1843(7) yes
+Ti2 Ti2 . 2_455 3.1976(7) yes
+Ti1 O1 . . 2.219(2) yes
+Ti1 O2 . . 2.201(2) yes
+Ti1 O2 . 2_455 1.9586(6) yes
+Ti1 O2 . 2_555 1.9586(6) yes
+Ti2 O1 . 1_565 2.228(2) yes
+Ti2 O1 . 2_455 1.9611(6) yes
+Ti2 O1 . 2_555 1.9611(6) yes
+Ti2 O2 . . 2.208(2) yes
+Ti1 Br1 . . 2.5451(7) yes
+Ti1 Br2 . . 2.5312(7) yes
+Ti2 Br1 . 1_565 2.5535(7) yes
+Ti2 Br2 . . 2.5406(7) yes
+Ti1 Ti1 . 2_555 3.1723(7) no
+Ti1 Ti2 . 2_555 3.1843(7) no
+Ti2 Ti2 . 2_565 3.1976(7) no
+O1 O1 . 2_445 2.7192(19) no
+O1 O1 . 2_545 2.7192(19) no
+O1 O2 . 2_455 2.7093(19) no
+O1 O2 . 2_555 2.7093(19) no
+O2 O2 . 2_455 2.7006(19) no
+O2 O2 . 2_555 2.7006(19) no

@@ -1,0 +1,991 @@
+#------------------------------------------------------------------------------
+#$Date: 2016-02-21 11:56:54 +0200 (Sun, 21 Feb 2016) $
+#$Revision: 176809 $
+#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/2/31/00/2310038.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/. The original data for this entry
+# were provided by IUCr Journals, http://journals.iucr.org/.
+#
+# The file may be used within the scientific community so long as
+# proper attribution is given to the journal article from which the
+# data were obtained.
+#
+data_2310038
+loop_
+_publ_author_name
+'Elcoro, Luis'
+'P\'erez, Olivier'
+'Perez-Mato, J. M.'
+'Pet\<r\'i\<cek, V\'aclav'
+_publ_section_title
+;
+ Unified (3+1)-dimensional superspace description of the 2212-type
+ stair-like [Bi~2~Sr~3~Fe~2~O~9~]~<i>m~</i>[Bi~4~Sr~6~Fe~2~O~16~]
+ family of compounds
+;
+_journal_coeditor_code           BP5040
+_journal_issue                   4
+_journal_name_full               'Acta Crystallographica Section B'
+_journal_page_first              341
+_journal_page_last               355
+_journal_paper_doi               10.1107/S0108768112018095
+_journal_volume                  68
+_journal_year                    2012
+_chemical_formula_sum            'Bi14 Fe12 O61 Sr21'
+_chemical_formula_weight         6411.8
+_chemical_name_systematic        ' ?'
+_space_group_ssg_name            X2/m(\a0\g)0s
+_symmetry_cell_setting           monoclinic
+_cell_angle_alpha                90
+_cell_angle_beta                 81.8989
+_cell_angle_gamma                90
+_cell_formula_units_Z            8
+_cell_length_a                   3.5905
+_cell_length_b                   5.4903
+_cell_length_c                   3.4954
+_cell_measurement_temperature    293
+_cell_modulation_dimension       1
+_cell_volume                     68.217
+_diffrn_ambient_temperature      293
+_diffrn_radiation_probe          x-ray
+_diffrn_radiation_source         'X-ray tube'
+_diffrn_radiation_wavelength     0.71069
+_exptl_crystal_density_diffrn    1248.213
+_exptl_crystal_F_000             59
+_refine_diff_density_max         35.75
+_refine_diff_density_min         -12.86
+_refine_ls_extinction_method     none
+_refine_ls_goodness_of_fit_gt    3.30
+_refine_ls_goodness_of_fit_ref   2.60
+_refine_ls_number_constraints    981
+_refine_ls_number_parameters     158
+_refine_ls_number_reflns         11954
+_refine_ls_number_restraints     0
+_refine_ls_R_factor_all          0.1447
+_refine_ls_R_factor_gt           0.0860
+_refine_ls_shift/su_max          0.0000
+_refine_ls_shift/su_mean         0.0000
+_refine_ls_structure_factor_coef F
+_refine_ls_weighting_details     w=1/(\s^2^(F)+0.0001F^2^)
+_refine_ls_weighting_scheme      sigma
+_refine_ls_wR_factor_gt          0.0998
+_refine_ls_wR_factor_ref         0.1042
+_reflns_number_gt                6846
+_reflns_number_total             11954
+_reflns_threshold_expression     I>3\s(I)
+_cod_data_source_file            bp5040.cif
+_cod_data_source_block           II
+_cod_depositor_comments
+;
+The following automatic conversions were performed:
+
+'_diffrn_radiation_probe' value 'X-ray' changed to 'x-ray' according
+to /home/saulius/struct/CIF-dictionaries/cif_core.dic dictionary
+named 'cif_core.dic' version 2.4.2 from 2011-04-26.
+
+Automatic conversion script
+Id: cif_fix_values 1891 2012-01-12 08:04:46Z andrius 
+;
+_cod_original_cell_volume        68.21695
+_cod_database_code               2310038
+#BEGIN Tags that were not found in dictionaries:
+_jana_cell_commen_supercell_matrix_1_1 4
+_jana_cell_commen_supercell_matrix_1_2 0
+_jana_cell_commen_supercell_matrix_1_3 5
+_jana_cell_commen_supercell_matrix_2_1 0
+_jana_cell_commen_supercell_matrix_2_2 1
+_jana_cell_commen_supercell_matrix_2_3 0
+_jana_cell_commen_supercell_matrix_3_1 -3
+_jana_cell_commen_supercell_matrix_3_2 0
+_jana_cell_commen_supercell_matrix_3_3 8
+_jana_cell_commen_t_section_1    -0.25
+#END Tags that were not found in dictionaries
+loop_
+_space_group_symop_ssg_id
+_space_group_symop_ssg_operation_algebraic
+1 x1,x2,x3,x4
+2 -x1,x2,-x3,-x4+1/2
+3 -x1,-x2,-x3,-x4
+4 x1,-x2,x3,x4+1/2
+5 x1+1/2,x2+1/2,x3+1/2,x4+1/2
+6 -x1+1/2,x2+1/2,-x3+1/2,-x4
+7 -x1+1/2,-x2+1/2,-x3+1/2,-x4+1/2
+8 x1+1/2,-x2+1/2,x3+1/2,x4
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_adp_type
+_atom_site_U_iso_or_equiv
+_atom_site_symmetry_multiplicity
+_atom_site_occupancy
+_atom_site_calc_flag
+Sr Sr 0 0 0 Uani 0.01011(9) 4 0.2234 d
+Bi Bi 0 0 0 Uani 0.01011(9) 8 0.0745 d
+Fe Fe 0 0 0 Uani 0.01011(9) 4 0.1277 d
+O1 O 0 0.4494(8) 0 Uiso 0.0215(8) 4 0.3723 d
+O2 O 0.2395(15) 0.2462(7) 0.2645(15) Uiso 0.0127(7) 8 0.1383 d
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Sr Sr 0.01350(15) 0.00468(14) 0.01352(16) 0 -0.00666(11) 0
+Bi Bi 0.01350(15) 0.00468(14) 0.01352(16) 0 -0.00666(11) 0
+Fe Fe 0.01350(15) 0.00468(14) 0.01352(16) 0 -0.00666(11) 0
+loop_
+_atom_site_displace_Fourier_atom_site_label
+_atom_site_displace_Fourier_axis
+_atom_site_displace_Fourier_wave_vector_seq_id
+_atom_site_displace_Fourier_param_cos
+_atom_site_displace_Fourier_param_sin
+Sr x 1 0 0
+Sr y 1 0 0.00834(9)
+Sr z 1 0 0
+Sr x 2 0 -0.00588(13)
+Sr y 2 0 0
+Sr z 2 0 -0.03459(14)
+Sr x 3 0 0
+Sr y 3 0 0.00963(10)
+Sr z 3 0 0
+Sr x 4 0 -0.19288(15)
+Sr y 4 0 0
+Sr z 4 0 0.09113(17)
+Sr x 5 0 0
+Sr y 5 0 -0.00543(11)
+Sr z 5 0 0
+Sr x 6 0 0.04458(16)
+Sr y 6 0 0
+Sr z 6 0 -0.02751(18)
+Sr x 7 0 0
+Sr y 7 0 -0.00775(9)
+Sr z 7 0 0
+Sr x 8 0 0.03134(16)
+Sr y 8 0 0
+Sr z 8 0 -0.00550(17)
+Sr x 9 0 0
+Sr y 9 0 -0.00227(11)
+Sr z 9 0 0
+Sr x 10 0 -0.04928(15)
+Sr y 10 0 0
+Sr z 10 0 0.07792(16)
+Sr x 11 0 0
+Sr y 11 0 0.00531(12)
+Sr z 11 0 0
+Sr x 12 0 -0.00695(16)
+Sr y 12 0 0
+Sr z 12 0 0.01154(18)
+Sr x 13 0 0
+Sr y 13 0 0.00126(15)
+Sr z 13 0 0
+Sr x 14 0 -0.00975(15)
+Sr y 14 0 0
+Sr z 14 0 -0.00256(17)
+Sr x 15 0 0
+Sr y 15 0 -0.00256(14)
+Sr z 15 0 0
+Sr x 16 0 0.00015(16)
+Sr y 16 0 0
+Sr z 16 0 -0.00640(17)
+Sr x 17 0 0
+Sr y 17 0 0.00008(16)
+Sr z 17 0 0
+Sr x 18 0 -0.02626(16)
+Sr y 18 0 0
+Sr z 18 0 0.01131(17)
+Sr x 19 0 0
+Sr y 19 0 0.00030(17)
+Sr z 19 0 0
+Sr x 20 0 0.00974(16)
+Sr y 20 0 0
+Sr z 20 0 -0.00413(18)
+Sr x 21 0 0
+Sr y 21 0 -0.00160(18)
+Sr z 21 0 0
+Sr x 22 0 0.00605(17)
+Sr y 22 0 0
+Sr z 22 0 -0.00272(19)
+Sr x 23 0 0
+Sr y 23 0 0.0001(2)
+Sr z 23 0 0
+Sr x 24 0 -0.00970(17)
+Sr y 24 0 0
+Sr z 24 0 0.01462(19)
+Sr x 25 0 0
+Sr y 25 0 0.00063(18)
+Sr z 25 0 0
+Sr x 26 0 -0.00439(17)
+Sr y 26 0 0
+Sr z 26 0 0.00544(19)
+Sr x 27 0 0
+Sr y 27 0 0.0003(2)
+Sr z 27 0 0
+Sr x 28 0 0.00146(18)
+Sr y 28 0 0
+Sr z 28 0 -0.0026(2)
+Sr x 29 0 0
+Sr y 29 0 0.0020(2)
+Sr z 29 0 0
+Sr x 30 0 -0.00018(18)
+Sr y 30 0 0
+Sr z 30 0 0.0010(2)
+Sr x 31 0 0
+Sr y 31 0 0.0007(2)
+Sr z 31 0 0
+Sr x 32 0 -0.00735(19)
+Sr y 32 0 0
+Sr z 32 0 0.0055(2)
+Sr x 33 0 0
+Sr y 33 0 0.0021(2)
+Sr z 33 0 0
+Sr x 34 0 0.00470(18)
+Sr y 34 0 0
+Sr z 34 0 -0.0015(2)
+Sr x 35 0 0
+Sr y 35 0 0.0010(2)
+Sr z 35 0 0
+Sr x 36 0 0.00372(18)
+Sr y 36 0 0
+Sr z 36 0 -0.0021(2)
+Sr x 37 0 0
+Sr y 37 0 0.0021(2)
+Sr z 37 0 0
+Sr x 38 0 -0.00475(17)
+Sr y 38 0 0
+Sr z 38 0 0.0041(2)
+Sr x 39 0 0
+Sr y 39 0 -0.0027(2)
+Sr z 39 0 0
+Sr x 40 0 -0.00481(19)
+Sr y 40 0 0
+Sr z 40 0 0.0009(2)
+Bi x 1 0 0
+Bi y 1 0 0.00834(9)
+Bi z 1 0 0
+Bi x 2 0 -0.00588(13)
+Bi y 2 0 0
+Bi z 2 0 -0.03459(14)
+Bi x 3 0 0
+Bi y 3 0 0.00963(10)
+Bi z 3 0 0
+Bi x 4 0 -0.19288(15)
+Bi y 4 0 0
+Bi z 4 0 0.09113(17)
+Bi x 5 0 0
+Bi y 5 0 -0.00543(11)
+Bi z 5 0 0
+Bi x 6 0 0.04458(16)
+Bi y 6 0 0
+Bi z 6 0 -0.02751(18)
+Bi x 7 0 0
+Bi y 7 0 -0.00775(9)
+Bi z 7 0 0
+Bi x 8 0 0.03134(16)
+Bi y 8 0 0
+Bi z 8 0 -0.00550(17)
+Bi x 9 0 0
+Bi y 9 0 -0.00227(11)
+Bi z 9 0 0
+Bi x 10 0 -0.04928(15)
+Bi y 10 0 0
+Bi z 10 0 0.07792(16)
+Bi x 11 0 0
+Bi y 11 0 0.00531(12)
+Bi z 11 0 0
+Bi x 12 0 -0.00695(16)
+Bi y 12 0 0
+Bi z 12 0 0.01154(18)
+Bi x 13 0 0
+Bi y 13 0 0.00126(15)
+Bi z 13 0 0
+Bi x 14 0 -0.00975(15)
+Bi y 14 0 0
+Bi z 14 0 -0.00256(17)
+Bi x 15 0 0
+Bi y 15 0 -0.00256(14)
+Bi z 15 0 0
+Bi x 16 0 0.00015(16)
+Bi y 16 0 0
+Bi z 16 0 -0.00640(17)
+Bi x 17 0 0
+Bi y 17 0 0.00008(16)
+Bi z 17 0 0
+Bi x 18 0 -0.02626(16)
+Bi y 18 0 0
+Bi z 18 0 0.01131(17)
+Bi x 19 0 0
+Bi y 19 0 0.00030(17)
+Bi z 19 0 0
+Bi x 20 0 0.00974(16)
+Bi y 20 0 0
+Bi z 20 0 -0.00413(18)
+Bi x 21 0 0
+Bi y 21 0 -0.00160(18)
+Bi z 21 0 0
+Bi x 22 0 0.00605(17)
+Bi y 22 0 0
+Bi z 22 0 -0.00272(19)
+Bi x 23 0 0
+Bi y 23 0 0.0001(2)
+Bi z 23 0 0
+Bi x 24 0 -0.00970(17)
+Bi y 24 0 0
+Bi z 24 0 0.01462(19)
+Bi x 25 0 0
+Bi y 25 0 0.00063(18)
+Bi z 25 0 0
+Bi x 26 0 -0.00439(17)
+Bi y 26 0 0
+Bi z 26 0 0.00544(19)
+Bi x 27 0 0
+Bi y 27 0 0.0003(2)
+Bi z 27 0 0
+Bi x 28 0 0.00146(18)
+Bi y 28 0 0
+Bi z 28 0 -0.0026(2)
+Bi x 29 0 0
+Bi y 29 0 0.0020(2)
+Bi z 29 0 0
+Bi x 30 0 -0.00018(18)
+Bi y 30 0 0
+Bi z 30 0 0.0010(2)
+Bi x 31 0 0
+Bi y 31 0 0.0007(2)
+Bi z 31 0 0
+Bi x 32 0 -0.00735(19)
+Bi y 32 0 0
+Bi z 32 0 0.0055(2)
+Bi x 33 0 0
+Bi y 33 0 0.0021(2)
+Bi z 33 0 0
+Bi x 34 0 0.00470(18)
+Bi y 34 0 0
+Bi z 34 0 -0.0015(2)
+Bi x 35 0 0
+Bi y 35 0 0.0010(2)
+Bi z 35 0 0
+Bi x 36 0 0.00372(18)
+Bi y 36 0 0
+Bi z 36 0 -0.0021(2)
+Bi x 37 0 0
+Bi y 37 0 0.0021(2)
+Bi z 37 0 0
+Bi x 38 0 -0.00475(17)
+Bi y 38 0 0
+Bi z 38 0 0.0041(2)
+Bi x 39 0 0
+Bi y 39 0 -0.0027(2)
+Bi z 39 0 0
+Bi x 40 0 -0.00481(19)
+Bi y 40 0 0
+Bi z 40 0 0.0009(2)
+Fe x 1 0 0
+Fe y 1 0 0.00834(9)
+Fe z 1 0 0
+Fe x 2 0 -0.00588(13)
+Fe y 2 0 0
+Fe z 2 0 -0.03459(14)
+Fe x 3 0 0
+Fe y 3 0 0.00963(10)
+Fe z 3 0 0
+Fe x 4 0 -0.19288(15)
+Fe y 4 0 0
+Fe z 4 0 0.09113(17)
+Fe x 5 0 0
+Fe y 5 0 -0.00543(11)
+Fe z 5 0 0
+Fe x 6 0 0.04458(16)
+Fe y 6 0 0
+Fe z 6 0 -0.02751(18)
+Fe x 7 0 0
+Fe y 7 0 -0.00775(9)
+Fe z 7 0 0
+Fe x 8 0 0.03134(16)
+Fe y 8 0 0
+Fe z 8 0 -0.00550(17)
+Fe x 9 0 0
+Fe y 9 0 -0.00227(11)
+Fe z 9 0 0
+Fe x 10 0 -0.04928(15)
+Fe y 10 0 0
+Fe z 10 0 0.07792(16)
+Fe x 11 0 0
+Fe y 11 0 0.00531(12)
+Fe z 11 0 0
+Fe x 12 0 -0.00695(16)
+Fe y 12 0 0
+Fe z 12 0 0.01154(18)
+Fe x 13 0 0
+Fe y 13 0 0.00126(15)
+Fe z 13 0 0
+Fe x 14 0 -0.00975(15)
+Fe y 14 0 0
+Fe z 14 0 -0.00256(17)
+Fe x 15 0 0
+Fe y 15 0 -0.00256(14)
+Fe z 15 0 0
+Fe x 16 0 0.00015(16)
+Fe y 16 0 0
+Fe z 16 0 -0.00640(17)
+Fe x 17 0 0
+Fe y 17 0 0.00008(16)
+Fe z 17 0 0
+Fe x 18 0 -0.02626(16)
+Fe y 18 0 0
+Fe z 18 0 0.01131(17)
+Fe x 19 0 0
+Fe y 19 0 0.00030(17)
+Fe z 19 0 0
+Fe x 20 0 0.00974(16)
+Fe y 20 0 0
+Fe z 20 0 -0.00413(18)
+Fe x 21 0 0
+Fe y 21 0 -0.00160(18)
+Fe z 21 0 0
+Fe x 22 0 0.00605(17)
+Fe y 22 0 0
+Fe z 22 0 -0.00272(19)
+Fe x 23 0 0
+Fe y 23 0 0.0001(2)
+Fe z 23 0 0
+Fe x 24 0 -0.00970(17)
+Fe y 24 0 0
+Fe z 24 0 0.01462(19)
+Fe x 25 0 0
+Fe y 25 0 0.00063(18)
+Fe z 25 0 0
+Fe x 26 0 -0.00439(17)
+Fe y 26 0 0
+Fe z 26 0 0.00544(19)
+Fe x 27 0 0
+Fe y 27 0 0.0003(2)
+Fe z 27 0 0
+Fe x 28 0 0.00146(18)
+Fe y 28 0 0
+Fe z 28 0 -0.0026(2)
+Fe x 29 0 0
+Fe y 29 0 0.0020(2)
+Fe z 29 0 0
+Fe x 30 0 -0.00018(18)
+Fe y 30 0 0
+Fe z 30 0 0.0010(2)
+Fe x 31 0 0
+Fe y 31 0 0.0007(2)
+Fe z 31 0 0
+Fe x 32 0 -0.00735(19)
+Fe y 32 0 0
+Fe z 32 0 0.0055(2)
+Fe x 33 0 0
+Fe y 33 0 0.0021(2)
+Fe z 33 0 0
+Fe x 34 0 0.00470(18)
+Fe y 34 0 0
+Fe z 34 0 -0.0015(2)
+Fe x 35 0 0
+Fe y 35 0 0.0010(2)
+Fe z 35 0 0
+Fe x 36 0 0.00372(18)
+Fe y 36 0 0
+Fe z 36 0 -0.0021(2)
+Fe x 37 0 0
+Fe y 37 0 0.0021(2)
+Fe z 37 0 0
+Fe x 38 0 -0.00475(17)
+Fe y 38 0 0
+Fe z 38 0 0.0041(2)
+Fe x 39 0 0
+Fe y 39 0 -0.0027(2)
+Fe z 39 0 0
+Fe x 40 0 -0.00481(19)
+Fe y 40 0 0
+Fe z 40 0 0.0009(2)
+loop_
+_atom_site_Fourier_wave_vector_seq_id
+_jana_atom_site_fourier_wave_vector_q1_coeff
+1 1
+2 2
+3 3
+4 4
+5 5
+6 6
+7 7
+8 8
+9 9
+10 10
+11 11
+12 12
+13 13
+14 14
+15 15
+16 16
+17 17
+18 18
+19 19
+20 20
+21 21
+22 22
+23 23
+24 24
+25 25
+26 26
+27 27
+28 28
+29 29
+30 30
+31 31
+32 32
+33 33
+34 34
+35 35
+36 36
+37 37
+38 38
+39 39
+40 40
+loop_
+_atom_site_occ_special_func_atom_site_label
+_atom_site_occ_special_func_crenel_c
+_atom_site_occ_special_func_crenel_w
+Sr 0.75 0.2234
+Bi 0.8989 0.0745
+Fe 0 0.1277
+O1 0.25 0.3723
+O2 -0.0072(6) 0.1383
+loop_
+_atom_site_U_Fourier_atom_site_label
+_atom_site_U_Fourier_tens_elem
+_atom_site_U_Fourier_wave_vector_seq_id
+_atom_site_U_Fourier_param_cos
+_atom_site_U_Fourier_param_sin
+Sr U11 1 0 0
+Sr U22 1 0 0
+Sr U33 1 0 0
+Sr U12 1 -0.0012(2) 0
+Sr U13 1 0 0
+Sr U23 1 0.0001(2) 0
+Sr U11 2 -0.0037(2) 0
+Sr U22 2 0.0005(2) 0
+Sr U33 2 -0.0010(2) 0
+Sr U12 2 0 0
+Sr U13 2 0.00383(19) 0
+Sr U23 2 0 0
+Sr U11 3 0 0
+Sr U22 3 0 0
+Sr U33 3 0 0
+Sr U12 3 0.0000(2) 0
+Sr U13 3 0 0
+Sr U23 3 0.0009(2) 0
+Sr U11 4 -0.0016(2) 0
+Sr U22 4 -0.00257(19) 0
+Sr U33 4 0.0008(2) 0
+Sr U12 4 0 0
+Sr U13 4 -0.00183(16) 0
+Sr U23 4 0 0
+Sr U11 5 0 0
+Sr U22 5 0 0
+Sr U33 5 0 0
+Sr U12 5 0.0006(2) 0
+Sr U13 5 0 0
+Sr U23 5 -0.00032(19) 0
+Sr U11 6 0.0012(2) 0
+Sr U22 6 -0.00268(17) 0
+Sr U33 6 0.0009(2) 0
+Sr U12 6 0 0
+Sr U13 6 -0.00507(16) 0
+Sr U23 6 0 0
+Sr U11 7 0 0
+Sr U22 7 0 0
+Sr U33 7 0 0
+Sr U12 7 0.0002(2) 0
+Sr U13 7 0 0
+Sr U23 7 0.0005(2) 0
+Sr U11 8 0.00345(19) 0
+Sr U22 8 0.00235(18) 0
+Sr U33 8 -0.0005(2) 0
+Sr U12 8 0 0
+Sr U13 8 0.00013(16) 0
+Sr U23 8 0 0
+Sr U11 9 0 0
+Sr U22 9 0 0
+Sr U33 9 0 0
+Sr U12 9 -0.0001(2) 0
+Sr U13 9 0 0
+Sr U23 9 -0.0003(2) 0
+Sr U11 10 -0.0006(2) 0
+Sr U22 10 0.00065(20) 0
+Sr U33 10 -0.0013(2) 0
+Sr U12 10 0 0
+Sr U13 10 0.00017(17) 0
+Sr U23 10 0 0
+Sr U11 11 0 0
+Sr U22 11 0 0
+Sr U33 11 0 0
+Sr U12 11 0.0010(3) 0
+Sr U13 11 0 0
+Sr U23 11 -0.0003(2) 0
+Sr U11 12 0.0006(2) 0
+Sr U22 12 -0.00026(19) 0
+Sr U33 12 -0.0013(2) 0
+Sr U12 12 0 0
+Sr U13 12 -0.00138(17) 0
+Sr U23 12 0 0
+Sr U11 13 0 0
+Sr U22 13 0 0
+Sr U33 13 0 0
+Sr U12 13 -0.0011(2) 0
+Sr U13 13 0 0
+Sr U23 13 0.0002(2) 0
+Sr U11 14 0.0054(2) 0
+Sr U22 14 0.00216(19) 0
+Sr U33 14 0.0031(2) 0
+Sr U12 14 0 0
+Sr U13 14 -0.00308(16) 0
+Sr U23 14 0 0
+Sr U11 15 0 0
+Sr U22 15 0 0
+Sr U33 15 0 0
+Sr U12 15 -0.0007(2) 0
+Sr U13 15 0 0
+Sr U23 15 0.0000(2) 0
+Sr U11 16 -0.0018(2) 0
+Sr U22 16 0.0002(2) 0
+Sr U33 16 0.0003(2) 0
+Sr U12 16 0 0
+Sr U13 16 0.00178(16) 0
+Sr U23 16 0 0
+Sr U11 17 0 0
+Sr U22 17 0 0
+Sr U33 17 0 0
+Sr U12 17 -0.0005(2) 0
+Sr U13 17 0 0
+Sr U23 17 0.0006(2) 0
+Sr U11 18 0.00271(17) 0
+Sr U22 18 -0.00099(19) 0
+Sr U33 18 0.00094(19) 0
+Sr U12 18 0 0
+Sr U13 18 -0.00102(14) 0
+Sr U23 18 0 0
+Sr U11 19 0 0
+Sr U22 19 0 0
+Sr U33 19 0 0
+Sr U12 19 0.0011(2) 0
+Sr U13 19 0 0
+Sr U23 19 -0.0002(2) 0
+Sr U11 20 -0.0015(2) 0
+Sr U22 20 -0.0018(2) 0
+Sr U33 20 0.0030(2) 0
+Sr U12 20 0 0
+Sr U13 20 -0.00120(16) 0
+Sr U23 20 0 0
+Bi U11 1 0 0
+Bi U22 1 0 0
+Bi U33 1 0 0
+Bi U12 1 -0.0012(2) 0
+Bi U13 1 0 0
+Bi U23 1 0.0001(2) 0
+Bi U11 2 -0.0037(2) 0
+Bi U22 2 0.0005(2) 0
+Bi U33 2 -0.0010(2) 0
+Bi U12 2 0 0
+Bi U13 2 0.00383(19) 0
+Bi U23 2 0 0
+Bi U11 3 0 0
+Bi U22 3 0 0
+Bi U33 3 0 0
+Bi U12 3 0.0000(2) 0
+Bi U13 3 0 0
+Bi U23 3 0.0009(2) 0
+Bi U11 4 -0.0016(2) 0
+Bi U22 4 -0.00257(19) 0
+Bi U33 4 0.0008(2) 0
+Bi U12 4 0 0
+Bi U13 4 -0.00183(16) 0
+Bi U23 4 0 0
+Bi U11 5 0 0
+Bi U22 5 0 0
+Bi U33 5 0 0
+Bi U12 5 0.0006(2) 0
+Bi U13 5 0 0
+Bi U23 5 -0.00032(19) 0
+Bi U11 6 0.0012(2) 0
+Bi U22 6 -0.00268(17) 0
+Bi U33 6 0.0009(2) 0
+Bi U12 6 0 0
+Bi U13 6 -0.00507(16) 0
+Bi U23 6 0 0
+Bi U11 7 0 0
+Bi U22 7 0 0
+Bi U33 7 0 0
+Bi U12 7 0.0002(2) 0
+Bi U13 7 0 0
+Bi U23 7 0.0005(2) 0
+Bi U11 8 0.00345(19) 0
+Bi U22 8 0.00235(18) 0
+Bi U33 8 -0.0005(2) 0
+Bi U12 8 0 0
+Bi U13 8 0.00013(16) 0
+Bi U23 8 0 0
+Bi U11 9 0 0
+Bi U22 9 0 0
+Bi U33 9 0 0
+Bi U12 9 -0.0001(2) 0
+Bi U13 9 0 0
+Bi U23 9 -0.0003(2) 0
+Bi U11 10 -0.0006(2) 0
+Bi U22 10 0.00065(20) 0
+Bi U33 10 -0.0013(2) 0
+Bi U12 10 0 0
+Bi U13 10 0.00017(17) 0
+Bi U23 10 0 0
+Bi U11 11 0 0
+Bi U22 11 0 0
+Bi U33 11 0 0
+Bi U12 11 0.0010(3) 0
+Bi U13 11 0 0
+Bi U23 11 -0.0003(2) 0
+Bi U11 12 0.0006(2) 0
+Bi U22 12 -0.00026(19) 0
+Bi U33 12 -0.0013(2) 0
+Bi U12 12 0 0
+Bi U13 12 -0.00138(17) 0
+Bi U23 12 0 0
+Bi U11 13 0 0
+Bi U22 13 0 0
+Bi U33 13 0 0
+Bi U12 13 -0.0011(2) 0
+Bi U13 13 0 0
+Bi U23 13 0.0002(2) 0
+Bi U11 14 0.0054(2) 0
+Bi U22 14 0.00216(19) 0
+Bi U33 14 0.0031(2) 0
+Bi U12 14 0 0
+Bi U13 14 -0.00308(16) 0
+Bi U23 14 0 0
+Bi U11 15 0 0
+Bi U22 15 0 0
+Bi U33 15 0 0
+Bi U12 15 -0.0007(2) 0
+Bi U13 15 0 0
+Bi U23 15 0.0000(2) 0
+Bi U11 16 -0.0018(2) 0
+Bi U22 16 0.0002(2) 0
+Bi U33 16 0.0003(2) 0
+Bi U12 16 0 0
+Bi U13 16 0.00178(16) 0
+Bi U23 16 0 0
+Bi U11 17 0 0
+Bi U22 17 0 0
+Bi U33 17 0 0
+Bi U12 17 -0.0005(2) 0
+Bi U13 17 0 0
+Bi U23 17 0.0006(2) 0
+Bi U11 18 0.00271(17) 0
+Bi U22 18 -0.00099(19) 0
+Bi U33 18 0.00094(19) 0
+Bi U12 18 0 0
+Bi U13 18 -0.00102(14) 0
+Bi U23 18 0 0
+Bi U11 19 0 0
+Bi U22 19 0 0
+Bi U33 19 0 0
+Bi U12 19 0.0011(2) 0
+Bi U13 19 0 0
+Bi U23 19 -0.0002(2) 0
+Bi U11 20 -0.0015(2) 0
+Bi U22 20 -0.0018(2) 0
+Bi U33 20 0.0030(2) 0
+Bi U12 20 0 0
+Bi U13 20 -0.00120(16) 0
+Bi U23 20 0 0
+Fe U11 1 0 0
+Fe U22 1 0 0
+Fe U33 1 0 0
+Fe U12 1 -0.0012(2) 0
+Fe U13 1 0 0
+Fe U23 1 0.0001(2) 0
+Fe U11 2 -0.0037(2) 0
+Fe U22 2 0.0005(2) 0
+Fe U33 2 -0.0010(2) 0
+Fe U12 2 0 0
+Fe U13 2 0.00383(19) 0
+Fe U23 2 0 0
+Fe U11 3 0 0
+Fe U22 3 0 0
+Fe U33 3 0 0
+Fe U12 3 0.0000(2) 0
+Fe U13 3 0 0
+Fe U23 3 0.0009(2) 0
+Fe U11 4 -0.0016(2) 0
+Fe U22 4 -0.00257(19) 0
+Fe U33 4 0.0008(2) 0
+Fe U12 4 0 0
+Fe U13 4 -0.00183(16) 0
+Fe U23 4 0 0
+Fe U11 5 0 0
+Fe U22 5 0 0
+Fe U33 5 0 0
+Fe U12 5 0.0006(2) 0
+Fe U13 5 0 0
+Fe U23 5 -0.00032(19) 0
+Fe U11 6 0.0012(2) 0
+Fe U22 6 -0.00268(17) 0
+Fe U33 6 0.0009(2) 0
+Fe U12 6 0 0
+Fe U13 6 -0.00507(16) 0
+Fe U23 6 0 0
+Fe U11 7 0 0
+Fe U22 7 0 0
+Fe U33 7 0 0
+Fe U12 7 0.0002(2) 0
+Fe U13 7 0 0
+Fe U23 7 0.0005(2) 0
+Fe U11 8 0.00345(19) 0
+Fe U22 8 0.00235(18) 0
+Fe U33 8 -0.0005(2) 0
+Fe U12 8 0 0
+Fe U13 8 0.00013(16) 0
+Fe U23 8 0 0
+Fe U11 9 0 0
+Fe U22 9 0 0
+Fe U33 9 0 0
+Fe U12 9 -0.0001(2) 0
+Fe U13 9 0 0
+Fe U23 9 -0.0003(2) 0
+Fe U11 10 -0.0006(2) 0
+Fe U22 10 0.00065(20) 0
+Fe U33 10 -0.0013(2) 0
+Fe U12 10 0 0
+Fe U13 10 0.00017(17) 0
+Fe U23 10 0 0
+Fe U11 11 0 0
+Fe U22 11 0 0
+Fe U33 11 0 0
+Fe U12 11 0.0010(3) 0
+Fe U13 11 0 0
+Fe U23 11 -0.0003(2) 0
+Fe U11 12 0.0006(2) 0
+Fe U22 12 -0.00026(19) 0
+Fe U33 12 -0.0013(2) 0
+Fe U12 12 0 0
+Fe U13 12 -0.00138(17) 0
+Fe U23 12 0 0
+Fe U11 13 0 0
+Fe U22 13 0 0
+Fe U33 13 0 0
+Fe U12 13 -0.0011(2) 0
+Fe U13 13 0 0
+Fe U23 13 0.0002(2) 0
+Fe U11 14 0.0054(2) 0
+Fe U22 14 0.00216(19) 0
+Fe U33 14 0.0031(2) 0
+Fe U12 14 0 0
+Fe U13 14 -0.00308(16) 0
+Fe U23 14 0 0
+Fe U11 15 0 0
+Fe U22 15 0 0
+Fe U33 15 0 0
+Fe U12 15 -0.0007(2) 0
+Fe U13 15 0 0
+Fe U23 15 0.0000(2) 0
+Fe U11 16 -0.0018(2) 0
+Fe U22 16 0.0002(2) 0
+Fe U33 16 0.0003(2) 0
+Fe U12 16 0 0
+Fe U13 16 0.00178(16) 0
+Fe U23 16 0 0
+Fe U11 17 0 0
+Fe U22 17 0 0
+Fe U33 17 0 0
+Fe U12 17 -0.0005(2) 0
+Fe U13 17 0 0
+Fe U23 17 0.0006(2) 0
+Fe U11 18 0.00271(17) 0
+Fe U22 18 -0.00099(19) 0
+Fe U33 18 0.00094(19) 0
+Fe U12 18 0 0
+Fe U13 18 -0.00102(14) 0
+Fe U23 18 0 0
+Fe U11 19 0 0
+Fe U22 19 0 0
+Fe U33 19 0 0
+Fe U12 19 0.0011(2) 0
+Fe U13 19 0 0
+Fe U23 19 -0.0002(2) 0
+Fe U11 20 -0.0015(2) 0
+Fe U22 20 -0.0018(2) 0
+Fe U33 20 0.0030(2) 0
+Fe U12 20 0 0
+Fe U13 20 -0.00120(16) 0
+Fe U23 20 0 0
+loop_
+_atom_type_symbol
+_atom_type_scat_dispersion_real
+_atom_type_scat_dispersion_imag
+_atom_type_scat_source
+Bi -4.1077 10.2566 'International Tables Vol C tables 4.2.6.8 and 6.1.1.1'
+Fe 0.3463 0.8444 'International Tables Vol C tables 4.2.6.8 and 6.1.1.1'
+O 0.0106 0.0060 'International Tables Vol C tables 4.2.6.8 and 6.1.1.1'
+Sr -1.5307 3.2498 'International Tables Vol C tables 4.2.6.8 and 6.1.1.1'
+loop_
+_cell_wave_vector_seq_id
+_cell_wave_vector_x
+_cell_wave_vector_y
+_cell_wave_vector_z
+1 0.276596 0.000000 -0.297872
+#BEGIN Loops that were not found in dictionaries:
+loop_
+_jana_atom_site_displace_legendre_atom_site_label
+_jana_atom_site_displace_legendre_axis
+_jana_atom_site_displace_legendre_param_order
+_jana_atom_site_displace_legendre_param_coeff
+O1 x 1 0.179(2)
+O1 y 1 0
+O1 z 1 -0.006(3)
+O1 x 2 0
+O1 y 2 -0.0741(19)
+O1 z 2 0
+O1 x 3 0.257(4)
+O1 y 3 0
+O1 z 3 0.124(4)
+O1 x 4 0
+O1 y 4 0.021(3)
+O1 z 4 0
+O1 x 5 -0.146(5)
+O1 y 5 0
+O1 z 5 0.121(5)
+O1 x 6 0
+O1 y 6 0.030(4)
+O1 z 6 0
+O1 x 7 -0.039(6)
+O1 y 7 0
+O1 z 7 -0.024(7)
+O1 x 8 0
+O1 y 8 -0.019(5)
+O1 z 8 0
+O1 x 9 0.054(7)
+O1 y 9 0
+O1 z 9 -0.141(7)
+O1 x 10 0
+O1 y 10 0.029(5)
+O1 z 10 0
+O2 x 1 -0.084(2)
+O2 y 1 -0.0032(14)
+O2 z 1 0.003(2)
+O2 x 2 0.002(4)
+O2 y 2 -0.0100(19)
+O2 z 2 0.006(4)
+O2 x 3 0.080(3)
+O2 y 3 -0.007(2)
+O2 z 3 -0.080(4)
+O2 x 4 0.003(6)
+O2 y 4 -0.010(3)
+O2 z 4 -0.006(6)
+#END Loops that were not found in dictionaries
