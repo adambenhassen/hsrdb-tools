@@ -70,7 +70,7 @@ def _text(block, tag):
 def _int(block, tag):
     """Integer CIF item, 0 when absent, not a plain number or too large for an int32 field."""
     t = _text(block, tag).strip()
-    return int(t) if t.isdigit() and int(t) < 2**31 else 0
+    return int(t) if t.isascii() and t.isdigit() and int(t) < 2**31 else 0
 
 
 def site_info(st, images):

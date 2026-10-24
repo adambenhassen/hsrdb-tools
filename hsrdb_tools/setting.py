@@ -85,6 +85,8 @@ def _transformed(st, rot, tran, spacegroup):
     for s in st.sites:
         n = s.clone()
         x = rot @ np.array([s.fract.x, s.fract.y, s.fract.z]) + tran
+        # a whole number with rounding noise (-1e-17 % 1.0 == 1.0): exactly 0, whatever the platform's noise
+        x = np.where(np.abs(x - np.rint(x)) < 1e-12, np.rint(x), x)
         n.fract = gemmi.Fractional(*(x % 1.0))
         if s.aniso.nonzero():
             n.aniso = _cart_to_ucif(q @ ucif_to_cart(s.aniso, st.cell) @ q.T, cell)

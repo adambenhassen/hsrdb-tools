@@ -1253,7 +1253,53 @@ def test_data_block_name_gives_the_cod_id(tmp_path):
     assert build(tmp_path, named, name="n.cif").cod_id == 7654321
 
 
+def test_cif_text_that_is_not_utf8_is_skipped(tmp_path):
+    """A Latin-1 accent in a title: a clear skip reason, not an internal error."""
+    p = tmp_path / "1234567.cif"
+    p.write_bytes(cif(NACL_ATOMS, extra="_publ_section_title 'caf\xe9'").encode("latin-1"))
+    with pytest.raises(entry.EntryError, match="not UTF-8"):
+        entry.from_cif(p)
+
+
 @pytest.mark.parametrize("item", ["_cell_wave_vector_x 1/3", "_cell_modulation_dimension one"])
 def test_value_that_is_not_a_number_still_states_a_modulation(tmp_path, item):
     e = build(tmp_path, cif(NACL_ATOMS, extra=item))
     assert "gives only the average structure" in e.modulation
+
+
+def test_journal_numbers_in_other_scripts_read_as_zero():
+    block = gemmi.cif.read_string("data_x\n_journal_volume '²'\n_journal_year '١٩'\n"
+                                  "_journal_page_first 12\n").sole_block()
+    assert [structure._int(block, t) for t in ("_journal_volume", "_journal_year", "_journal_page_first")] == [0, 0, 12]
+
+
+def test_transformed_coordinates_of_whole_numbers_are_exactly_zero():
+    """Rounding noise of a coordinate that is a whole number (-6e-17 on one platform, +2e-17 on another) must give 0,
+    not 1.0 after wrapping into the cell (COD 1010022 stored y = 1.0 on Linux and 2e-17 on macOS)."""
+    st = gemmi.make_small_structure_from_block(gemmi.cif.read_string(cif(NACL_ATOMS, sg="P 1")).sole_block())
+    st.sites[0].fract = gemmi.Fractional(0.3, 0.25, 0.5)
+    out = setting._transformed(st, np.eye(3), np.array([-(0.1 + 0.2), 0.0, 0.0]), st.spacegroup)
+    assert (out.sites[0].fract.x, out.sites[0].fract.y, out.sites[0].fract.z) == (0.0, 0.25, 0.5)
+
+
+def test_cif_with_crlf_line_ends_gives_the_same_entry(tmp_path):
+    """Windows line ends (some COD files, and any CIF checked out on Windows): a multi-line title must not put a
+    carriage return, the comment's line separator, into the comment."""
+    text = cif(NACL_ATOMS, extra="_publ_section_title\n;\nRock salt,\nrefined again\n;")
+    lf = build(tmp_path, text, "lf.cif")
+    crlf = tmp_path / "crlf.cif"
+    crlf.write_bytes(text.replace("\n", "\r\n").encode("utf-8"))
+    e = entry.from_cif(crlf)
+    assert e.comment == lf.comment and "Publication title: Rock salt, refined again" in e.comment.split("\r")
+    assert [(x.d, x.intensity) for x in e.lines] == [(x.d, x.intensity) for x in lf.lines]
+
+
+@pytest.mark.parametrize("content", [b"", b"data_1\n_journal_name_full 'unterminated\n_cell_length_a 5\n",
+                                     b"no data block\n"])
+def test_cif_that_cannot_be_parsed_is_skipped(tmp_path, content):
+    """gemmi raises ValueError for CIF syntax errors and IndexError for an empty file: a skip, not an internal
+    error."""
+    p = tmp_path / "1234567.cif"
+    p.write_bytes(content)
+    with pytest.raises(entry.EntryError, match="unreadable CIF"):
+        entry.from_cif(p)

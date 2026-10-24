@@ -714,7 +714,11 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
     global _K_CORUNDUM
     try:
         block = gemmi.cif.read(str(path)).sole_block()
-    except RuntimeError as e:  # not CIF syntax, or not exactly one data block
+        block.as_string()  # every value is read as UTF-8 text later on: check them all here
+    except UnicodeDecodeError as e:
+        raise EntryError("CIF text is not UTF-8 (e.g. Latin-1 accents)") from e
+    except (RuntimeError, ValueError, IndexError, OSError) as e:
+        # gemmi: ValueError for CIF syntax, RuntimeError for several data blocks, IndexError for none (empty file)
         raise EntryError(f"unreadable CIF: {e}") from e
     cell_values = [_number(block, f"_cell_{t}") for t in ("length_a", "length_b", "length_c",
                                                           "angle_alpha", "angle_beta", "angle_gamma")]
@@ -906,7 +910,7 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
     description = _text(block, "_exptl_crystal_description")
     if description:
         comment.append(f"Crystal description: {description}")
-    title = _text(block, "_publ_section_title").replace("\n", " ")
+    title = _text(block, "_publ_section_title").replace("\r", "").replace("\n", " ")  # \r separates comment lines
     if title:
         comment.append(f"Publication title: {title}")
     if correction:

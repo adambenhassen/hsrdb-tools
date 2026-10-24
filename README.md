@@ -68,7 +68,7 @@ hsrdb-tools add cod/ --hs4 COD_HS4x.hsrdb --hs3 COD_HS3x.hsrdb -j 8
 
 All of COD takes about 6 hours on a 4-core ARM64 Ampere Altra machine and gives two databases of about 7 GB each. Other CIF files work too if each holds one data block and carries a 7-digit COD-style id (a numeric data block name, as in COD, else `_cod_database_code`; COD's own 1010542 carries another entry's `_cod_database_code`).
 
-A build writes `<name>.partial` and renames it only on success, so an interrupted build leaves no half-written database (with `--append`, nothing is committed). CIFs that cannot be converted, for example without coordinates, unit cell or a recognisable space group, are skipped and listed with the reason in a report next to the first output (`--hs4` if given): `COD_HS4x.skipped.tsv` for `COD_HS4x.hsrdb`. Unexpected errors are printed with a traceback and make the command exit with status 1; the databases are still written, without those CIFs.
+A build writes `<name>.partial` and renames it only on success, so an interrupted build leaves no half-written database (with `--append`, nothing is committed). CIFs that cannot be converted, for example without coordinates, unit cell or a recognisable space group, or with text that is not UTF-8, are skipped and listed with the reason in a report next to the first output (`--hs4` if given): `COD_HS4x.skipped.tsv` for `COD_HS4x.hsrdb`. Unexpected errors are printed with a traceback and make the command exit with status 1; the databases are still written, without those CIFs.
 
 ### In HighScore
 
