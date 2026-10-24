@@ -42,7 +42,7 @@ Each line intensity is multiplicity × |F|² × Lorentz-polarisation, for the st
 pip install .
 ```
 
-Requires Python 3.10+, [gemmi](https://gemmi.readthedocs.io), numpy and [spglib](https://spglib.readthedocs.io). A `Dockerfile` with all dependencies is included.
+Requires Python 3.10+, [gemmi](https://gemmi.readthedocs.io), numpy and [spglib](https://spglib.readthedocs.io). `hsrdb-tools --version` prints the version. A `Dockerfile` with all dependencies is included.
 
 ## Build a database
 
@@ -65,10 +65,15 @@ hsrdb-tools add cod/ --hs4 COD_HS4x.hsrdb --hs3 COD_HS3x.hsrdb -j 8
 | `-j N` | worker processes (default: all cores) |
 | `--base DB` | copy an existing database and add only CIFs it does not contain (one output only) |
 | `--append` | add to the given databases in place |
+| `--resume` | continue an interrupted build from its last checkpoint (same arguments otherwise) |
 
 All of COD takes about 6 hours on a 4-core ARM64 Ampere Altra machine and gives two databases of about 7 GB each. Other CIF files work too if each holds one data block and carries a 7-digit COD-style id (a numeric data block name, as in COD, else `_cod_database_code`; COD's own 1010542 carries another entry's `_cod_database_code`).
 
-A build writes `<name>.partial` and renames it only on success, so an interrupted build leaves no half-written database (with `--append`, nothing is committed). CIFs that cannot be converted, for example without coordinates, unit cell or a recognisable space group, or with text that is not UTF-8, are skipped and listed with the reason in a report next to the first output (`--hs4` if given): `COD_HS4x.skipped.tsv` for `COD_HS4x.hsrdb`. Unexpected errors are printed with a traceback and make the command exit with status 1; the databases are still written, without those CIFs.
+A build writes `<name>.partial` and renames it once it is complete, so an interrupted build never leaves a half-written database under the output name. Every 2,000 CIFs it commits a checkpoint: interrupted after the first one (Ctrl-C, a crash, a reboot), it keeps the `.partial` files, and the same command with `--resume` continues from the last checkpoint and gives the same database contents and report as an uninterrupted build. Resuming needs the same CIFs, outputs, `--base` and hsrdb-tools code, and the report as it was (`-j` may differ). Each `.partial` file can be as large as the finished database (about 7 GB for all of COD), and a new build refuses to start over them: resume, or delete them. With `--append`, nothing is committed until the end, and an interrupted build leaves the databases unchanged.
+
+Next to the first output, a successful build writes `COD_HS4x.build.json`, how the databases were built: hsrdb-tools version, a hash of its code and data, the git commit when it runs from a git checkout with git installed (not in the Docker image), the platform, Python, gemmi, numpy and spglib versions, the command, the inputs, start and finish times, the number of resumes, the counts, and any database that could not be compacted.
+
+CIFs that cannot be converted, for example without coordinates, unit cell or a recognisable space group, or with text that is not UTF-8, are skipped and listed with the reason in a report next to the first output (`--hs4` if given): `COD_HS4x.skipped.tsv` for `COD_HS4x.hsrdb`. Unexpected errors are printed with a traceback and make the command exit with status 1; the databases are still written, without those CIFs. The databases are compacted at the end (SQLite `VACUUM`, which needs free space of up to twice a database's size); if that fails, for example on a full disk, they are still written, complete, and the command exits with status 1.
 
 ### In HighScore
 

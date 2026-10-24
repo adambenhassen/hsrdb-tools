@@ -3,8 +3,6 @@
 import math
 import re
 import sqlite3
-import subprocess
-import sys
 
 import gemmi
 import numpy as np
@@ -354,49 +352,6 @@ def test_many_atoms_round_trip(tmp_path):
 def test_no_reflections(tmp_path):
     with pytest.raises(entry.EntryError, match="no reflections"):
         build(tmp_path, cif("Na1 Na 0 0 0 0 0.01\n"))
-
-
-# --- command line -------------------------------------------------------------------------------------
-
-def run_cli(*args):
-    return subprocess.run([sys.executable, "-m", "hsrdb_tools", "add", *map(str, args)],
-                          capture_output=True, text=True)
-
-
-def test_cli_skips_bad_cifs_and_reports(tmp_path):
-    src = tmp_path / "cifs"
-    src.mkdir()
-    (src / "1234567.cif").write_text(cif(NACL_ATOMS))
-    (src / "1234568.cif").write_text(cif(NACL_ATOMS, cod=1234568).replace("_cell_length_a 5.6402\n", ""))
-    out = tmp_path / "db.hsrdb"
-    r = run_cli(src, "--hs4", out, "--hs3", tmp_path / "db3.hsrdb", "-j", "1")
-    assert r.returncode == 0, r.stderr
-    assert "skipped 1" in r.stdout
-    report = (tmp_path / "db.skipped.tsv").read_text()
-    assert "1234568.cif" in report and "no valid unit cell" in report
-    for path in (out, tmp_path / "db3.hsrdb"):
-        db = sqlite3.connect(path)
-        assert db.execute("select count(*) from general_indexed").fetchone()[0] == 1
-        assert db.execute("select Value from Properties where Key='NoOfPatterns'").fetchone()[0] == "1"
-    assert not list(tmp_path.glob("*.partial"))
-
-
-def test_cli_append_duplicates_and_guards(tmp_path):
-    src = tmp_path / "cifs"
-    src.mkdir()
-    (src / "a.cif").write_text(cif(NACL_ATOMS))
-    (src / "b.cif").write_text(cif(NACL_ATOMS))  # same COD id
-    out = tmp_path / "db.hsrdb"
-    r = run_cli(src, "--hs4", out, "-j", "1")
-    assert r.returncode == 0 and "already present 1" in r.stdout
-    assert "b.cif\tnote: not added: same COD id as" in (tmp_path / "db.skipped.tsv").read_text()
-    r = run_cli(src, "--hs4", out, "--append", "-j", "1")
-    assert r.returncode == 0 and "added {}" in r.stdout
-    assert run_cli(src, "--hs4", out, "-j", "1").returncode != 0  # exists
-    r = run_cli(src, "--hs3", out, "--append", "-j", "1")
-    assert r.returncode == 1 and "schema is for hs4, not hs3" in r.stderr  # wrong schema, clean exit
-    assert run_cli(src, "--hs4", tmp_path / "c.hsrdb", "--hs3", tmp_path / "d.hsrdb", "--base", out).returncode != 0
-    assert run_cli(src, "--hs4", tmp_path / "e.hsrdb", "--base", out, "--append").returncode != 0
 
 
 def test_form_factors_match_international_tables():

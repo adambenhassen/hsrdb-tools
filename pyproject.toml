@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "hsrdb-tools"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Build HighScore (.hsrdb) reference databases from Crystallography Open Database CIF files"
 readme = "README.md"
 license = "MIT"
@@ -19,6 +19,9 @@ hsrdb-tools = "hsrdb_tools.__main__:main"
 
 [tool.setuptools]
 packages = ["hsrdb_tools"]
+
+[tool.setuptools.dynamic]
+version = {attr = "hsrdb_tools.__version__"}
 
 [tool.setuptools.package-data]
 hsrdb_tools = ["*.json", "*.sql"]
