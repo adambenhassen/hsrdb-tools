@@ -42,7 +42,14 @@ Each line intensity is multiplicity × |F|² × Lorentz-polarisation, for the st
 pip install .
 ```
 
-Requires Python 3.10+, [gemmi](https://gemmi.readthedocs.io), numpy and [spglib](https://spglib.readthedocs.io). `hsrdb-tools --version` prints the version. A `Dockerfile` with all dependencies is included.
+Requires Python 3.10+, [gemmi](https://gemmi.readthedocs.io), numpy and [spglib](https://spglib.readthedocs.io). `hsrdb-tools --version` prints the version.
+
+Patterns depend on the numerics of gemmi and numpy, so the published databases are built with the exact versions in `requirements-release.txt`, on Python 3.12 (`pip install -r requirements-release.txt .`). The `Dockerfile` installs those; it holds the environment, and the repository is mounted at run time (run from its root):
+
+```
+docker build -t hsrdb .
+docker run --rm -v "$PWD:/w" hsrdb python -m hsrdb_tools add cod/ --hs4 COD_HS4x.hsrdb --hs3 COD_HS3x.hsrdb
+```
 
 ## Build a database
 

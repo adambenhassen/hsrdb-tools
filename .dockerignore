@@ -1,0 +1,4 @@
+# The image needs only the pinned requirements; the repository is mounted at run time. Keeps the COD mirror and
+# build outputs out of the build context.
+*
+!requirements-release.txt

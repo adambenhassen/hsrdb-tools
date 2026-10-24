@@ -1,0 +1,7 @@
+# Exact library versions for release builds, on Python 3.12 as in the Dockerfile (numpy 2.5 needs 3.12 or later).
+# Patterns depend on gemmi's and numpy's numerics, so a release is reproducible only with the same versions:
+# pip install -r requirements-release.txt
+gemmi==0.7.5
+numpy==2.5.3
+spglib==2.7.0
+typing_extensions==4.16.0  # needed by spglib before Python 3.13
