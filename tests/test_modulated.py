@@ -536,3 +536,61 @@ def test_crenel_quadrature_beyond_its_limit_is_an_error(tmp_path):
 def test_modulation_values_that_cannot_be_read(tmp_path, tail, reason):
     """Malformed modulation values give the basic structure with the reason, not an internal error."""
     assert_basic(build(tmp_path, text(f"Cu1 Cu 0.1 0.2 0.3 1 {U}", tail)), reason)
+
+
+CRENEL = ("loop_\n_atom_site_occ_special_func_atom_site_label\n_atom_site_occ_special_func_crenel_c\n"
+          "_atom_site_occ_special_func_crenel_w\n")
+SAWTOOTH = ("loop_\n_atom_site_displace_special_func_atom_site_label\n_atom_site_displace_special_func_sawtooth_ax\n"
+            "_atom_site_displace_special_func_sawtooth_ay\n_atom_site_displace_special_func_sawtooth_az\n"
+            "_atom_site_displace_special_func_sawtooth_c\n_atom_site_displace_special_func_sawtooth_w\n")
+LEGENDRE = ("loop_\n_jana_atom_site_displace_legendre_atom_site_label\n_jana_atom_site_displace_legendre_axis\n"
+            "_jana_atom_site_displace_legendre_param_order\n_jana_atom_site_displace_legendre_param_coeff\n")
+
+
+def commensurate(m11=3, t0=0.1):
+    return "".join(f"_jana_cell_commen_supercell_matrix_{i}_{j} {m11 if i == j == 1 else int(i == j)}\n"
+                   for i in (1, 2, 3) for j in (1, 2, 3)) + f"_jana_cell_commen_t_section_1 {t0}\n"
+
+
+@pytest.mark.parametrize("cif, reason", [
+    (text(f"Cu1 Cu 0.1 0.2 0.3 0.4 {U}", CRENEL + "Cu1 0.5 ?\n" + SAWTOOTH + "Cu1 0.1 0 0 0.5 0.4\n"), "crenel width"),
+    *[(text(f"Cu1 Cu 0.1 0.2 0.3 0.4 {U}", CRENEL + "Cu1 0.5 0.4\n" + LEGENDRE + f"Cu1 x {n} 0.01\n"),
+       "Legendre polynomial order") for n in ("-1", "2.5", "1e6", "1e300", "?")],
+    (text(f"Cu1 Cu 0.1 0.2 0.3 1 {U}", displace("Cu1 x 1 0 0.03\n") + "loop_\n_atom_site_Fourier_wave_vector_seq_id\n"
+          "_atom_site_Fourier_wave_vector_q1_coeff\n1 1e300\n"), "not integers up to 1000"),
+    (text(f"Cu1 Cu 0.1 0.2 0.3 1 {U}", displace("Cu1 x '²' 0 0.03\n")), "Fourier terms without wave vectors"),
+    (text(f"Cu1 Cu 0.1 0.2 0.3 1 {U}", displace("Cu1 x 1 0 0.03\n"), group=("x,y,z", "x1+1e999,x2,x3,x4")),
+     "unreadable superspace operation"),
+    (text(f"Cu1 Cu 0.1 0.2 0.3 1 {U}", displace("Cu1 x 1 0 0.03\n") + commensurate(0), q=1 / 3),
+     "commensurate supercell of 0 basic cells"),
+    (text(f"Cu1 Cu 0.1 0.2 0.3 1 {U}", displace("Cu1 x 1 0 0.03\n") + commensurate(10**6), q=1 / 3),
+     "commensurate supercell of 1e+06 basic cells"),
+    (text(f"Cu1 Cu 0.1 0.2 0.3 1 {U}", displace("Cu1 x 1 0 0.03\n") + commensurate(1)).replace(
+        "1 0.3 0 0\n", "1 0.001003009 0.001009082 0\n"), "period of 988027 basic cells"),  # 1/997, 1/991
+])
+def test_modulation_values_out_of_range(tmp_path, cif, reason):
+    """Values no evaluation can use (a negative or huge order, a coefficient beyond int64, a singular or vast
+    supercell, a satellite period beyond MAX_SUPERCELL) give the basic structure with the reason, promptly, not an
+    internal error or a run without end."""
+    assert_basic(build(tmp_path, cif), reason)
+
+
+def test_sawtooth_without_width_inside_a_crenel_interval(tmp_path):
+    """A sawtooth whose width is '?' takes its crenel interval: evaluated, not an internal error."""
+    e = build(tmp_path, text(f"Cu1 Cu 0.1 0.2 0.3 0.4 {U}", CRENEL + "Cu1 0.5 0.4\n" + SAWTOOTH + "Cu1 0.1 0 0 0.5 ?\n"))
+    assert e.modulated is not None and e.modulated.atoms[0].crenel == (0.5, 0.4)
+
+
+def test_reflection_range_does_not_grow_with_the_wave_vector():
+    """q and q + (10^6, 0, 0) give the same satellites, h shifted by -m 10^6, without a range of 10^6 indices."""
+    cell = gemmi.UnitCell(4, 5, 6, 90, 100, 90)
+    near = superspace.Modulated(cell, np.array([[0.31, 0.12, 0.0]]), [], [], "")
+    far = superspace.Modulated(cell, np.array([[10**6 + 0.31, 0.12, 0.0]]), [], [], "")
+    for m in (1, -1, 2):
+        got = {(int(h) + m * 10**6, int(k), int(l), int(n)) for h, k, l, n in superspace._reflections(far, np.array([[m]]), 1.0)}
+        assert got == {tuple(int(x) for x in r) for r in superspace._reflections(near, np.array([[m]]), 1.0)}
+
+
+def test_commensurate_order_reaches_every_residue():
+    model = superspace.Modulated(gemmi.UnitCell(4, 5, 6, 90, 90, 90), np.array([[1 / 3, 1 / 4, 0.0]]), [], [], "")
+    assert superspace._commensurate_order(model) == 6  # lcm(3, 4) = 12 residues: |m| up to 6

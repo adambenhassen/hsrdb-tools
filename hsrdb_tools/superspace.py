@@ -39,6 +39,9 @@ _IJ = {"u11": (0, 0), "u22": (1, 1), "u33": (2, 2), "u12": (0, 1), "u13": (0, 2)
 MIN_POINTS, MAX_POINTS = {1: 16, 2: 16}, {1: 1024, 2: 160}
 SATELLITE_LIMIT = 0.5
 MAX_ORDER = {1: 64, 2: 12}
+# commensurate: largest supercell (in basic cells) and largest period of the satellites (in basic cells along a wave
+# vector) that are evaluated; COD 2310038 needs 47
+MAX_SUPERCELL = 1000
 # largest R against the structure factors a CIF lists (agreement) for which it is built: the reproduced CIFs agree
 # within 0.9% (rounding of the listed values), the others differ by 2% to 50%
 AGREEMENT_LIMIT = 0.01
@@ -114,7 +117,7 @@ def _op(text, n):
                     W[r, names.index(m.group(2))] += s * (float(Fraction(m.group(1))) if m.group(1) else 1.0)
                 else:
                     w[r] += s * float(Fraction(term))
-            except (ValueError, ZeroDivisionError):
+            except (ValueError, ZeroDivisionError, OverflowError):  # OverflowError: 1e999
                 raise ModulationError(f"unreadable superspace operation {text!r}") from None
     return W, w
 
@@ -168,6 +171,9 @@ def _used_tags(block):
 
 def _lattice_points(M):
     """Basic lattice translations inside the supercell whose axes are the rows of M (in basic units)."""
+    cells = abs(np.linalg.det(M))
+    if not 0.5 < cells <= MAX_SUPERCELL:
+        raise ModulationError(f"commensurate supercell of {cells:.4g} basic cells (1 to {MAX_SUPERCELL} are evaluated)")
     Minv = np.linalg.inv(M)
     lo = np.floor(np.minimum(M, 0).sum(axis=0)).astype(int) - 1
     hi = np.ceil(np.maximum(M, 0).sum(axis=0)).astype(int) + 1
@@ -194,6 +200,8 @@ def _waves(block, d):
         coeffs = [[_num(lp[r, c]) for c in cols] for r in range(lp.length())]
         if any(v is None for row in coeffs for v in row):
             raise ModulationError("Fourier wave vector coefficients that are not numbers")
+        if any(v != round(v) or abs(v) > 1000 for row in coeffs for v in row):  # harmonics: small integers
+            raise ModulationError("Fourier wave vector coefficients that are not integers up to 1000")
         return {lp[r, seq]: np.array([int(v) for v in row]) for r, row in enumerate(coeffs)}
     return None
 
@@ -223,7 +231,7 @@ def _explicit_waves(block, q):
             raise ModulationError("Fourier wave vector components that are not numbers")
         vec = np.array(vec)
         key = lp[r, seq]
-        i = int(key) - 1 if key.isdigit() else -1
+        i = int(key) - 1 if key.isascii() and key.isdigit() else -1  # isdigit alone: also '²', which int rejects
         if 0 <= i < d and np.allclose(q[i, listed], vec, atol=1e-4):
             out[key] = np.eye(d, dtype=int)[i]
             continue
@@ -328,7 +336,7 @@ def read(block, st, rows, shift=(0.0, 0.0, 0.0)):
             if seq not in waves:
                 raise ModulationError(f"unknown wave vector {seq!r}")
             return waves[seq]
-        if d != 1 or not seq.isdigit():
+        if d != 1 or not (seq.isascii() and seq.isdigit()):
             raise ModulationError("Fourier terms without wave vectors")
         return np.array([int(seq)])
 
@@ -378,6 +386,12 @@ def read(block, st, rows, shift=(0.0, 0.0, 0.0)):
             raise ModulationError(f"displacement tensor element {s or v!r}")
         return _IJ[s]
 
+    def order(v):  # of a Legendre polynomial: beyond the crenel quadrature's points it cannot be resolved
+        x = _num(v)
+        if x is None or x != round(x) or not 0 <= x <= MAX_POINTS[1]:
+            raise ModulationError(f"Legendre polynomial order {gemmi.cif.as_string(v)!r}")
+        return int(x)
+
     for r in _terms(block, "_atom_site_displace_Fourier_", ["axis", "wave_vector_seq_id"], ["cos", "sin"]):
         for a in each(r[0]):
             a.disp.append((axis(r[1]), wave(gemmi.cif.as_string(r[2])), value(r[3]), value(r[4])))
@@ -401,19 +415,20 @@ def read(block, st, rows, shift=(0.0, 0.0, 0.0)):
                     # the atom occupies the sawtooth's interval; JANA then writes the occupancy within it (COD
                     # 4002590: Na and Mn alternate on one site, each at occupancy 1 over half of x4)
                     a.crenel, a.occ_inside = interval, True
-                elif not np.allclose(a.crenel, interval):
+                elif None not in (a.crenel[1], interval[1]) and not np.allclose(a.crenel, interval):
+                    # (a missing width is reported below)
                     raise ModulationError("sawtooth and crenel intervals of an atom differ")
     for pre in ("_jana_atom_site_displace_legendre_", "_atom_site_displace_legendre_"):
         for r in _loop(block, pre, ["atom_site_label", "axis", "param_order", "param_coeff"]):
             for a in each(r[0]):
-                a.legendre_disp.append((axis(r[1]), int(value(r[2])), value(r[3])))
+                a.legendre_disp.append((axis(r[1]), order(r[2]), value(r[3])))
     for r in _loop(block, "_jana_atom_site_u_legendre_", ["atom_site_label", "tens_elem", "param_order",
                                                             "param_coeff"]):
         for a in each(r[0]):
-            a.legendre_u.append((element(r[1]), int(value(r[2])), value(r[3])))
+            a.legendre_u.append((element(r[1]), order(r[2]), value(r[3])))
     for r in _loop(block, "_jana_atom_site_occ_legendre_", ["atom_site_label", "param_order", "param_coeff"]):
         for a in each(r[0]):
-            a.legendre_occ.append((int(value(r[1])), value(r[2])))
+            a.legendre_occ.append((order(r[1]), value(r[2])))
     # a function the CIF gives values for must have reached the atoms (another loop layout would otherwise be
     # ignored silently)
     read = {"displace": any(a.disp for a in atoms), "occ": any(a.occf for a in atoms), "u": any(a.uf for a in atoms),
@@ -616,8 +631,9 @@ def _reflections(model, m, dmin, seen=None):
     shift = m @ model.q
     out = []
     for mv, sh in zip(m, shift):
-        hmax = np.ceil(smax * axes + np.abs(sh)).astype(int) + 1
-        hkl = np.stack(np.meshgrid(*[np.arange(-x, x + 1) for x in hmax], indexing="ij"), -1).reshape(-1, 3)
+        # around -shift, so that the range does not grow with the length of the wave vectors
+        lo, hi = np.floor(-sh - smax * axes).astype(int), np.ceil(-sh + smax * axes).astype(int)
+        hkl = np.stack(np.meshgrid(*[np.arange(a, b + 1) for a, b in zip(lo, hi)], indexing="ij"), -1).reshape(-1, 3)
         S = hkl + sh
         s2 = np.einsum("ni,ij,nj->n", S, gstar, S)
         ok = (s2 <= smax**2) & (s2 > 1e-12)
@@ -666,7 +682,11 @@ def _commensurate_order(model):
     """Largest satellite order needed to reach every distinct scattering vector of a commensurate structure: m q_i
     repeats modulo the lattice after n_i, the least common multiple of q_i's denominators (12 for q = (1/3, 1/4, 0)),
     so |m_i| up to n_i // 2 reaches every residue."""
-    return max(math.lcm(*(Fraction(float(x)).limit_denominator(1000).denominator for x in q)) // 2 for q in model.q)
+    period = max(math.lcm(*(Fraction(float(x)).limit_denominator(1000).denominator for x in q)) for q in model.q)
+    if period > MAX_SUPERCELL:
+        raise ModulationError(f"commensurate satellites with a period of {period} basic cells (up to {MAX_SUPERCELL} "
+                              "are evaluated)")
+    return period // 2
 
 
 def calculate(model, basis, cell, dmin, wavelength=pattern.CU_KA1):
