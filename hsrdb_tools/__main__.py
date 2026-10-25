@@ -99,7 +99,7 @@ def _source_sha256():
 def _git(package, *args):
     try:
         r = subprocess.run(["git", "-C", str(package), *args], capture_output=True, text=True, encoding="utf-8",
-                           timeout=10)
+                           errors="surrogateescape", timeout=10)  # a checkout path that is not UTF-8
     except (OSError, subprocess.SubprocessError):  # no git
         return None
     return r.stdout.strip() if r.returncode == 0 else None
@@ -113,14 +113,19 @@ def _provenance():
     # not the commit of another repository that happens to contain an installed copy (a venv inside a project)
     own = top is not None and (Path(top) / "hsrdb_tools").resolve() == package
     commit = _git(package, "describe", "--always", "--dirty", "--abbrev=12") if own else None
+    return {"version": __version__, "source_sha256": _source_sha256(), "git": commit,
+            "python": platform.python_version(), "packages": _packages(), "platform": platform.platform()}
+
+
+def _packages():
+    """Versions of the libraries the patterns depend on (None if not installed as a package)."""
     versions = {}
     for name in ("gemmi", "numpy", "spglib"):
         try:
             versions[name] = metadata.version(name)
         except metadata.PackageNotFoundError:
             versions[name] = None
-    return {"version": __version__, "source_sha256": _source_sha256(), "git": commit,
-            "python": platform.python_version(), "packages": versions, "platform": platform.platform()}
+    return versions
 
 
 def cmd_add(args):
@@ -136,6 +141,13 @@ def cmd_add(args):
     missing = [s for s in args.cifs if not Path(s).exists()]
     if missing:
         sys.exit(f"not found: {', '.join(missing)}")
+    cifs = []
+    for src in args.cifs:
+        found = list(Path(src).rglob("*.cif")) if Path(src).is_dir() else [Path(src)]
+        if not found:  # a wrong directory would give an empty database
+            sys.exit(f"{src}: no .cif files")
+        cifs += found
+    cifs.sort()
     opened = {}
     try:
         for t, p in outputs.items():
@@ -149,16 +161,22 @@ def cmd_add(args):
     dbs = {t: db for t, (db, _) in opened.items()}
     first = next(iter(outputs))
     report = outputs[first].with_suffix(".skipped.tsv")
-    cifs = sorted(Path(p) for src in args.cifs
-                  for p in (Path(src).rglob("*.cif") if Path(src).is_dir() else [Path(src)]))
+    listing = hashlib.sha256()  # the CIFs, and whether any changed (size, modification time)
+    for p in cifs:
+        try:
+            s = p.stat()
+            stamp = f"{s.st_size}\0{s.st_mtime_ns}"
+        except OSError:  # e.g. a broken link: reported as an internal error when its turn comes
+            stamp = "?"
+        listing.update(os.fsencode(p) + f"\0{stamp}\n".encode())
     run = {"inputs": list(map(str, args.cifs)), "outputs": {t: str(p) for t, p in outputs.items()},
-           "base": args.base, "cifs": len(cifs),
-           "cifs_sha256": hashlib.sha256(b"\n".join(map(os.fsencode, cifs))).hexdigest(),
-           "source_sha256": _source_sha256()}  # one build, one version of the code
+           "base": args.base, "cifs": len(cifs), "cifs_sha256": listing.hexdigest(),
+           "source_sha256": _source_sha256(), "packages": _packages()}  # one build, one version of code and libraries
     if args.resume:
         state = {t: _state(db) for t, db in dbs.items()}
         offset = state[first].get("report_offset")
-        problem = ("--resume needs the same CIFs, outputs, --base and hsrdb-tools code as the interrupted build"
+        problem = ("--resume needs the same CIFs, unchanged, and the same outputs, --base, hsrdb-tools code and "
+                   "gemmi, numpy and spglib versions as the interrupted build"
                    if state[first].get("run") != run else
                    f"{report}: the report of the interrupted build is missing or shorter than at its checkpoint"
                    if not (report.exists() and report.stat().st_size >= offset) else None)
@@ -171,16 +189,11 @@ def cmd_add(args):
         present, internal = state[first]["present"], state[first]["internal"]
         problems = collections.Counter(state[first]["problems"])
         built = {code: path for code, path in dbs[first].execute(f"select code, path from {BUILT}")}
-        rep = open(report, "r+", encoding="utf-8", errors="backslashreplace")  # file names that are not UTF-8
-        rep.truncate(offset)  # lines written after the checkpoint come again
-        rep.seek(0, os.SEEK_END)
     else:
         done, started, resumes = 0, _now(), 0
         added, problems = collections.Counter(), collections.Counter()
         present = internal = 0
         built = {}  # reference code -> first CIF added with it in this build
-        rep = open(report, "w", encoding="utf-8", errors="backslashreplace")
-        rep.write("file\tproblem\n")
     existing = {t: {int(c) for (c,) in db.execute("select ProductID from general_indexed")} for t, db in dbs.items()}
     new_built = []  # (reference code, CIF) added since the last checkpoint
     checkpoints = not args.append  # --append writes in place: nothing is committed until the end
@@ -240,6 +253,13 @@ def cmd_add(args):
     ok = False
     finished = []  # outputs whose private tables are dropped
     try:
+        if args.resume:
+            rep = open(report, "r+", encoding="utf-8", errors="backslashreplace")  # file names that are not UTF-8
+            rep.truncate(offset)  # lines written after the checkpoint come again
+            rep.seek(0, os.SEEK_END)
+        else:
+            rep = open(report, "w", encoding="utf-8", errors="backslashreplace")
+            rep.write("file\tproblem\n")
         with ProcessPoolExecutor(args.jobs) as pool, rep:
             jobs = [(p, tuple(outputs)) for p in cifs[done:]]
             for i, result in enumerate(pool.map(build.prepare, jobs, chunksize=16), done + 1):
@@ -292,7 +312,14 @@ def cmd_add(args):
                 "outputs": {t: {"path": str(p), "patterns": patterns[t], "added": added[t]} for t, p in outputs.items()},
                 "already_present": present, "skipped": sum(problems.values()), "internal_errors": internal,
                 "report": str(report), "not_compacted": not_compacted}
-    outputs[first].with_suffix(".build.json").write_text(json.dumps(manifest, indent=1) + "\n", encoding="utf-8")
+    text, manifest_path = json.dumps(manifest, indent=1) + "\n", outputs[first].with_suffix(".build.json")
+    try:
+        manifest_path.write_text(text, encoding="utf-8")
+        written = True
+    except OSError as e:  # e.g. disk full: the databases are complete, keep the record in the log
+        written = False
+        print(f"{manifest_path}: cannot be written ({e}); the databases are complete, and it would hold:\n{text}",
+              file=sys.stderr, end="")
     print(f"added {dict(added)}, already present {present}, skipped {sum(problems.values())} (listed in {report})")
     for reason, n in problems.most_common(15):
         print(f"  {n:7d}  {reason}")
@@ -301,7 +328,7 @@ def cmd_add(args):
               f"sqlite3 {outputs[t]} VACUUM", file=sys.stderr)
     if internal:
         sys.exit(f"{internal} internal errors: bugs in hsrdb-tools, tracebacks above")
-    if not_compacted:
+    if not_compacted or not written:
         sys.exit(1)
 
 

@@ -26,6 +26,11 @@ def write(path, text):
     return path
 
 
+def private_tables(db):
+    """The build's own tables (checkpoint state), which a finished database must not hold."""
+    return db.execute("select name from sqlite_master where name like 'hsrdb_tools%'").fetchall()
+
+
 def test_cli_skips_bad_cifs_and_reports(tmp_path):
     src = tmp_path / "cifs"
     src.mkdir()
@@ -41,6 +46,7 @@ def test_cli_skips_bad_cifs_and_reports(tmp_path):
         db = sqlite3.connect(path)
         assert db.execute("select count(*) from general_indexed").fetchone()[0] == 1
         assert db.execute("select Value from Properties where Key='NoOfPatterns'").fetchone()[0] == "1"
+        assert not private_tables(db)
         db.close()
     assert not list(tmp_path.glob("*.partial"))
     manifest = json.loads((tmp_path / "db.build.json").read_text(encoding="utf-8"))
@@ -64,13 +70,20 @@ def test_cli_append_duplicates_and_guards(tmp_path):
     assert run_cli("add", src, "--hs4", out, "-j", "1").returncode != 0  # exists
     r = run_cli("add", src, "--hs3", out, "--append", "-j", "1")
     assert r.returncode == 1 and "schema is for hs4, not hs3" in r.stderr  # wrong schema, clean exit
-    assert run_cli("add", src, "--hs4", tmp_path / "c.hsrdb", "--hs3", tmp_path / "d.hsrdb", "--base", out).returncode != 0
-    assert run_cli("add", src, "--hs4", tmp_path / "e.hsrdb", "--base", out, "--append").returncode != 0
-    assert run_cli("add", src, "--hs4", tmp_path / "f.hsrdb", "--append", "--resume").returncode != 0
-    assert run_cli("add", tmp_path / "missing.cif", "--hs4", tmp_path / "g.hsrdb", "--append").returncode != 0
-    assert run_cli("add", src).returncode != 0  # no output
+    for args, message in (
+            (("--hs4", tmp_path / "c.hsrdb", "--hs3", tmp_path / "d.hsrdb", "--base", out), "--base extends one"),
+            (("--hs4", out, "--base", out, "--append"), "either --base or --append"),
+            (("--hs4", out, "--append", "--resume"), "--append builds in place and has nothing to resume"),
+            ((), "give --hs4 and/or --hs3")):
+        r = run_cli("add", src, *args)
+        assert r.returncode == 1 and message in r.stderr, (args, r.stderr)
+    r = run_cli("add", tmp_path / "missing.cif", "--hs4", out, "--append")
+    assert r.returncode == 1 and "not found: " in r.stderr
     r = run_cli("add", src, tmp_path / "missing", "--hs4", tmp_path / "h.hsrdb")
     assert r.returncode != 0 and "not found:" in r.stderr and not list(tmp_path.glob("h.*"))
+    (tmp_path / "empty").mkdir()  # a wrong directory: an error, not an empty database
+    r = run_cli("add", src, tmp_path / "empty", "--hs4", tmp_path / "i.hsrdb")
+    assert r.returncode == 1 and "empty: no .cif files" in r.stderr and not list(tmp_path.glob("i.*"))
     assert not list(tmp_path.glob("*.partial"))
 
 
@@ -193,10 +206,37 @@ def test_cli_interrupted_build_resumes_to_the_same_databases(tmp_path, monkeypat
         cli.main(args)
     with pytest.raises(SystemExit, match="same CIFs"):
         cli.main(["add", str(src / "1234560.cif"), *args[2:], "--resume"])
+    with pytest.raises(SystemExit, match="nothing to resume"):  # a typing error in the second output
+        cli.main([*args[:5], str(out / "typo.hsrdb"), *args[6:], "--resume"])
+    real_packages = cli._packages
+    monkeypatch.setattr(cli, "_packages", lambda: real_packages() | {"numpy": "0.0"})
+    with pytest.raises(SystemExit, match="numpy and spglib versions"):  # other numerics, another pattern
+        cli.main(args + ["--resume"])
+    monkeypatch.setattr(cli, "_packages", real_packages)
+    changed = src / "1234566.cif"
+    before, stat = changed.read_bytes(), changed.stat()
+    changed.write_bytes(before + b"# revised\n")  # a mirror updated in between
+    with pytest.raises(SystemExit, match="same CIFs, unchanged"):
+        cli.main(args + ["--resume"])
+    changed.write_bytes(before)
+    os.utime(changed, ns=(stat.st_atime_ns, stat.st_mtime_ns))
+    real_add = hsrdb.add
+
+    def crash_now(*a, **k):
+        raise KeyboardInterrupt
+
+    monkeypatch.setattr(hsrdb, "add", crash_now)
+    with pytest.raises(KeyboardInterrupt):  # a resume interrupted before its own first checkpoint
+        cli.main(args + ["--resume"])
+    monkeypatch.setattr(hsrdb, "add", real_add)
+    assert (out / "db4.hsrdb.partial").exists() and (out / "db3.hsrdb.partial").exists()  # kept by all of these
     cli.main(args[:-1] + ["2", "--resume"])  # -j may differ
     assert sorted(p.name for p in out.iterdir()) == ["db3.hsrdb", "db4.build.json", "db4.hsrdb", "db4.skipped.tsv"]
     for name in ("db4.hsrdb", "db3.hsrdb"):
         assert _content(out / name) == _content(ref / name)
+        db = sqlite3.connect(out / name)
+        assert not private_tables(db)
+        db.close()
     assert (out / "db4.skipped.tsv").read_text(encoding="utf-8") == (ref / "db4.skipped.tsv").read_text(encoding="utf-8")
     manifest = json.loads((out / "db4.build.json").read_text(encoding="utf-8"))
     assert manifest["resumes"] == 1 and manifest["already_present"] == 2 and manifest["skipped"] == 1
@@ -311,3 +351,58 @@ def test_cli_failure_while_finishing_is_not_offered_as_resumable(tmp_path, monke
         cli.main(["add", str(src), "--hs4", str(tmp_path / "db4.hsrdb"), "--hs3", str(tmp_path / "db3.hsrdb"),
                   "-j", "1"])
     assert "interrupted while finishing" in capsys.readouterr().err
+
+
+def test_cli_resumed_build_keeps_the_internal_errors_of_its_first_part(tmp_path, monkeypatch):
+    """An internal error before the interruption still fails the resumed build: exit 1, counted in the manifest."""
+    src = _sources(tmp_path, 3)
+    write(src / "0.cif", cif(NACL_ATOMS, cod=1544611))  # first; the correction for COD 1544611 names absent sites
+    monkeypatch.setattr(cli, "CHECKPOINT", 1)
+    real, calls = hsrdb.add, []
+
+    def crash_on_second(*a, **k):
+        calls.append(1)
+        if len(calls) == 2:
+            raise KeyboardInterrupt
+        return real(*a, **k)
+
+    monkeypatch.setattr(hsrdb, "add", crash_on_second)
+    args = ["add", str(src), "--hs4", str(tmp_path / "db.hsrdb"), "-j", "1"]
+    with pytest.raises(KeyboardInterrupt):
+        cli.main(args)
+    monkeypatch.setattr(hsrdb, "add", real)
+    with pytest.raises(SystemExit, match="1 internal errors"):
+        cli.main(args + ["--resume"])
+    manifest = json.loads((tmp_path / "db.build.json").read_text(encoding="utf-8"))
+    assert manifest["internal_errors"] == 1 and manifest["resumes"] == 1
+
+
+def test_cli_report_that_cannot_be_opened_leaves_no_partial_file(tmp_path):
+    src = write(tmp_path / "1234567.cif", cif(NACL_ATOMS))
+    (tmp_path / "db.skipped.tsv").mkdir()
+    with pytest.raises(OSError):
+        cli.main(["add", str(src), "--hs4", str(tmp_path / "db.hsrdb"), "-j", "1"])
+    assert not list(tmp_path.glob("db.hsrdb*"))
+
+
+def test_cli_manifest_that_cannot_be_written(tmp_path, capsys):
+    """The databases are complete: kept, the manifest's content printed instead, exit status 1."""
+    src = write(tmp_path / "1234567.cif", cif(NACL_ATOMS))
+    (tmp_path / "db.build.json").mkdir()
+    with pytest.raises(SystemExit) as exit_:
+        cli.main(["add", str(src), "--hs4", str(tmp_path / "db.hsrdb"), "-j", "1"])
+    err = capsys.readouterr().err
+    assert exit_.value.code == 1 and "db.build.json: cannot be written" in err and '"source_sha256"' in err
+    db = sqlite3.connect(tmp_path / "db.hsrdb")
+    assert db.execute("select count(*) from general_indexed").fetchone()[0] == 1
+    db.close()
+
+
+@pytest.mark.skipif(sys.platform == "win32", reason="a shell script stands in for git")
+def test_provenance_with_git_output_that_is_not_utf8(tmp_path, monkeypatch):
+    """A checkout path that is not UTF-8 (Latin-1 on Linux) must not fail a finished build."""
+    git = tmp_path / "git"
+    git.write_bytes(b"#!/bin/sh\nprintf '/home/caf\\351/repo\\n'\n")
+    git.chmod(0o755)
+    monkeypatch.setenv("PATH", f"{tmp_path}{os.pathsep}{os.environ['PATH']}")
+    assert cli._provenance()["git"] is None  # not the package's own checkout
