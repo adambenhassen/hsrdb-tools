@@ -1238,19 +1238,27 @@ def test_transformed_coordinates_of_whole_numbers_are_exactly_zero():
 
 
 def test_cif_with_crlf_line_ends_gives_the_same_entry(tmp_path):
-    """Windows line ends (some COD files, and any CIF checked out on Windows): a multi-line title must not put a
-    carriage return, the comment's line separator, into the comment."""
-    text = cif(NACL_ATOMS, extra="_publ_section_title\n;\nRock salt,\nrefined again\n;")
+    """Windows line ends (some COD files, and any CIF checked out on Windows): multi-line values must not put a
+    carriage return, the comment's line separator, into the comment, names or literature."""
+    multi = {"_publ_section_title": "Rock salt,\nrefined again", "_exptl_crystal_colour": "colour-\nless",
+             "_exptl_crystal_description": "cube,\nsmall", "_chemical_name_mineral": "Halite,\nrock salt"}
+    text = cif(NACL_ATOMS, extra="".join(f"{tag}\n;\n{v}\n;\n" for tag, v in multi.items())
+               + "loop_\n_publ_author_name\n;\nSmith,\nJ.\n;\n'Doe, A.'").replace(
+        "_journal_name_full 'Test Journal'", "_journal_name_full\n;\nTest\nJournal\n;")
     lf = build(tmp_path, text, "lf.cif")
     crlf = tmp_path / "crlf.cif"
     crlf.write_bytes(text.replace("\n", "\r\n").encode("utf-8"))
     e = entry.from_cif(crlf)
     assert e.comment == lf.comment and "Publication title: Rock salt, refined again" in e.comment.split("\r")
+    assert "Crystal color: colour-\nless" in e.comment.split("\r")
+    assert (e.mineral_name, e.compound_name, e.literature) == (lf.mineral_name, lf.compound_name, lf.literature)
+    assert e.mineral_name == "Halite,\nrock salt" and e.literature["journal"] == "Test\nJournal"
+    assert "\r" not in e.literature["authors"] and e.literature["authors"].endswith("J., Doe, A.")
     assert [(x.d, x.intensity) for x in e.lines] == [(x.d, x.intensity) for x in lf.lines]
 
 
 @pytest.mark.parametrize("content", [b"", b"data_1\n_journal_name_full 'unterminated\n_cell_length_a 5\n",
-                                     b"no data block\n"])
+                                     b"no data block\n", b"data_1\n_cell_length_a 5\ndata_2\n_cell_length_a 6\n"])
 def test_cif_that_cannot_be_parsed_is_skipped(tmp_path, content):
     """gemmi raises ValueError for CIF syntax errors and IndexError for an empty file: a skip, not an internal
     error."""
@@ -1258,3 +1266,28 @@ def test_cif_that_cannot_be_parsed_is_skipped(tmp_path, content):
     p.write_bytes(content)
     with pytest.raises(entry.EntryError, match="unreadable CIF"):
         entry.from_cif(p)
+
+
+def test_cif_file_that_cannot_be_read_fails_the_build(tmp_path):
+    """A missing or unreadable file (permissions, I/O) is no fault of the CIF: an error, not a skip reason."""
+    with pytest.raises(OSError):
+        entry.from_cif(tmp_path / "1234567.cif")
+
+
+def test_numbers_in_other_scripts_are_not_read_as_integers(tmp_path):
+    """'²' passes str.isdigit but not int(): a site-symmetry multiplicity of '²' is no statement, and a COD id of
+    '²' no id, rather than internal errors."""
+    text = cif(NACL_ATOMS.replace(" 0.012\n", " 0.012 '²'\n").replace(" 0.011\n", " 0.011 '²'\n")).replace(
+        "_atom_site_U_iso_or_equiv\n", "_atom_site_U_iso_or_equiv\n_atom_site_symmetry_multiplicity\n")
+    assert [x.d for x in build(tmp_path, text).lines] == [x.d for x in build(tmp_path, cif(NACL_ATOMS), "b.cif").lines]
+    no_id = cif(NACL_ATOMS).replace("data_1234567", "data_nacl").replace("_cod_database_code 1234567",
+                                                                        "_cod_database_code '²'")
+    with pytest.raises(entry.EntryError, match="no COD id"):
+        build(tmp_path, no_id, "c.cif")
+
+
+def test_occupancies_that_leave_no_mass_are_skipped(tmp_path):
+    """Negative occupancies that cancel the cell's mass, or outweigh it, give no I/Ic (a division by zero or a
+    negative value): a skip reason."""
+    with pytest.raises(entry.EntryError, match="occupancies that give the unit cell a mass of -"):
+        build(tmp_path, cif("Na1 Na 0 0 0 1 0.01\nNa2 Na 0.5 0.5 0.5 -2 0.01\n"))

@@ -552,7 +552,7 @@ def _site_orders(block, rows, n_ops):
 
     def positive_int(values, row):
         v = values[row].strip() if row is not None and row < len(values) else ""
-        return int(v) if v.isdigit() and int(v) > 0 else None
+        return int(v) if v.isascii() and v.isdigit() and int(v) > 0 else None  # isdigit alone: also '²'
 
     order, mult = column("_atom_site_site_symmetry_order"), column("_atom_site_symmetry_multiplicity")
     out = []
@@ -568,10 +568,12 @@ def _site_orders(block, rows, n_ops):
 
 
 def _text(block, tag):
+    """A CIF value as text; a CIF with Windows line ends has \r\n in multi-line values, and \r separates the lines
+    of the comment, so line breaks are \n whatever the file's."""
     v = block.find_value(tag)
     if v is None:
         return ""
-    v = gemmi.cif.as_string(v).strip()
+    v = gemmi.cif.as_string(v).replace("\r", "").strip()
     return "" if v in ("?", ".") else v
 
 
@@ -590,7 +592,10 @@ def _cell_mass(st, images, weights=None):
 def _k_factor(st, images, imax=None, weights=None):
     if imax is None:
         _, imax = pattern.calculate(st, 90.0, images=images)
-    density = _cell_mass(st, images, weights) * 1.66054 / st.cell.volume
+    mass = _cell_mass(st, images, weights)
+    if not mass > 0:  # negative occupancies
+        raise EntryError(f"occupancies that give the unit cell a mass of {mass:.4g}")
+    density = mass * 1.66054 / st.cell.volume
     return imax / st.cell.volume**2 / density
 
 
@@ -717,8 +722,9 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
         block.as_string()  # every value is read as UTF-8 text later on: check them all here
     except UnicodeDecodeError as e:
         raise EntryError("CIF text is not UTF-8 (e.g. Latin-1 accents)") from e
-    except (RuntimeError, ValueError, IndexError, OSError) as e:
-        # gemmi: ValueError for CIF syntax, RuntimeError for several data blocks, IndexError for none (empty file)
+    except (RuntimeError, ValueError, IndexError) as e:
+        # gemmi: ValueError for CIF syntax, RuntimeError for several data blocks, IndexError for none (empty file).
+        # Not OSError: a file that cannot be read (permissions, I/O) is no fault of the CIF and must fail the build
         raise EntryError(f"unreadable CIF: {e}") from e
     cell_values = [_number(block, f"_cell_{t}") for t in ("length_a", "length_b", "length_c",
                                                           "angle_alpha", "angle_beta", "angle_gamma")]
@@ -727,8 +733,9 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
     if cod_id is None:
         # the data block name when it is an id: COD 1010542.cif (data_1010542) carries another entry's
         # _cod_database_code (9016579)
-        code = block.name if block.name.isdigit() else _text(block, "_cod_database_code") or block.name
-        if not code.isdigit():
+        code = block.name if block.name.isascii() and block.name.isdigit() else (
+            _text(block, "_cod_database_code") or block.name)
+        if not (code.isascii() and code.isdigit()):  # isdigit alone: also '²', which int rejects
             raise EntryError(f"no COD id (data block {block.name!r})")
         cod_id = int(code)
     if not 1_000_000 <= cod_id <= 9_999_998:  # reference code 96 + (id + 1) must stay 9 digits
@@ -910,7 +917,7 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
     description = _text(block, "_exptl_crystal_description")
     if description:
         comment.append(f"Crystal description: {description}")
-    title = _text(block, "_publ_section_title").replace("\r", "").replace("\n", " ")  # \r separates comment lines
+    title = _text(block, "_publ_section_title").replace("\n", " ")
     if title:
         comment.append(f"Publication title: {title}")
     if correction:
@@ -921,7 +928,7 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
 
     first, last = _text(block, "_journal_page_first"), _text(block, "_journal_page_last")
     pages = (f"{first} - {last}" if last else first) if first.isdigit() else "0"
-    authors = ", ".join(gemmi.cif.as_string(a) for a in block.find_values("_publ_author_name"))
+    authors = ", ".join(gemmi.cif.as_string(a).replace("\r", "") for a in block.find_values("_publ_author_name"))
     literature = {
         "volume": _text(block, "_journal_volume") or "0",
         "pages": pages,
