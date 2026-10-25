@@ -10,7 +10,7 @@ Terms, from the COD home page https://www.crystallography.net/cod/ (checked 2026
 
 > All data in the COD and the database itself are dedicated to the public domain and licensed under the CC0 License. Users of the data should acknowledge the original authors of the structural data.
 
-CC0 text: https://creativecommons.org/publicdomain/zero/1.0/. Each CIF's header repeats it ("All data on this site have been placed in the public domain by the contributors"). Redistribution is therefore allowed; the acknowledgement is met by keeping the files unchanged, with their `_publ_author_name`, `_journal_*` and `_cod_database_code` items. How to cite COD: https://wiki.crystallography.net/citingcod/.
+CC0 text: https://creativecommons.org/publicdomain/zero/1.0/. The headers of most CIFs here repeat it ("All data on this site have been placed in the public domain by the contributors"); those from IUCr journals and from the American Mineralogist Crystal Structure Database say instead that the file "may be used within the scientific community so long as proper attribution is given to the journal article from which the data were obtained", and 3000357 has no header. Redistribution is allowed under the database's CC0 dedication; the acknowledgement is met by keeping the files unchanged, with their `_publ_author_name`, `_journal_*` and `_cod_database_code` items. How to cite COD: https://wiki.crystallography.net/citingcod/.
 
 ## Files
 
@@ -22,16 +22,16 @@ CC0 text: https://creativecommons.org/publicdomain/zero/1.0/. Each CIF's header 
 | 4319054 | anisotropic displacement parameters given as beta_ij |
 | 1524007 | Fe-Cr alloy: metallic subfile |
 | 1524039 | triclinic P-1, Niggli reduction (beta 89.76 becomes 90.24) |
-| 9001314 | triclinic P-1 mineral (werdingite), Niggli reduction; split O19A/O19B atoms near an inversion centre |
+| 9001314 | triclinic P-1 mineral (werdingite), Niggli reduction; split O19A/O19B atoms, O19B near an inversion centre |
 | 2010123 | organic (C-H bonds: organic subfile), P 1 21/n 1 stored as P 1 21/c 1 (beta 91.79 becomes 127.82); 4 atom_site rows without coordinates dropped |
 | 1537595 | setting gemmi does not know: `P 1 21/c 1 (2*a+c,b,c)` supercell symbol, converted via spglib |
 | 1524367 | orthorhombic axis permutation: `P n a m` stored as `P n m a` |
 | 2003598 | symbol `P m n b` (axis permutation), and the listed operations name another group: the symbol is used (symmetry_note) |
-| 2100788 | symmetry stated twice, disagreeing: `C m c 21` symbol against P m c 21 operations; symbol used |
+| 2100788 | symmetry stated twice, disagreeing: H-M symbol `A 21 a m` (C m c 21) against Hall symbol `p -2 2a` (P m c 21), no listed operations; symbol used |
 | 1010022 | rhombohedral, reverse setting `R -3 m HR`, stored as R -3 m in hexagonal axes |
 | 1010918 | bassanite: `P 32 2 1 S`, operations with the origin shifted by c/3 |
 | 2014900 | listed operations in a shifted-origin setting that gemmi does not match to the symbol |
-| 1524392 | partially occupied Ca and Tl sites with images 0.2-0.3 A apart (split-atom decision) |
+| 1524392 | partially occupied Ca and Tl sites with images 0.2-0.5 A apart (split-atom decision) |
 | 2101363 | hydrogen site whose symmetry images lie 0.09 A apart (near-special-position merge) |
 | 2002730 | sites on special positions that the CIF states as general: images counted separately (merge_note) |
 | 1010542 | baryte: dummy atom (`dum`) that does not scatter; mineral name |
