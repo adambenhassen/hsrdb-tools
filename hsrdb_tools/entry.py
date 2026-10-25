@@ -700,10 +700,12 @@ def from_cif(path, cod_id=None):
     if e.symbol_conflict and _composition_matches(e) is False:
         by_symbol = _from_cif(path, cod_id, symbol_only=True)
         if not _composition_matches(by_symbol):
-            raise EntryError(f"the listed symmetry operations ({e.sg_hm}) and the space-group symbol "
-                             f"({by_symbol.sg_hm}) disagree, and neither gives the CIF's density or formula")
-        by_symbol.symmetry_note = (f"symmetry from the space-group symbol {by_symbol.sg_hm}: the listed operations "
-                                   f"({e.sg_hm}) do not give the CIF's density or formula")
+            raise EntryError(f"the symmetry operations the CIF lists or its Hall symbol gives ({e.sg_hm}) and the "
+                             f"space-group symbol ({by_symbol.sg_hm}) disagree, and neither gives the CIF's density "
+                             "or formula")
+        by_symbol.symmetry_note = (f"symmetry from the space-group symbol {by_symbol.sg_hm}: the operations the CIF "
+                                   f"lists or its Hall symbol gives ({e.sg_hm}) do not give the CIF's density or "
+                                   "formula")
         e = by_symbol
     if e.stated_general and _composition_matches(e) is False:
         separate = _from_cif(path, cod_id, symbol_only=bool(e.symmetry_note), separate_stated=True)

@@ -33636,7 +33636,7 @@
   "mineral_name": "",
   "notes": {
    "correction": "",
-   "symmetry_note": "symmetry from the space-group symbol P n m a: the listed operations (P m n 21) do not give the CIF's density or formula",
+   "symmetry_note": "symmetry from the space-group symbol P n m a: the operations the CIF lists or its Hall symbol gives (P m n 21) do not give the CIF's density or formula",
    "merge_note": "",
    "modulation": "",
    "setting_changed": true,
@@ -55447,7 +55447,7 @@
   "mineral_name": "",
   "notes": {
    "correction": "",
-   "symmetry_note": "symmetry from the space-group symbol C m c 21: the listed operations (P m c 21) do not give the CIF's density or formula",
+   "symmetry_note": "symmetry from the space-group symbol C m c 21: the operations the CIF lists or its Hall symbol gives (P m c 21) do not give the CIF's density or formula",
    "merge_note": "",
    "modulation": "",
    "setting_changed": true,
