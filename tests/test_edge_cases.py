@@ -323,6 +323,24 @@ def test_coincident_reflections_merge():
     assert len(at) == 1
 
 
+def test_tied_reflections_get_the_same_label_in_any_order():
+    """Symmetry-equivalent reflections (as the superspace path lists them, COD 4302713) have equal d and intensity
+    up to rounding noise, which differs between numpy versions: the label must not depend on it."""
+    hkl = np.array([(2, 1, 0), (3, -2, 0), (3, -1, 0), (-3, 1, 0), (-3, 2, 0), (-2, -1, 0), (-2, 3, 0), (-1, -2, 0),
+                    (-1, 3, 0), (1, -3, 0), (1, 2, 0), (2, -3, 0)])
+    rng = np.random.default_rng(0)
+    labels = set()
+    for _ in range(20):
+        noise = rng.integers(-2, 3, size=(2, len(hkl)))
+        d = np.nextafter(1.3861964150406063, 2) + noise[0] * 2e-16
+        inten = 243.86608967765 + noise[1] * 1e-13
+        order = rng.permutation(len(hkl))
+        lines, _ = pattern.merge_lines(hkl[order], d[order], inten[order])
+        assert len(lines) == 1
+        labels.add(lines[0].hkl)
+    assert labels == {(2, 1, 0)}
+
+
 def test_inverted_structure_gives_the_same_pattern():
     """Friedel mates share a powder line, so a structure and its inverted image (x -> -x) give one pattern even
     when anomalous scattering makes |F(h)| and |F(-h)| differ."""

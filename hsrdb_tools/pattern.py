@@ -118,6 +118,11 @@ def _calculate(st, dmin, wavelength, images):
     return merge_lines(hkl, d, _intensities(st, hkl, d, wavelength, images), wavelength)
 
 
+def _label_key(hkl):
+    """Preference among the labels of reflections at one d: fewest negative indices, then the largest."""
+    return -sum(v < 0 for v in hkl), hkl
+
+
 def merge_lines(hkl, d, inten, wavelength=CU_KA1):
     """Reflections (hkl, d, intensity) as lines by decreasing d, and the intensity of the strongest line (see
     calculate)."""
@@ -134,8 +139,13 @@ def merge_lines(hkl, d, inten, wavelength=CU_KA1):
             m = merged[-1]
             m[0] = t
             m[1] += inte
-            if inte > m[2] * (1 + 1e-9):  # equal within rounding: the first (lower-angle) reflection stays
-                m[2], m[3], m[4] = inte, float(d[i]), tuple(int(v) for v in hkl[i])
+            h = tuple(int(v) for v in hkl[i])
+            # equal within rounding: the first (lower-angle) reflection stays; at the same d (symmetry-equivalent
+            # reflections, whose rounding noise differs between platforms) the label with the fewest negative
+            # indices, then the largest, so that the order of the reflections does not matter
+            tied = inte >= m[2] * (1 - 1e-9) and abs(d[i] - m[3]) <= 1e-9 * m[3]
+            if inte > m[2] * (1 + 1e-9) or tied and _label_key(h) > _label_key(m[4]):
+                m[2], m[3], m[4] = max(inte, m[2]), float(d[i]), h
         else:
             merged.append([t, inte, inte, float(d[i]), tuple(int(v) for v in hkl[i])])
     imax = max(m[1] for m in merged)
