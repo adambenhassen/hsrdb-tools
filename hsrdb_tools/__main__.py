@@ -4,6 +4,7 @@ import argparse
 import collections
 import datetime
 import hashlib
+import itertools
 import json
 import os
 import platform
@@ -81,6 +82,17 @@ def _open(path, target, base, append, resume):
             work.unlink()
         sys.exit(f"{base or path}: schema is for {found}, not {target}")
     return db, work
+
+
+def _bounded_map(pool, fn, items, window):
+    """pool.map, in order, with at most window items submitted and not yet consumed: finished results wait in memory
+    only while the caller is less than window items behind (Executor.map submits everything at once)."""
+    items = iter(items)
+    pending = collections.deque(pool.submit(fn, x) for x in itertools.islice(items, window))
+    while pending:
+        result = pending.popleft().result()
+        pending.extend(pool.submit(fn, x) for x in itertools.islice(items, 1))
+        yield result
 
 
 def _now():
@@ -262,7 +274,7 @@ def cmd_add(args):
             rep.write("file\tproblem\n")
         with ProcessPoolExecutor(args.jobs) as pool, rep:
             jobs = [(p, tuple(outputs)) for p in cifs[done:]]
-            for i, result in enumerate(pool.map(build.prepare, jobs, chunksize=16), done + 1):
+            for i, result in enumerate(_bounded_map(pool, build.prepare, jobs, 64 * args.jobs), done + 1):
                 record(i, *result)
                 if checkpoints and i % CHECKPOINT == 0:
                     checkpoint(i)

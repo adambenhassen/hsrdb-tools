@@ -6,6 +6,7 @@ import os
 import sqlite3
 import subprocess
 import sys
+from concurrent.futures import Future
 
 import pytest
 
@@ -406,3 +407,23 @@ def test_provenance_with_git_output_that_is_not_utf8(tmp_path, monkeypatch):
     git.chmod(0o755)
     monkeypatch.setenv("PATH", f"{tmp_path}{os.pathsep}{os.environ['PATH']}")
     assert cli._provenance()["git"] is None  # not the package's own checkout
+
+
+def test_results_waiting_for_the_main_loop_are_bounded():
+    """A main loop slower than the workers (checkpoint commits on a slow disk) must not let finished results pile up:
+    the full COD run held 18 GB of them before the first 120,000 CIFs were written."""
+    submitted = []
+
+    class Pool:
+        def submit(self, fn, item):
+            submitted.append(item)
+            f = Future()
+            f.set_result(fn(item))
+            return f
+
+    out = []
+    for r in cli._bounded_map(Pool(), lambda x: 2 * x, range(100), 8):
+        out.append(r)
+        assert len(submitted) - len(out) <= 8
+    assert out == [2 * x for x in range(100)]
+    assert submitted == list(range(100))
