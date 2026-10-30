@@ -749,6 +749,29 @@ def test_dummy_atoms_do_not_scatter(tmp_path):
     assert [a.label for a in atoms] == ["Fe1", "S1", "Cg1"] and atoms[2].tail[20] == 2  # kept, flagged dummy
 
 
+def test_impossible_occupancy_is_read_as_one_and_noted(tmp_path):
+    # COD 9005000 gives FeM1 occupancy 130.00000 for 0.130: read as 1 (as COD24), not 130 atoms per site
+    ref = build(tmp_path, cif(NACL_ATOMS), name="ref.cif")
+    e = build(tmp_path, cif("Na1 Na+ 0 0 0 130.00000 0.012\nCl1 Cl- 0.5 0.5 0.5 1 0.011\n"))
+    assert e.formula == ref.formula and e.density == pytest.approx(ref.density)
+    same_lines(e.lines, ref.lines)
+    assert "Occupancy read as 1 where the CIF gives an impossible value: Na1 130" in e.comment
+    assert "Occupancy" not in ref.comment
+
+
+def test_refined_occupancy_slightly_above_one_is_kept(tmp_path):
+    e = build(tmp_path, cif("Na1 Na+ 0 0 0 1.2 0.012\nCl1 Cl- 0.5 0.5 0.5 1 0.011\n"))
+    assert e.formula == "Na4.80 Cl4.00" and "Occupancy read as 1" not in e.comment
+
+
+def test_correction_applies_to_the_published_occupancy(tmp_path, monkeypatch):
+    # a site a correction names keeps the CIF's value for the correction to act on
+    fix = {"source": "article", "note": "occupancy 200 stands for 0.5", "sites": {"Na1": {"occupancy_factor": 0.0025}}}
+    monkeypatch.setattr(entry, "_corrections", lambda: {"1234567": fix})
+    e = build(tmp_path, cif("Na1 Na+ 0 0 0 200 0.012\nCl1 Cl- 0.5 0.5 0.5 1 0.011\n"))
+    assert e.formula == "Na2.00 Cl4.00" and "Occupancy read as 1" not in e.comment
+
+
 def test_missing_displacement_uses_highscore_default(tmp_path):
     missing = build(tmp_path, cif("Na1 Na 0 0 0 1 .\nCl1 Cl 0.5 0.5 0.5 1 .\n"))
     b05 = cif("Na1 Na 0 0 0 1 0.5\nCl1 Cl 0.5 0.5 0.5 1 0.5\n").replace("_atom_site_U_iso_or_equiv",

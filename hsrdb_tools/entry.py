@@ -101,6 +101,7 @@ def _corrections():
 
 _ANISO = ("u11", "u22", "u33", "u12", "u13", "u23")
 MIN_UEQ = 1e-4  # Å²; a smaller equivalent value of an invalid tensor is no displacement parameter
+OCC_IMPOSSIBLE = 1.5  # an occupancy this large is not a refined excess over 1 (_cap_occupancies)
 # Å²; a tensor is invalid if a mean-square displacement is more negative than this (rounded values such as a
 # U33 of -0.0001 pass); the factor keeps values exactly at the margin on the valid side despite rounding
 ADP_MARGIN = 1e-4 * (1 + 1e-6)
@@ -481,6 +482,23 @@ def _default_b(st, block, rows, ueq=None):
             site.u_iso = sites.DEFAULT_B / (8 * math.pi**2)
 
 
+def _cap_occupancies(block, st, fix):
+    """Reads an occupancy of OCC_IMPOSSIBLE or more as 1, as COD24 does, and returns 'label value' for each: such a
+    value is a typo (130 for 0.130), a ratio (2 and 3 for 0.4 and 0.6) or a count, never atoms on one site. Smaller
+    excesses are refined values and stay as published. Sites a correction names keep the CIF's value for the
+    correction to act on; dummy atoms (flagged dum) do not scatter and keep theirs."""
+    labels = [gemmi.cif.as_string(v) for v in block.find_values("_atom_site_label")]
+    flags = [gemmi.cif.as_string(v).strip().lower() for v in block.find_values("_atom_site_calc_flag")]
+    keep = set(fix.get("sites", {})) | {label for label, flag in zip(labels, flags) if flag == "dum"}
+    capped = []
+    for i in range(len(st.sites)):
+        site = st.sites[i]
+        if site.occ >= OCC_IMPOSSIBLE and site.label not in keep and not site.label.lower().startswith("dum"):
+            capped.append(f"{site.label} {site.occ:g}")
+            st.sites[i].occ = 1.0
+    return capped
+
+
 def _clean_sites(st, spacegroup, shift=(0.0, 0.0, 0.0)):
     """Structure with only usable sites in the given space group, the atom_site row of each kept site, the
     number of displacement parameters that had to be replaced, and the equivalent value (trace / 3) of each
@@ -759,6 +777,7 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
     if not st.cell.volume > 0:
         raise EntryError("no valid unit cell")
     _read_aniso(block, st)
+    capped = _cap_occupancies(block, st, fix)
     origin, weights, correction, shell_specs, assigned = _apply_corrections(st, cod_id)
     _resolve_types(block, st, origin, assigned)
     shift = (0.0, 0.0, 0.0)
@@ -924,6 +943,8 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
         comment.append(f"Publication title: {title}")
     if correction:
         comment.append(f"Corrected from the publication: {correction}")
+    if capped:
+        comment.append(f"Occupancy read as 1 where the CIF gives an impossible value: {', '.join(capped)}")
     if modulation:
         comment.append(f"Pattern: {modulation}" + ("; satellite lines carry hkl 0 0 0" if modulated else ""))
     comment.append(f"COD database code: {cod_id}")

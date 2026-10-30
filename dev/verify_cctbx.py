@@ -141,7 +141,8 @@ def read_structures(path):
 def our_choices(xs, path, e):
     """cctbx's reading of the CIF with the deliberate choices of hsrdb-tools applied, so that they explain no
     difference: aniso rows as given (beta_ij too, which cctbx does not read; repeated labels paired in order, which
-    cctbx gets wrong); dummy atoms (calc_flag dum) left out; tensors with all components zero or a negative
+    cctbx gets wrong); dummy atoms (calc_flag dum) left out; occupancies of entry.OCC_IMPOSSIBLE or more read as 1
+    (entry._cap_occupancies); tensors with all components zero or a negative
     mean-square displacement (judged before site symmetry is imposed) replaced by the isotropic value; B = sites.DEFAULT_B for atoms without any displacement parameter
     (cctbx leaves them at U = 0); images of an atom merged within the distance hsrdb-tools chose for it
     (sites.merge_tolerances), with cctbx's own special-position handling; the space group of the symmetry
@@ -180,12 +181,16 @@ def our_choices(xs, path, e):
     adp_types = [gemmi.cif.as_string(v).strip().lower() for v in
                  block.find_values("_atom_site_adp_type") or block.find_values("_atom_site_thermal_displace_type")]
     keep = flex.bool()
+    fixed = set(entry._corrections().get(str(e.cod_id), {}).get("sites", {}))
     for row, sc in enumerate(xs.scatterers()):
         keep.append(not (row < len(flags) and flags[row] == "dum"))
         # cctbx drops a whole occupancy or U column when one value is '?' or '.'; those values default to 1 and
         # (below) to U_iso_or_equiv, B_iso_or_equiv or B = sites.DEFAULT_B
         occ = gemmi.cif.as_number(occ_col[row]) if occ_col and row < len(occ_col) else math.nan
         sc.occupancy = occ if math.isfinite(occ) else 1.0
+        if sc.occupancy >= entry.OCC_IMPOSSIBLE and keep[-1] and sc.label not in fixed \
+                and not sc.label.lower().startswith("dum"):  # entry._cap_occupancies
+            sc.occupancy = 1.0
         rows = tensors.get(sc.label, [])
         if rows:
             same = [r for r, lab in enumerate(labels) if lab == sc.label]
