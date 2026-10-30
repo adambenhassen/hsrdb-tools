@@ -1,0 +1,116 @@
+#------------------------------------------------------------------------------
+#$Date: 2016-03-02 09:51:31 +0200 (Wed, 02 Mar 2016) $
+#$Revision: 177123 $
+#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/5/91/01/5910160.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/
+#
+# All data on this site have been placed in the public domain by the
+# contributors.
+#
+data_5910160
+loop_
+_publ_author_name
+'Wyckoff, R. W. G.'
+_publ_section_title
+;
+Pages 429 & 431 from the Structure of Crystals, vol. 3 by Wyckoff R W G. 
+published by Interscience Publishers, Inc. in 1951 
+;
+_journal_name_full               'The Structure of Crystals'
+_journal_page_first              429
+_journal_page_last               431
+_journal_volume                  3
+_journal_year                    1951
+_chemical_formula_structural     SiP2O7
+_chemical_formula_sum            'O7 P2 Si'
+_space_group_IT_number           205
+_symmetry_cell_setting           cubic
+_symmetry_Int_Tables_number      205
+_symmetry_space_group_name_Hall  '-P 2ac 2ab 3'
+_symmetry_space_group_name_H-M   'P a -3'
+_audit_creation_date             2006-08-07
+_audit_creation_method
+;
+Pages 429 & 431 from the Structure of Crystals, vol. 3 by Wyckoff R W G. 
+published by Interscience Publishers, Inc. in 1951 
+;
+_audit_update_record
+'created by Girish Upreti, Portland State University'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                90
+_cell_length_a                   7.46
+_cell_length_b                   7.46
+_cell_length_c                   7.46
+_cell_volume                     415.161
+_cod_original_formula_sum        'Si P2 O7'
+_cod_database_code               5910160
+loop_
+_symmetry_equiv_pos_as_xyz
+x,y,z
+z,x,y
+y,z,x
+-y+1/2,-z,x+1/2
+z+1/2,-x+1/2,-y
+-y,z+1/2,-x+1/2
+-z+1/2,-x,y+1/2
+-z,x+1/2,-y+1/2
+y+1/2,-z+1/2,-x
+x+1/2,-y+1/2,-z
+-x,y+1/2,-z+1/2
+-x+1/2,-y,z+1/2
+-x,-y,-z
+-z,-x,-y
+-y,-z,-x
+y+1/2,z,-x+1/2
+-z+1/2,x+1/2,y
+y,-z+1/2,x+1/2
+z+1/2,x,-y+1/2
+z,-x+1/2,y+1/2
+-y+1/2,z+1/2,x
+-x+1/2,y+1/2,z
+x,-y+1/2,z+1/2
+x+1/2,y,-z+1/2
+loop_
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_label
+0.00000 0.00000 0.00000 Si1
+0.39000 0.39000 0.39000 P1
+0.89000 0.11000 -0.39000 P2
+-0.39000 0.89000 0.11000 P3
+0.11000 -0.39000 0.89000 P4
+-0.39000 -0.39000 -0.39000 P5
+-0.89000 -0.11000 0.39000 P6
+0.39000 -0.89000 -0.11000 P7
+-0.11000 0.39000 -0.89000 P8
+0.50000 0.50000 0.50000 O1
+0.39400 0.21800 0.45800 O2
+0.89400 0.28200 -0.45800 O3
+-0.39400 0.71800 0.04200 O4
+0.10600 -0.21800 0.95800 O5
+0.45800 0.39400 0.21800 O6
+-0.45800 0.89400 0.28200 O7
+0.04200 -0.39400 0.71800 O8
+0.95800 0.10600 -0.21800 O9
+0.21800 0.45800 0.39400 O10
+0.28200 -0.45800 0.89400 O11
+0.71800 0.04200 -0.39400 O12
+-0.21800 0.95800 0.10600 O13
+-0.50000 -0.50000 -0.50000 O14
+-0.39400 -0.21800 -0.45800 O15
+-0.89400 -0.28200 0.45800 O16
+0.39400 -0.71800 -0.04200 O17
+-0.10600 0.21800 -0.95800 O18
+-0.45800 -0.39400 -0.21800 O19
+0.45800 -0.89400 -0.28200 O20
+-0.04200 0.39400 -0.71800 O21
+-0.95800 -0.10600 0.21800 O22
+-0.21800 -0.45800 -0.39400 O23
+-0.28200 0.45800 -0.89400 O24
+-0.71800 -0.04200 0.39400 O25
+0.21800 -0.95800 -0.10600 O26

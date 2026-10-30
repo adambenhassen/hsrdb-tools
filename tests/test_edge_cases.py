@@ -772,6 +772,41 @@ def test_correction_applies_to_the_published_occupancy(tmp_path, monkeypatch):
     assert e.formula == "Na2.00 Cl4.00" and "Occupancy read as 1" not in e.comment
 
 
+NACL_CELL = ("Na1 Na 0 0 0 1 0.012\nNa2 Na 0.5 0.5 0 1 0.012\nNa3 Na 0.5 0 0.5 1 0.012\nNa4 Na 0 0.5 0.5 1 0.012\n"
+             "Cl1 Cl 0.5 0.5 0.5 1 0.011\n")
+
+
+def test_rows_listed_as_images_of_another_row_count_once(tmp_path):
+    # Wyckoff-compilation CIFs (COD 5910xxx) list every atom of the cell besides the space group: Na2-Na4 are
+    # images of Na1, and counting each row's images gives Na16 Cl4, against the formula's proportions
+    ref = build(tmp_path, cif(NACL_ATOMS, extra="_chemical_formula_sum 'Cl Na'"), name="ref.cif")
+    e = build(tmp_path, cif(NACL_CELL, extra="_chemical_formula_sum 'Cl Na'"))
+    assert e.merged_images and e.image_rows == (1, 2, 3) and [s.label for s in e.structure.sites] == ["Na1", "Cl1"]
+    assert e.formula == "Na4.00 Cl4.00" and e.density == pytest.approx(ref.density) and e.site_rows == [0, 4]
+    same_lines(e.lines, ref.lines)
+    assert "symmetry images of another row (counted separately, they contradict the CIF's formula or give an " \
+           "impossible density): Na2, Na3, Na4" in e.comment
+
+
+def test_rows_listed_as_images_count_separately_when_the_formula_says_so(tmp_path):
+    # two half-occupied rows on one position: counted separately they give the formula, so they stay
+    rows = "Na1 Na 0 0 0 0.5 0.012\nNa2 Na 0.5 0.5 0 0.5 0.012\nCl1 Cl 0.5 0.5 0.5 1 0.011\n"
+    e = build(tmp_path, cif(rows, extra="_chemical_formula_sum 'Cl Na'"))
+    assert e.image_rows == (1,) and not e.merged_images and e.formula == "Na4.00 Cl4.00"
+
+
+def test_rows_listed_as_images_count_once_when_the_density_is_impossible(tmp_path):
+    # without Z or density, Pt16 is as proportional to the formula as Pt4: 86 g/cm3 decides (COD 5910217)
+    rows = "Pt1 Pt 0 0 0 1 0.01\nPt2 Pt 0.5 0.5 0 1 0.01\nPt3 Pt 0.5 0 0.5 1 0.01\nPt4 Pt 0 0.5 0.5 1 0.01\n"
+    e = build(tmp_path, cif(rows, a=3.92, extra="_chemical_formula_sum 'Pt'"))
+    assert e.merged_images and e.formula == "Pt4.00" and e.density == pytest.approx(21.5, abs=0.1)
+
+
+def test_rows_listed_as_images_without_formula_stay(tmp_path):
+    e = build(tmp_path, cif(NACL_CELL))
+    assert e.image_rows == (1, 2, 3) and not e.merged_images and e.formula == "Na16.00 Cl4.00"
+
+
 def test_missing_displacement_uses_highscore_default(tmp_path):
     missing = build(tmp_path, cif("Na1 Na 0 0 0 1 .\nCl1 Cl 0.5 0.5 0.5 1 .\n"))
     b05 = cif("Na1 Na 0 0 0 1 0.5\nCl1 Cl 0.5 0.5 0.5 1 0.5\n").replace("_atom_site_U_iso_or_equiv",

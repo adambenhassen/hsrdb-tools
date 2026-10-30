@@ -232,6 +232,9 @@ def cmd_add(args):
             rep.write(f"{path}\tnote: {e.symmetry_note}\n")
         if e.merge_note:
             rep.write(f"{path}\tnote: {e.merge_note}\n")
+        if e.merged_images:
+            rep.write(f"{path}\tnote: {len(e.image_rows)} atom_site rows counted once: symmetry images of another "
+                      "row\n")
         if e.modulation:
             rep.write(f"{path}\tnote: {e.modulation}\n")
         if e.dummy_sites:

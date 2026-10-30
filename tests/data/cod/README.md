@@ -34,6 +34,8 @@ CC0 text: https://creativecommons.org/publicdomain/zero/1.0/. The headers of mos
 | 1524392 | partially occupied Ca and Tl sites with images 0.2-0.5 A apart (split-atom decision) |
 | 2101363 | hydrogen site whose symmetry images lie 0.09 A apart (near-special-position merge) |
 | 2002730 | sites on special positions that the CIF states as general: images counted separately (merge_note) |
+| 5910160 | Wyckoff compilation (SiP2O7, P a -3): every atom of the cell listed besides the space group, no Z; rows that are symmetry images of another row counted once (merged_images), the formula's proportions decide |
+| 5910217 | Wyckoff compilation (Mo2BC, C m c m): as 5910160, but counted separately the content is still proportional to the formula; the impossible density (35 g/cm3) decides |
 | 1010542 | baryte: dummy atom (`dum`) that does not scatter; mineral name |
 | 1101168 | physically invalid ADPs replaced (invalid-adp.md) |
 | 1544611 | melanophlogite: correction with `sites` / `stand_in` species for the cage atoms; atom types that are not framework elements (atom-types.md) |

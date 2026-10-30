@@ -78,6 +78,8 @@ class Entry:
     stated_general: bool = False  # sites on special positions that the CIF states to have lower site symmetry
     separate_stated: bool = False  # the images of those sites count separately (merge_note says why)
     merge_note: str = ""
+    image_rows: tuple = ()  # atom_site rows that are symmetry images of an earlier row (same element, occupancy)
+    merged_images: bool = False  # those rows count once (not in the structure record): the comment says why
     shell_sites: tuple = ()  # structure sites that are the centres of shell scatterers (not atoms)
     modulation: str = ""  # modulated structure: how its pattern was calculated (superspace)
     # only in the process that built the entry; set to None before it crosses process boundaries
@@ -101,6 +103,7 @@ def _corrections():
 
 _ANISO = ("u11", "u22", "u33", "u12", "u13", "u23")
 MIN_UEQ = 1e-4  # Å²; a smaller equivalent value of an invalid tensor is no displacement parameter
+MAX_DENSITY = 22.6  # g/cm3, osmium: no solid at ambient pressure is denser (from_cif)
 OCC_IMPOSSIBLE = 1.5  # an occupancy this large is not a refined excess over 1 (_cap_occupancies)
 # Å²; a tensor is invalid if a mean-square displacement is more negative than this (rounded values such as a
 # U33 of -0.0001 pass); the factor keeps values exactly at the margin on the valid side despite rounding
@@ -671,6 +674,25 @@ def _formula_matches(block, have):
                for el in set(want) | set(have) if el not in ("H", "D"))
 
 
+def _composition_or_proportions(e):
+    """_composition_matches, or for a CIF without Z and density, whether the content is proportional to its
+    _chemical_formula_sum (elements other than H and D, within 3%); None if the CIF states no formula either."""
+    found = _composition_matches(e)
+    if found is not None:
+        return found
+    formula = _text(e.block, "_chemical_formula_sum")
+    want = {}
+    for el, n in re.findall(r"([A-Z][a-z]?)(\d*\.?\d*)", formula):
+        if el not in ("H", "D"):
+            want[el] = want.get(el, 0.0) + (float(n) if n not in ("", ".") else 1.0)
+    have = {el: float(t[len(el):]) for el, t in zip(e.elements, e.formula.split()) if el not in ("H", "D")}
+    if not (want and have):
+        return None
+    k = sum(have.values()) / sum(want.values())
+    return all(abs(have.get(el, 0.0) - k * want.get(el, 0.0)) <= 0.03 * max(have.get(el, 0.0), k * want.get(el, 0.0))
+               for el in set(want) | set(have))
+
+
 def _density_matches(block, density):
     """The density calculated by the authors (_exptl_crystal_density_diffrn) within 3%; None if not given."""
     measured = _number(block, "_exptl_crystal_density_diffrn")
@@ -713,7 +735,10 @@ def from_cif(path, cod_id=None):
     than the Hermann-Mauguin symbol and do not give the CIF's density or formula (e.g. only half of the
     operations listed), the symbol is used if it does; if neither does, the CIF is skipped. Likewise, images of
     an atom on a special position that the CIF states as general are one atom, unless that contradicts the CIF's
-    density or formula and counting them separately, as stated, does not."""
+    density or formula and counting them separately, as stated, does not. Atom rows that are symmetry images of
+    another row (e.g. every atom of the cell listed besides the space group) count once if counting them
+    separately contradicts the CIF's density or formula (without Z: its proportions, or a density above
+    MAX_DENSITY) and counting them once does not."""
     e = _from_cif(path, cod_id)
     if e.symbol_conflict and _composition_matches(e) is False:
         by_symbol = _from_cif(path, cod_id, symbol_only=True)
@@ -731,11 +756,18 @@ def from_cif(path, cod_id=None):
             separate.symmetry_note = e.symmetry_note
             separate.merge_note = ("images of atoms on special positions that the CIF states as general (lower site "
                                    "symmetry) counted separately: merged, they do not give the CIF's density or formula")
-            return separate
+            e = separate
+    if e.image_rows and (_composition_or_proportions(e) is False
+                         or _composition_matches(e) is None and e.density > MAX_DENSITY):
+        once = _from_cif(path, cod_id, symbol_only=bool(e.symmetry_note), separate_stated=e.separate_stated,
+                         merge_images=True)
+        if _composition_or_proportions(once) and once.density <= MAX_DENSITY:
+            once.symmetry_note, once.merge_note = e.symmetry_note, e.merge_note
+            return once
     return e
 
 
-def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
+def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge_images=False):
     global _K_CORUNDUM
     try:
         block = gemmi.cif.read(str(path)).sole_block()
@@ -850,6 +882,15 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
     symbol = _symbol_group(block) if stated and not symbol_only and not corrected_symmetry else None
     symbol_conflict = symbol is not None and symbol.number != st.spacegroup.number
     setting.constrain_cell(st)
+    duplicates = {} if modulated else sites.image_sites(st)  # sites listed twice: images of an earlier site
+    image_rows = tuple(site_rows[k] for k in sorted(duplicates) if site_rows[k] is not None)
+    merged_labels = []
+    if merge_images:
+        merged_labels = [st.sites[k].label for k in sorted(duplicates)]
+        for k in sorted(duplicates, reverse=True):
+            del st.sites[k]
+        site_rows = [r for k, r in enumerate(site_rows) if k not in duplicates]
+        weights = [w for k, w in enumerate(weights) if k not in duplicates]
     site_orders = _site_orders(block, site_rows, n_ops)
     images = sites.unit_cell_images(st, site_orders=site_orders, separate_stated=separate_stated)
     # dummy atoms (e.g. ring centroids) stay in the structure record, flagged, but do not scatter or count
@@ -945,6 +986,9 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
         comment.append(f"Corrected from the publication: {correction}")
     if capped:
         comment.append(f"Occupancy read as 1 where the CIF gives an impossible value: {', '.join(capped)}")
+    if merged_labels:
+        comment.append("Atoms counted once that the CIF lists again as symmetry images of another row (counted "
+                       f"separately, they contradict the CIF's formula or give an impossible density): {', '.join(merged_labels)}")
     if modulation:
         comment.append(f"Pattern: {modulation}" + ("; satellite lines carry hkl 0 0 0" if modulated else ""))
     comment.append(f"COD database code: {cod_id}")
@@ -990,6 +1034,8 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False):
         shell_sites=tuple(shell_sites),
         stated_general="stated_general" in images.reasons,
         separate_stated=separate_stated,
+        image_rows=image_rows,
+        merged_images=merge_images,
         dropped_sites=dropped,
         invalid_adps=invalid_adps,
         dummy_sites=int(dummy.sum()),

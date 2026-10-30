@@ -96,6 +96,29 @@ def _image_distances(st, i, rot, tran, metric):
     return x, diff, np.einsum("abi,ij,abj->ab", diff, metric, diff)
 
 
+def image_sites(st, ops=None):
+    """Sites that are a symmetry image (within SAME_POSITION) of an earlier site with the same element and
+    occupancy, as {site: that earlier site}: one atom listed twice, e.g. by a CIF that lists every atom of the
+    cell besides its space group."""
+    orth = np.array(st.cell.orth.mat.tolist())
+    metric = orth.T @ orth
+    rot, tran = _operations(st, ops)
+    xyz = np.array([[s.fract.x, s.fract.y, s.fract.z] for s in st.sites])
+    out = {}
+    for i, s in enumerate(st.sites):
+        if i in out:
+            continue
+        later = [j for j in range(i + 1, len(st.sites)) if j not in out and st.sites[j].element == s.element
+                 and abs(st.sites[j].occ - s.occ) < 1e-6]
+        if not later:
+            continue
+        x = (rot @ xyz[i] + tran) % 1.0  # (ops, 3)
+        d = (xyz[later][:, None, :] - x[None, :, :] + 0.5) % 1.0 - 0.5
+        hit = (np.einsum("aoi,ij,aoj->ao", d, metric, d) < SAME_POSITION**2).any(axis=1)
+        out.update({j: i for j, h in zip(later, hit) if h})
+    return out
+
+
 def merge_tolerances(st, ops=None, site_orders=None, separate_stated=False):
     """Per site: the distance (Å) below which its images are one atom, and why.
 
