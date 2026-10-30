@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" hreflang="en" href="https://cod.adambh.net/">
+<link rel="alternate" hreflang="fr" href="https://cod.adambh.net/fr.html">
+<script>
+(function () {
+  var k = "cod-lang", chosen = null;
+  try { chosen = localStorage.getItem(k); } catch (e) {}
+  if (!chosen && document.documentElement.lang === "en") {
+    var l = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+    if (/^fr\b/i.test(l)) location.replace("fr.html" + location.hash);
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest(".langswitch a[hreflang]");
+    if (a) try { localStorage.setItem(k, a.getAttribute("hreflang")); } catch (err) {}
+  });
+})();
+</script>
+<title>Bases de référence HighScore issues de la COD</title>
+<meta name="description" content="Bases de données de référence pour Malvern Panalytical HighScore 3.x et 4.x, calculées à partir de la Crystallography Open Database : 533 950 fiches, vérifiées indépendamment avec cctbx.">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f3f2ee;
+  --border: #e2e0da;
+  --text: #16150f;
+  --text-2: #52514e;
+  --text-3: #7a7872;
+  --accent: #1d5fb0;
+  --accent-soft: #e6eef8;
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --grid: #e7e5df;
+  --code-bg: #f3f2ee;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+h1, h2, h3 { font-family: "Iowan Old Style", Charter, "Palatino Linotype", Georgia, serif; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2rem, 5vw, 2.9rem); margin: 0 0 12px; }
+h2 { font-size: 1.6rem; margin: 0 0 12px; }
+h3 { font-size: 1.15rem; margin: 20px 0 6px; }
+p { margin: 0 0 12px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+code, .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+.muted { color: var(--text-2); }
+.small { font-size: 0.875rem; }
+header.top { border-bottom: 1px solid var(--border); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 56px; }
+.brand { font-weight: 600; letter-spacing: 0.01em; white-space: nowrap; }
+nav { white-space: nowrap; }
+@media (max-width: 1100px) { .brand span { display: none; } nav a { margin-left: 14px; } }
+.brand span { color: var(--text-3); font-weight: 400; }
+nav a { color: var(--text-2); text-decoration: none; margin-left: 18px; font-size: 0.95rem; }
+nav a:hover { color: var(--text); }
+@media (max-width: 900px) { nav { display: none; } }
+.hero { padding-top: 56px; padding-bottom: 24px; }
+.lede { font-size: 1.15rem; color: var(--text-2); max-width: 720px; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+.badges li { font-size: 0.85rem; border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; color: var(--text-2); background: var(--surface); }
+section { padding: 36px 0; border-top: 1px solid var(--border); }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 28px 0 8px; }
+@media (max-width: 760px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+.stat b { display: block; font-family: "Iowan Old Style", Charter, Georgia, serif; font-size: 1.7rem; line-height: 1.1; font-weight: 600; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 0.85rem; color: var(--text-2); }
+.downloads { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 760px) { .downloads { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.card h3 { margin: 0; }
+.card .btn { margin-top: auto; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; align-self: stretch; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; padding: 9px 16px; border-radius: 8px; }
+.downloads .btn { padding: 12px 18px; font-size: 1.02rem; }
+.downloads .card > p.meta { min-height: 3.3em; }
+@media (max-width: 760px) { .downloads .card > p.meta { min-height: 0; } }
+.downloads .btn::before { content: "↓"; font-weight: 700; }
+.btn:focus-visible, a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.meta { font-size: 0.85rem; color: var(--text-2); }
+.sha { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.78rem; line-height: 1.5; color: var(--text-2); background: var(--surface-2); border-radius: 8px; padding: 8px 10px; white-space: pre-line; overflow-wrap: anywhere; }
+.sha:empty { display: none; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }
+ul.clean { padding-left: 1.1em; margin: 0 0 12px; }
+ul.clean li { margin: 4px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { font-weight: 600; color: var(--text-2); font-size: 0.85rem; }
+td.num { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.tablewrap table tr:last-child td { border-bottom: 0; }
+figure { margin: 18px 0 0; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+figcaption { font-size: 0.9rem; color: var(--text-2); margin-top: 8px; }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.85rem; color: var(--text-2); margin-bottom: 6px; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+#chart { width: 100%; min-width: 640px; height: auto; display: block; }
+#chart text { fill: var(--text-2); font: 11px system-ui, sans-serif; }
+#tip { position: absolute; pointer-events: none; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 9px; font-size: 0.8rem; box-shadow: 0 4px 16px rgba(0,0,0,.12); display: none; white-space: nowrap; z-index: 5; }
+.chartbox { position: relative; overflow-x: auto; }
+details { margin-top: 10px; }
+summary { cursor: pointer; color: var(--accent); font-size: 0.9rem; }
+.bars { list-style: none; margin: 14px 0; padding: 0; }
+.bars li { display: grid; grid-template-columns: 12rem 1fr 3.4rem; align-items: center; gap: 10px; margin: 7px 0; font-size: 0.9rem; color: var(--text-2); }
+.bars .track { display: block; height: 12px; background: var(--surface-2); border-radius: 4px; }
+.bars .track i { display: block; height: 100%; min-width: 2px; background: var(--series-1); border-radius: 4px; }
+.bars b { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--text); }
+@media (max-width: 640px) { .bars li { grid-template-columns: 1fr 3.4rem; } .bars .track { grid-column: 1 / -1; grid-row: 2; } }
+.cols { display: flex; align-items: flex-end; gap: 4px; height: 150px; margin: 8px 0 0; padding: 0; list-style: none; }
+.cols li { flex: 1; min-width: 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+.cols b { font-size: 0.7rem; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--text); }
+.cols i { display: block; width: 100%; min-height: 2px; background: var(--series-1); border-radius: 3px 3px 0 0; }
+.cols em { font-style: normal; font-size: 0.65rem; color: var(--text-2); margin-top: 4px; }
+.dots { list-style: none; margin: 12px 0; padding: 0; }
+.dots li { display: grid; grid-template-columns: 11rem 1fr 3.8rem; gap: 10px; align-items: center; margin: 8px 0; font-size: 0.9rem; color: var(--text-2); }
+.dots .track { position: relative; display: block; height: 16px; border-right: 1px solid var(--grid); border-bottom: 1px solid var(--border); background: linear-gradient(to right, var(--grid) 1px, transparent 1px) 0 0 / 25% 100%; }
+.dots .track i { position: absolute; top: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--series-1); box-shadow: 0 0 0 2px var(--surface); }
+.dots b, .bars b { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--text); }
+.ticks { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-3); }
+.ticks em { font-style: normal; }
+.bars.short li { grid-template-columns: 8.5rem 1fr 3.4rem; }
+.cols + p { margin-top: 14px; }
+.charttitle { margin: 14px 0 0; font-size: 0.85rem; color: var(--text-2); }
+@media (max-width: 640px) { .dots li { grid-template-columns: 1fr 3.8rem; } .dots .track { grid-column: 1 / -1; grid-row: 2; } .bars.short li { grid-template-columns: 1fr 3.4rem; } .dots li > span:empty, .bars li > span:empty { display: none; } .ticks { grid-column: 1 / -1; } }
+.callout { background: var(--accent-soft); border-radius: 10px; padding: 12px 14px; font-size: 0.95rem; }
+ol.steps { padding-left: 1.3em; }
+ol.steps li { margin: 6px 0; }
+.release { color: var(--text-2); margin: -4px 0 14px; }
+.fname { font-size: 0.8rem; color: var(--text-2); overflow-wrap: anywhere; }
+.changes h3 { margin-top: 18px; }
+.changes h3 span { font-family: system-ui, sans-serif; font-weight: 400; font-size: 0.9rem; color: var(--text-3); margin-left: 8px; }
+footer { border-top: 1px solid var(--border); padding: 28px 0 48px; font-size: 0.85rem; color: var(--text-2); }
+header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
+.langswitch { display: inline-flex; margin-left: 18px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; vertical-align: middle; }
+.langswitch a { padding: 3px 10px; font-size: 0.85rem; font-weight: 600; color: var(--text-2); text-decoration: none; }
+.langswitch a[href]:hover { color: var(--text); background: var(--surface-2); }
+.langswitch a[aria-current] { background: var(--accent); color: #fff; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Bases de référence HighScore <span>· issues de la COD</span></div>
+    <div>
+      <nav aria-label="Sections">
+        <a href="#download">Téléchargement</a><a href="#model">Calcul</a><a href="#verification">Vérification</a><a href="#differences">Différences</a><a href="#install">Installation</a><a href="#changelog">Versions</a>
+      </nav>
+      <div class="langswitch" role="group" aria-label="Language / Langue"><a href="./" hreflang="en" lang="en" title="English">EN</a><a aria-current="true" lang="fr">FR</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <h1>La Crystallography Open Database en diagrammes de référence pour HighScore</h1>
+  <p class="lede">Diagrammes de poudre calculés et données structurales pour chaque fiche exploitable de la <a href="https://www.crystallography.net/">Crystallography Open Database</a>, pour Malvern Panalytical HighScore 3.x et 4.x et versions ultérieures. Construits à partir de la COD de octobre 2026, calculés indépendamment des bases officielles et vérifiés avec <a href="https://cctbx.github.io/">cctbx</a>.</p>
+  <ul class="badges" aria-label="Résumé">
+    <li>COD, octobre 2026</li><li>Cu Kα₁</li><li>HighScore 3.x · 4.x+</li><li>Recalcul indépendant</li><li>Libre d’utilisation</li>
+  </ul>
+  <div class="stats">
+    <div class="stat"><b>533 950</b><span>fiches dans chaque base</span></div>
+    <div class="stat"><b>22 367</b><span>fiches plus récentes que la base officielle COD 2024</span></div>
+    <div class="stat"><b>202</b><span>structures modulées avec réflexions satellites</span></div>
+    <div class="stat"><b>0</b><span>écart de calcul avec cctbx</span></div>
+  </div>
+</div>
+
+<section id="download">
+  <div class="wrap">
+    <h2>Téléchargement</h2>
+    <p class="release">Version du <b data-release>2026-10-29</b>, construite à partir de la COD d’octobre 2026 · <a href="#changelog">historique des versions</a></p>
+    <p class="muted">Chaque archive contient un fichier <code>.hsrdb</code> (environ 7 Go une fois décompressé). Les sommes de contrôle proviennent de <a href="https://cod-dl.adambh.net/SHA256SUMS.txt">SHA256SUMS.txt</a>.</p>
+    <p class="muted">L’outil qui construit ces bases, avec la liste des corrections faites à partir des publications, est libre : <a href="https://github.com/adambenhassen/hsrdb-tools">code source sur GitHub</a>.</p>
+    <div class="downloads">
+      <div class="card" data-kind="HS4x">
+        <h3>HighScore 4.x et ultérieures</h3>
+        <p class="meta">Données structurales au format de HighScore 4 (phase, version 6).</p>
+        <div class="meta"><span class="fname mono">COD_2026_10_29_HS4x.7z</span> <span class="size"></span></div>
+        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_10_29_HS4x.7z" download>Télécharger pour HighScore 4.x</a>
+        <div class="sha"></div>
+      </div>
+      <div class="card" data-kind="HS3x">
+        <h3>HighScore 3.x</h3>
+        <p class="meta">Les mêmes fiches, avec les données structurales au format de HighScore 3 (phase, version 3).</p>
+        <div class="meta"><span class="fname mono">COD_2026_10_29_HS3x.7z</span> <span class="size"></span></div>
+        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_10_29_HS3x.7z" download>Télécharger pour HighScore 3.x</a>
+        <div class="sha"></div>
+      </div>
+    </div>
+    <details>
+      <summary>Vérifier et décompresser un téléchargement</summary>
+    <p class="small muted" style="margin-top:12px">Sous Windows, vérifiez un téléchargement dans PowerShell avec <code>Get-FileHash</code> sur le fichier (SHA-256 par défaut) et comparez l’empreinte avec <a href="https://cod-dl.adambh.net/SHA256SUMS.txt">SHA256SUMS.txt</a>, ou clic droit sur le fichier › 7-Zip › CRC SHA › SHA-256 ; puis décompressez-le avec <a href="https://www.7-zip.org/">7-Zip</a>. Sous Linux ou macOS : <code>sha256sum -c SHA256SUMS.txt</code>.</p>
+    </details>
+  </div>
+</section>
+
+<section id="model">
+  <div class="wrap">
+    <h2>Calcul des diagrammes</h2>
+    <div class="grid2">
+      <div>
+        <h3>Modèle de diffraction</h3>
+        <ul class="clean">
+          <li>Facteurs de structure en théorie cinématique, avec les coefficients exacts des facteurs de diffusion des International Tables (1992) et les termes f′ et f″ de Cromer–Liberman à Cu Kα₁ (1,540598 Å).</li>
+          <li>|F|² moyenné sur les paires de Friedel, pour traiter correctement la diffusion anomale dans les structures non centrosymétriques.</li>
+          <li>Les paramètres de déplacement publiés : tenseurs anisotropes U, B ou β, chacun tourné avec son image par symétrie ; B = 0,5 Å² seulement quand le CIF n’en donne pas, comme HighScore et les bases officielles.</li>
+          <li>Facteur de Lorentz–polarisation de poudre (1 + cos²2θ)/(sin²θ cos θ) ; raies jusqu’à 90° en 2θ, fusionnées à 0,005° près, 203 raies au plus, normalisées à 1000.</li>
+          <li>Les réflexions de même angle qui ne sont pas équivalentes par symétrie sont additionnées, car une raie mesurée les contient toutes.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Structures telles que publiées</h3>
+        <ul class="clean">
+          <li>Symétrie tirée des opérations listées dans le CIF, sinon de son symbole de Hall, sinon de son symbole de Hermann–Mauguin ; réglages non standard, origines décalées et surstructures standardisés avec spglib seulement s’il retrouve exactement le groupe listé.</li>
+          <li>Enregistrées dans le réglage de référence attendu par HighScore, avec la même maille que les bases officielles (mailles monocliniques et tricliniques réduites, axes orthorhombiques conventionnels).</li>
+          <li>Atomes dédoublés près des positions spéciales conservés ou fusionnés selon la symétrie de site, les taux d’occupation et la densité donnés par le CIF ; les atomes fictifs (centroïdes de cycles) ne diffusent pas.</li>
+          <li>Structures modulées calculées à partir de leur modèle en superespace, avec les satellites ; le résultat est comparé aux facteurs de structure que le programme d’affinement a inscrits dans le CIF.</li>
+          <li>500 CIF complétés ou corrigés d’après leur publication d’origine (ou les indications du CIF lui-même), chacun cité et signalé dans sa fiche ; les fichiers CIF eux-mêmes ne sont jamais modifiés.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small muted">Chaque fiche contient la maille, le groupe d’espace, le contenu de la maille, la densité calculée, I/Ic, les données structurales (atomes, taux d’occupation, paramètres de déplacement, positions de Wyckoff) et la référence bibliographique, et appartient aux sous-fichiers inorganique, organique, minéral et métallique comme dans les bases officielles.</p>
+    <p><a href="corrections.fr.html">Les 500 CIF corrigés, chacun avec son problème, sa correction et sa source →</a></p>
+  </div>
+</section>
+
+<section id="verification">
+  <div class="wrap">
+    <h2>Vérification</h2>
+    <div class="grid2">
+      <div>
+        <h3>Avec cctbx</h3>
+        <p>Tous les diagrammes de la COD ont été recalculés avec <a href="https://cctbx.github.io/">cctbx</a>, une bibliothèque cristallographique indépendante, de deux manières : à partir de la structure telle que lue ici (facteurs de structure, facteurs de diffusion et de déplacement, multiplicités, Lorentz–polarisation), et à partir de la lecture du CIF brut par cctbx (analyse du fichier, réglages, traitement des sites). Le calcul complet n’a donné aucun écart de calcul ; chaque écart de lecture a une cause documentée, par exemple cctbx qui traite les atomes fictifs comme des diffuseurs. Les 507 CIF corrigés ou nouvellement construits pour cette version ont été vérifiés de nouveau, de même que la base terminée.</p>
+        <p class="charttitle">Plus grand écart sur une raie forte, par fiche, raies officielles (échelle 0–1000)</p>
+        <ul class="bars short">
+          <li><span>Médiane</span><span class="track"><i style="width:1.2%"></i></span><b>12</b></li>
+          <li><span>90ᵉ centile</span><span class="track"><i style="width:11.1%"></i></span><b>111</b></li>
+          <li><span>99ᵉ centile</span><span class="track"><i style="width:38.1%"></i></span><b>381</b></li>
+          <li><span></span><span class="ticks"><em>0</em><em>500</em><em>1 000</em></span><b></b></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Avec les bases COD officielles</h3>
+        <p class="charttitle">Accord avec la COD 2024 (axe à partir de 96 %)</p>
+        <ul class="dots">
+          <li><span>Groupe d’espace</span><span class="track"><i style="left:86.75%"></i></span><b>99,47 %</b></li>
+          <li><span>Volume de maille à 0,5 % près</span><span class="track"><i style="left:99.75%"></i></span><b>99,99 %</b></li>
+          <li><span>Jeu d’éléments</span><span class="track"><i style="left:89.0%"></i></span><b>99,56 %</b></li>
+          <li><span>I/Ic à 10 % près</span><span class="track"><i style="left:29.25%"></i></span><b>97,17 %</b></li>
+          <li><span>Toutes les raies fortes officielles présentes</span><span class="track"><i style="left:99.5%"></i></span><b>99,98 %</b></li>
+          <li><span></span><span class="ticks"><em>96 %</em><em>97 %</em><em>98 %</em><em>99 %</em><em>100 %</em></span><b></b></li>
+        </ul>
+        <details>
+          <summary>Afficher sous forme de tableau</summary>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>511 583 fiches communes avec COD 2024</th><th class="num">Accord</th></tr></thead>
+            <tbody>
+              <tr><td>Groupe d’espace</td><td class="num">99,47 %</td></tr>
+              <tr><td>Volume de maille à 0,5 % près</td><td class="num">99,99 %</td></tr>
+              <tr><td>Éléments chimiques</td><td class="num">99,56 %</td></tr>
+              <tr><td>I/Ic à 10 % près</td><td class="num">97,17 %</td></tr>
+              <tr><td>Toutes les raies fortes officielles présentes</td><td class="num">99,98 %</td></tr>
+              <tr><td>Plus grand écart sur une raie forte, médiane / 90<sup>e</sup> centile (0–1000)</td><td class="num">12 / 111</td></tr>
+            </tbody>
+          </table>
+        </div>
+        </details>
+        <p class="small muted" style="margin-top:8px">Chaque fiche des deux bases passe aussi un audit structurel : listes de raies valides, métadonnées et filtres d’éléments cohérents, données structurales qui se décodent et se réencodent à l’identique.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="differences">
+  <div class="wrap">
+    <h2>Différences avec les bases officielles</h2>
+    <p>La plupart des différences viennent de choix de calcul ; chacune a été vérifiée sur des fiches officielles.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Sujet</th><th>COD 2024 officielle</th><th>Ici</th></tr></thead>
+        <tbody>
+          <tr><td>Réflexions coïncidentes (classes de Laue −3, 6/m, 4/m, m−3)</td><td>une seule semble comptée</td><td>toutes additionnées (ci-dessous)</td></tr>
+          <tr><td>Structures modulées</td><td>structure de base, raies principales seulement</td><td>calcul en superespace avec satellites</td></tr>
+          <tr><td>Types d’atomes qui ne sont pas des éléments (<code>WO</code>, <code>ST1</code>, <code>OS1</code>)</td><td>premières lettres lues comme un élément (tungstène, soufre, osmium)</td><td>l’élément quand il est certain, sinon le modèle de l’article</td></tr>
+          <tr><td>Atomes fictifs (centroïdes)</td><td>comptés comme des atomes</td><td>ne diffusent pas, absents de la formule</td></tr>
+          <tr><td>Tenseurs anisotropes physiquement impossibles</td><td>utilisés tels quels</td><td>remplacés par la valeur isotrope</td></tr>
+          <tr><td>Pseudo-atome cyanure <code>CN</code></td><td>carbone seul</td><td>C et N sur le site</td></tr>
+          <tr><td>Contenu de la COD</td><td>mai 2024</td><td>octobre 2026, révisions comprises</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure>
+      <div class="legend" aria-hidden="true"><span><i style="background:var(--series-1)"></i>Cette base</span><span><i style="background:var(--series-2)"></i>COD 2024 officielle</span></div>
+      <div class="chartbox">
+        <svg id="chart" viewBox="0 0 900 376" role="img" aria-labelledby="chartTitle chartDesc"><title id="chartTitle">Diagrammes en bâtons calculés de la finnemanite, COD 9009599</title><desc id="chartDesc">Cette base au-dessus de l’axe, la base officielle COD 2024 en miroir au-dessous, 2θ de 10 à 45 degrés, Cu Kα1. À 26,36° les réflexions (1 2 0) et (2 1 0) coïncident ; cette base donne 353, la base officielle 216.</desc></svg>
+        <div id="tip" role="status"></div>
+      </div>
+      <figcaption>Finnemanite, Pb₅(AsO₃)₃Cl, P6₃/m (COD <a href="https://www.crystallography.net/cod/9009599.html">9009599</a>), Cu Kα₁. Dans la classe de Laue 6/m, (1 2 0) et (2 1 0) ne sont pas équivalentes par symétrie mais ont le même d. La raie officielle à 3,379 Å correspond à (1 2 0) seule ; avec les deux, elle vaut 353 et tout le diagramme est renormalisé. Survolez ou touchez une raie pour voir d, hkl et l’intensité.</figcaption>
+      <details>
+        <summary>Afficher les raies sous forme de tableau</summary>
+        <div class="tablewrap" style="margin-top:8px"><table id="linetable"><thead><tr><th>2θ (°)</th><th>d (Å)</th><th>hkl</th><th class="num">Cette base</th><th class="num">Officielle</th></tr></thead><tbody></tbody></table></div>
+      </details>
+    </figure>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <div class="grid2">
+      <div>
+        <h2>Utilisation dans HighScore</h2>
+        <ol class="steps">
+          <li>Téléchargez l’archive correspondant à votre version de HighScore et vérifiez son SHA-256.</li>
+          <li>Décompressez-la avec 7-Zip ; gardez le fichier <code>.hsrdb</code> sur un disque local.</li>
+          <li>Ajoutez le fichier comme base de données de référence dans HighScore.</li>
+          <li>Désactivez ou retirez d’abord les autres bases COD : elles utilisent les mêmes codes de référence <code>96-</code>, et HighScore refuse une seconde base dont les préfixes entrent en conflit.</li>
+        </ol>
+        <p class="callout">Les codes de référence suivent le schéma officiel, <code>96-</code> + (numéro COD + 1) : la COD 9009599 devient <code>96-900-9600</code>. Chaque fiche renvoie à sa page COD par son numéro.</p>
+      </div>
+      <div>
+        <h2>Ce qui n’est pas inclus</h2>
+        <p>1 228 CIF ne permettent pas de calculer un diagramme : 1 017 n’ont pas de coordonnées atomiques, 152 pas de symétrie, 46 pas de maille, et quelques-uns ont une symétrie ou des types d’atomes illisibles sans deviner. Aucun ne figure non plus dans la base officielle COD 2024. Chacun a été examiné ; lorsque l’article d’origine donne ce qui manque au CIF, la fiche est construite à partir de lui.</p>
+        <p class="small muted" style="margin-bottom:0">CIF non retenus, par raison</p>
+        <ul class="bars">
+          <li><span>Pas de coordonnées atomiques</span><span class="track"><i style="width:100%"></i></span><b>1 017</b></li>
+          <li><span>Pas de symétrie exploitable</span><span class="track"><i style="width:16%"></i></span><b>162</b></li>
+          <li><span>Pas de maille valide</span><span class="track"><i style="width:4.5%"></i></span><b>46</b></li>
+          <li><span>Type d’atome qui n’est pas un élément</span><span class="track"><i style="width:0.2%"></i></span><b>2</b></li>
+          <li><span>Opérations incompatibles avec la structure</span><span class="track"><i style="width:0.1%"></i></span><b>1</b></li>
+        </ul>
+        <p class="charttitle">CIF non retenus, par décennie de publication (432 autres n’ont pas d’année)</p>
+        <ul class="cols"><li><b>1</b><i style="height:2px"></i><em>1910</em></li><li><b>13</b><i style="height:5px"></i><em>1920</em></li><li><b>201</b><i style="height:82px"></i><em>1930</em></li><li><b>43</b><i style="height:17px"></i><em>1940</em></li><li><b>38</b><i style="height:15px"></i><em>1950</em></li><li><b>13</b><i style="height:5px"></i><em>1960</em></li><li><b>12</b><i style="height:5px"></i><em>1970</em></li><li><b>12</b><i style="height:5px"></i><em>1980</em></li><li><b>208</b><i style="height:85px"></i><em>1990</em></li><li><b>246</b><i style="height:100px"></i><em>2000</em></li><li><b>8</b><i style="height:3px"></i><em>2010</em></li><li><b>1</b><i style="height:2px"></i><em>2020</em></li></ul>
+        <p class="small muted">Cinq fiches de la base officielle n’ont pas de coordonnées utilisables dans leur CIF actuel (COD 2300247, 2300248, 2300253, 2300257, 5900030). Elles sont reprises telles que la base officielle les contient, et leur commentaire indique qu’il ne s’agit pas de structures correctes.</p>
+        <p><a href="skipped.fr.html">Les 1 228 CIF non retenus, avec leurs références, DOI et raisons →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="changelog">
+  <div class="wrap changes">
+    <h2>Historique des versions</h2>
+    <p class="muted">Chaque version porte la date de sa construction, dans le nom de l’archive et dans celui du fichier de base affiché par HighScore : <code>COD_2026_10_29_HS4x.hsrdb</code>.</p>
+    <div class="grid2">
+      <div>
+        <p class="charttitle">CIF corrigés, par version</p>
+        <ul class="bars short"><li><span>2026-10-29</span><span class="track"><i style="width:100%"></i></span><b>500</b></li><li><span>2026-10-15</span><span class="track"><i style="width:100%"></i></span><b>500</b></li><li><span>2026-10-04</span><span class="track"><i style="width:99.8%"></i></span><b>499</b></li><li><span>2026-10-03</span><span class="track"><i style="width:100%"></i></span><b>499</b></li><li><span>2026-09-30</span><span class="track"><i style="width:11.4%"></i></span><b>57</b></li></ul>
+      </div>
+      <div>
+        <p class="charttitle">CIF non retenus, par version</p>
+        <ul class="bars short"><li><span>2026-10-29</span><span class="track"><i style="width:73.6%"></i></span><b>1 228</b></li><li><span>2026-10-15</span><span class="track"><i style="width:73.5%"></i></span><b>1 227</b></li><li><span>2026-10-04</span><span class="track"><i style="width:73.4%"></i></span><b>1 225</b></li><li><span>2026-10-03</span><span class="track"><i style="width:73.3%"></i></span><b>1 224</b></li><li><span>2026-09-30</span><span class="track"><i style="width:100%"></i></span><b>1 669</b></li></ul>
+      </div>
+    </div>
+    <h3>2026-10-29 <span>533 950 fiches</span></h3>
+    <ul class="clean">
+      <li>11 CIF ajoutés à la COD depuis la version précédente donnent des fiches (22 367 plus récentes que la base officielle COD 2024) ; un autre dépôt non publié, sans coordonnées, est écarté (1 228 au total).</li>
+      <li>La COD a révisé sept CIF entre-temps (1010542, 4100872–4100877) ; les fiches 4100872–4100877 portent désormais leurs auteurs, titre, revue et pages corrects.</li>
+      <li>Une erreur de calcul dans quatre structures modulées commensurables est corrigée (COD 2310038, 2310043, 2310046, 2310055) : les intensités des raies changent d’au plus 5 sur l’échelle 0–1000, I/Ic d’au plus 1,4 %.</li>
+      <li>Une raie qui regroupe plusieurs réflexions de même intensité à une même distance d porte désormais le même indice hkl sur toutes les plateformes (2 849 fiches) ; les diagrammes sont inchangés.</li>
+      <li>Reconstruit à partir du miroir de la COD du 29 octobre 2026.</li>
+    </ul>
+    <h3>2026-10-15 <span>533 939 fiches</span></h3>
+    <ul class="clean">
+      <li>7 CIF ajoutés à la COD depuis la version précédente donnent des fiches (22 356 plus récentes que la base officielle COD 2024) ; trois autres dépôts non publiés, sans coordonnées, sont écartés.</li>
+      <li>LaONO₃ (COD 6000784), écarté jusqu’ici, est désormais construit d’après son article (500 CIF corrigés) ; 1 227 CIF sont écartés au total.</li>
+      <li>Reconstruit à partir du miroir de la COD du 15 octobre 2026 ; le calcul est inchangé.</li>
+    </ul>
+    <h3>2026-10-04 <span>533 931 fiches</span></h3>
+    <ul class="clean">
+      <li>31 CIF ajoutés à la COD depuis la version précédente donnent des fiches (22 348 plus récentes que la base officielle COD 2024) ; un autre dépôt non publié, sans coordonnées, est écarté (1 225 au total).</li>
+      <li>La COD a révisé un CIF entre-temps (9011997) ; sa fiche suit la révision.</li>
+      <li>Reconstruit à partir du miroir de la COD du 3 octobre 2026 ; le calcul est inchangé.</li>
+    </ul>
+    <h3>2026-10-03 <span>533 900 fiches</span></h3>
+    <ul class="clean">
+      <li>445 CIF de plus donnent une fiche (22 317 plus récentes que la base officielle COD 2024) ; 1 224 CIF restent non retenus, contre 1 669.</li>
+      <li>499 CIF sont désormais complétés ou corrigés d’après leur publication d’origine (57 auparavant), chacun cité et signalé dans sa fiche ; chaque correction a été vérifiée d’après l’article, et les fichiers CIF eux-mêmes ne sont jamais modifiés.</li>
+      <li>Les CIF corrigés ont ensuite été audités à nouveau : contrôles de cohérence sur tous, et tableaux de coordonnées comparés ligne à ligne à l’article lorsque son PDF était disponible ; deux erreurs ont été trouvées et corrigées.</li>
+      <li>Quatre structures modulées de plus sont calculées à partir du modèle en superespace donné par leur article (202 fiches au total) ; les structures dont le CIF ne donne qu’un symbole de superespace sont construites comme structures moyennes.</li>
+      <li>Le code source et la liste des corrections sont publics sur GitHub.</li>
+    </ul>
+    <h3>2026-09-30 <span>533 455 fiches</span></h3>
+    <ul class="clean">
+      <li>Toutes les fiches de la base officielle COD 2024 sont incluses, ainsi que 21 872 fiches plus récentes.</li>
+      <li>Les structures modulées sont calculées à partir de leur modèle en superespace, avec les réflexions satellites (198 fiches) ; lorsqu’un modèle ne peut pas être évalué, la structure de base est enregistrée, comme dans COD 2024, et la fiche l’indique.</li>
+      <li>57 CIF sont complétés ou corrigés d’après leur publication d’origine ou leurs propres indications.</li>
+      <li>Les mailles sont enregistrées comme dans les bases officielles : mailles monocliniques et tricliniques réduites (P2₁/n et P2₁/a deviennent P2₁/c avec la maille courte, et non β ≈ 140°), axes orthorhombiques conventionnels ; environ 94 000 fiches. Les diagrammes sont inchangés ; les indices hkl suivent la maille.</li>
+      <li>Les opérations de symétrie listées ou le symbole de Hall l’emportent sur un symbole de Hermann–Mauguin discordant : les fiches dont les atomes étaient doublés sont désormais correctes.</li>
+      <li>Les atomes dédoublés près des positions spéciales suivent la symétrie de site, les taux d’occupation et la densité donnés par le CIF ; lorsque U<sub>iso</sub> manque, les paramètres de déplacement viennent de B<sub>iso</sub> ; les tenseurs à diagonale vide sont remplacés.</li>
+      <li>Les noms des archives et des bases portent la date de construction.</li>
+    </ul>
+    <h3>2026-09-27 <span>533 229 fiches</span></h3>
+    <ul class="clean">
+      <li>Première version publique.</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Une construction indépendante, sans lien avec la Crystallography Open Database ni Malvern Panalytical et non approuvée par elles. HighScore est une marque de Malvern Panalytical. Les diagrammes sont calculés ; comparez-les à vos propres mesures.</p>
+    <p><a href="https://cod-dl.adambh.net/SHA256SUMS.txt">SHA256SUMS.txt</a> · <a href="https://github.com/adambenhassen/hsrdb-tools">Code source (GitHub)</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // the current release from SHA256SUMS.txt (COD_<yyyy_mm_dd>_<HS4x|HS3x>.7z), so a new release needs no page edit;
+  // the archives are served from their own host, which allows cross-origin reads
+  var FILES = "https://cod-dl.adambh.net/";
+  function size(card) {
+    var f = card.querySelector(".btn").getAttribute("href");
+    fetch(f, { method: "HEAD", cache: "no-store" }).then(function (r) {
+      if (!r.ok) return;
+      var n = +r.headers.get("content-length"), lm = r.headers.get("last-modified");
+      var parts = [];
+      if (n) parts.push((n / 1e9).toFixed(2).replace(".", ",") + "\u202fGo");
+      if (lm) parts.push("publié le " + new Date(lm).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }));
+      card.querySelector(".size").textContent = parts.length ? "· " + parts.join(" · ") : "";
+    }).catch(function () {});
+  }
+  fetch(FILES + "SHA256SUMS.txt", { cache: "no-store" }).then(function (r) { return r.ok ? r.text() : ""; }).then(function (txt) {
+    txt.split("\n").forEach(function (line) {
+      var m = line.trim().match(/^([0-9a-f]{64})\s+\*?(COD_(\d{4})_(\d{2})_(\d{2})_(HS4x|HS3x)\.7z)$/);
+      if (!m) return;
+      var card = document.querySelector('[data-kind="' + m[6] + '"]');
+      if (!card) return;
+      card.querySelector(".btn").setAttribute("href", FILES + m[2]);
+      card.querySelector(".fname").textContent = m[2];
+      card.querySelector(".sha").textContent = "SHA-256\n" + m[1].slice(0, 32) + "\n" + m[1].slice(32);
+      document.querySelectorAll("[data-release]").forEach(function (el) { el.textContent = m[3] + "-" + m[4] + "-" + m[5]; });
+    });
+  }).catch(function () {}).then(function () {
+    document.querySelectorAll("[data-kind]").forEach(size);
+  });
+})();
+</script>
+<script>
+// Finnemanite, COD 9009599: [2θ, d, I, hkl], Cu Kα1, 10–45° 2θ; each pattern scaled to its own strongest line
+const OURS=[[15.992, 5.5375, 145, [0, 1, 1]], [17.167, 5.161, 50, [1, 1, 0]], [19.848, 4.4696, 164, [0, 2, 0]], [21.315, 4.1652, 183, [1, 1, 1]], [23.545, 3.7755, 123, [0, 2, 1]], [25.23, 3.527, 72, [0, 0, 2]], [26.357, 3.3787, 353, [1, 2, 0]], [27.158, 3.2809, 225, [0, 1, 2]], [29.285, 3.0472, 1000, [1, 2, 1]], [29.964, 2.9797, 482, [0, 3, 0]], [30.678, 2.912, 912, [1, 1, 2]], [32.306, 2.7688, 22, [0, 2, 2]], [32.596, 2.7449, 51, [0, 3, 1]], [34.736, 2.5805, 60, [2, 2, 0]], [36.202, 2.4793, 43, [1, 3, 0]], [36.809, 2.4398, 40, [1, 2, 2]], [37.067, 2.4234, 27, [2, 2, 1]], [38.456, 2.339, 76, [1, 3, 1]], [39.561, 2.2762, 55, [0, 3, 2]], [40.325, 2.2348, 30, [0, 4, 0]], [42.201, 2.1397, 60, [1, 1, 3]], [43.416, 2.0826, 210, [2, 2, 2]], [43.453, 2.0809, 28, [0, 2, 3]], [44.124, 2.0508, 64, [2, 3, 0]], [44.64, 2.0283, 191, [3, 1, 2]]];
+const COD24=[[30.678, 2.912, 1000, [1, 1, 2]], [29.285, 3.0472, 711, [1, 2, 1]], [29.964, 2.9797, 529, [0, 3, 0]], [27.158, 3.2809, 247, [0, 1, 2]], [43.416, 2.0826, 231, [2, 2, 2]], [26.357, 3.3787, 216, [1, 2, 0]], [44.64, 2.0283, 210, [3, 1, 2]], [21.315, 4.1652, 200, [1, 1, 1]], [19.848, 4.4696, 179, [0, 2, 0]], [15.992, 5.5375, 160, [0, 1, 1]], [23.545, 3.7755, 135, [0, 2, 1]], [25.23, 3.527, 79, [0, 0, 2]], [38.456, 2.339, 75, [1, 3, 1]], [44.124, 2.0508, 68, [2, 3, 0]], [34.736, 2.5805, 66, [2, 2, 0]], [42.201, 2.1397, 66, [1, 1, 3]], [39.561, 2.2762, 61, [0, 3, 2]], [32.596, 2.7449, 55, [0, 3, 1]], [17.167, 5.161, 54, [1, 1, 0]], [36.809, 2.4398, 42, [1, 2, 2]], [40.325, 2.2348, 33, [0, 4, 0]], [36.202, 2.4793, 33, [1, 3, 0]], [43.453, 2.0809, 31, [0, 2, 3]], [37.067, 2.4234, 31, [2, 2, 1]], [32.306, 2.7688, 24, [0, 2, 2]]];
+(function () {
+  var svg = document.getElementById("chart"), tip = document.getElementById("tip");
+  var W = 900, H = 376, L = 48, R = 16, T = 18, B = 50, mid = T + (H - T - B) / 2;
+  var x0 = 10, x1 = 45, half = (H - T - B) / 2 - 6;
+  var NS = "http://www.w3.org/2000/svg";
+  function el(n, a, p) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); (p || svg).appendChild(e); return e; }
+  function X(t) { return L + (t - x0) / (x1 - x0) * (W - L - R); }
+  function Y(i, dir) { return mid - dir * i / 1000 * half; }
+  // recessive grid and axes
+  for (var t = 10; t <= 45; t += 5) {
+    el("line", { x1: X(t), x2: X(t), y1: T, y2: H - B, stroke: "var(--grid)", "stroke-width": 1 });
+    var tx = el("text", { x: X(t), y: H - B + 18, "text-anchor": "middle" }); tx.textContent = t + "°";
+  }
+  [1000, 500].forEach(function (v) {
+    [1, -1].forEach(function (s) {
+      el("line", { x1: L, x2: W - R, y1: Y(v, s), y2: Y(v, s), stroke: "var(--grid)", "stroke-width": 1 });
+      var ty = el("text", { x: L - 6, y: Y(v, s) + 4, "text-anchor": "end" }); ty.textContent = v;
+    });
+  });
+  el("line", { x1: L, x2: W - R, y1: mid, y2: mid, stroke: "var(--text-3)", "stroke-width": 1 });
+  var xl = el("text", { x: (L + W - R) / 2, y: H - 6, "text-anchor": "middle" }); xl.textContent = "2θ (degrés), Cu Kα₁";
+  var byT = {};
+  function draw(rows, dir, color, name) {
+    rows.forEach(function (r) {
+      var x = X(r[0]);
+      var key = r[0].toFixed(3); byT[key] = byT[key] || { t: r[0], d: r[1], hkl: r[3] }; byT[key][name] = r[2];
+      el("line", { x1: x, x2: x, y1: mid, y2: Y(r[2], dir), stroke: color, "stroke-width": 2.5, "stroke-linecap": "round" });
+      var hit = el("rect", { x: x - 6, y: Math.min(mid, Y(r[2], dir)) - 4, width: 12, height: Math.abs(Y(r[2], dir) - mid) + 8, fill: "transparent", tabindex: 0, "aria-label": (name === "ours" ? "Cette base" : "COD 2024 officielle") + ", 2θ " + r[0].toFixed(2).replace(".", ",") + "°, hkl " + r[3].join(" ") + ", I " + r[2] });
+      function show(ev) {
+        var box = svg.getBoundingClientRect(), s = box.width / W;
+        tip.innerHTML = "<b>" + (name === "ours" ? "Cette base" : "COD 2024 officielle") + "</b><br>2θ " + r[0].toFixed(2).replace(".", ",") + "°, d " + r[1].toFixed(4).replace(".", ",") + " Å<br>hkl " + r[3].join(" ") + " · I " + r[2];
+        tip.style.display = "block";
+        var left = x * s + 12, top = Math.min(mid, Y(r[2], dir)) * s;
+        if (left + 190 > box.width) left = x * s - 200;
+        tip.style.left = left + "px"; tip.style.top = Math.max(0, top) + "px";
+      }
+      hit.addEventListener("mouseenter", show); hit.addEventListener("focus", show);
+      hit.addEventListener("click", show);
+      hit.addEventListener("mouseleave", function () { tip.style.display = "none"; });
+      hit.addEventListener("blur", function () { tip.style.display = "none"; });
+    });
+  }
+  draw(OURS, 1, "var(--series-1)", "ours");
+  draw(COD24, -1, "var(--series-2)", "cod");
+  // selective direct labels: the coincident pair and the strongest line
+  function note(t, i, dir, text, anchor) {
+    var y = Y(i, dir) + (dir > 0 ? -6 : 14);
+    var n = el("text", { x: X(t) + (anchor === "end" ? -6 : 6), y: y, "text-anchor": anchor || "start" }); n.textContent = text;
+  }
+  note(26.357, 353, 1, "(1 2 0) + (2 1 0): 353", "end");
+  note(26.357, 216, -1, "216", "end");
+  var lab1 = el("text", { x: L + 6, y: T + 12 }); lab1.textContent = "Cette base";
+  var lab2 = el("text", { x: L + 6, y: H - B - 6 }); lab2.textContent = "COD 2024 officielle";
+  // table view
+  var tb = document.querySelector("#linetable tbody");
+  Object.keys(byT).map(function (k) { return byT[k]; }).sort(function (a, b) { return a.t - b.t; }).forEach(function (r) {
+    var tr = document.createElement("tr");
+    tr.innerHTML = "<td>" + r.t.toFixed(2) + "</td><td>" + r.d.toFixed(4) + "</td><td>" + r.hkl.join(" ") + "</td><td class='num'>" + (r.ours == null ? "–" : r.ours) + "</td><td class='num'>" + (r.cod == null ? "–" : r.cod) + "</td>";
+    tb.appendChild(tr);
+  });
+  svg.addEventListener("mouseleave", function () { tip.style.display = "none"; });
+})();
+</script>
+</body>
+</html>
