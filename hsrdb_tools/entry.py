@@ -488,18 +488,25 @@ def _default_b(st, block, rows, ueq=None):
 def _cap_occupancies(block, st, fix):
     """Reads an occupancy of OCC_IMPOSSIBLE or more as 1, as COD24 does, and returns 'label value' for each: such a
     value is a typo (130 for 0.130), a ratio (2 and 3 for 0.4 and 0.6) or a count, never atoms on one site. Smaller
-    excesses are refined values and stay as published. Sites a correction names keep the CIF's value for the
-    correction to act on; dummy atoms (flagged dum) do not scatter and keep theirs."""
+    excesses are refined values and stay as published. A negative occupancy is read as 0 (no site holds less than
+    nothing; most are refined zeros within their uncertainty) and returned likewise as the second list. Sites a
+    correction names keep the CIF's value for the correction to act on; dummy atoms (flagged dum) do not scatter and
+    keep theirs."""
     labels = [gemmi.cif.as_string(v) for v in block.find_values("_atom_site_label")]
     flags = [gemmi.cif.as_string(v).strip().lower() for v in block.find_values("_atom_site_calc_flag")]
     keep = set(fix.get("sites", {})) | {label for label, flag in zip(labels, flags) if flag == "dum"}
-    capped = []
+    capped, negative = [], []
     for i in range(len(st.sites)):
         site = st.sites[i]
-        if site.occ >= OCC_IMPOSSIBLE and site.label not in keep and not site.label.lower().startswith("dum"):
+        if site.label in keep or site.label.lower().startswith("dum"):
+            continue
+        if site.occ >= OCC_IMPOSSIBLE:
             capped.append(f"{site.label} {site.occ:g}")
             st.sites[i].occ = 1.0
-    return capped
+        elif site.occ < 0:
+            negative.append(f"{site.label} {site.occ:g}")
+            st.sites[i].occ = 0.0
+    return capped, negative
 
 
 def _clean_sites(st, spacegroup, shift=(0.0, 0.0, 0.0)):
@@ -614,7 +621,7 @@ def _k_factor(st, images, imax=None, weights=None):
     if imax is None:
         _, imax = pattern.calculate(st, 90.0, images=images)
     mass = _cell_mass(st, images, weights)
-    if not mass > 0:  # negative occupancies
+    if not mass > 0:  # zero occupancies (negative ones are read as 0, _cap_occupancies)
         raise EntryError(f"occupancies that give the unit cell a mass of {mass:.4g}")
     density = mass * 1.66054 / st.cell.volume
     return imax / st.cell.volume**2 / density
@@ -809,7 +816,7 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge
     if not st.cell.volume > 0:
         raise EntryError("no valid unit cell")
     _read_aniso(block, st)
-    capped = _cap_occupancies(block, st, fix)
+    capped, negative = _cap_occupancies(block, st, fix)
     origin, weights, correction, shell_specs, assigned = _apply_corrections(st, cod_id)
     _resolve_types(block, st, origin, assigned)
     shift = (0.0, 0.0, 0.0)
@@ -986,6 +993,8 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge
         comment.append(f"Corrected from the publication: {correction}")
     if capped:
         comment.append(f"Occupancy read as 1 where the CIF gives an impossible value: {', '.join(capped)}")
+    if negative:
+        comment.append(f"Occupancy read as 0 where the CIF gives a negative value: {', '.join(negative)}")
     if merged_labels:
         comment.append("Atoms counted once that the CIF lists again as symmetry images of another row (counted "
                        f"separately, they contradict the CIF's formula or give an impossible density): {', '.join(merged_labels)}")

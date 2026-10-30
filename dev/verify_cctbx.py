@@ -143,7 +143,7 @@ def our_choices(xs, path, e):
     difference: aniso rows as given (beta_ij too, which cctbx does not read; repeated labels paired in order, which
     cctbx gets wrong); dummy atoms (calc_flag dum) and rows counted once as symmetry images of another row
     (entry.from_cif, merged_images) left out; occupancies of entry.OCC_IMPOSSIBLE or more read as 1
-    (entry._cap_occupancies); tensors with all components zero or a negative
+    and negative ones as 0 (entry._cap_occupancies); tensors with all components zero or a negative
     mean-square displacement (judged before site symmetry is imposed) replaced by the isotropic value; B = sites.DEFAULT_B for atoms without any displacement parameter
     (cctbx leaves them at U = 0); images of an atom merged within the distance hsrdb-tools chose for it
     (sites.merge_tolerances), with cctbx's own special-position handling; the space group of the symmetry
@@ -192,6 +192,9 @@ def our_choices(xs, path, e):
         if sc.occupancy >= entry.OCC_IMPOSSIBLE and keep[-1] and sc.label not in fixed \
                 and not sc.label.lower().startswith("dum"):  # entry._cap_occupancies
             sc.occupancy = 1.0
+        elif sc.occupancy < 0 and keep[-1] and sc.label not in fixed \
+                and not sc.label.lower().startswith("dum"):  # entry._cap_occupancies
+            sc.occupancy = 0.0
         rows = tensors.get(sc.label, [])
         if rows:
             same = [r for r, lab in enumerate(labels) if lab == sc.label]

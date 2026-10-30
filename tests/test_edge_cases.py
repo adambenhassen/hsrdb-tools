@@ -759,6 +759,16 @@ def test_impossible_occupancy_is_read_as_one_and_noted(tmp_path):
     assert "Occupancy" not in ref.comment
 
 
+def test_negative_occupancy_is_read_as_zero_and_noted(tmp_path):
+    # COD 4134236 refines occupancies freely (C3X -2(6) next to H1 45(19)); most negative values are refined zeros
+    # within their uncertainty (1563204: D1 -0.003(12))
+    ref = build(tmp_path, cif(NACL_ATOMS), name="ref.cif")
+    e = build(tmp_path, cif(NACL_ATOMS + "Na2 Na+ 0.25 0.25 0.25 -2(6) 0.012\n"))
+    assert e.formula == ref.formula and e.density == pytest.approx(ref.density)
+    same_lines(e.lines, ref.lines)
+    assert "Occupancy read as 0 where the CIF gives a negative value: Na2 -2" in e.comment
+
+
 def test_refined_occupancy_slightly_above_one_is_kept(tmp_path):
     e = build(tmp_path, cif("Na1 Na+ 0 0 0 1.2 0.012\nCl1 Cl- 0.5 0.5 0.5 1 0.011\n"))
     assert e.formula == "Na4.80 Cl4.00" and "Occupancy read as 1" not in e.comment
@@ -1366,7 +1376,7 @@ def test_numbers_in_other_scripts_are_not_read_as_integers(tmp_path):
 
 
 def test_occupancies_that_leave_no_mass_are_skipped(tmp_path):
-    """Negative occupancies that cancel the cell's mass, or outweigh it, give no I/Ic (a division by zero or a
-    negative value): a skip reason."""
-    with pytest.raises(entry.EntryError, match="occupancies that give the unit cell a mass of -"):
-        build(tmp_path, cif("Na1 Na 0 0 0 1 0.01\nNa2 Na 0.5 0.5 0.5 -2 0.01\n"))
+    """Occupancies that leave the cell no mass (zero, or negative and read as 0) give no pattern and no I/Ic:
+    a skip reason."""
+    with pytest.raises(entry.EntryError, match="no reflections|occupancies that give the unit cell a mass of 0"):
+        build(tmp_path, cif("Na1 Na 0 0 0 0 0.01\nNa2 Na 0.5 0.5 0.5 -2 0.01\n"))
