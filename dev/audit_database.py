@@ -89,7 +89,7 @@ def check_range(bounds):
         else:
             m1 = m2 = 0
             for el, _ in els:
-                z = gemmi.Element(el).atomic_number
+                z = 108 if el == "D" else gemmi.Element(el).atomic_number  # deuterium has its own bit, as in COD24
                 if z < 64:
                     m1 |= 1 << z
                 else:
