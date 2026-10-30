@@ -110,7 +110,7 @@ Every entry of both databases passes `dev/audit_database.py` (valid peak lists, 
 | Structure record format | byte-identical re-encoding of official records (2,000 per version checked) |
 | Space group | 99.47% |
 | Cell volume within 0.5% | 99.99% |
-| Element set | 99.56% |
+| Element set | 99.89% |
 | I/Ic within 10% | 97.17% |
 | All strong official lines present | 99.98% |
 | Largest strong-line intensity difference | median 12, 90th percentile 111 (scale 0–1000) |
