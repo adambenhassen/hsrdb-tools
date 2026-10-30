@@ -1000,11 +1000,15 @@ def _modulated_pattern(model, atoms, dummy, shell_sites, basis, cell):
     return lines, imax / ratio**2, order, left
 
 
+DEUTERIUM_BIT = 108
+
+
 def element_masks(elements):
-    """Bit Z (Z < 64) in e1, bit Z-64 in e2."""
+    """Bit Z (Z < 64) in e1, bit Z-64 in e2. Deuterium has the bit of Z = 108, as in the official databases (COD24,
+    PAN-ICSD), not hydrogen's: an element search for D finds it, one for H does not."""
     e1 = e2 = 0
     for el in elements:
-        z = gemmi.Element(el).atomic_number
+        z = DEUTERIUM_BIT if el == "D" else gemmi.Element(el).atomic_number
         if z < 64:
             e1 |= 1 << z
         else:

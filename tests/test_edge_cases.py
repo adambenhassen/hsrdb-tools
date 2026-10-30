@@ -250,6 +250,9 @@ def test_element_masks():
     assert entry.element_masks(["Eu"]) == (-(2**63), 0)  # Z = 63: sign bit of the signed 64-bit column
     assert entry.element_masks(["Gd"]) == (0, 1)
     assert entry.element_masks(["H", "U"]) == (2, 1 << 28)
+    # deuterium has its own bit, Z = 108, as in the official databases (an element search for D finds it)
+    assert entry.element_masks(["D"]) == (0, 1 << 44)
+    assert entry.element_masks(["H", "D", "O"]) == (2 | 1 << 8, 1 << 44)
     db = sqlite3.connect(":memory:")
     db.execute("create table t(e1 integer)")
     db.execute("insert into t values (?)", (entry.element_masks(["Eu"])[0],))
