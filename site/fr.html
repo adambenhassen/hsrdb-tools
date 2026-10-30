@@ -197,7 +197,7 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
     </div>
     <details>
       <summary>Vérifier et décompresser un téléchargement</summary>
-    <p class="small muted" style="margin-top:12px">Sous Windows, vérifiez un téléchargement dans PowerShell avec <code>Get-FileHash</code> sur le fichier (SHA-256 par défaut) et comparez l’empreinte avec <a href="https://cod-dl.adambh.net/SHA256SUMS.txt">SHA256SUMS.txt</a>, ou clic droit sur le fichier › 7-Zip › CRC SHA › SHA-256 ; puis décompressez-le avec <a href="https://www.7-zip.org/">7-Zip</a>. Sous Linux ou macOS : <code>sha256sum -c SHA256SUMS.txt</code>.</p>
+    <p class="small muted" style="margin-top:12px">Sous Windows, vérifiez un téléchargement dans PowerShell avec <code>Get-FileHash</code> sur le fichier (SHA-256 par défaut) et comparez l’empreinte avec <a href="https://cod-dl.adambh.net/SHA256SUMS.txt">SHA256SUMS.txt</a>, ou clic droit sur le fichier › 7-Zip › CRC SHA › SHA-256 ; puis décompressez-le avec <a href="https://www.7-zip.org/">7-Zip</a>. Sous Linux ou macOS : <code>sha256sum -c --ignore-missing SHA256SUMS.txt</code>.</p>
     </details>
   </div>
 </section>
@@ -431,10 +431,15 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
     }).catch(function () {});
   }
   fetch(FILES + "SHA256SUMS.txt", { cache: "no-store" }).then(function (r) { return r.ok ? r.text() : ""; }).then(function (txt) {
+    // the file may also list releases still kept online: each database shows its newest one, whatever the order
+    var newest = {};
     txt.split("\n").forEach(function (line) {
       var m = line.trim().match(/^([0-9a-f]{64})\s+\*?(COD_(\d{4})_(\d{2})_(\d{2})_(HS4x|HS3x)\.7z)$/);
-      if (!m) return;
-      var card = document.querySelector('[data-kind="' + m[6] + '"]');
+      if (m && (!newest[m[6]] || m[2] > newest[m[6]][2])) newest[m[6]] = m;
+    });
+    Object.keys(newest).forEach(function (kind) {
+      var m = newest[kind];
+      var card = document.querySelector('[data-kind="' + kind + '"]');
       if (!card) return;
       card.querySelector(".btn").setAttribute("href", FILES + m[2]);
       card.querySelector(".fname").textContent = m[2];
