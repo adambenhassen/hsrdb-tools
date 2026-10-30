@@ -1,10 +1,10 @@
 # Skipped CIFs
 
-1,227 COD CIFs from which no correct pattern can be calculated. The README explains each reason.
+1,228 COD CIFs from which no correct pattern can be calculated. The README explains each reason.
 
 | Reason | CIFs |
 |---|---|
-| No atom coordinates | 1,016 |
+| No atom coordinates | 1,017 |
 | No usable symmetry | 162 |
 | No valid unit cell | 46 |
 | Atom type that is not an element | 2 |
@@ -818,6 +818,7 @@
 | 3000656 | No atom coordinates |  | [3000656.cif](https://www.crystallography.net/cod/3000656.cif) |
 | 3000657 | No atom coordinates |  | [3000657.cif](https://www.crystallography.net/cod/3000657.cif) |
 | 3000658 | No atom coordinates |  | [3000658.cif](https://www.crystallography.net/cod/3000658.cif) |
+| 3000659 | No atom coordinates |  | [3000659.cif](https://www.crystallography.net/cod/3000659.cif) |
 | 4030775 | No atom coordinates |  | [4030775.cif](https://www.crystallography.net/cod/4030775.cif) |
 | 4030776 | No atom coordinates |  | [4030776.cif](https://www.crystallography.net/cod/4030776.cif) |
 | 4030831 | No atom coordinates |  | [4030831.cif](https://www.crystallography.net/cod/4030831.cif) |
