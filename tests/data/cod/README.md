@@ -36,6 +36,9 @@ CC0 text: https://creativecommons.org/publicdomain/zero/1.0/. The headers of mos
 | 2002730 | sites on special positions that the CIF states as general: images counted separately (merge_note) |
 | 5910160 | Wyckoff compilation (SiP2O7, P a -3): every atom of the cell listed besides the space group, no Z; rows that are symmetry images of another row counted once (merged_images), the formula's proportions decide |
 | 5910217 | Wyckoff compilation (Mo2BC, C m c m): as 5910160, but counted separately the content is still proportional to the formula; the impossible density (35 g/cm3) decides |
+| 5910088 | Wyckoff compilation (scheelite CaWO4): every atom of the cell listed, coordinates in origin choice 1; correction `spacegroup` I 41/a:1, then the duplicate rows count once |
+| 5910132 | Wyckoff compilation (KReO4): as 5910088, but the doubled content stays proportional to the formula; correction omits the duplicate rows |
+| 5910161 | Wyckoff compilation (spinel NiMn2O4): no setting gives one cell (a stray row); whole structure replaced by a corrected one of the same publication (not checked against the article) |
 | 9000012 | Sb2O3 (valentinite): a and b swapped against the coordinates (12 impossible contacts); whole structure replaced by a corrected one of the same publication (not checked against the article) |
 | 1000408 | TlAlF4: 12 impossible contacts; whole structure replaced by a corrected one of the same publication (not checked against the article) |
 | 1010542 | baryte: dummy atom (`dum`) that does not scatter; mineral name |
