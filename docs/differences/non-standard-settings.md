@@ -1,6 +1,6 @@
 # Non-standard space-group settings
 
-**COD24:** 29 of these 81 CIFs are included; 5 of them with a wrong space group.
+**COD24:** 29 of these 81 CIFs are included; 2 of them with a wrong space group, and 3 in the mirror-image space group.
 **hsrdb-tools:** all 81 included, in the standard setting.
 
 ## Method
@@ -23,7 +23,7 @@ No CIF that agreed with its density or formula before disagrees now.
 ## Where COD24 differs
 
 - `R -3 m HR` and `R -3 HR` (1010022, 1010098) describe rhombohedral structures in the reverse setting. COD24 stores them as primitive `P -3 m 1` and `P -3`, which drops the rhombohedral centring and adds reflections the crystal does not have.
-- `P 32 2 1 S` (1010918, 1011159, 1011176): the listed operations are those of P 3₂21 with the origin shifted by c/3. COD24 stores P 3₁21, the mirror-image space group. The powder pattern is the same, but the space group is not.
+- `P 32 2 1 S` (1010918, 1011159, 1011176): the listed operations are those of P 3₂21 with the origin shifted by c/3. COD24 stores P 3₁21, the mirror-image space group, as it does for every structure in an enantiomorphic space group ([README](../../README.md#differences-from-the-official-cod-databases)). The powder pattern is the same, but the space group is not.
 
 ## All 81 CIFs
 

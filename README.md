@@ -115,7 +115,7 @@ Every entry of both databases passes `dev/audit_database.py` (valid peak lists, 
 | All strong official lines present | 99.98% |
 | Largest strong-line intensity difference | median 12, 90th percentile 111 (scale 0–1000) |
 
-7% of entries have a strong line whose intensity differs by more than 150/1000. The main causes are the first two differences below.
+7% of entries have a strong line whose intensity differs by more than 150/1000. The main causes are the first two differences below. Almost all of the space-group difference (2,653 of 2,703 entries) is COD24's choice of enantiomorph, also below: the powder patterns are the same.
 
 ## Independent verification
 
@@ -139,10 +139,11 @@ Where hsrdb-tools deliberately does something different from the official COD24 
 | [Physically invalid anisotropic tensors](docs/differences/invalid-adp.md) (about 2,800 CIFs) | used as given | replaced by the isotropic value | a tensor with a negative mean-square displacement gives unphysical intensities |
 | [Modulated structures](docs/differences/modulated.md) (202 CIFs) | the basic structure: main lines only, as if every atom sat at its average position | main and satellite lines from the CIF's superspace model; the structure factors agree with those the refinement program lists in the CIF (30 CIFs, R at most 0.9%) | the modulation changes a main line by 10/1000 or more in 147 of the first 198 and gives satellites of 10/1000 or more in 138, which a measured pattern shows |
 | [Corrections from publications](docs/corrections.md) (500 CIFs) | CIF as deposited: interlayer sites as iodine (COD 9002229), virtual atoms as cerium and tungsten (7201135) | the article's model, with the CIF file unchanged and the entry marked | the article states what the CIF leaves out |
-| [Non-standard settings](docs/differences/non-standard-settings.md) (81 CIFs, e.g. `B 1 21/d 1`, supercells) | 29 of them included, 5 with a wrong space group | all standardised from the CIF's own symmetry operations with spglib | see [Skipped CIFs](#skipped-cifs) |
+| Enantiomorphic space groups (P4₁ and P4₃, P3₁21 and P3₂21, P6₁22 and P6₅22, … ; about 2,650 entries) | always the first group of the pair, whatever the CIF states: 5,624 entries in P4₁, P3₁21, P6₁22, … and 2 in their mirror images | the group the CIF's listed operations, Hall symbol and symbol state | the mirror-image group describes the mirror-image crystal; both give the same powder pattern |
+| [Non-standard settings](docs/differences/non-standard-settings.md) (81 CIFs, e.g. `B 1 21/d 1`, supercells) | 29 of them included: 2 without their rhombohedral centring, 3 in the mirror-image space group (see enantiomorphic space groups) | all standardised from the CIF's own symmetry operations with spglib | see [Skipped CIFs](#skipped-cifs) |
 | COD content | May 2024 | the mirror you build from; about 30% of entries with large differences are CIFs COD revised after May 2024 | newer data |
 
-The same as COD24, checked: cells are constrained to the crystal system (exact angles, a = b or a = b = c where required) when a CIF's cell does not quite fit its space group; atoms without displacement parameters get B = 0.5 Å²; anisotropic B and U tensors, split atoms next to special positions, radiation, Lorentz-polarisation, the line cap, the reference setting and its cell choice (checked on a sample of 16,600 entries: 99.97% of monoclinic, 99.9% of orthorhombic and 98.2% of triclinic cells as COD24; the rest are near-ties or COD24 keeping a CIF's axes under the reference symbol) and the subfiles (inorganic, organic, mineral, metallic).
+The same as COD24, checked: cells are constrained to the crystal system (exact angles, a = b or a = b = c where required) when a CIF's cell does not quite fit its space group; atoms without displacement parameters get B = 0.5 Å²; anisotropic B and U tensors, split atoms next to special positions, radiation, Lorentz-polarisation, the line cap, the reference setting and its cell choice (checked on a sample of 16,600 entries: 99.97% of monoclinic, 99.9% of orthorhombic and 98.2% of triclinic cells as COD24; the rest are near-ties or COD24 keeping a CIF's axes under the reference symbol) the subfiles (inorganic, organic, mineral, metallic), and deuterium's own element flag (Z = 108) in the element filters.
 
 Other known differences:
 
