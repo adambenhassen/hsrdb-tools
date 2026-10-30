@@ -19,7 +19,7 @@ CC0 text: https://creativecommons.org/publicdomain/zero/1.0/. The headers of mos
 | 1000032 | corundum: plain inorganic, rhombohedral in hexagonal axes, mineral name and mineral subfile |
 | 1000041 | NaCl: plain cubic inorganic |
 | 1008063 | anisotropic displacement parameters given as B_ij |
-| 4319054 | anisotropic displacement parameters given as beta_ij |
+| 4319054 | anisotropic displacement parameters given as beta_ij (read, then discarded: O1 and O2 coincide, so its atoms are replaced by a corrected structure of the same publication; the beta_ij conversion is also tested by test_anisotropic_b_and_beta) |
 | 1524007 | Fe-Cr alloy: metallic subfile |
 | 1524039 | triclinic P-1, Niggli reduction (beta 89.76 becomes 90.24) |
 | 9001314 | triclinic P-1 mineral (werdingite), Niggli reduction; split O19A/O19B atoms, O19B near an inversion centre |

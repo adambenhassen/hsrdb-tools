@@ -51,7 +51,7 @@ T = {
     "en": dict(lang="en", title="Corrected CIFs", home="index.html", other="corrections.fr.html", other_lang="fr",
                other_label="FR", brand="COD for HighScore <span>· corrections</span>", back="← Back to the databases",
                h1="CIFs corrected from their publications",
-               lede="{n} COD CIFs cannot give a correct pattern as deposited, but the original article, or the CIF's own statements, say what the file leaves out or gets wrong. For these the build applies a correction after reading the CIF; the CIF files are never changed, and each entry says in its comment in HighScore that it was corrected and from which source. A correction is added only when the source itself gives the missing information, and each one is checked against the CIF's formula, Z and density.",
+               lede="{n} COD CIFs cannot give a correct pattern as deposited, but the original article, or the CIF's own statements, say what the file leaves out or gets wrong. For these the build applies a correction after reading the CIF; the CIF files are never changed, and each entry says in its comment in HighScore that it was corrected and from which source. A correction is added only when the source itself gives the missing information, and each one is checked against the CIF's formula, Z and density. The exception are the corrections marked “not checked against the article”: CIFs whose transcribed structure contradicts itself (atoms on top of each other, or a content against the CIF's own formula), read with a corrected structure of the same publication.",
                search="Search COD id, compound or source", labels=("Problem in the CIF", "Correction", "Source", "Check"),
                kept_h="Kept as in the official database",
                kept_p="These entries of the official COD 2024 database have no usable coordinates in their current CIFs. They are included as the official database has them, so that nothing it contains is missing, and each entry's comment says that it is not a correct structure.",
@@ -59,7 +59,7 @@ T = {
     "fr": dict(lang="fr", title="CIF corrigés", home="fr.html", other="corrections.html", other_lang="en",
                other_label="EN", brand="COD pour HighScore <span>· corrections</span>", back="← Retour aux bases",
                h1="CIF corrigés d’après leur publication",
-               lede="{n} CIF de la COD ne donnent pas de diagramme correct tels quels, mais l’article d’origine, ou les indications du CIF lui-même, précisent ce que le fichier omet ou donne de travers. Pour ceux-ci, la construction applique une correction après la lecture du CIF ; les fichiers CIF ne sont jamais modifiés, et le commentaire de chaque fiche dans HighScore indique qu’elle a été corrigée et d’après quelle source. Une correction n’est ajoutée que si la source donne elle-même l’information manquante, et chacune est vérifiée par rapport à la formule, au Z et à la densité du CIF.",
+               lede="{n} CIF de la COD ne donnent pas de diagramme correct tels quels, mais l’article d’origine, ou les indications du CIF lui-même, précisent ce que le fichier omet ou donne de travers. Pour ceux-ci, la construction applique une correction après la lecture du CIF ; les fichiers CIF ne sont jamais modifiés, et le commentaire de chaque fiche dans HighScore indique qu’elle a été corrigée et d’après quelle source. Une correction n’est ajoutée que si la source donne elle-même l’information manquante, et chacune est vérifiée par rapport à la formule, au Z et à la densité du CIF. Font exception les corrections marquées « not checked against the article » : des CIF dont la structure transcrite se contredit (atomes superposés, ou contenu contraire à la formule du CIF lui-même), lus avec une structure corrigée de la même publication.",
                search="Rechercher un numéro COD, un composé ou une source", labels=("Problème dans le CIF", "Correction", "Source", "Vérification"),
                kept_h="Reprises telles que dans la base officielle",
                kept_p="Ces fiches de la base officielle COD 2024 n’ont pas de coordonnées utilisables dans leur CIF actuel. Elles sont reprises telles que la base officielle les contient, afin que rien de ce qu’elle contient ne manque, et le commentaire de chaque fiche indique qu’il ne s’agit pas d’une structure correcte.",
@@ -84,7 +84,7 @@ def page(fixes, kept, lang, release):
 .filters {{ margin: 16px 0 12px; }}
 .filters input {{ font: inherit; font-size: 0.95rem; padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px; width: 100%; max-width: 520px; background: var(--surface); color: var(--text); }}
 .fix {{ background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin: 12px 0; }}
-.fix h3 {{ margin: 0 0 8px; font-size: 1.05rem; }}
+.fix h3 {{ margin: 0 0 8px; font-size: 1.05rem; overflow-wrap: anywhere; }}
 .fix h3 .ids {{ font-family: system-ui, sans-serif; font-size: 0.9rem; font-weight: 600; }}
 .fix dl {{ display: grid; grid-template-columns: 170px 1fr; gap: 6px 14px; margin: 0; font-size: 0.93rem; }}
 .fix dt {{ color: var(--text-2); font-weight: 600; font-size: 0.85rem; }}
