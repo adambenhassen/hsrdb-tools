@@ -96,6 +96,7 @@ table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
 th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
 th { font-weight: 600; color: var(--text-2); font-size: 0.85rem; }
 td.num { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.nowrap { white-space: nowrap; }
 .tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
 .tablewrap table tr:last-child td { border-bottom: 0; }
 figure { margin: 18px 0 0; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
@@ -325,7 +326,7 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
           <li>Ajoutez le fichier comme base de données de référence dans HighScore.</li>
           <li>Désactivez ou retirez d’abord les autres bases COD : elles utilisent les mêmes codes de référence <code>96-</code>, et HighScore refuse une seconde base dont les préfixes entrent en conflit.</li>
         </ol>
-        <p class="callout">Les codes de référence suivent le schéma officiel, <code>96-</code> + (numéro COD + 1) : la COD 9009599 devient <code>96-900-9600</code>. Chaque fiche renvoie à sa page COD par son numéro.</p>
+        <p class="callout">Les codes de référence suivent le schéma officiel, <span class="nowrap"><code>96-</code> + (numéro COD + 1)</span> : la COD 9009599 devient <code class="nowrap">96-900-9600</code>. Chaque fiche renvoie à sa page COD par son numéro.</p>
       </div>
       <div>
         <h2>Ce qui n’est pas inclus</h2>

@@ -96,6 +96,7 @@ table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
 th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
 th { font-weight: 600; color: var(--text-2); font-size: 0.85rem; }
 td.num { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.nowrap { white-space: nowrap; }
 .tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
 .tablewrap table tr:last-child td { border-bottom: 0; }
 figure { margin: 18px 0 0; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
@@ -325,7 +326,7 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
           <li>Add the file as a reference database in HighScore.</li>
           <li>Untick or remove other COD databases first: they use the same <code>96-</code> reference codes, and HighScore refuses a second database with conflicting prefixes.</li>
         </ol>
-        <p class="callout">Reference codes follow the official scheme, <code>96-</code> + (COD id + 1): COD 9009599 is <code>96-900-9600</code>. Each entry links back to its COD page through its id.</p>
+        <p class="callout">Reference codes follow the official scheme, <span class="nowrap"><code>96-</code> + (COD id + 1)</span>: COD 9009599 is <code class="nowrap">96-900-9600</code>. Each entry links back to its COD page through its id.</p>
       </div>
       <div>
         <h2>What is not included</h2>
