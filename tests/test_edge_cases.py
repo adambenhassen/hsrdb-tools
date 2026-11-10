@@ -967,7 +967,8 @@ def test_u_values_in_the_b_column_are_read_as_u(tmp_path, cl_b, as_u):
     if not as_u:
         assert e.b_as_u_rows == () and e.structure.sites[1].u_iso == pytest.approx(0.9 / B8)
         return
-    assert e.b_as_u_rows == (1,) and e.structure.sites[1].u_iso == pytest.approx(0.011)
+    assert e.b_as_u_rows == (0, 1) and e.structure.sites[1].u_iso == pytest.approx(0.011)
+    assert e.structure.sites[0].u_iso == pytest.approx(0.012)  # the record's isotropic value of the tensor atom
     ref = build(tmp_path, cif("Na1 Na+ 0 0 0 1 0.012\nCl1 Cl- 0.5 0.5 0.5 1 0.011\n", tail=tail), name="ref.cif")
     same_lines(e.lines, ref.lines)
     assert "Displacement parameters read as U (not divided by 8π²): the CIF's B_iso_or_equiv column gives its atoms " \

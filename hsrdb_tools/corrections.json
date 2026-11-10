@@ -41720,6 +41720,1198 @@
    }
   ]
  },
+ "2106625": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF's values are those of Table S2 (Model III)",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0102,
+     "u22": 0.0081,
+     "u33": 0.0019,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0067
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0025,
+     "u22": 0.0054,
+     "u33": 0.0016,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0031
+   },
+   "O1": {
+    "u_iso": 0.007
+   },
+   "O2": {
+    "u_iso": 0.007
+   }
+  }
+ },
+ "2106626": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF's values are those of Table S2 (Model III)",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0102,
+     "u22": 0.0081,
+     "u33": 0.0019,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0067
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0025,
+     "u22": 0.0054,
+     "u33": 0.0016,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0031
+   },
+   "O1": {
+    "u_iso": 0.007
+   },
+   "O2": {
+    "u_iso": 0.007
+   }
+  }
+ },
+ "2106627": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model I (Pr on the Ba site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0129,
+     "u22": 0.0115,
+     "u33": 0.0104,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0116
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0129,
+     "u22": 0.0115,
+     "u33": 0.0104,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0116
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0011,
+     "u22": 0.003,
+     "u33": 0.0018,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.002
+   },
+   "O1": {
+    "u_iso": 0.0201
+   },
+   "O2": {
+    "u_iso": 0.0201
+   }
+  }
+ },
+ "2106628": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model I (Pr on the Ba site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0129,
+     "u22": 0.0115,
+     "u33": 0.0104,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0116
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0129,
+     "u22": 0.0115,
+     "u33": 0.0104,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0116
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0011,
+     "u22": 0.003,
+     "u33": 0.0018,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.002
+   },
+   "O1": {
+    "u_iso": 0.0201
+   },
+   "O2": {
+    "u_iso": 0.0201
+   }
+  }
+ },
+ "2106629": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model II (Pr on the Ce site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0111,
+     "u22": 0.0082,
+     "u33": 0.008,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0091
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0025,
+     "u22": 0.0062,
+     "u33": 0.0042,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0043
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0025,
+     "u22": 0.0062,
+     "u33": 0.0042,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0043
+   },
+   "O1": {
+    "u_iso": 0.0032
+   },
+   "O2": {
+    "u_iso": 0.0032
+   }
+  }
+ },
+ "2106630": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model II (Pr on the Ce site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0111,
+     "u22": 0.0082,
+     "u33": 0.008,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0091
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0025,
+     "u22": 0.0062,
+     "u33": 0.0042,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0043
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0025,
+     "u22": 0.0062,
+     "u33": 0.0042,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0043
+   },
+   "O1": {
+    "u_iso": 0.0032
+   },
+   "O2": {
+    "u_iso": 0.0032
+   }
+  }
+ },
+ "2106631": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF's values are those of Table S2 (Model III)",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0094,
+     "u22": 0.0061,
+     "u33": 0.0045,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0067
+   },
+   "Pr1": {
+    "aniso": {
+     "u11": 0.0094,
+     "u22": 0.0061,
+     "u33": 0.0045,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0067
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0039,
+     "u22": 0.0043,
+     "u33": 0.0028,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0037
+   },
+   "Pr2": {
+    "aniso": {
+     "u11": 0.0039,
+     "u22": 0.0043,
+     "u33": 0.0028,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0037
+   },
+   "O1": {
+    "u_iso": 0.0057
+   },
+   "O2": {
+    "u_iso": 0.0057
+   }
+  }
+ },
+ "2106632": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF's values are those of Table S2 (Model III)",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0094,
+     "u22": 0.0061,
+     "u33": 0.0045,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0067
+   },
+   "Pr1": {
+    "aniso": {
+     "u11": 0.0094,
+     "u22": 0.0061,
+     "u33": 0.0045,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0067
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0039,
+     "u22": 0.0043,
+     "u33": 0.0028,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0037
+   },
+   "Pr2": {
+    "aniso": {
+     "u11": 0.0039,
+     "u22": 0.0043,
+     "u33": 0.0028,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0037
+   },
+   "O1": {
+    "u_iso": 0.0057
+   },
+   "O2": {
+    "u_iso": 0.0057
+   }
+  }
+ },
+ "2106633": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model I (Pr on the Ba site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0155,
+     "u22": 0.0153,
+     "u33": 0.0103,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0137
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0155,
+     "u22": 0.0153,
+     "u33": 0.0103,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0137
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0031,
+     "u22": 0.0035,
+     "u33": 0.0022,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0029
+   },
+   "O1": {
+    "u_iso": 0.0137
+   },
+   "O2": {
+    "u_iso": 0.0137
+   }
+  }
+ },
+ "2106634": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model I (Pr on the Ba site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0155,
+     "u22": 0.0153,
+     "u33": 0.0103,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0137
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0155,
+     "u22": 0.0153,
+     "u33": 0.0103,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0137
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0031,
+     "u22": 0.0035,
+     "u33": 0.0022,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0029
+   },
+   "O1": {
+    "u_iso": 0.0137
+   },
+   "O2": {
+    "u_iso": 0.0137
+   }
+  }
+ },
+ "2106635": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model II (Pr on the Ce site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0122,
+     "u22": 0.0098,
+     "u33": 0.0062,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0094
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0055,
+     "u22": 0.0084,
+     "u33": 0.0064,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0068
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0055,
+     "u22": 0.0084,
+     "u33": 0.0064,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0068
+   },
+   "O1": {
+    "u_iso": 0.0048
+   },
+   "O2": {
+    "u_iso": 0.0048
+   }
+  }
+ },
+ "2106636": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model II (Pr on the Ce site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0122,
+     "u22": 0.0098,
+     "u33": 0.0062,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0094
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0055,
+     "u22": 0.0084,
+     "u33": 0.0064,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0068
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0055,
+     "u22": 0.0084,
+     "u33": 0.0064,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0068
+   },
+   "O1": {
+    "u_iso": 0.0048
+   },
+   "O2": {
+    "u_iso": 0.0048
+   }
+  }
+ },
+ "2106637": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF's values are those of Table S2 (Model III)",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.013,
+     "u22": 0.009,
+     "u33": 0.0039,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0087
+   },
+   "Pr1": {
+    "aniso": {
+     "u11": 0.013,
+     "u22": 0.009,
+     "u33": 0.0039,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0087
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0047,
+     "u22": 0.0085,
+     "u33": 0.0061,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0064
+   },
+   "Pr2": {
+    "aniso": {
+     "u11": 0.0047,
+     "u22": 0.0085,
+     "u33": 0.0061,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0064
+   },
+   "O1": {
+    "u_iso": 0.0051
+   },
+   "O2": {
+    "u_iso": 0.0051
+   }
+  }
+ },
+ "2106638": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF's values are those of Table S2 (Model III)",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.013,
+     "u22": 0.009,
+     "u33": 0.0039,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0087
+   },
+   "Pr1": {
+    "aniso": {
+     "u11": 0.013,
+     "u22": 0.009,
+     "u33": 0.0039,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0087
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0047,
+     "u22": 0.0085,
+     "u33": 0.0061,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0064
+   },
+   "Pr2": {
+    "aniso": {
+     "u11": 0.0047,
+     "u22": 0.0085,
+     "u33": 0.0061,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0064
+   },
+   "O1": {
+    "u_iso": 0.0051
+   },
+   "O2": {
+    "u_iso": 0.0051
+   }
+  }
+ },
+ "2106639": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model I (Pr on the Ba site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0135,
+     "u22": 0.0142,
+     "u33": 0.0058,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0112
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0135,
+     "u22": 0.0142,
+     "u33": 0.0058,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0112
+   },
+   "O1": {
+    "u_iso": 0.0181
+   },
+   "O2": {
+    "u_iso": 0.0181
+   }
+  }
+ },
+ "2106640": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model I (Pr on the Ba site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0135,
+     "u22": 0.0142,
+     "u33": 0.0058,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0112
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0135,
+     "u22": 0.0142,
+     "u33": 0.0058,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0112
+   },
+   "O1": {
+    "u_iso": 0.0181
+   },
+   "O2": {
+    "u_iso": 0.0181
+   }
+  }
+ },
+ "2106641": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model II (Pr on the Ce site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0092,
+     "u22": 0.0079,
+     "u33": 0.003,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0067
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0034,
+     "u22": 0.0055,
+     "u33": 0.0023,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0037
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0034,
+     "u22": 0.0055,
+     "u33": 0.0023,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0037
+   },
+   "O1": {
+    "u_iso": 0.0047
+   },
+   "O2": {
+    "u_iso": 0.0047
+   }
+  }
+ },
+ "2106642": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model II (Pr on the Ce site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0092,
+     "u22": 0.0079,
+     "u33": 0.003,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0067
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0034,
+     "u22": 0.0055,
+     "u33": 0.0023,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0037
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0034,
+     "u22": 0.0055,
+     "u33": 0.0023,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0037
+   },
+   "O1": {
+    "u_iso": 0.0047
+   },
+   "O2": {
+    "u_iso": 0.0047
+   }
+  }
+ },
+ "2106643": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF's values are those of Table S2 (Model III)",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0099,
+     "u22": 0.0099,
+     "u33": 0.0021,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0067
+   },
+   "Pr1": {
+    "aniso": {
+     "u11": 0.0099,
+     "u22": 0.0099,
+     "u33": 0.0021,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0067
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0032,
+     "u22": 0.0048,
+     "u33": 0.0026,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0037
+   },
+   "Pr2": {
+    "aniso": {
+     "u11": 0.0032,
+     "u22": 0.0048,
+     "u33": 0.0026,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0037
+   },
+   "O1": {
+    "u_iso": 0.0029
+   },
+   "O2": {
+    "u_iso": 0.0029
+   }
+  }
+ },
+ "2106644": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF's values are those of Table S2 (Model III)",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0099,
+     "u22": 0.0099,
+     "u33": 0.0021,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0067
+   },
+   "Pr1": {
+    "aniso": {
+     "u11": 0.0099,
+     "u22": 0.0099,
+     "u33": 0.0021,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0067
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0032,
+     "u22": 0.0048,
+     "u33": 0.0026,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0037
+   },
+   "Pr2": {
+    "aniso": {
+     "u11": 0.0032,
+     "u22": 0.0048,
+     "u33": 0.0026,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0037
+   },
+   "O1": {
+    "u_iso": 0.0029
+   },
+   "O2": {
+    "u_iso": 0.0029
+   }
+  }
+ },
+ "2106645": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model I (Pr on the Ba site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0251,
+     "u22": 0.0115,
+     "u33": 0.0042,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0136
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0251,
+     "u22": 0.0115,
+     "u33": 0.0042,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0136
+   },
+   "O1": {
+    "u_iso": 0.0024
+   },
+   "O2": {
+    "u_iso": 0.0024
+   }
+  }
+ },
+ "2106646": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model I (Pr on the Ba site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0251,
+     "u22": 0.0115,
+     "u33": 0.0042,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0136
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0251,
+     "u22": 0.0115,
+     "u33": 0.0042,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0136
+   },
+   "O1": {
+    "u_iso": 0.0024
+   },
+   "O2": {
+    "u_iso": 0.0024
+   }
+  }
+ },
+ "2106647": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model II (Pr on the Ce site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0096,
+     "u22": 0.0091,
+     "u33": 0.0058,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0082
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0033,
+     "u22": 0.0071,
+     "u33": 0.0034,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0046
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0033,
+     "u22": 0.0071,
+     "u33": 0.0034,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0046
+   },
+   "O1": {
+    "u_iso": 0.0019
+   },
+   "O2": {
+    "u_iso": 0.0019
+   }
+  }
+ },
+ "2106648": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF holds the refinement with Model II (Pr on the Ce site), pp. 457-458, whose values the article does not tabulate: read on the scale of the article's tables, not checked against the article",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.0096,
+     "u22": 0.0091,
+     "u33": 0.0058,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0082
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.0033,
+     "u22": 0.0071,
+     "u33": 0.0034,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0046
+   },
+   "Pr": {
+    "aniso": {
+     "u11": 0.0033,
+     "u22": 0.0071,
+     "u33": 0.0034,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0046
+   },
+   "O1": {
+    "u_iso": 0.0019
+   },
+   "O2": {
+    "u_iso": 0.0019
+   }
+  }
+ },
+ "2106649": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF's values are those of Table S2 (Model III)",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.012,
+     "u22": 0.0084,
+     "u33": 0.009,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0098
+   },
+   "Pr1": {
+    "aniso": {
+     "u11": 0.012,
+     "u22": 0.0084,
+     "u33": 0.009,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0098
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.004,
+     "u22": 0.0026,
+     "u33": 0.0032,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0033
+   },
+   "Pr2": {
+    "aniso": {
+     "u11": 0.004,
+     "u22": 0.0026,
+     "u33": 0.0032,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0033
+   },
+   "O1": {
+    "u_iso": 0.0019
+   },
+   "O2": {
+    "u_iso": 0.0019
+   }
+  }
+ },
+ "2106650": {
+  "source": "Basbus et al., Acta Crystallographica Section B 71, 455-462 (2015), https://doi.org/10.1107/S2052520615010203",
+  "note": "the article gives all displacement parameters as U x 10^2 (A^2): Table 3 (p. 459) for x = 0.6 and Table S2 of its supporting information for x = 0, 0.2, 0.4, 0.6 and 0.8; the CIF stores these numbers as U, 100 times too large; anisotropic U and U_iso divided by 100; this CIF's values are those of Table S2 (Model III)",
+  "sites": {
+   "Ba": {
+    "aniso": {
+     "u11": 0.012,
+     "u22": 0.0084,
+     "u33": 0.009,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0098
+   },
+   "Pr1": {
+    "aniso": {
+     "u11": 0.012,
+     "u22": 0.0084,
+     "u33": 0.009,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0098
+   },
+   "Ce": {
+    "aniso": {
+     "u11": 0.004,
+     "u22": 0.0026,
+     "u33": 0.0032,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0033
+   },
+   "Pr2": {
+    "aniso": {
+     "u11": 0.004,
+     "u22": 0.0026,
+     "u33": 0.0032,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    },
+    "u_iso": 0.0033
+   },
+   "O1": {
+    "u_iso": 0.0019
+   },
+   "O2": {
+    "u_iso": 0.0019
+   }
+  }
+ },
  "2107179": {
   "source": "Soled and Carpenter, Acta Crystallographica B (24,1968-38,1982) 29, 2104-2109 (1973)",
   "note": "the CIF's structure has 4 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii); its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
