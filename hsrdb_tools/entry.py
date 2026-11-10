@@ -86,8 +86,9 @@ class Entry:
     sof_rows: tuple = ()
     sof_scaled: bool = False  # their occupancies were multiplied by those orders: the comment says why
     b_rows: tuple = ()  # atom_site rows whose U_iso_or_equiv value was read as B (_b_in_u_column): the comment says why
+    b_as_u_rows: tuple = ()  # atom_site rows whose B_iso_or_equiv value was read as U (_u_in_b_column): the comment says why
     u_divisors: tuple = ()  # (row, divisor) of U_iso_or_equiv values read on another scale (_group_scales)
-    aniso_divisor: tuple = ()  # ((row, ...), 10^k) of tensors read as 10^k x U (_tensor_scale)
+    aniso_divisor: tuple = ()  # ((row, ...), divisor) of tensors read as divisor x U: 10^k, or 2 pi^2 (_tensor_scale)
     columns_swapped: bool = False  # the occupancy and U_iso_or_equiv columns read swapped (from_cif)
     swap_candidate: bool = False  # the two columns may be swapped (values within each other's ranges)
     shell_sites: tuple = ()  # structure sites that are the centres of shell scatterers (not atoms)
@@ -509,6 +510,10 @@ SCALE_TOLERANCE = 0.1  # relative: how closely the column's value over the tenso
 GROUP_ANCHOR = (0.4, 4.0)
 GROUP_SCALES = (1000.0, 10000.0)  # decimal scales a group may take by GROUP_ANCHOR (100 is too close to 8 pi^2)
 SWAP_OCC_MAX = 0.2  # an occupancy column whose values are all below this (and a U column within 1): maybe swapped
+# a B_iso_or_equiv column giving every atom with a tensor 4 x its U_eq: the tensors are B_ij / 4 (2 pi^2 U_ij; e.g.
+# COD 1544873), so U = value / 2 pi^2. Exact to the CIF's digits there; any other spread is not this convention
+TENSOR_B_QUARTER = 4.0
+B_QUARTER_TOLERANCE = 0.01  # relative, per atom
 
 
 def _u_column(block, st, rows):
@@ -535,6 +540,31 @@ def _u_column(block, st, rows):
     return picked, ratios
 
 
+def _b_column(block, st, rows):
+    """Like _u_column, for a CIF whose isotropic values are only in _atom_site_B_iso_or_equiv: ({site: (row,
+    value)} of the atoms without a tensor whose value came from that column, [the column's value over the tensor's
+    U_eq (from the cell metric) for the atoms with a tensor]); dummy atoms left out. ({}, []) with a U_iso_or_equiv
+    column or without a B column."""
+    b_col = block.find_values("_atom_site_B_iso_or_equiv")
+    if not b_col or block.find_values("_atom_site_U_iso_or_equiv"):
+        return {}, []
+    flags = [gemmi.cif.as_string(v).strip().lower() for v in block.find_values("_atom_site_calc_flag")]
+    picked, ratios = {}, []
+    for i, (site, row) in enumerate(zip(st.sites, rows)):
+        if row is None or row >= len(b_col) or (row < len(flags) and flags[row] == "dum"):
+            continue
+        b = gemmi.cif.as_number(b_col[row])
+        if not math.isfinite(b):
+            continue
+        if site.aniso.nonzero():
+            ueq = st.cell.calculate_u_eq(site.aniso)
+            if ueq > 0:
+                ratios.append(b / ueq)
+        elif math.isclose(site.u_iso, max(b, 0.0) / (8 * math.pi**2)):  # the value came from the B column
+            picked[i] = (row, b)
+    return picked, ratios
+
+
 def _decimal_scale(x, base=1.0):
     """The scale of DECIMAL_SCALES that x is (times base), within SCALE_TOLERANCE; None if none."""
     return next((s for s in DECIMAL_SCALES if abs(x / (base * s) - 1) <= SCALE_TOLERANCE), None)
@@ -554,18 +584,26 @@ def _tensor_scale(block, st, rows, fix):
     """Divides the anisotropic tensors by 10^k (DECIMAL_SCALES) where the CIF's own U_iso_or_equiv column shows
     them to be 10^k x U: their median U_eq is above B_IN_U_MEDIAN (impossible as U), the column's values for those
     atoms are their U_eq / 10^k (or B_eq / 10^k: 8 pi^2 U_eq / 10^k) and, so divided, the median is below it.
-    Returns ((row, ...), 10^k, median U_eq as given), or ((), 1, 0). Not for corrected CIFs."""
+    Without a U column, divides them by 2 pi^2 where the B_iso_or_equiv column gives every atom with a tensor
+    TENSOR_B_QUARTER times its U_eq (within B_QUARTER_TOLERANCE): the tensors are B_ij / 4.
+    Returns ((row, ...), divisor, median U_eq as given), or ((), 1, 0). Not for corrected CIFs."""
     tensors = [i for i, site in enumerate(st.sites) if site.aniso.nonzero() and rows[i] is not None]
     if fix or not tensors:
         return (), 1.0, 0.0
     median = statistics.median(_ueq(st.sites[i]) for i in tensors)
     _, ratios = _u_column(block, st, rows)
-    if not ratios or median <= B_IN_U_MEDIAN:
-        return (), 1.0, 0.0
-    ratio = statistics.median(ratios)
-    scale = _decimal_scale(1 / ratio) or _decimal_scale(8 * math.pi**2 / ratio)
-    if scale is None or median / scale > B_IN_U_MEDIAN:
-        return (), 1.0, 0.0
+    if ratios:
+        if median <= B_IN_U_MEDIAN:
+            return (), 1.0, 0.0
+        ratio = statistics.median(ratios)
+        scale = _decimal_scale(1 / ratio) or _decimal_scale(8 * math.pi**2 / ratio)
+        if scale is None or median / scale > B_IN_U_MEDIAN:
+            return (), 1.0, 0.0
+    else:
+        _, ratios = _b_column(block, st, rows)
+        if not ratios or any(abs(r / TENSOR_B_QUARTER - 1) > B_QUARTER_TOLERANCE for r in ratios):
+            return (), 1.0, 0.0
+        scale = 8 * math.pi**2 / TENSOR_B_QUARTER
     for i in tensors:
         a = st.sites[i].aniso
         st.sites[i].aniso = gemmi.SMat33d(*(x / scale for x in (a.u11, a.u22, a.u33, a.u12, a.u13, a.u23)))
@@ -594,6 +632,24 @@ def _b_in_u_column(block, st, rows, fix):
     for i, (_, u) in picked.items():
         st.sites[i].u_iso = u / (8 * math.pi**2)
     return tuple(sorted(row for row, _ in picked.values())), median
+
+
+def _u_in_b_column(block, st, rows, fix):
+    """Reads the B_iso_or_equiv values of the atoms without a tensor as U (not divided by 8 pi^2) where the column
+    holds U: it gives the atoms with a tensor their U_eq (median ratio within SCALE_TOLERANCE of 1), not B_eq, and
+    none of the other atoms' values is above B_IN_U_MEDIAN (else they are B, e.g. COD 2004776). Returns ((row, ...),
+    median) of the rows so read, or ((), 0). Not for corrected CIFs; dummy atoms do not count."""
+    if fix:
+        return (), 0.0
+    picked, ratios = _b_column(block, st, rows)
+    if not picked or not ratios or abs(statistics.median(ratios) - 1) > SCALE_TOLERANCE:
+        return (), 0.0
+    bs = [b for _, b in picked.values()]
+    if max(bs) > B_IN_U_MEDIAN:
+        return (), 0.0
+    for i, (_, b) in picked.items():
+        st.sites[i].u_iso = max(b, 0.0)
+    return tuple(sorted(row for row, _ in picked.values())), statistics.median(bs)
 
 
 def _group_scales(block, st, rows, fix):
@@ -1073,6 +1129,7 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge
     site_rows = [origin[i] for i in kept]
     _default_b(st, block, site_rows, ueq)
     tensor_rows, tensor_scale, tensor_median = _tensor_scale(block, st, site_rows, fix)
+    b_as_u_rows, b_as_u_median = _u_in_b_column(block, st, site_rows, fix)
     b_rows, b_median = _b_in_u_column(block, st, site_rows, fix)
     group_scales = [] if b_rows else _group_scales(block, st, site_rows, fix)
     # a modulated structure whose superspace model cannot be evaluated (a composite, a function specific to JANA,
@@ -1215,10 +1272,18 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge
     if merged_labels:
         comment.append("Atoms counted once that the CIF lists again as symmetry images of another row (counted "
                        f"separately, they contradict the CIF's formula or give an impossible density): {', '.join(merged_labels)}")
-    if tensor_rows:
+    if tensor_rows and tensor_scale == 8 * math.pi**2 / TENSOR_B_QUARTER:
+        comment.append("Anisotropic displacement parameters read as B_ij / 4 (divided by 2π²): the CIF's B_iso_or_equiv "
+                       f"values give each of its {len(tensor_rows)} atoms with a tensor {TENSOR_B_QUARTER:g} × its U_eq "
+                       f"(as given, median U_eq {tensor_median:.3g} Å²)")
+    elif tensor_rows:
         comment.append(f"Anisotropic displacement parameters divided by {tensor_scale:g}: the CIF's U_iso_or_equiv "
                        f"values show its tensors to be {tensor_scale:g} × U (as given, median U_eq {tensor_median:.3g} "
                        "Å², impossible)")
+    if b_as_u_rows:
+        comment.append("Displacement parameters read as U (not divided by 8π²): the CIF's B_iso_or_equiv column gives "
+                       f"its atoms with a tensor their U_eq, and the values of the {len(b_as_u_rows)} atoms without a "
+                       f"tensor (median {b_as_u_median:.3g} Å², none above {B_IN_U_MEDIAN:g}) are on that scale")
     for rows_, divisor, name, median, why in group_scales:
         who = f"{len(rows_)} {'H' if name == 'H' else 'non-H'} atoms without a tensor"
         how = "read as B (divided by 8π²)" if divisor == 8 * math.pi**2 else f"divided by {divisor:g}"
@@ -1285,6 +1350,7 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge
         sof_rows=tuple((site_rows[k], n) for k, n in sorted(sof_orders.items())),
         sof_scaled=bool(scaled_labels),
         b_rows=b_rows,
+        b_as_u_rows=b_as_u_rows,
         u_divisors=tuple(sorted((r, d) for rows_, d, *_ in group_scales for r in rows_)),
         aniso_divisor=(tensor_rows, tensor_scale) if tensor_rows else (),
         columns_swapped=columns_swapped,

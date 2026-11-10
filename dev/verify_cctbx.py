@@ -146,8 +146,8 @@ def our_choices(xs, path, e):
     and negative ones as 0 (entry._cap_occupancies), and multiplied by the site-symmetry order where hsrdb-tools
     read SHELX site occupation factors (entry.from_cif, sof_scaled); occupancy and U_iso_or_equiv columns swapped
     where hsrdb-tools read them so (entry.from_cif, columns_swapped); U_iso_or_equiv values read as B or divided
-    where hsrdb-tools did (entry._b_in_u_column, b_rows; entry._group_scales, u_divisors), and tensors divided
-    likewise (entry._tensor_scale, aniso_divisor); tensors with all components zero or a negative
+    where hsrdb-tools did (entry._b_in_u_column, b_rows; entry._group_scales, u_divisors), B_iso_or_equiv values
+    read as U (entry._u_in_b_column, b_as_u_rows), and tensors divided likewise (entry._tensor_scale, aniso_divisor); tensors with all components zero or a negative
     mean-square displacement (judged before site symmetry is imposed) replaced by the isotropic value; B = sites.DEFAULT_B for atoms without any displacement parameter
     (cctbx leaves them at U = 0); images of an atom merged within the distance hsrdb-tools chose for it
     (sites.merge_tolerances), with cctbx's own special-position handling; the space group of the symmetry
@@ -192,6 +192,7 @@ def our_choices(xs, path, e):
     scaled = dict(e.sof_rows)
     b_rows = set(e.b_rows)
     divisors = dict(e.u_divisors)
+    b_as_u = set(e.b_as_u_rows)
     tensor_rows, tensor_scale = e.aniso_divisor or ((), 1.0)
     for row, sc in enumerate(xs.scatterers()):
         keep.append(not (row < len(flags) and flags[row] == "dum") and not (e.merged_images and row in e.image_rows))
@@ -218,7 +219,7 @@ def our_choices(xs, path, e):
             else:  # one row for the atoms of a mixed site, at the position of the first
                 f = [(a - b + 0.5) % 1 - 0.5 for a, b in zip(sc.site, xs.scatterers()[same[0]].site)]
                 raw = rows[0] if uc.length(f) < 1e-3 else None
-            if raw is not None and row in tensor_rows:  # entry._tensor_scale: the CIF's tensors are 10^k x U
+            if raw is not None and row in tensor_rows:  # entry._tensor_scale: the CIF's tensors are 10^k x U or B/4
                 raw = tuple(x / tensor_scale for x in raw)
             sc.flags.set_use_u_iso(raw is None)
             sc.flags.set_use_u_aniso(raw is not None)
@@ -231,6 +232,8 @@ def our_choices(xs, path, e):
             iso = u / (8 * math.pi**2)
         if row in divisors and math.isfinite(u):  # entry._group_scales: B or 10^k x U for this group of atoms
             iso = u / divisors[row]
+        if row in b_as_u and math.isfinite(b):  # entry._u_in_b_column: the B column holds U values
+            iso = max(b, 0.0)
         if sc.flags.use_u_aniso():
             ucart = np.array(adptbx.u_star_as_u_cart(uc, sc.u_star))
             m = ucart[[0, 3, 4, 3, 1, 5, 4, 5, 2]].reshape(3, 3)

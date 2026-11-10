@@ -930,7 +930,60 @@ def test_large_tensors_on_the_column_scale_stay(tmp_path):
     assert e.aniso_divisor == () and e.structure.sites[0].aniso.u11 == pytest.approx(0.6)
 
 
-CH_CELL = dict(sg="P -1", a=6, b=7, c=8, al=80, be=85, ga=95)
+def b_column(text):
+    return text.replace("_atom_site_U_iso_or_equiv", "_atom_site_B_iso_or_equiv")
+
+
+@pytest.mark.parametrize("na_b, divided", [
+    (0.4, True),  # COD 1544873: the B column gives every atom with a tensor exactly 4 x its U_eq
+    (0.42, False),  # 4.2 x U_eq: not exact (COD 1544874 spreads 3.8-5.0)
+    (0.1 * B8, False),  # B_eq: the tensors are U
+])
+def test_tensors_given_as_b_quarter_are_divided(tmp_path, na_b, divided):
+    tail = ANISO_LOOP + "Na1 0.1 0.1 0.1 0 0 0\n"
+    e = build(tmp_path, b_column(cif(f"Na1 Na+ 0 0 0 1 {na_b!r}\nCl1 Cl- 0.5 0.5 0.5 1 0.9\n", tail=tail)))
+    if not divided:
+        assert e.aniso_divisor == () and e.structure.sites[0].aniso.u11 == pytest.approx(0.1)
+        return
+    u = 0.1 / (2 * math.pi**2)
+    ref = build(tmp_path, b_column(cif("Na1 Na+ 0 0 0 1 0.4\nCl1 Cl- 0.5 0.5 0.5 1 0.9\n",
+                                       tail=ANISO_LOOP + f"Na1 {u!r} {u!r} {u!r} 0 0 0\n")), name="ref.cif")
+    assert e.aniso_divisor == ((0,), pytest.approx(2 * math.pi**2))
+    assert e.structure.sites[0].aniso.u11 == pytest.approx(u)
+    assert e.structure.sites[1].u_iso == pytest.approx(0.9 / B8)
+    same_lines(e.lines, ref.lines)
+    assert "Anisotropic displacement parameters read as B_ij / 4 (divided by 2π²): the CIF's B_iso_or_equiv values " \
+           "give each of its 1 atoms with a tensor 4 × its U_eq" in e.comment
+
+
+@pytest.mark.parametrize("cl_b, as_u", [
+    (0.011, True),  # COD 2004677: the B column gives the atoms with a tensor their U_eq, the others U too
+    (0.9, False),  # COD 2004776: the others' values are B
+])
+def test_u_values_in_the_b_column_are_read_as_u(tmp_path, cl_b, as_u):
+    tail = ANISO_LOOP + "Na1 0.012 0.012 0.012 0 0 0\n"
+    e = build(tmp_path, b_column(cif(f"Na1 Na+ 0 0 0 1 0.012\nCl1 Cl- 0.5 0.5 0.5 1 {cl_b!r}\n", tail=tail)))
+    assert e.aniso_divisor == () and e.structure.sites[0].aniso.u11 == pytest.approx(0.012)
+    if not as_u:
+        assert e.b_as_u_rows == () and e.structure.sites[1].u_iso == pytest.approx(0.9 / B8)
+        return
+    assert e.b_as_u_rows == (1,) and e.structure.sites[1].u_iso == pytest.approx(0.011)
+    ref = build(tmp_path, cif("Na1 Na+ 0 0 0 1 0.012\nCl1 Cl- 0.5 0.5 0.5 1 0.011\n", tail=tail), name="ref.cif")
+    same_lines(e.lines, ref.lines)
+    assert "Displacement parameters read as U (not divided by 8π²): the CIF's B_iso_or_equiv column gives its atoms " \
+           "with a tensor their U_eq, and the values of the 1 atoms without a tensor (median 0.011 Å², none above " \
+           "0.5) are on that scale" in e.comment
+
+
+def test_b_column_rules_not_for_a_corrected_cif(tmp_path, monkeypatch):
+    fix = {"source": "article", "note": "cell", "cell": [5.6402, 5.6402, 5.6402, 90, 90, 90]}
+    monkeypatch.setattr(entry, "_corrections", lambda: {"1234567": fix})
+    e = build(tmp_path, b_column(cif("Na1 Na+ 0 0 0 1 0.4\nCl1 Cl- 0.5 0.5 0.5 1 0.011\n",
+                                     tail=ANISO_LOOP + "Na1 0.1 0.1 0.1 0 0 0\n")))
+    assert e.aniso_divisor == () and e.b_as_u_rows == ()
+
+
+CH_CELL =dict(sg="P -1", a=6, b=7, c=8, al=80, be=85, ga=95)
 
 
 @pytest.mark.parametrize("c_u, h_u, group, divisor", [

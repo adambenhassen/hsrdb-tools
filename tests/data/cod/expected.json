@@ -41,6 +41,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -912,6 +913,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -1721,6 +1723,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -3841,6 +3844,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -4713,6 +4717,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -6711,6 +6716,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -8744,6 +8750,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -11542,6 +11549,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -13010,6 +13018,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -13750,6 +13759,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -18533,6 +18543,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -19656,6 +19667,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -23812,6 +23824,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -27928,6 +27941,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -30970,6 +30984,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -33651,6 +33666,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -35860,6 +35876,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -43751,6 +43768,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -55193,6 +55211,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -57689,6 +57708,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -61009,6 +61029,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -63985,6 +64006,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -66771,6 +66793,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -70444,6 +70467,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -76340,6 +76364,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -78992,6 +79017,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -80219,6 +80245,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -81231,6 +81258,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -82682,6 +82710,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -98342,6 +98371,7 @@
    "merged_images": true,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -99569,6 +99599,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -100579,6 +100610,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -101876,6 +101908,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -102879,6 +102912,7 @@
    "merged_images": true,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -104279,6 +104313,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -105546,6 +105581,7 @@
    "merged_images": true,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -107031,6 +107067,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -110576,6 +110613,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -112947,6 +112985,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -121505,6 +121544,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -132947,6 +132987,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
@@ -134815,6 +134856,7 @@
    "merged_images": false,
    "sof_scaled": false,
    "b_rows": [],
+   "b_as_u_rows": [],
    "u_divisors": [],
    "aniso_divisor": [],
    "columns_swapped": false
