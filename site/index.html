@@ -177,22 +177,22 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
 <section id="download">
   <div class="wrap">
     <h2>Download</h2>
-    <p class="release">Release <b data-release>2026-11-10</b>, built from the COD of October 2026 · <a href="#changelog">changelog</a></p>
+    <p class="release">Release <b data-release>2026-11-11</b>, built from the COD of October 2026 · <a href="#changelog">changelog</a></p>
     <p class="muted">Each archive holds one <code>.hsrdb</code> file (about 7 GB unpacked). Checksums are read from <a href="https://cod-dl.adambh.net/SHA256SUMS.txt">SHA256SUMS.txt</a>.</p>
     <p class="muted">The tool that builds these databases, with the list of corrections made from publications, is open source: <a href="https://github.com/adambenhassen/hsrdb-tools">source code on GitHub</a>.</p>
     <div class="downloads">
       <div class="card" data-kind="HS4x">
         <h3>HighScore 4.x and later</h3>
         <p class="meta">Structure records in the format of HighScore 4 (phase version 6).</p>
-        <div class="meta"><span class="fname mono">COD_2026_11_10_HS4x.7z</span> <span class="size"></span></div>
-        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_11_10_HS4x.7z" download>Download for HighScore 4.x</a>
+        <div class="meta"><span class="fname mono">COD_2026_11_11_HS4x.7z</span> <span class="size"></span></div>
+        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_11_11_HS4x.7z" download>Download for HighScore 4.x</a>
         <div class="sha"></div>
       </div>
       <div class="card" data-kind="HS3x">
         <h3>HighScore 3.x</h3>
         <p class="meta">The same entries with structure records in the HighScore 3 format (phase version 3).</p>
-        <div class="meta"><span class="fname mono">COD_2026_11_10_HS3x.7z</span> <span class="size"></span></div>
-        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_11_10_HS3x.7z" download>Download for HighScore 3.x</a>
+        <div class="meta"><span class="fname mono">COD_2026_11_11_HS3x.7z</span> <span class="size"></span></div>
+        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_11_11_HS3x.7z" download>Download for HighScore 3.x</a>
         <div class="sha"></div>
       </div>
     </div>
@@ -212,7 +212,7 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
         <ul class="clean">
           <li>Kinematic structure factors with the exact International Tables (1992) form-factor coefficients and Cromer–Liberman f′ and f″ at Cu Kα₁ (1.540598 Å).</li>
           <li>|F|² averaged over Friedel pairs, so anomalous scattering is treated correctly in non-centrosymmetric structures.</li>
-          <li>The published displacement parameters: anisotropic U, B or β tensors, each rotated with its symmetry image; B = 0.5 Å² only where a CIF gives none, as HighScore and the official databases do.</li>
+          <li>The published displacement parameters: anisotropic U, B or β tensors, each rotated with its symmetry image; values a CIF gives on another scale (B or 1000 × U under the U heading) read on the scale its other values show; B = 0.5 Å² only where a CIF gives none, as HighScore and the official databases do.</li>
           <li>Powder Lorentz–polarisation (1 + cos²2θ)/(sin²θ cos θ); lines to 90° 2θ, merged within 0.005°, at most 203 lines, scaled to 1000.</li>
           <li>Reflections that fall at the same angle without being symmetry-equivalent are added, as a measured line contains all of them.</li>
         </ul>
@@ -239,12 +239,12 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
     <div class="grid2">
       <div>
         <h3>Against cctbx</h3>
-        <p>Every pattern of COD was recalculated with <a href="https://cctbx.github.io/">cctbx</a>, an independent crystallographic library, in two ways: from the structure as read here (structure factors, form and displacement factors, multiplicities, Lorentz–polarisation), and from cctbx's own reading of the raw CIF (parsing, settings, site handling). The full run gave no calculation differences; each reading difference has a documented cause, such as cctbx treating dummy atoms as scatterers. The 383 entries this release changes were checked again (structure factors and patterns exactly as cctbx computes them), and so was the finished database.</p>
+        <p>Every pattern of COD was recalculated with <a href="https://cctbx.github.io/">cctbx</a>, an independent crystallographic library, in two ways: from the structure as read here (structure factors, form and displacement factors, multiplicities, Lorentz–polarisation), and from cctbx's own reading of the raw CIF (parsing, settings, site handling). The full run gave no calculation differences; each reading difference has a documented cause, such as cctbx treating dummy atoms as scatterers. The 323 entries this release changes were checked again (structure factors and patterns exactly as cctbx computes them), and so was the finished database.</p>
         <p class="charttitle">Largest strong-line difference per entry, official lines (0–1000 scale)</p>
         <ul class="bars short">
           <li><span>Median</span><span class="track"><i style="width:1.2%"></i></span><b>12</b></li>
-          <li><span>90th percentile</span><span class="track"><i style="width:11.2%"></i></span><b>112</b></li>
-          <li><span>99th percentile</span><span class="track"><i style="width:38.6%"></i></span><b>386</b></li>
+          <li><span>90th percentile</span><span class="track"><i style="width:11.1%"></i></span><b>111</b></li>
+          <li><span>99th percentile</span><span class="track"><i style="width:38.3%"></i></span><b>383</b></li>
           <li><span></span><span class="ticks"><em>0</em><em>500</em><em>1,000</em></span><b></b></li>
         </ul>
       </div>
@@ -255,7 +255,7 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
           <li><span>Space group</span><span class="track"><i style="left:86.75%"></i></span><b>99.47%</b></li>
           <li><span>Cell volume within 0.5%</span><span class="track"><i style="left:99.75%"></i></span><b>99.99%</b></li>
           <li><span>Element set</span><span class="track"><i style="left:97.25%"></i></span><b>99.89%</b></li>
-          <li><span>I/Ic within 10%</span><span class="track"><i style="left:26.5%"></i></span><b>97.06%</b></li>
+          <li><span>I/Ic within 10%</span><span class="track"><i style="left:27%"></i></span><b>97.08%</b></li>
           <li><span>All strong official lines present</span><span class="track"><i style="left:99.5%"></i></span><b>99.98%</b></li>
           <li><span></span><span class="ticks"><em>96%</em><em>97%</em><em>98%</em><em>99%</em><em>100%</em></span><b></b></li>
         </ul>
@@ -268,9 +268,9 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
               <tr><td>Space group</td><td class="num">99.47%</td></tr>
               <tr><td>Cell volume within 0.5%</td><td class="num">99.99%</td></tr>
               <tr><td>Element set</td><td class="num">99.89%</td></tr>
-              <tr><td>I/Ic within 10%</td><td class="num">97.06%</td></tr>
+              <tr><td>I/Ic within 10%</td><td class="num">97.08%</td></tr>
               <tr><td>All strong official lines present</td><td class="num">99.98%</td></tr>
-              <tr><td>Largest strong-line difference, median / 90th percentile (0–1000)</td><td class="num">12 / 112</td></tr>
+              <tr><td>Largest strong-line difference, median / 90th percentile (0–1000)</td><td class="num">12 / 111</td></tr>
             </tbody>
           </table>
         </div>
@@ -351,17 +351,27 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
 <section id="changelog">
   <div class="wrap changes">
     <h2>Changelog</h2>
-    <p class="muted">Each release is named by its build date, in the archive and in the database file HighScore shows: <code>COD_2026_11_10_HS4x.hsrdb</code>.</p>
+    <p class="muted">Each release is named by its build date, in the archive and in the database file HighScore shows: <code>COD_2026_11_11_HS4x.hsrdb</code>.</p>
     <div class="grid2">
       <div>
         <p class="charttitle">Corrected CIFs per release</p>
-        <ul class="bars short"><li><span>2026-11-10</span><span class="track"><i style="width:98.6%"></i></span><b>782</b></li><li><span>2026-10-31</span><span class="track"><i style="width:100%"></i></span><b>793</b></li><li><span>2026-10-30</span><span class="track"><i style="width:63.1%"></i></span><b>500</b></li><li><span>2026-10-29</span><span class="track"><i style="width:63.1%"></i></span><b>500</b></li><li><span>2026-10-15</span><span class="track"><i style="width:63.1%"></i></span><b>500</b></li><li><span>2026-10-04</span><span class="track"><i style="width:62.9%"></i></span><b>499</b></li><li><span>2026-10-03</span><span class="track"><i style="width:62.9%"></i></span><b>499</b></li><li><span>2026-09-30</span><span class="track"><i style="width:7.2%"></i></span><b>57</b></li></ul>
+        <ul class="bars short"><li><span>2026-11-11</span><span class="track"><i style="width:98.6%"></i></span><b>782</b></li><li><span>2026-11-10</span><span class="track"><i style="width:98.6%"></i></span><b>782</b></li><li><span>2026-10-31</span><span class="track"><i style="width:100%"></i></span><b>793</b></li><li><span>2026-10-30</span><span class="track"><i style="width:63.1%"></i></span><b>500</b></li><li><span>2026-10-29</span><span class="track"><i style="width:63.1%"></i></span><b>500</b></li><li><span>2026-10-15</span><span class="track"><i style="width:63.1%"></i></span><b>500</b></li><li><span>2026-10-04</span><span class="track"><i style="width:62.9%"></i></span><b>499</b></li><li><span>2026-10-03</span><span class="track"><i style="width:62.9%"></i></span><b>499</b></li><li><span>2026-09-30</span><span class="track"><i style="width:7.2%"></i></span><b>57</b></li></ul>
+        <p class="small muted">CIFs whose structure the build completes or corrects from a cited source, listed on the <a href="corrections.html">corrections page</a>. Fewer from 2026-11-10: 12 no longer need a correction, because a new rule builds them from the CIF itself.</p>
       </div>
       <div>
         <p class="charttitle">Skipped CIFs per release</p>
-        <ul class="bars short"><li><span>2026-11-10</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-31</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-30</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-29</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-15</span><span class="track"><i style="width:73.5%"></i></span><b>1,227</b></li><li><span>2026-10-04</span><span class="track"><i style="width:73.4%"></i></span><b>1,225</b></li><li><span>2026-10-03</span><span class="track"><i style="width:73.3%"></i></span><b>1,224</b></li><li><span>2026-09-30</span><span class="track"><i style="width:100%"></i></span><b>1,669</b></li></ul>
+        <ul class="bars short"><li><span>2026-11-11</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-11-10</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-31</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-30</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-29</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-15</span><span class="track"><i style="width:73.5%"></i></span><b>1,227</b></li><li><span>2026-10-04</span><span class="track"><i style="width:73.4%"></i></span><b>1,225</b></li><li><span>2026-10-03</span><span class="track"><i style="width:73.3%"></i></span><b>1,224</b></li><li><span>2026-09-30</span><span class="track"><i style="width:100%"></i></span><b>1,669</b></li></ul>
+        <p class="small muted">CIFs left out because they cannot be built (no coordinates, contradictory symmetry, and so on), listed on the <a href="skipped.html">skipped page</a>. Bars are scaled to the largest value in each chart.</p>
       </div>
     </div>
+    <h3>2026-11-11 <span>533,950 entries</span></h3>
+    <ul class="clean">
+      <li>Displacement parameters that a CIF gives as B under the U heading are read as B (divided by 8π²) where its values are impossible as U and its other values show the scale (257 entries); as U, every line beyond the first few vanished.</li>
+      <li>Where only part of a CIF is on another scale, that part is read on the scale its other values show (65 entries): hydrogen atoms given as B, or the other atoms as B or 1000 × U, compared with the rest of the CIF; and anisotropic tensors given as 100, 1000 or 10,000 × U, as the CIF's own U<sub>eq</sub> values show.</li>
+      <li>Occupancies and displacement parameters given in each other's columns are read swapped where, as given, the content contradicts the CIF's formula and swapped it agrees (2 entries).</li>
+      <li>323 entries change in all; the entry's comment names each of these readings. The 2026-10-31 archives, whose 80 corrected structures had wrong displacement parameters, are no longer offered.</li>
+      <li>Built from the same COD mirror as 2026-10-29 to 2026-11-10.</li>
+    </ul>
     <h3>2026-11-10 <span>533,950 entries</span></h3>
     <ul class="clean">
       <li>Occupancies that a CIF gives as SHELX site occupation factors (the occupancy divided by the site-symmetry order, e.g. 0.5 for a full atom on a mirror) are multiplied by that order where, as given, they contradict the CIF's own formula or density and multiplied they do not (302 entries); the entry's comment names them.</li>
