@@ -39,7 +39,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -906,7 +907,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -1711,7 +1713,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -3827,7 +3830,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -4695,7 +4699,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -6689,7 +6694,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -8718,7 +8724,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -11512,7 +11519,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -12976,7 +12984,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -13712,7 +13721,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -18491,7 +18501,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -19610,7 +19621,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -23762,7 +23774,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -27874,7 +27887,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -30912,7 +30926,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -33589,7 +33604,8 @@
    "stated_general": true,
    "separate_stated": true,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -35794,7 +35810,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -43681,7 +43698,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -55119,7 +55137,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -57611,7 +57630,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -60927,7 +60947,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -63899,7 +63920,8 @@
    "stated_general": true,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -66681,7 +66703,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -70350,7 +70373,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -76242,7 +76266,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -78890,7 +78915,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -80113,7 +80139,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -81121,7 +81148,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -82568,7 +82596,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -98224,7 +98253,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": true,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -99447,7 +99477,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -100453,7 +100484,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -101746,7 +101778,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -102745,7 +102778,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": true,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -104141,7 +104175,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -105404,7 +105439,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": true,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -106885,7 +106921,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -110426,7 +110463,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -112793,7 +112831,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -121347,7 +121386,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -132785,7 +132825,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [
@@ -134649,7 +134690,8 @@
    "stated_general": false,
    "separate_stated": false,
    "merged_images": false,
-   "sof_scaled": false
+   "sof_scaled": false,
+   "b_rows": []
   },
   "lines": [
    [

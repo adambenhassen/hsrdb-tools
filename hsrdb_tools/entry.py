@@ -4,6 +4,7 @@ import json
 import math
 import os
 import re
+import statistics
 from dataclasses import dataclass, field
 from functools import lru_cache
 from pathlib import Path
@@ -84,6 +85,7 @@ class Entry:
     # stays a possible occupancy (the SHELX site occupation factor convention, from_cif); empty otherwise
     sof_rows: tuple = ()
     sof_scaled: bool = False  # their occupancies were multiplied by those orders: the comment says why
+    b_rows: tuple = ()  # atom_site rows whose U_iso_or_equiv value was read as B (_b_in_u_column): the comment says why
     shell_sites: tuple = ()  # structure sites that are the centres of shell scatterers (not atoms)
     modulation: str = ""  # modulated structure: how its pattern was calculated (superspace)
     # only in the process that built the entry; set to None before it crosses process boundaries
@@ -489,6 +491,53 @@ def _default_b(st, block, rows, ueq=None):
             site.u_iso = sites.DEFAULT_B / (8 * math.pi**2)
 
 
+B_IN_U_MEDIAN = 0.5  # A^2: no crystal has a median U this large (rms displacement 0.7 A); B values of 0.5-15 are usual
+B_IN_U_MIN = 0.1  # a column that also holds values this small mixes U and B (e.g. B only for H): not read as B
+B_IN_U_MAX = 15.0  # a median this large is not B either (U x 1000 and similar): left as published
+# the column's value over the tensor's U_eq for atoms with a tensor: about 8 pi^2 (79) where the column holds B_eq;
+# about 1 where it holds U_eq (then large values of atoms without a tensor are U, e.g. disordered atoms)
+B_EQ_RATIO = (50.0, 110.0)
+
+
+def _b_in_u_column(block, st, rows, fix):
+    """Reads the U_iso_or_equiv values of the atoms without a tensor as B (divided by 8 pi^2) when they cannot be
+    U: their median is above B_IN_U_MEDIAN and below B_IN_U_MAX, none is B_IN_U_MIN or less (else the column mixes
+    U and B), the occupancy column does not hold the displacements instead (values all below 0.2 while the U
+    column stays within 1: the two columns swapped), and, where atoms also have tensors, the column gives them B_eq
+    (B_EQ_RATIO), not U_eq. Returns ((row, ...), median) of the rows read as B, or ((), 0).
+    Not for corrected CIFs (their corrections decide); dummy atoms do not count."""
+    if fix:
+        return (), 0.0
+    u_col = block.find_values("_atom_site_U_iso_or_equiv")
+    if not u_col:
+        return (), 0.0
+    flags = [gemmi.cif.as_string(v).strip().lower() for v in block.find_values("_atom_site_calc_flag")]
+    occ = [gemmi.cif.as_number(v) for v in block.find_values("_atom_site_occupancy")]
+    picked, ratios = {}, []
+    for i, (site, row) in enumerate(zip(st.sites, rows)):
+        if row is None or row >= len(u_col) or (row < len(flags) and flags[row] == "dum"):
+            continue
+        u = gemmi.cif.as_number(u_col[row])
+        if not math.isfinite(u):
+            continue
+        if site.aniso.nonzero():  # the column's value for an atom with a tensor: its U_eq, or B_eq if the column is B
+            ueq = (site.aniso.u11 + site.aniso.u22 + site.aniso.u33) / 3
+            if ueq > 0:
+                ratios.append(u / ueq)
+        elif site.u_iso == u:  # the value came from the U column
+            picked[i] = (row, u)
+    if not picked or ratios and not B_EQ_RATIO[0] <= statistics.median(ratios) <= B_EQ_RATIO[1]:
+        return (), 0.0
+    us = [u for _, u in picked.values()]
+    median = statistics.median(us)
+    occ = [o for o in occ if math.isfinite(o)]
+    if not B_IN_U_MEDIAN < median < B_IN_U_MAX or min(us) <= B_IN_U_MIN or (occ and max(occ) < 0.2 and max(us) <= 1.0):
+        return (), 0.0
+    for i, (_, u) in picked.items():
+        st.sites[i].u_iso = u / (8 * math.pi**2)
+    return tuple(sorted(row for row, _ in picked.values())), median
+
+
 def _cap_occupancies(block, st, fix):
     """Reads an occupancy of OCC_IMPOSSIBLE or more as 1, as COD24 does, and returns 'label value' for each: such a
     value is a typo (130 for 0.130), a ratio (2 and 3 for 0.4 and 0.6) or a count, never atoms on one site. Smaller
@@ -891,6 +940,7 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge
     dropped -= len(kept)
     site_rows = [origin[i] for i in kept]
     _default_b(st, block, site_rows, ueq)
+    b_rows, b_median = _b_in_u_column(block, st, site_rows, fix)
     # a modulated structure whose superspace model cannot be evaluated (a composite, a function specific to JANA,
     # an incomplete CIF) is stored as its basic structure, as in COD24, and noted (unmodelled)
     unmodelled = ""
@@ -1031,6 +1081,10 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge
     if merged_labels:
         comment.append("Atoms counted once that the CIF lists again as symmetry images of another row (counted "
                        f"separately, they contradict the CIF's formula or give an impossible density): {', '.join(merged_labels)}")
+    if b_rows:
+        comment.append(f"Displacement parameters read as B (divided by 8π²): the CIF's U_iso_or_equiv values of the "
+                       f"{len(b_rows)} atoms without a tensor (median {b_median:.3g} Å², none below {B_IN_U_MIN:g}) are "
+                       "impossible as U")
     if scaled_labels:
         comment.append("Occupancies of atoms on special positions read as the CIF's value times the site-symmetry order "
                        "(SHELX site occupation factors; as given they contradict the CIF's formula or density): "
@@ -1084,6 +1138,7 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge
         merged_images=merge_images,
         sof_rows=tuple((site_rows[k], n) for k, n in sorted(sof_orders.items())),
         sof_scaled=bool(scaled_labels),
+        b_rows=b_rows,
         dropped_sites=dropped,
         invalid_adps=invalid_adps,
         dummy_sites=int(dummy.sum()),

@@ -144,7 +144,8 @@ def our_choices(xs, path, e):
     cctbx gets wrong); dummy atoms (calc_flag dum) and rows counted once as symmetry images of another row
     (entry.from_cif, merged_images) left out; occupancies of entry.OCC_IMPOSSIBLE or more read as 1
     and negative ones as 0 (entry._cap_occupancies), and multiplied by the site-symmetry order where hsrdb-tools
-    read SHELX site occupation factors (entry.from_cif, sof_scaled); tensors with all components zero or a negative
+    read SHELX site occupation factors (entry.from_cif, sof_scaled); U_iso_or_equiv values read as B where
+    hsrdb-tools did (entry._b_in_u_column, b_rows); tensors with all components zero or a negative
     mean-square displacement (judged before site symmetry is imposed) replaced by the isotropic value; B = sites.DEFAULT_B for atoms without any displacement parameter
     (cctbx leaves them at U = 0); images of an atom merged within the distance hsrdb-tools chose for it
     (sites.merge_tolerances), with cctbx's own special-position handling; the space group of the symmetry
@@ -185,6 +186,7 @@ def our_choices(xs, path, e):
     keep = flex.bool()
     fixed = set(entry._corrections().get(str(e.cod_id), {}).get("sites", {}))
     scaled = dict(e.sof_rows)
+    b_rows = set(e.b_rows)
     for row, sc in enumerate(xs.scatterers()):
         keep.append(not (row < len(flags) and flags[row] == "dum") and not (e.merged_images and row in e.image_rows))
         # cctbx drops a whole occupancy or U column when one value is '?' or '.'; those values default to 1 and
@@ -217,6 +219,8 @@ def our_choices(xs, path, e):
         b = gemmi.cif.as_number(b_col[row]) if b_col and row < len(b_col) else math.nan
         # isotropic value: U_iso, else B_iso, else trace / 3 of an invalid tensor (>= entry.MIN_UEQ), else default
         iso = u if math.isfinite(u) else max(b, 0.0) / (8 * math.pi**2) if math.isfinite(b) else math.nan
+        if row in b_rows and math.isfinite(u):  # entry._b_in_u_column: the U column holds B values
+            iso = u / (8 * math.pi**2)
         if sc.flags.use_u_aniso():
             ucart = np.array(adptbx.u_star_as_u_cart(uc, sc.u_star))
             m = ucart[[0, 3, 4, 3, 1, 5, 4, 5, 2]].reshape(3, 3)

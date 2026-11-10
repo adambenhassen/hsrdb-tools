@@ -14,7 +14,7 @@ LINE_ABS = 1e-6  # line intensities, on the 0-1000 scale
 TARGETS = ("hs4", "hs3")
 NOTES = ("correction", "symmetry_note", "merge_note", "modulation", "setting_changed", "dropped_sites",
          "invalid_adps", "dummy_sites", "symbol_conflict", "stated_general", "separate_stated", "merged_images",
-         "sof_scaled")
+         "sof_scaled", "b_rows")
 
 
 def _plain(x):
@@ -52,7 +52,7 @@ def summarize(path):
            "volume": e.volume, "density": e.density, "iic": e.iic, "formula": e.formula,
            "elements": list(e.elements), "subfiles": list(e.subfiles), "comment": e.comment,
            "compound_name": e.compound_name, "mineral_name": e.mineral_name,
-           "notes": {k: getattr(e, k) for k in NOTES},
+           "notes": {k: _plain(getattr(e, k)) for k in NOTES},
            "lines": [[x.d, x.intensity, *x.hkl] for x in e.lines]}
     out["phase"] = {t: _record(e, t, sites) for t in TARGETS}
     return out

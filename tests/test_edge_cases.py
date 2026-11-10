@@ -854,6 +854,51 @@ def test_site_occupation_factors_not_read_for_a_corrected_cif(tmp_path, monkeypa
     assert e.sof_rows == () and not e.sof_scaled and e.formula == "Co1.00 O4.00"
 
 
+B8 = 8 * math.pi**2
+
+
+def test_b_values_in_the_u_column_are_read_as_b(tmp_path):
+    # COD 1562110 gives B = 1.529 and 1.47 under _atom_site_U_iso_or_equiv: as U, every line beyond the first few vanishes
+    ref = build(tmp_path, cif(f"Na1 Na+ 0 0 0 1 {1.2 / B8!r}\nCl1 Cl- 0.5 0.5 0.5 1 {0.9 / B8!r}\n"), name="ref.cif")
+    e = build(tmp_path, cif("Na1 Na+ 0 0 0 1 1.2\nCl1 Cl- 0.5 0.5 0.5 1 0.9\n"))
+    assert e.b_rows == (0, 1) and e.structure.sites[0].u_iso == pytest.approx(1.2 / B8)
+    same_lines(e.lines, ref.lines)
+    assert "Displacement parameters read as B (divided by 8π²): the CIF's U_iso_or_equiv values of the 2 atoms " \
+           "without a tensor (median 1.05 Å², none below 0.1) are impossible as U" in e.comment
+
+
+@pytest.mark.parametrize("rows, why", [
+    ("Na1 Na+ 0 0 0 1 0.012\nCl1 Cl- 0.5 0.5 0.5 1 1.5\n", "mixed U and B"),  # COD 2010486: B only for some atoms
+    ("Na1 Na+ 0 0 0 0.035 0.875\nCl1 Cl- 0.5 0.5 0.5 0.093 1.0\n", "columns swapped"),  # COD 2002893
+    ("Na1 Na+ 0 0 0 1 53\nCl1 Cl- 0.5 0.5 0.5 1 61\n", "U x 1000"),  # COD 2001388
+    ("Na1 Na+ 0 0 0 1 0.3\nCl1 Cl- 0.5 0.5 0.5 1 0.4\n", "large but possible U"),
+])
+def test_u_column_not_read_as_b(tmp_path, rows, why):
+    e = build(tmp_path, cif(rows))
+    assert e.b_rows == (), why
+    assert "read as B" not in e.comment
+
+
+@pytest.mark.parametrize("na_column, b_rows", [
+    (0.011 * B8, (1,)),  # the column gives the tensor atom B_eq: the column holds B, Cl's 0.9 is B too
+    (0.011, ()),  # the column gives U_eq: Cl's 0.9 is a (large) U, e.g. a disordered atom
+    (11.0, ()),  # COD 2001604: the column holds 1000 x U_eq, not B
+])
+def test_b_in_u_rule_decided_by_the_tensor_atoms(tmp_path, na_column, b_rows):
+    tail = ANISO_LOOP + "Na1 0.011 0.011 0.011 0 0 0\n"
+    e = build(tmp_path, cif(f"Na1 Na+ 0 0 0 1 {na_column!r}\nCl1 Cl- 0.5 0.5 0.5 1 0.9\n", tail=tail))
+    assert e.b_rows == b_rows
+    assert e.structure.sites[1].u_iso == pytest.approx(0.9 / B8 if b_rows else 0.9)
+    assert e.structure.sites[0].aniso.u11 == pytest.approx(0.011)
+
+
+def test_b_in_u_rule_not_for_a_corrected_cif(tmp_path, monkeypatch):
+    fix = {"source": "article", "note": "cell", "cell": [5.6402, 5.6402, 5.6402, 90, 90, 90]}
+    monkeypatch.setattr(entry, "_corrections", lambda: {"1234567": fix})
+    e = build(tmp_path, cif("Na1 Na+ 0 0 0 1 1.2\nCl1 Cl- 0.5 0.5 0.5 1 0.9\n"))
+    assert e.b_rows == () and e.structure.sites[0].u_iso == pytest.approx(1.2)
+
+
 def test_missing_displacement_uses_highscore_default(tmp_path):
     missing = build(tmp_path, cif("Na1 Na 0 0 0 1 .\nCl1 Cl 0.5 0.5 0.5 1 .\n"))
     b05 = cif("Na1 Na 0 0 0 1 0.5\nCl1 Cl 0.5 0.5 0.5 1 0.5\n").replace("_atom_site_U_iso_or_equiv",
