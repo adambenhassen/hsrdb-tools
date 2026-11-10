@@ -143,7 +143,8 @@ def our_choices(xs, path, e):
     difference: aniso rows as given (beta_ij too, which cctbx does not read; repeated labels paired in order, which
     cctbx gets wrong); dummy atoms (calc_flag dum) and rows counted once as symmetry images of another row
     (entry.from_cif, merged_images) left out; occupancies of entry.OCC_IMPOSSIBLE or more read as 1
-    and negative ones as 0 (entry._cap_occupancies); tensors with all components zero or a negative
+    and negative ones as 0 (entry._cap_occupancies), and multiplied by the site-symmetry order where hsrdb-tools
+    read SHELX site occupation factors (entry.from_cif, sof_scaled); tensors with all components zero or a negative
     mean-square displacement (judged before site symmetry is imposed) replaced by the isotropic value; B = sites.DEFAULT_B for atoms without any displacement parameter
     (cctbx leaves them at U = 0); images of an atom merged within the distance hsrdb-tools chose for it
     (sites.merge_tolerances), with cctbx's own special-position handling; the space group of the symmetry
@@ -183,6 +184,7 @@ def our_choices(xs, path, e):
                  block.find_values("_atom_site_adp_type") or block.find_values("_atom_site_thermal_displace_type")]
     keep = flex.bool()
     fixed = set(entry._corrections().get(str(e.cod_id), {}).get("sites", {}))
+    scaled = dict(e.sof_rows)
     for row, sc in enumerate(xs.scatterers()):
         keep.append(not (row < len(flags) and flags[row] == "dum") and not (e.merged_images and row in e.image_rows))
         # cctbx drops a whole occupancy or U column when one value is '?' or '.'; those values default to 1 and
@@ -195,6 +197,8 @@ def our_choices(xs, path, e):
         elif sc.occupancy < 0 and keep[-1] and sc.label not in fixed \
                 and not sc.label.lower().startswith("dum"):  # entry._cap_occupancies
             sc.occupancy = 0.0
+        if e.sof_scaled:  # entry.from_cif: SHELX site occupation factors
+            sc.occupancy *= scaled.get(row, 1)
         rows = tensors.get(sc.label, [])
         if rows:
             same = [r for r, lab in enumerate(labels) if lab == sc.label]

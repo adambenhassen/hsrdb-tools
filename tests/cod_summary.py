@@ -13,7 +13,8 @@ PHASE_ABS = 1e-9  # structure record values near zero
 LINE_ABS = 1e-6  # line intensities, on the 0-1000 scale
 TARGETS = ("hs4", "hs3")
 NOTES = ("correction", "symmetry_note", "merge_note", "modulation", "setting_changed", "dropped_sites",
-         "invalid_adps", "dummy_sites", "symbol_conflict", "stated_general", "separate_stated", "merged_images")
+         "invalid_adps", "dummy_sites", "symbol_conflict", "stated_general", "separate_stated", "merged_images",
+         "sof_scaled")
 
 
 def _plain(x):

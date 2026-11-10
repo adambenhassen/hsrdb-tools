@@ -38,7 +38,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -904,7 +905,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -1708,7 +1710,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -3823,7 +3826,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -4690,7 +4694,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -6683,7 +6688,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -8711,7 +8717,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -11504,7 +11511,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -12967,7 +12975,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -13702,7 +13711,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -18480,7 +18490,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -19598,7 +19609,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -23749,7 +23761,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -27860,7 +27873,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -30897,7 +30911,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -33573,7 +33588,8 @@
    "symbol_conflict": false,
    "stated_general": true,
    "separate_stated": true,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -35777,7 +35793,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -43663,7 +43680,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -55100,7 +55118,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -57591,7 +57610,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -60906,7 +60926,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -63877,7 +63898,8 @@
    "symbol_conflict": false,
    "stated_general": true,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -66658,7 +66680,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -70326,7 +70349,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -76217,7 +76241,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -78864,7 +78889,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -80086,7 +80112,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -81093,7 +81120,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -82539,7 +82567,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -98194,7 +98223,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": true
+   "merged_images": true,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -99416,7 +99446,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -100421,7 +100452,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -101713,7 +101745,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -102711,7 +102744,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": true
+   "merged_images": true,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -104106,7 +104140,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -105368,7 +105403,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": true
+   "merged_images": true,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -106848,7 +106884,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -110388,7 +110425,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -112754,7 +112792,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -121307,7 +121346,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -132744,7 +132784,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [
@@ -134607,7 +134648,8 @@
    "symbol_conflict": false,
    "stated_general": false,
    "separate_stated": false,
-   "merged_images": false
+   "merged_images": false,
+   "sof_scaled": false
   },
   "lines": [
    [

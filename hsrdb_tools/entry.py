@@ -80,6 +80,10 @@ class Entry:
     merge_note: str = ""
     image_rows: tuple = ()  # atom_site rows that are symmetry images of an earlier row (same element, occupancy)
     merged_images: bool = False  # those rows count once (not in the structure record): the comment says why
+    # (atom_site row, site-symmetry order) of each atom on a special position, if every one of them times its order
+    # stays a possible occupancy (the SHELX site occupation factor convention, from_cif); empty otherwise
+    sof_rows: tuple = ()
+    sof_scaled: bool = False  # their occupancies were multiplied by those orders: the comment says why
     shell_sites: tuple = ()  # structure sites that are the centres of shell scatterers (not atoms)
     modulation: str = ""  # modulated structure: how its pattern was calculated (superspace)
     # only in the process that built the entry; set to None before it crosses process boundaries
@@ -745,7 +749,10 @@ def from_cif(path, cod_id=None):
     density or formula and counting them separately, as stated, does not. Atom rows that are symmetry images of
     another row (e.g. every atom of the cell listed besides the space group) count once if counting them
     separately contradicts the CIF's density or formula (without Z: its proportions, or a density above
-    MAX_DENSITY) and counting them once does not."""
+    MAX_DENSITY) and counting them once does not. Occupancies of atoms on special positions are read as SHELX site
+    occupation factors (the occupancy divided by the site-symmetry order, e.g. 0.5 for a full atom on a mirror)
+    and multiplied by that order if, as given, they contradict the CIF's density or formula (likewise) and so
+    multiplied they do not; never when an atom on a special position would then hold more than one atom."""
     e = _from_cif(path, cod_id)
     if e.symbol_conflict and _composition_matches(e) is False:
         by_symbol = _from_cif(path, cod_id, symbol_only=True)
@@ -770,11 +777,31 @@ def from_cif(path, cod_id=None):
                          merge_images=True)
         if _composition_or_proportions(once) and once.density <= MAX_DENSITY:
             once.symmetry_note, once.merge_note = e.symmetry_note, e.merge_note
-            return once
+            e = once
+    if e.sof_rows and _composition_or_proportions(e) is False:
+        scaled = _from_cif(path, cod_id, symbol_only=bool(e.symmetry_note), separate_stated=e.separate_stated,
+                           merge_images=e.merged_images, sof_scale=True)
+        if _composition_or_proportions(scaled) and scaled.density <= MAX_DENSITY:
+            scaled.symmetry_note, scaled.merge_note = e.symmetry_note, e.merge_note
+            e = scaled
     return e
 
 
-def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge_images=False):
+def _sof_orders(st, images, real, fix, modulated):
+    """{site: site-symmetry order} of the scattering atoms on special positions, if each one's occupancy times its
+    order is at most 1.01 (the CIF may give SHELX site occupation factors, occupancy / order); else {}. Not for
+    corrected CIFs (their corrections decide) or modulated structures."""
+    if fix or modulated:
+        return {}
+    n_cell = len(list(st.spacegroup.operations()))  # with centring, as sites.unit_cell_images uses them
+    counts = np.bincount(images.site[real], minlength=len(st.sites))
+    orders = {int(k): round(n_cell / counts[k]) for k in np.flatnonzero(counts) if n_cell > counts[k]}
+    if not orders or any(st.sites[k].occ * n > 1.01 for k, n in orders.items()):
+        return {}
+    return orders
+
+
+def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge_images=False, sof_scale=False):
     global _K_CORUNDUM
     try:
         block = gemmi.cif.read(str(path)).sole_block()
@@ -911,6 +938,12 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge
     atoms = sites.Images(images.site[real], images.xyz[real], images.ucart[real], shells=shells)
     if not len(atoms.site):
         raise EntryError("no atoms other than dummy atoms")
+    sof_orders = _sof_orders(st, images, real, fix, modulated)
+    scaled_labels = []
+    if sof_scale:
+        for k, n in sorted(sof_orders.items()):
+            scaled_labels.append(f"{st.sites[k].label} {st.sites[k].occ:g} x {n}")
+            st.sites[k].occ *= n
     modulation = ""
     inside = False
     if modulated and _crenel_occupancy_inside(block, modulated, st, atoms, weights):
@@ -998,6 +1031,10 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge
     if merged_labels:
         comment.append("Atoms counted once that the CIF lists again as symmetry images of another row (counted "
                        f"separately, they contradict the CIF's formula or give an impossible density): {', '.join(merged_labels)}")
+    if scaled_labels:
+        comment.append("Occupancies of atoms on special positions read as the CIF's value times the site-symmetry order "
+                       "(SHELX site occupation factors; as given they contradict the CIF's formula or density): "
+                       f"{', '.join(scaled_labels)}")
     if modulation:
         comment.append(f"Pattern: {modulation}" + ("; satellite lines carry hkl 0 0 0" if modulated else ""))
     comment.append(f"COD database code: {cod_id}")
@@ -1045,6 +1082,8 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge
         separate_stated=separate_stated,
         image_rows=image_rows,
         merged_images=merge_images,
+        sof_rows=tuple((site_rows[k], n) for k, n in sorted(sof_orders.items())),
+        sof_scaled=bool(scaled_labels),
         dropped_sites=dropped,
         invalid_adps=invalid_adps,
         dummy_sites=int(dummy.sum()),

@@ -817,6 +817,42 @@ def test_rows_listed_as_images_without_formula_stay(tmp_path):
     assert e.image_rows == (1, 2, 3) and not e.merged_images and e.formula == "Na16.00 Cl4.00"
 
 
+SOF_CELL = dict(sg="P 1 21/c 1", a=5.1, b=6.2, c=7.3, be=101)
+
+
+def test_shelx_site_occupation_factors_are_multiplied_by_the_site_order(tmp_path):
+    # COD 8103003 gives SHELX sofs (occupancy / site-symmetry order): Co1 on an inversion centre 0.5 for a full
+    # atom, half the Co of the formula x Z
+    rows = "Co1 Co 0 0 0 0.5 0.01\nO1 O 0.21 0.32 0.13 1 0.01\n"
+    e = build(tmp_path, cif(rows, extra="_chemical_formula_sum 'Co O2'\n_cell_formula_units_Z 2", **SOF_CELL))
+    assert e.sof_scaled and e.sof_rows == ((0, 2),) and e.formula == "Co2.00 O4.00"
+    assert e.structure.sites[0].occ == pytest.approx(1.0)
+    assert "times the site-symmetry order (SHELX site occupation factors; as given they contradict the CIF's " \
+           "formula or density): Co1 0.5 x 2" in e.comment
+
+
+def test_occupancy_on_a_special_position_stays_when_the_formula_agrees(tmp_path):
+    rows = "Co1 Co 0 0 0 0.5 0.01\nO1 O 0.21 0.32 0.13 1 0.01\n"
+    e = build(tmp_path, cif(rows, extra="_chemical_formula_sum 'Co0.5 O2'\n_cell_formula_units_Z 2", **SOF_CELL))
+    assert e.sof_rows == ((0, 2),) and not e.sof_scaled and e.formula == "Co1.00 O4.00"
+    assert "SHELX" not in e.comment
+
+
+def test_site_occupation_factors_not_read_when_a_special_atom_would_exceed_one(tmp_path):
+    # O2 at full occupancy on an inversion centre: the CIF does not give sofs, whatever its formula says
+    rows = "Co1 Co 0 0 0 0.5 0.01\nO1 O 0.21 0.32 0.13 1 0.01\nO2 O 0.5 0 0 1 0.01\n"
+    e = build(tmp_path, cif(rows, extra="_chemical_formula_sum 'Co O3'\n_cell_formula_units_Z 2", **SOF_CELL))
+    assert e.sof_rows == () and not e.sof_scaled and e.formula == "Co1.00 O6.00"
+
+
+def test_site_occupation_factors_not_read_for_a_corrected_cif(tmp_path, monkeypatch):
+    fix = {"source": "article", "note": "cell from the article", "cell": [5.1, 6.2, 7.3, 90, 101, 90]}
+    monkeypatch.setattr(entry, "_corrections", lambda: {"1234567": fix})
+    rows = "Co1 Co 0 0 0 0.5 0.01\nO1 O 0.21 0.32 0.13 1 0.01\n"
+    e = build(tmp_path, cif(rows, extra="_chemical_formula_sum 'Co O2'\n_cell_formula_units_Z 2", **SOF_CELL))
+    assert e.sof_rows == () and not e.sof_scaled and e.formula == "Co1.00 O4.00"
+
+
 def test_missing_displacement_uses_highscore_default(tmp_path):
     missing = build(tmp_path, cif("Na1 Na 0 0 0 1 .\nCl1 Cl 0.5 0.5 0.5 1 .\n"))
     b05 = cif("Na1 Na 0 0 0 1 0.5\nCl1 Cl 0.5 0.5 0.5 1 0.5\n").replace("_atom_site_U_iso_or_equiv",
