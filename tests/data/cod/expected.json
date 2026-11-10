@@ -40,7 +40,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -908,7 +911,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -1714,7 +1720,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -3831,7 +3840,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -4700,7 +4712,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -6695,7 +6710,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -8725,7 +8743,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -11520,7 +11541,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -12985,7 +13009,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -13722,7 +13749,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -18502,7 +18532,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -19622,7 +19655,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -23775,7 +23811,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -27888,7 +27927,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -30927,7 +30969,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -33605,7 +33650,10 @@
    "separate_stated": true,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -35811,7 +35859,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -43699,7 +43750,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -55138,7 +55192,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -57631,7 +57688,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -60948,7 +61008,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -63921,7 +63984,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -66704,7 +66770,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -70374,7 +70443,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -76267,7 +76339,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -78916,7 +78991,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -80140,7 +80218,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -81149,7 +81230,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -82597,7 +82681,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -98254,7 +98341,10 @@
    "separate_stated": false,
    "merged_images": true,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -99478,7 +99568,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -100485,7 +100578,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -101779,7 +101875,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -102779,7 +102878,10 @@
    "separate_stated": false,
    "merged_images": true,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -104176,7 +104278,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -105440,7 +105545,10 @@
    "separate_stated": false,
    "merged_images": true,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -106922,7 +107030,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -110464,7 +110575,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -112832,7 +112946,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -121387,7 +121504,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -132826,7 +132946,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [
@@ -134691,7 +134814,10 @@
    "separate_stated": false,
    "merged_images": false,
    "sof_scaled": false,
-   "b_rows": []
+   "b_rows": [],
+   "u_divisors": [],
+   "aniso_divisor": [],
+   "columns_swapped": false
   },
   "lines": [
    [

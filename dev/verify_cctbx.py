@@ -144,8 +144,10 @@ def our_choices(xs, path, e):
     cctbx gets wrong); dummy atoms (calc_flag dum) and rows counted once as symmetry images of another row
     (entry.from_cif, merged_images) left out; occupancies of entry.OCC_IMPOSSIBLE or more read as 1
     and negative ones as 0 (entry._cap_occupancies), and multiplied by the site-symmetry order where hsrdb-tools
-    read SHELX site occupation factors (entry.from_cif, sof_scaled); U_iso_or_equiv values read as B where
-    hsrdb-tools did (entry._b_in_u_column, b_rows); tensors with all components zero or a negative
+    read SHELX site occupation factors (entry.from_cif, sof_scaled); occupancy and U_iso_or_equiv columns swapped
+    where hsrdb-tools read them so (entry.from_cif, columns_swapped); U_iso_or_equiv values read as B or divided
+    where hsrdb-tools did (entry._b_in_u_column, b_rows; entry._group_scales, u_divisors), and tensors divided
+    likewise (entry._tensor_scale, aniso_divisor); tensors with all components zero or a negative
     mean-square displacement (judged before site symmetry is imposed) replaced by the isotropic value; B = sites.DEFAULT_B for atoms without any displacement parameter
     (cctbx leaves them at U = 0); images of an atom merged within the distance hsrdb-tools chose for it
     (sites.merge_tolerances), with cctbx's own special-position handling; the space group of the symmetry
@@ -161,6 +163,8 @@ def our_choices(xs, path, e):
             tol[r] = max(t, tol.get(r, 0.0))
     u_col, b_col, occ_col = (block.find_values(t) for t in ("_atom_site_U_iso_or_equiv", "_atom_site_B_iso_or_equiv",
                                                            "_atom_site_occupancy"))
+    if e.columns_swapped:  # entry.from_cif: the CIF's occupancy and U columns hold each other's values
+        u_col, occ_col = occ_col, u_col
     flags = [gemmi.cif.as_string(v).strip().lower() for v in block.find_values("_atom_site_calc_flag")]
     uc = xs.unit_cell()
     # the aniso rows as the CIF gives them, converted with cctbx: U_ij, B_ij, and beta_ij (U* = beta / 2 pi^2),
@@ -187,6 +191,8 @@ def our_choices(xs, path, e):
     fixed = set(entry._corrections().get(str(e.cod_id), {}).get("sites", {}))
     scaled = dict(e.sof_rows)
     b_rows = set(e.b_rows)
+    divisors = dict(e.u_divisors)
+    tensor_rows, tensor_scale = e.aniso_divisor or ((), 1.0)
     for row, sc in enumerate(xs.scatterers()):
         keep.append(not (row < len(flags) and flags[row] == "dum") and not (e.merged_images and row in e.image_rows))
         # cctbx drops a whole occupancy or U column when one value is '?' or '.'; those values default to 1 and
@@ -212,6 +218,8 @@ def our_choices(xs, path, e):
             else:  # one row for the atoms of a mixed site, at the position of the first
                 f = [(a - b + 0.5) % 1 - 0.5 for a, b in zip(sc.site, xs.scatterers()[same[0]].site)]
                 raw = rows[0] if uc.length(f) < 1e-3 else None
+            if raw is not None and row in tensor_rows:  # entry._tensor_scale: the CIF's tensors are 10^k x U
+                raw = tuple(x / tensor_scale for x in raw)
             sc.flags.set_use_u_iso(raw is None)
             sc.flags.set_use_u_aniso(raw is not None)
             sc.u_star = raw if raw is not None else (0, 0, 0, 0, 0, 0)
@@ -221,6 +229,8 @@ def our_choices(xs, path, e):
         iso = u if math.isfinite(u) else max(b, 0.0) / (8 * math.pi**2) if math.isfinite(b) else math.nan
         if row in b_rows and math.isfinite(u):  # entry._b_in_u_column: the U column holds B values
             iso = u / (8 * math.pi**2)
+        if row in divisors and math.isfinite(u):  # entry._group_scales: B or 10^k x U for this group of atoms
+            iso = u / divisors[row]
         if sc.flags.use_u_aniso():
             ucart = np.array(adptbx.u_star_as_u_cart(uc, sc.u_star))
             m = ucart[[0, 3, 4, 3, 1, 5, 4, 5, 2]].reshape(3, 3)

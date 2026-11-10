@@ -14,7 +14,7 @@ LINE_ABS = 1e-6  # line intensities, on the 0-1000 scale
 TARGETS = ("hs4", "hs3")
 NOTES = ("correction", "symmetry_note", "merge_note", "modulation", "setting_changed", "dropped_sites",
          "invalid_adps", "dummy_sites", "symbol_conflict", "stated_general", "separate_stated", "merged_images",
-         "sof_scaled", "b_rows")
+         "sof_scaled", "b_rows", "u_divisors", "aniso_divisor", "columns_swapped")
 
 
 def _plain(x):

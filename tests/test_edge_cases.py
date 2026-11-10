@@ -879,17 +879,98 @@ def test_u_column_not_read_as_b(tmp_path, rows, why):
     assert "read as B" not in e.comment
 
 
-@pytest.mark.parametrize("na_column, b_rows", [
-    (0.011 * B8, (1,)),  # the column gives the tensor atom B_eq: the column holds B, Cl's 0.9 is B too
-    (0.011, ()),  # the column gives U_eq: Cl's 0.9 is a (large) U, e.g. a disordered atom
-    (11.0, ()),  # COD 2001604: the column holds 1000 x U_eq, not B
+@pytest.mark.parametrize("na_column, b_rows, divisors, cl_u", [
+    (0.011 * B8, (1,), (), 0.9 / B8),  # the column gives the tensor atom B_eq: the column holds B, Cl's 0.9 is B too
+    (0.011, (), (), 0.9),  # the column gives U_eq: Cl's 0.9 is a (large) U, e.g. a disordered atom
+    (11.0, (), ((1, 1000.0),), 0.0009),  # COD 2001604: the column holds 1000 x U_eq, not B: Cl's 0.9 too
+    (1.1, (), ((1, 100.0),), 0.009),  # COD 2001307: 100 x U_eq, within the B_eq range but exactly 100
 ])
-def test_b_in_u_rule_decided_by_the_tensor_atoms(tmp_path, na_column, b_rows):
+def test_b_in_u_rule_decided_by_the_tensor_atoms(tmp_path, na_column, b_rows, divisors, cl_u):
     tail = ANISO_LOOP + "Na1 0.011 0.011 0.011 0 0 0\n"
     e = build(tmp_path, cif(f"Na1 Na+ 0 0 0 1 {na_column!r}\nCl1 Cl- 0.5 0.5 0.5 1 0.9\n", tail=tail))
-    assert e.b_rows == b_rows
-    assert e.structure.sites[1].u_iso == pytest.approx(0.9 / B8 if b_rows else 0.9)
+    assert e.b_rows == b_rows and e.u_divisors == divisors
+    assert e.structure.sites[1].u_iso == pytest.approx(cl_u)
     assert e.structure.sites[0].aniso.u11 == pytest.approx(0.011)
+
+
+def test_b_column_shown_by_the_tensors_holds_b_above_15(tmp_path):
+    # COD 4323429: the column gives the tensor atoms B_eq; its isotropic atoms have B of 17-24 (disordered)
+    tail = ANISO_LOOP + "Na1 0.011 0.011 0.011 0 0 0\n"
+    e = build(tmp_path, cif(f"Na1 Na+ 0 0 0 1 {0.011 * B8!r}\nCl1 Cl- 0.5 0.5 0.5 1 19.2\n", tail=tail))
+    assert e.b_rows == () and e.u_divisors == ((1, pytest.approx(B8)),)
+    assert e.structure.sites[1].u_iso == pytest.approx(19.2 / B8)
+    assert "Displacement parameters read as B (divided by 8π²): the CIF's U_iso_or_equiv values of the 1 non-H " \
+           "atoms without a tensor (median 19.2 Å², none below 0.5) are impossible as U; the column gives the atoms " \
+           "with a tensor B_eq" in e.comment
+
+
+@pytest.mark.parametrize("column, scale", [
+    (0.011, 10000.0),  # COD 2000571: tensors 10^4 x U, the column their U_eq
+    (0.011 * B8, 10000.0),  # COD 2009417: tensors 10^4 x U, the column their B_eq
+    (0.011, 100.0),  # COD 2101927
+])
+def test_tensors_the_column_shows_to_be_scaled_are_divided(tmp_path, column, scale):
+    t = 0.011 * scale
+    tail = ANISO_LOOP + f"Na1 {t!r} {t!r} {t!r} 0 0 0\n"
+    ref = build(tmp_path, cif("Na1 Na+ 0 0 0 1 0.011\nCl1 Cl- 0.5 0.5 0.5 1 0.011\n",
+                              tail=ANISO_LOOP + "Na1 0.011 0.011 0.011 0 0 0\n"), name="ref.cif")
+    cl = 0.011 * B8 if column > 0.5 else 0.011  # Cl in the column's scale
+    e = build(tmp_path, cif(f"Na1 Na+ 0 0 0 1 {column!r}\nCl1 Cl- 0.5 0.5 0.5 1 {cl!r}\n", tail=tail))
+    assert e.aniso_divisor == ((0,), scale)
+    assert e.structure.sites[0].aniso.u11 == pytest.approx(0.011)
+    same_lines(e.lines, ref.lines)
+    assert f"Anisotropic displacement parameters divided by {scale:g}: the CIF's U_iso_or_equiv values show its " \
+           f"tensors to be {scale:g} × U" in e.comment
+
+
+def test_large_tensors_on_the_column_scale_stay(tmp_path):
+    # COD 7229169 (320 K, disordered chains): tensors and column both about 0.5, a large but published U
+    tail = ANISO_LOOP + "Na1 0.6 0.6 0.6 0 0 0\n"
+    e = build(tmp_path, cif("Na1 Na+ 0 0 0 1 0.6\nCl1 Cl- 0.5 0.5 0.5 1 0.011\n", tail=tail))
+    assert e.aniso_divisor == () and e.structure.sites[0].aniso.u11 == pytest.approx(0.6)
+
+
+CH_CELL = dict(sg="P -1", a=6, b=7, c=8, al=80, be=85, ga=95)
+
+
+@pytest.mark.parametrize("c_u, h_u, group, divisor", [
+    (0.05, 4.0, "H", B8),  # COD 2003394: H given as B, the other atoms as U
+    (4.0, 0.06, "C", B8),  # COD 2006422: the other atoms as B, H as U
+    (50.0, 0.06, "C", 1000.0),  # COD 2001413: the other atoms as 1000 x U
+    (0.05, 98.0, "H", 1000.0),  # COD 2003690: H as 1000 x U
+    (0.05, 0.8, None, None),  # COD 2003748: 0.8 for H is no U, and as B (0.010) far below C's: left as published
+    (5.0, 0.005, None, None),  # COD 2000814: B by its range, but 13 times H's 0.005; not 1000 x U below 15
+])
+def test_group_of_atoms_read_on_the_scale_the_other_atoms_give(tmp_path, c_u, h_u, group, divisor):
+    rows = f"C1 C 0.1 0.2 0.3 1 {c_u!r}\nC2 C 0.3 0.1 0.2 1 {c_u!r}\nH1 H 0.2 0.3 0.1 1 {h_u!r}\n"
+    e = build(tmp_path, cif(rows, **CH_CELL))
+    if group is None:
+        assert e.u_divisors == () and [s.u_iso for s in e.structure.sites] == pytest.approx([c_u, c_u, h_u])
+        return
+    want = [0, 1] if group == "C" else [2]
+    assert e.u_divisors == tuple((r, pytest.approx(divisor)) for r in want)
+    u = [c_u / divisor if group == "C" else c_u] * 2 + [h_u / divisor if group == "H" else h_u]
+    assert [s.u_iso for s in e.structure.sites] == pytest.approx(u)
+    assert "impossible as U; so read, they move" in e.comment
+
+
+def test_occupancy_and_u_columns_read_swapped_where_the_formula_shows_it(tmp_path):
+    # COD 2002893: occupancies 0.035-0.093 and U 0.125-1 in each other's columns
+    rows = "Na1 Na+ 0 0 0 0.035 1.0\nCl1 Cl- 0.5 0.5 0.5 0.04 1.0\n"
+    ref = build(tmp_path, cif("Na1 Na+ 0 0 0 1.0 0.035\nCl1 Cl- 0.5 0.5 0.5 1.0 0.04\n"), name="ref.cif")
+    e = build(tmp_path, cif(rows, extra="_chemical_formula_sum 'Cl Na'\n_cell_formula_units_Z 4"))
+    assert e.columns_swapped and e.formula == "Na4.00 Cl4.00"
+    same_lines(e.lines, ref.lines)
+    assert "Occupancy and U_iso_or_equiv columns read swapped" in e.comment
+
+
+def test_columns_not_swapped_without_evidence(tmp_path):
+    rows = "Na1 Na+ 0 0 0 0.035 1.0\nCl1 Cl- 0.5 0.5 0.5 0.04 1.0\n"
+    e = build(tmp_path, cif(rows))  # no formula or density: nothing to decide by
+    assert not e.columns_swapped and e.structure.sites[0].occ == pytest.approx(0.035)
+    tail = ANISO_LOOP + "Na1 1.0 1.0 1.0 0 0 0\n"  # a tensor shows the U column's scale
+    e = build(tmp_path, cif(rows, extra="_chemical_formula_sum 'Cl Na'\n_cell_formula_units_Z 4", tail=tail))
+    assert not e.columns_swapped
 
 
 def test_b_in_u_rule_not_for_a_corrected_cif(tmp_path, monkeypatch):
@@ -897,6 +978,12 @@ def test_b_in_u_rule_not_for_a_corrected_cif(tmp_path, monkeypatch):
     monkeypatch.setattr(entry, "_corrections", lambda: {"1234567": fix})
     e = build(tmp_path, cif("Na1 Na+ 0 0 0 1 1.2\nCl1 Cl- 0.5 0.5 0.5 1 0.9\n"))
     assert e.b_rows == () and e.structure.sites[0].u_iso == pytest.approx(1.2)
+    e = build(tmp_path, cif("Na1 Na+ 0 0 0 1 0.011\nCl1 Cl- 0.5 0.5 0.5 1 0.011\n",
+                            tail=ANISO_LOOP + "Na1 110 110 110 0 0 0\n"))
+    assert e.aniso_divisor == () and e.structure.sites[0].aniso.u11 == pytest.approx(110)
+    rows = "Na1 Na+ 0 0 0 0.035 1.0\nCl1 Cl- 0.5 0.5 0.5 0.04 1.0\n"
+    e = build(tmp_path, cif(rows, extra="_chemical_formula_sum 'Cl Na'\n_cell_formula_units_Z 4"))
+    assert not e.columns_swapped
 
 
 def test_missing_displacement_uses_highscore_default(tmp_path):
