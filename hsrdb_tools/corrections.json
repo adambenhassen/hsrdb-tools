@@ -21991,6 +21991,1814 @@
    }
   ]
  },
+ "2000118": {
+  "source": "Guesdon et al., Chemistry - A European Journal 3, 1797-1800 (1997), https://doi.org/10.1002/chem.19970031111",
+  "note": "the CIF's structure has 14 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii) and contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
+  "cell": [
+   11.943,
+   13.339,
+   26.765,
+   85.33,
+   86.87,
+   64.08
+  ],
+  "operations": [
+   "-x, -y, -z",
+   "x, y, z"
+  ],
+  "sites": {
+   "Mo1": {
+    "omit": true
+   },
+   "Mo2": {
+    "omit": true
+   },
+   "Mo3": {
+    "omit": true
+   },
+   "Mo4": {
+    "omit": true
+   },
+   "Mo5": {
+    "omit": true
+   },
+   "Mo6": {
+    "omit": true
+   },
+   "Mo7": {
+    "omit": true
+   },
+   "Mo8": {
+    "omit": true
+   },
+   "Mo9": {
+    "omit": true
+   },
+   "Mo10": {
+    "omit": true
+   },
+   "Mo11": {
+    "omit": true
+   },
+   "Mo12": {
+    "omit": true
+   },
+   "P1": {
+    "omit": true
+   },
+   "P2": {
+    "omit": true
+   },
+   "P3": {
+    "omit": true
+   },
+   "P4": {
+    "omit": true
+   },
+   "P5": {
+    "omit": true
+   },
+   "P6": {
+    "omit": true
+   },
+   "P7": {
+    "omit": true
+   },
+   "P8": {
+    "omit": true
+   },
+   "Cd1": {
+    "omit": true
+   },
+   "Cd2": {
+    "omit": true
+   },
+   "Cd3": {
+    "omit": true
+   },
+   "Cd4": {
+    "omit": true
+   },
+   "Cd5": {
+    "omit": true
+   },
+   "Cd6?": {
+    "omit": true
+   },
+   "Cd7": {
+    "omit": true
+   },
+   "O1": {
+    "omit": true
+   },
+   "O2": {
+    "omit": true
+   },
+   "O3": {
+    "omit": true
+   },
+   "O4": {
+    "omit": true
+   },
+   "O5": {
+    "omit": true
+   },
+   "O6": {
+    "omit": true
+   },
+   "O7": {
+    "omit": true
+   },
+   "O8": {
+    "omit": true
+   },
+   "O9": {
+    "omit": true
+   },
+   "O10": {
+    "omit": true
+   },
+   "O11": {
+    "omit": true
+   },
+   "O12": {
+    "omit": true
+   },
+   "O13": {
+    "omit": true
+   },
+   "O14": {
+    "omit": true
+   },
+   "O15": {
+    "omit": true
+   },
+   "O16": {
+    "omit": true
+   },
+   "O17": {
+    "omit": true
+   },
+   "O18": {
+    "omit": true
+   },
+   "O19": {
+    "omit": true
+   },
+   "O20": {
+    "omit": true
+   },
+   "O21": {
+    "omit": true
+   },
+   "O22": {
+    "omit": true
+   },
+   "O23": {
+    "omit": true
+   },
+   "O24": {
+    "omit": true
+   },
+   "O25": {
+    "omit": true
+   },
+   "O26": {
+    "omit": true
+   },
+   "O27": {
+    "omit": true
+   },
+   "O28": {
+    "omit": true
+   },
+   "O29": {
+    "omit": true
+   },
+   "O30": {
+    "omit": true
+   },
+   "O31": {
+    "omit": true
+   },
+   "O32": {
+    "omit": true
+   },
+   "O33": {
+    "omit": true
+   },
+   "O34": {
+    "omit": true
+   },
+   "O35": {
+    "omit": true
+   },
+   "O36": {
+    "omit": true
+   },
+   "O37": {
+    "omit": true
+   },
+   "O38": {
+    "omit": true
+   },
+   "O39": {
+    "omit": true
+   },
+   "O40": {
+    "omit": true
+   },
+   "O41": {
+    "omit": true
+   },
+   "O42": {
+    "omit": true
+   },
+   "O43": {
+    "omit": true
+   },
+   "O44": {
+    "omit": true
+   },
+   "O45": {
+    "omit": true
+   },
+   "O46": {
+    "omit": true
+   },
+   "O47": {
+    "omit": true
+   },
+   "O48": {
+    "omit": true
+   },
+   "O49": {
+    "omit": true
+   },
+   "O50": {
+    "omit": true
+   },
+   "O51": {
+    "omit": true
+   },
+   "O52": {
+    "omit": true
+   },
+   "O53": {
+    "omit": true
+   },
+   "O54": {
+    "omit": true
+   },
+   "O55": {
+    "omit": true
+   },
+   "O56": {
+    "omit": true
+   },
+   "O57": {
+    "omit": true
+   },
+   "O58": {
+    "omit": true
+   },
+   "O59": {
+    "omit": true
+   },
+   "O60": {
+    "omit": true
+   },
+   "O61": {
+    "omit": true
+   },
+   "O62": {
+    "omit": true
+   },
+   "O63": {
+    "omit": true
+   },
+   "O64": {
+    "omit": true
+   },
+   "O65": {
+    "omit": true
+   },
+   "O66": {
+    "omit": true
+   },
+   "O67": {
+    "omit": true
+   },
+   "O68": {
+    "omit": true
+   },
+   "O69?": {
+    "omit": true
+   },
+   "O70": {
+    "omit": true
+   },
+   "O71": {
+    "omit": true
+   },
+   "N1": {
+    "omit": true
+   },
+   "N2": {
+    "omit": true
+   },
+   "N3": {
+    "omit": true
+   },
+   "N4": {
+    "omit": true
+   },
+   "C1": {
+    "omit": true
+   },
+   "C2": {
+    "omit": true
+   },
+   "C3": {
+    "omit": true
+   },
+   "C4": {
+    "omit": true
+   },
+   "C5": {
+    "omit": true
+   },
+   "C6": {
+    "omit": true
+   },
+   "C7": {
+    "omit": true
+   },
+   "C8": {
+    "omit": true
+   },
+   "C9": {
+    "omit": true
+   },
+   "C10": {
+    "omit": true
+   },
+   "C11": {
+    "omit": true
+   },
+   "C12": {
+    "omit": true
+   },
+   "C13": {
+    "omit": true
+   },
+   "C14": {
+    "omit": true
+   },
+   "C15": {
+    "omit": true
+   },
+   "C16": {
+    "omit": true
+   },
+   "O4A": {
+    "omit": true
+   },
+   "O10A": {
+    "omit": true
+   },
+   "O18A": {
+    "omit": true
+   },
+   "O29A*": {
+    "omit": true
+   },
+   "O37A*": {
+    "omit": true
+   },
+   "O45A*": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "Mo1",
+    "xyz": [
+     0.00933,
+     0.21323,
+     0.0886
+    ],
+    "species": {
+     "Mo": 1.0
+    },
+    "u_iso": 0.0136
+   },
+   {
+    "label": "Mo2",
+    "xyz": [
+     0.26852,
+     0.94584,
+     0.08907
+    ],
+    "species": {
+     "Mo": 1.0
+    },
+    "u_iso": 0.0145
+   },
+   {
+    "label": "Mo3",
+    "xyz": [
+     0.23062,
+     0.76731,
+     0.09271
+    ],
+    "species": {
+     "Mo": 1.0
+    },
+    "u_iso": 0.0149
+   },
+   {
+    "label": "Mo4",
+    "xyz": [
+     0.92425,
+     0.79046,
+     0.08918
+    ],
+    "species": {
+     "Mo": 1.0
+    },
+    "u_iso": 0.0148
+   },
+   {
+    "label": "Mo5",
+    "xyz": [
+     0.73297,
+     0.9866,
+     0.08451
+    ],
+    "species": {
+     "Mo": 1.0
+    },
+    "u_iso": 0.0162
+   },
+   {
+    "label": "Mo6",
+    "xyz": [
+     0.78399,
+     0.22836,
+     0.08989
+    ],
+    "species": {
+     "Mo": 1.0
+    },
+    "u_iso": 0.0141
+   },
+   {
+    "label": "Mo7",
+    "xyz": [
+     0.08191,
+     0.21037,
+     0.41441
+    ],
+    "species": {
+     "Mo": 1.0
+    },
+    "u_iso": 0.0146
+   },
+   {
+    "label": "Mo8",
+    "xyz": [
+     0.27552,
+     0.0149,
+     0.42255
+    ],
+    "species": {
+     "Mo": 1.0
+    },
+    "u_iso": 0.0141
+   },
+   {
+    "label": "Mo9",
+    "xyz": [
+     0.22284,
+     0.77758,
+     0.40833
+    ],
+    "species": {
+     "Mo": 1.0
+    },
+    "u_iso": 0.0138
+   },
+   {
+    "label": "Mo10",
+    "xyz": [
+     0.99953,
+     0.78872,
+     0.40839
+    ],
+    "species": {
+     "Mo": 1.0
+    },
+    "u_iso": 0.0134
+   },
+   {
+    "label": "Mo11",
+    "xyz": [
+     0.74,
+     0.05496,
+     0.40674
+    ],
+    "species": {
+     "Mo": 1.0
+    },
+    "u_iso": 0.0142
+   },
+   {
+    "label": "Mo12",
+    "xyz": [
+     0.77799,
+     0.23351,
+     0.40621
+    ],
+    "species": {
+     "Mo": 1.0
+    },
+    "u_iso": 0.015
+   },
+   {
+    "label": "P1",
+    "xyz": [
+     0.024,
+     0.0202,
+     0.35526
+    ],
+    "species": {
+     "P": 1.0
+    },
+    "u_iso": 0.012
+   },
+   {
+    "label": "P2",
+    "xyz": [
+     0.9863,
+     0.9851,
+     0.1459
+    ],
+    "species": {
+     "P": 1.0
+    },
+    "u_iso": 0.012
+   },
+   {
+    "label": "P3",
+    "xyz": [
+     0.7881,
+     0.8759,
+     0.32041
+    ],
+    "species": {
+     "P": 1.0
+    },
+    "u_iso": 0.016
+   },
+   {
+    "label": "P4",
+    "xyz": [
+     0.2239,
+     0.1234,
+     0.17582
+    ],
+    "species": {
+     "P": 1.0
+    },
+    "u_iso": 0.017
+   },
+   {
+    "label": "P5",
+    "xyz": [
+     0.4194,
+     0.8422,
+     0.33538
+    ],
+    "species": {
+     "P": 1.0
+    },
+    "u_iso": 0.016
+   },
+   {
+    "label": "P6",
+    "xyz": [
+     0.8853,
+     0.3806,
+     0.32786
+    ],
+    "species": {
+     "P": 1.0
+    },
+    "u_iso": 0.027
+   },
+   {
+    "label": "P7",
+    "xyz": [
+     0.1183,
+     0.6422,
+     0.1799
+    ],
+    "species": {
+     "P": 1.0
+    },
+    "u_iso": 0.018
+   },
+   {
+    "label": "P8",
+    "xyz": [
+     0.5964,
+     0.1695,
+     0.17097
+    ],
+    "species": {
+     "P": 1.0
+    },
+    "u_iso": 0.022
+   },
+   {
+    "label": "Cd1",
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "species": {
+     "Cd": 1.0
+    },
+    "u_iso": 0.0149
+   },
+   {
+    "label": "Cd2",
+    "xyz": [
+     0.0,
+     0.0,
+     0.5
+    ],
+    "species": {
+     "Cd": 1.0
+    },
+    "u_iso": 0.0155
+   },
+   {
+    "label": "Cd3",
+    "xyz": [
+     0.06385,
+     0.8456,
+     0.2668
+    ],
+    "species": {
+     "Cd": 1.0
+    },
+    "u_iso": 0.0192
+   },
+   {
+    "label": "Cd4",
+    "xyz": [
+     0.29196,
+     0.09977,
+     0.2876
+    ],
+    "species": {
+     "Cd": 1.0
+    },
+    "u_iso": 0.0233
+   },
+   {
+    "label": "Cd5",
+    "xyz": [
+     0.82337,
+     0.09752,
+     0.26623
+    ],
+    "species": {
+     "Cd": 0.701
+    },
+    "u_iso": 0.0195
+   },
+   {
+    "label": "Cd6",
+    "xyz": [
+     0.9537,
+     0.151,
+     0.23329
+    ],
+    "species": {
+     "Cd": 0.299
+    },
+    "u_iso": 0.018
+   },
+   {
+    "label": "Cd7",
+    "xyz": [
+     0.7192,
+     0.9093,
+     0.21488
+    ],
+    "species": {
+     "Cd": 0.5
+    },
+    "u_iso": 0.04
+   },
+   {
+    "label": "O1",
+    "xyz": [
+     0.9881,
+     0.3377,
+     0.0607
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.024
+   },
+   {
+    "label": "O2",
+    "xyz": [
+     0.1257,
+     0.2166,
+     0.1438
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.018
+   },
+   {
+    "label": "O3",
+    "xyz": [
+     0.8824,
+     0.2456,
+     0.1413
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.02
+   },
+   {
+    "label": "O4",
+    "xyz": [
+     0.9259,
+     0.1613,
+     0.0427
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.016
+   },
+   {
+    "label": "O5",
+    "xyz": [
+     0.1769,
+     0.109,
+     0.0534
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.019
+   },
+   {
+    "label": "O6",
+    "xyz": [
+     0.072,
+     0.038,
+     0.1235
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.012
+   },
+   {
+    "label": "O7",
+    "xyz": [
+     0.4073,
+     0.9014,
+     0.0608
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.028
+   },
+   {
+    "label": "O8",
+    "xyz": [
+     0.3038,
+     0.0267,
+     0.1449
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.02
+   },
+   {
+    "label": "O9",
+    "xyz": [
+     0.2845,
+     0.833,
+     0.1424
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.018
+   },
+   {
+    "label": "O10",
+    "xyz": [
+     0.176,
+     0.8992,
+     0.0449
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.015
+   },
+   {
+    "label": "O11",
+    "xyz": [
+     0.3621,
+     0.6758,
+     0.0655
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.027
+   },
+   {
+    "label": "O12",
+    "xyz": [
+     0.2237,
+     0.6606,
+     0.1516
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.023
+   },
+   {
+    "label": "O13",
+    "xyz": [
+     0.1043,
+     0.7277,
+     0.0567
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.017
+   },
+   {
+    "label": "O14",
+    "xyz": [
+     0.0364,
+     0.8664,
+     0.1281
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.016
+   },
+   {
+    "label": "O15",
+    "xyz": [
+     0.8691,
+     0.7175,
+     0.0593
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.025
+   },
+   {
+    "label": "O16",
+    "xyz": [
+     0.0075,
+     0.671,
+     0.1457
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.023
+   },
+   {
+    "label": "O17",
+    "xyz": [
+     0.7944,
+     0.8685,
+     0.1376
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.019
+   },
+   {
+    "label": "O18",
+    "xyz": [
+     0.8868,
+     0.9223,
+     0.0427
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.017
+   },
+   {
+    "label": "O19",
+    "xyz": [
+     0.6342,
+     0.9614,
+     0.0528
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.03
+   },
+   {
+    "label": "O20",
+    "xyz": [
+     0.6075,
+     0.0792,
+     0.1381
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.032
+   },
+   {
+    "label": "O21",
+    "xyz": [
+     0.7023,
+     0.145,
+     0.0517
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.019
+   },
+   {
+    "label": "O22",
+    "xyz": [
+     0.8561,
+     0.0518,
+     0.1242
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.017
+   },
+   {
+    "label": "O23",
+    "xyz": [
+     0.704,
+     0.3577,
+     0.0625
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.027
+   },
+   {
+    "label": "O24",
+    "xyz": [
+     0.6541,
+     0.2432,
+     0.1467
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.022
+   },
+   {
+    "label": "O25",
+    "xyz": [
+     0.1317,
+     0.286,
+     0.4464
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.029
+   },
+   {
+    "label": "O26",
+    "xyz": [
+     0.9736,
+     0.1388,
+     0.3735
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.013
+   },
+   {
+    "label": "O27",
+    "xyz": [
+     0.0071,
+     0.3295,
+     0.3561
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.022
+   },
+   {
+    "label": "O28",
+    "xyz": [
+     0.8997,
+     0.2732,
+     0.445
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.019
+   },
+   {
+    "label": "O29",
+    "xyz": [
+     0.1167,
+     0.0775,
+     0.4612
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.016
+   },
+   {
+    "label": "O30",
+    "xyz": [
+     0.2184,
+     0.131,
+     0.3681
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.019
+   },
+   {
+    "label": "O31",
+    "xyz": [
+     0.3666,
+     0.0433,
+     0.4584
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.025
+   },
+   {
+    "label": "O32",
+    "xyz": [
+     0.4143,
+     0.9208,
+     0.3749
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.018
+   },
+   {
+    "label": "O33",
+    "xyz": [
+     0.1549,
+     0.9535,
+     0.3777
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.015
+   },
+   {
+    "label": "O34",
+    "xyz": [
+     0.3004,
+     0.8559,
+     0.4522
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.015
+   },
+   {
+    "label": "O35",
+    "xyz": [
+     0.302,
+     0.6467,
+     0.4327
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.022
+   },
+   {
+    "label": "O36",
+    "xyz": [
+     0.3549,
+     0.7694,
+     0.3537
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.02
+   },
+   {
+    "label": "O37",
+    "xyz": [
+     0.0814,
+     0.8384,
+     0.4564
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.016
+   },
+   {
+    "label": "O38",
+    "xyz": [
+     0.125,
+     0.7651,
+     0.3546
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.015
+   },
+   {
+    "label": "O39",
+    "xyz": [
+     0.0252,
+     0.6628,
+     0.4341
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.025
+   },
+   {
+    "label": "O40",
+    "xyz": [
+     0.8861,
+     0.7845,
+     0.3545
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.021
+   },
+   {
+    "label": "O41",
+    "xyz": [
+     0.8295,
+     0.893,
+     0.4425
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.015
+   },
+   {
+    "label": "O42",
+    "xyz": [
+     0.9387,
+     0.9673,
+     0.3772
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.014
+   },
+   {
+    "label": "O43",
+    "xyz": [
+     0.5963,
+     0.1026,
+     0.4332
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.025
+   },
+   {
+    "label": "O44",
+    "xyz": [
+     0.7045,
+     0.9758,
+     0.3514
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.022
+   },
+   {
+    "label": "O45",
+    "xyz": [
+     0.8256,
+     0.1024,
+     0.4542
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.017
+   },
+   {
+    "label": "O46",
+    "xyz": [
+     0.7338,
+     0.1646,
+     0.3531
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.022
+   },
+   {
+    "label": "O47",
+    "xyz": [
+     0.6429,
+     0.3224,
+     0.4314
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.027
+   },
+   {
+    "label": "O48",
+    "xyz": [
+     0.7872,
+     0.348,
+     0.3522
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.02
+   },
+   {
+    "label": "O49",
+    "xyz": [
+     0.027,
+     0.0198,
+     0.2987
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.016
+   },
+   {
+    "label": "O50",
+    "xyz": [
+     0.9843,
+     0.9878,
+     0.2025
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.019
+   },
+   {
+    "label": "O51",
+    "xyz": [
+     0.7085,
+     0.832,
+     0.296
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.024
+   },
+   {
+    "label": "O52",
+    "xyz": [
+     0.8568,
+     0.9146,
+     0.2784
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.022
+   },
+   {
+    "label": "O53",
+    "xyz": [
+     0.1575,
+     0.0852,
+     0.2207
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.027
+   },
+   {
+    "label": "O54",
+    "xyz": [
+     0.3045,
+     0.1624,
+     0.2031
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.027
+   },
+   {
+    "label": "O55",
+    "xyz": [
+     0.5574,
+     0.7577,
+     0.3256
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.025
+   },
+   {
+    "label": "O56",
+    "xyz": [
+     0.3656,
+     0.9129,
+     0.2869
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.021
+   },
+   {
+    "label": "O57",
+    "xyz": [
+     0.8299,
+     0.5122,
+     0.3325
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.087
+   },
+   {
+    "label": "O58",
+    "xyz": [
+     0.9095,
+     0.3554,
+     0.2742
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.08
+   },
+   {
+    "label": "O59",
+    "xyz": [
+     0.1725,
+     0.5135,
+     0.1922
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.026
+   },
+   {
+    "label": "O60",
+    "xyz": [
+     0.0784,
+     0.6986,
+     0.2286
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.026
+   },
+   {
+    "label": "O61",
+    "xyz": [
+     0.454,
+     0.2505,
+     0.1776
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.025
+   },
+   {
+    "label": "O62",
+    "xyz": [
+     0.6483,
+     0.1164,
+     0.2219
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.049
+   },
+   {
+    "label": "O63",
+    "xyz": [
+     0.2611,
+     0.8022,
+     0.2422
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.024
+   },
+   {
+    "label": "O64",
+    "xyz": [
+     0.4821,
+     0.0963,
+     0.2977
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.034
+   },
+   {
+    "label": "O65",
+    "xyz": [
+     0.2013,
+     0.2909,
+     0.288
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.026
+   },
+   {
+    "label": "O66",
+    "xyz": [
+     0.8016,
+     0.2622,
+     0.2371
+    ],
+    "species": {
+     "O": 0.701
+    },
+    "u_iso": 0.028
+   },
+   {
+    "label": "O67",
+    "xyz": [
+     0.5257,
+     0.907,
+     0.2038
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.036
+   },
+   {
+    "label": "O68",
+    "xyz": [
+     0.798,
+     0.694,
+     0.211
+    ],
+    "species": {
+     "O": 0.5
+    },
+    "u_iso": 0.17
+   },
+   {
+    "label": "O69",
+    "xyz": [
+     0.76,
+     0.202,
+     0.2565
+    ],
+    "species": {
+     "O": 0.299
+    },
+    "u_iso": 0.02
+   },
+   {
+    "label": "O70",
+    "xyz": [
+     0.0393,
+     0.4011,
+     0.2017
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.039
+   },
+   {
+    "label": "O71",
+    "xyz": [
+     0.9804,
+     0.5935,
+     0.3014
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.065
+   },
+   {
+    "label": "N1",
+    "xyz": [
+     0.3156,
+     0.3688,
+     0.534
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.033
+   },
+   {
+    "label": "N2",
+    "xyz": [
+     0.3162,
+     0.3739,
+     0.0412
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.036
+   },
+   {
+    "label": "N3",
+    "xyz": [
+     0.4051,
+     0.4416,
+     0.316
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.051
+   },
+   {
+    "label": "N4",
+    "xyz": [
+     0.661,
+     0.604,
+     0.1666
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.088
+   },
+   {
+    "label": "C1",
+    "xyz": [
+     0.194,
+     0.454,
+     0.5183
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.116
+   },
+   {
+    "label": "C2",
+    "xyz": [
+     0.312,
+     0.268,
+     0.557
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.132
+   },
+   {
+    "label": "C3",
+    "xyz": [
+     0.38,
+     0.337,
+     0.487
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.2
+   },
+   {
+    "label": "C4",
+    "xyz": [
+     0.61,
+     0.59,
+     0.438
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.074
+   },
+   {
+    "label": "C5",
+    "xyz": [
+     0.356,
+     0.252,
+     0.0423
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.069
+   },
+   {
+    "label": "C6",
+    "xyz": [
+     0.227,
+     0.438,
+     0.9997
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.105
+   },
+   {
+    "label": "C7",
+    "xyz": [
+     0.244,
+     0.413,
+     0.0874
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.119
+   },
+   {
+    "label": "C8",
+    "xyz": [
+     0.58,
+     0.598,
+     0.9566
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.119
+   },
+   {
+    "label": "C9",
+    "xyz": [
+     0.482,
+     0.501,
+     0.3324
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.07
+   },
+   {
+    "label": "C10",
+    "xyz": [
+     0.27,
+     0.515,
+     0.3248
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.083
+   },
+   {
+    "label": "C11",
+    "xyz": [
+     0.43,
+     0.337,
+     0.3476
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.092
+   },
+   {
+    "label": "C12",
+    "xyz": [
+     0.425,
+     0.418,
+     0.2621
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.14
+   },
+   {
+    "label": "C13",
+    "xyz": [
+     0.604,
+     0.701,
+     0.1304
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.069
+   },
+   {
+    "label": "C14",
+    "xyz": [
+     0.772,
+     0.517,
+     0.1459
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.139
+   },
+   {
+    "label": "C15",
+    "xyz": [
+     0.694,
+     0.61,
+     0.217
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.2
+   },
+   {
+    "label": "C16",
+    "xyz": [
+     0.578,
+     0.542,
+     0.165
+    ],
+    "species": {
+     "C": 1.0
+    },
+    "u_iso": 0.2
+   }
+  ]
+ },
  "2000170": {
   "source": "Powell et al., Acta Crystallographica Section C 47, 2279-2282 (1991), https://doi.org/10.1107/S0108270191006054",
   "note": "the CIF's structure has 9 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii) and contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -26448,272 +28256,6 @@
    }
   ]
  },
- "2003246": {
-  "source": "Capparelli and Murgich, Acta Crystallographica Section C 51, 356-358 (1995), https://doi.org/10.1107/S010827019401022X",
-  "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
-  "cell": [
-   18.56,
-   13.335,
-   9.677,
-   90.0,
-   90.0,
-   90.0
-  ],
-  "operations": [
-   "x+1/2, y, -z+1/2",
-   "x, -y+1/2, z",
-   "-x+1/2, y+1/2, z+1/2",
-   "-x, -y, -z",
-   "-x+1/2, -y, z+1/2",
-   "-x, y+1/2, -z",
-   "x+1/2, -y+1/2, -z+1/2",
-   "x, y, z"
-  ],
-  "sites": {
-   "Cs(1)": {
-    "omit": true
-   },
-   "Cs(2)": {
-    "omit": true
-   },
-   "Cs(3)": {
-    "omit": true
-   },
-   "Cs(4)": {
-    "omit": true
-   },
-   "Fe": {
-    "omit": true
-   },
-   "Cl(1)": {
-    "omit": true
-   },
-   "Cl(2)": {
-    "omit": true
-   },
-   "N(1)": {
-    "omit": true
-   },
-   "N(2)": {
-    "omit": true
-   },
-   "N(3)": {
-    "omit": true
-   },
-   "N(4)": {
-    "omit": true
-   },
-   "C(1)": {
-    "omit": true
-   },
-   "C(2)": {
-    "omit": true
-   },
-   "C(3)": {
-    "omit": true
-   },
-   "C(4)": {
-    "omit": true
-   },
-   "O(1w)": {
-    "omit": true
-   }
-  },
-  "add": [
-   {
-    "label": "Cs1",
-    "xyz": [
-     0.3336,
-     0.25,
-     0.84235
-    ],
-    "species": {
-     "Cs": 1.0
-    },
-    "u_iso": 0.03733
-   },
-   {
-    "label": "Cs2",
-    "xyz": [
-     0.166,
-     0.25,
-     0.46442
-    ],
-    "species": {
-     "Cs": 1.0
-    },
-    "u_iso": 0.0336
-   },
-   {
-    "label": "Cs3",
-    "xyz": [
-     0.21132,
-     0.46254,
-     0.11326
-    ],
-    "species": {
-     "Cs": 1.0
-    },
-    "u_iso": 0.0358
-   },
-   {
-    "label": "Cs4",
-    "xyz": [
-     0.46585,
-     0.42461,
-     0.2114
-    ],
-    "species": {
-     "Cs": 1.0
-    },
-    "u_iso": 0.0374
-   },
-   {
-    "label": "Fe1",
-    "xyz": [
-     0.05403,
-     0.25,
-     0.8563
-    ],
-    "species": {
-     "Fe": 1.0
-    },
-    "u_iso": 0.02217
-   },
-   {
-    "label": "Cl1",
-    "xyz": [
-     0.315,
-     0.25,
-     0.2023
-    ],
-    "species": {
-     "Cl": 1.0
-    },
-    "u_iso": 0.04467
-   },
-   {
-    "label": "Cl2",
-    "xyz": [
-     0.36862,
-     0.4991,
-     -0.0741
-    ],
-    "species": {
-     "Cl": 1.0
-    },
-    "u_iso": 0.03553
-   },
-   {
-    "label": "N1",
-    "xyz": [
-     0.0,
-     0.25,
-     0.554
-    ],
-    "species": {
-     "N": 1.0
-    },
-    "u_iso": 0.04467
-   },
-   {
-    "label": "N2",
-    "xyz": [
-     0.0945,
-     0.25,
-     0.1673
-    ],
-    "species": {
-     "N": 1.0
-    },
-    "u_iso": 0.04167
-   },
-   {
-    "label": "N3",
-    "xyz": [
-     0.1753,
-     0.4023,
-     0.7875
-    ],
-    "species": {
-     "N": 1.0
-    },
-    "u_iso": 0.044
-   },
-   {
-    "label": "N4",
-    "xyz": [
-     -0.059,
-     0.4098,
-     -0.074
-    ],
-    "species": {
-     "N": 1.0
-    },
-    "u_iso": 0.05967
-   },
-   {
-    "label": "C1",
-    "xyz": [
-     0.0212,
-     0.25,
-     0.6664
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.03333
-   },
-   {
-    "label": "C2",
-    "xyz": [
-     0.0812,
-     0.25,
-     0.0491
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.02733
-   },
-   {
-    "label": "C3",
-    "xyz": [
-     0.1281,
-     0.349,
-     0.8133
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.02833
-   },
-   {
-    "label": "C4",
-    "xyz": [
-     -0.0169,
-     0.3524,
-     -0.0993
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.03033
-   },
-   {
-    "label": "O1",
-    "xyz": [
-     0.3205,
-     0.199,
-     0.514
-    ],
-    "species": {
-     "O": 0.5
-    },
-    "u_iso": 0.00081
-   }
-  ]
- },
  "2003252": {
   "source": "Foulon et al., Acta Crystallographica Section C 51, 348-350 (1995), https://doi.org/10.1107/S0108270193007796",
   "note": "the CIF's structure has 8 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii) and contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -28520,152 +30062,6 @@
    }
   ]
  },
- "2004217": {
-  "source": "Guo et al., Acta Crystallographica Section C 51, 2471-2473 (1995), https://doi.org/10.1107/S0108270195008390",
-  "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
-  "cell": [
-   14.3,
-   6.43,
-   8.754,
-   90.0,
-   98.36,
-   90.0
-  ],
-  "operations": [
-   "x, -y, z+1/2",
-   "-x, -y, -z",
-   "-x, y, -z+1/2",
-   "x, y, z",
-   "x+1/2, -y+1/2, z+1/2",
-   "-x+1/2, -y+1/2, -z",
-   "-x+1/2, y+1/2, -z+1/2",
-   "x+1/2, y+1/2, z"
-  ],
-  "sites": {
-   "Pr(1)": {
-    "omit": true
-   },
-   "Pr(2)": {
-    "omit": true
-   },
-   "Cl": {
-    "omit": true
-   },
-   "Si": {
-    "omit": true
-   },
-   "O(1)": {
-    "omit": true
-   },
-   "O(2)": {
-    "omit": true
-   },
-   "O(3)": {
-    "omit": true
-   },
-   "O(4)": {
-    "omit": true
-   }
-  },
-  "add": [
-   {
-    "label": "Pr1",
-    "xyz": [
-     0.1838,
-     0.10391,
-     0.16958
-    ],
-    "species": {
-     "Pr": 1.0
-    },
-    "u_iso": 0.00897
-   },
-   {
-    "label": "Pr2",
-    "xyz": [
-     0.5,
-     0.07297,
-     0.25
-    ],
-    "species": {
-     "Pr": 1.0
-    },
-    "u_iso": 0.0099
-   },
-   {
-    "label": "Cl1",
-    "xyz": [
-     0.0,
-     0.0271,
-     0.25
-    ],
-    "species": {
-     "Cl": 1.0
-    },
-    "u_iso": 0.03227
-   },
-   {
-    "label": "Si1",
-    "xyz": [
-     0.342,
-     -0.0553,
-     -0.0251
-    ],
-    "species": {
-     "Si": 1.0
-    },
-    "u_iso": 0.00863
-   },
-   {
-    "label": "O1",
-    "xyz": [
-     0.1549,
-     0.3854,
-     0.344
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.01267
-   },
-   {
-    "label": "O2",
-    "xyz": [
-     0.2389,
-     -0.0572,
-     0.4174
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.011
-   },
-   {
-    "label": "O3",
-    "xyz": [
-     0.0781,
-     0.3754,
-     0.0295
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.013
-   },
-   {
-    "label": "O4",
-    "xyz": [
-     0.142,
-     0.7386,
-     0.1443
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.015
-   }
-  ]
- },
  "2004310": {
   "source": "Ladjeroud, Balegroune, Guehria, Benziada and Triki, Acta Crystallographica C51, 2459-2461 (1995), https://doi.org/10.1107/S0108270195007980",
   "note": "ST1, ST2 are the refinement's fictitious atom ST = 3/5 Nb + 2/5 Ti (total Nb/Ti disorder) and OF1-OF3 the mixed anion OF = 3/4 O + 1/4 F (p. 2459); without a type column their labels read as sulfur and oxygen",
@@ -28701,156 +30097,6 @@
     }
    }
   }
- },
- "2004425": {
-  "source": "Guo et al., Acta Crystallographica Section C 52, 5-7 (1996), https://doi.org/10.1107/S0108270195010353",
-  "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
-  "cell": [
-   6.199,
-   6.199,
-   19.859,
-   90.0,
-   90.0,
-   120.0
-  ],
-  "operations": [
-   "x, x-y, -z",
-   "-x+y, y, -z",
-   "-y, -x, -z",
-   "x, x-y, z+1/2",
-   "-x+y, y, z+1/2",
-   "-y, -x, z+1/2",
-   "-x+y, -x, -z+1/2",
-   "-y, x-y, -z+1/2",
-   "x, y, -z+1/2",
-   "-x+y, -x, z",
-   "-y, x-y, z",
-   "x, y, z"
-  ],
-  "sites": {
-   "Ta1": {
-    "omit": true
-   },
-   "Ta2": {
-    "omit": true
-   },
-   "Dy": {
-    "omit": true
-   },
-   "O1": {
-    "omit": true
-   },
-   "O2": {
-    "omit": true
-   },
-   "O3": {
-    "omit": true
-   },
-   "O4": {
-    "omit": true
-   },
-   "O5": {
-    "omit": true
-   }
-  },
-  "add": [
-   {
-    "label": "Ta1",
-    "xyz": [
-     0.6667,
-     0.3333,
-     0.0
-    ],
-    "species": {
-     "Ta": 1.0
-    },
-    "u_iso": 0.00723
-   },
-   {
-    "label": "Ta2",
-    "xyz": [
-     0.3586,
-     0.3631,
-     0.15558
-    ],
-    "species": {
-     "Ta": 1.0
-    },
-    "u_iso": 0.0085
-   },
-   {
-    "label": "Dy1",
-    "xyz": [
-     0.3333,
-     0.6667,
-     0.0
-    ],
-    "species": {
-     "Dy": 1.0
-    },
-    "u_iso": 0.0096
-   },
-   {
-    "label": "O1",
-    "xyz": [
-     0.375,
-     0.408,
-     0.25
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 9e-05
-   },
-   {
-    "label": "O2",
-    "xyz": [
-     0.423,
-     0.385,
-     0.054
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.0002
-   },
-   {
-    "label": "O3",
-    "xyz": [
-     0.018,
-     0.253,
-     0.153
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.00013
-   },
-   {
-    "label": "O4",
-    "xyz": [
-     0.6667,
-     0.3333,
-     0.161
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.00018
-   },
-   {
-    "label": "O5",
-    "xyz": [
-     0.3333,
-     0.6667,
-     0.123
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.00013
-   }
-  ]
  },
  "2004555": {
   "source": "Yuge and Iwamoto, Acta Crystallographica C52, 575-580 (1996), https://doi.org/10.1107/S0108270195011899",
@@ -29995,212 +31241,6 @@
      "N": 1.0
     },
     "u_iso": 0.00013
-   }
-  ]
- },
- "2007629": {
-  "source": "Bettach et al., Acta Crystallographica Section C 54, 1209-1211 (1998), https://doi.org/10.1107/S0108270198003886",
-  "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
-  "cell": [
-   11.636,
-   8.232,
-   11.086,
-   90.0,
-   128.71,
-   90.0
-  ],
-  "operations": [
-   "x, -y, z+1/2",
-   "-x, -y, -z",
-   "-x, y, -z+1/2",
-   "x, y, z",
-   "x+1/2, -y+1/2, z+1/2",
-   "-x+1/2, -y+1/2, -z",
-   "-x+1/2, y+1/2, -z+1/2",
-   "x+1/2, y+1/2, z"
-  ],
-  "sites": {
-   "M^I^": {
-    "omit": true
-   },
-   "M^I^b": {
-    "omit": true
-   },
-   "M^II^": {
-    "omit": true
-   },
-   "M^II^b": {
-    "omit": true
-   },
-   "P1": {
-    "omit": true
-   },
-   "P2": {
-    "omit": true
-   },
-   "O1": {
-    "omit": true
-   },
-   "O2": {
-    "omit": true
-   },
-   "O3": {
-    "omit": true
-   },
-   "O4": {
-    "omit": true
-   },
-   "O5": {
-    "omit": true
-   },
-   "O6": {
-    "omit": true
-   }
-  },
-  "add": [
-   {
-    "label": "Zn1",
-    "xyz": [
-     1.0,
-     0.19621,
-     0.25
-    ],
-    "species": {
-     "Zn": 0.7
-    },
-    "u_iso": 0.00643
-   },
-   {
-    "label": "Ni1",
-    "xyz": [
-     1.0,
-     0.19621,
-     0.25
-    ],
-    "species": {
-     "Ni": 0.3
-    },
-    "u_iso": 0.00643
-   },
-   {
-    "label": "Zn2",
-    "xyz": [
-     1.0,
-     0.0,
-     0.5
-    ],
-    "species": {
-     "Zn": 0.3
-    },
-    "u_iso": 0.0059
-   },
-   {
-    "label": "Ni2",
-    "xyz": [
-     1.0,
-     0.0,
-     0.5
-    ],
-    "species": {
-     "Ni": 0.7
-    },
-    "u_iso": 0.0059
-   },
-   {
-    "label": "P1",
-    "xyz": [
-     0.75094,
-     0.75688,
-     0.19784
-    ],
-    "species": {
-     "P": 1.0
-    },
-    "u_iso": 0.00493
-   },
-   {
-    "label": "P2",
-    "xyz": [
-     0.78386,
-     0.51209,
-     0.02364
-    ],
-    "species": {
-     "P": 1.0
-    },
-    "u_iso": 0.0045
-   },
-   {
-    "label": "O1",
-    "xyz": [
-     0.878,
-     0.3691,
-     0.0924
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.00997
-   },
-   {
-    "label": "O2",
-    "xyz": [
-     0.8657,
-     0.8269,
-     0.3492
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.00973
-   },
-   {
-    "label": "O3",
-    "xyz": [
-     0.6186,
-     0.4921,
-     -0.0824
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.0065
-   },
-   {
-    "label": "O4",
-    "xyz": [
-     0.8287,
-     0.638,
-     0.1557
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.0108
-   },
-   {
-    "label": "O5",
-    "xyz": [
-     0.6279,
-     0.6659,
-     0.1774
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.00733
-   },
-   {
-    "label": "O6",
-    "xyz": [
-     0.828,
-     0.6098,
-     -0.0651
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.01077
    }
   ]
  },
@@ -43143,235 +44183,6 @@
    }
   ]
  },
- "2200531": {
-  "source": "Akashi et al., Acta Crystallographica Section E 57, i75-i76 (2001), https://doi.org/10.1107/S1600536801012983",
-  "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
-  "cell": [
-   10.0236,
-   9.098,
-   10.357,
-   90.0,
-   90.0,
-   90.0
-  ],
-  "operations": [
-   "-x, y, -z+1/2",
-   "-x, -y, z+1/2",
-   "-x, y, z",
-   "-x, -y, -z",
-   "x, -y, z+1/2",
-   "x, y, -z+1/2",
-   "x, -y, -z",
-   "x, y, z",
-   "-x+1/2, y+1/2, -z+1/2",
-   "-x+1/2, -y+1/2, z+1/2",
-   "-x+1/2, y+1/2, z",
-   "-x+1/2, -y+1/2, -z",
-   "x+1/2, -y+1/2, z+1/2",
-   "x+1/2, y+1/2, -z+1/2",
-   "x+1/2, -y+1/2, -z",
-   "x+1/2, y+1/2, z"
-  ],
-  "sites": {
-   "Cr1": {
-    "omit": true
-   },
-   "Cl1": {
-    "omit": true
-   },
-   "O1": {
-    "omit": true
-   },
-   "N1": {
-    "omit": true
-   },
-   "N2": {
-    "omit": true
-   },
-   "N3": {
-    "omit": true
-   },
-   "N4": {
-    "omit": true
-   },
-   "H1": {
-    "omit": true
-   },
-   "H2": {
-    "omit": true
-   },
-   "H3": {
-    "omit": true
-   },
-   "H4": {
-    "omit": true
-   },
-   "H5": {
-    "omit": true
-   },
-   "H6": {
-    "omit": true
-   }
-  },
-  "add": [
-   {
-    "label": "Cr1",
-    "xyz": [
-     0.5,
-     0.3005,
-     0.75
-    ],
-    "species": {
-     "Cr": 1.0
-    },
-    "u_iso": 0.0167
-   },
-   {
-    "label": "Cl1",
-    "xyz": [
-     0.2168,
-     0.5,
-     0.0
-    ],
-    "species": {
-     "Cl": 1.0
-    },
-    "u_iso": 0.0214
-   },
-   {
-    "label": "O1",
-    "xyz": [
-     0.5,
-     0.6166,
-     0.75
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.02867
-   },
-   {
-    "label": "N1",
-    "xyz": [
-     0.5,
-     0.487,
-     0.75
-    ],
-    "species": {
-     "N": 1.0
-    },
-    "u_iso": 0.017
-   },
-   {
-    "label": "N2",
-    "xyz": [
-     0.5,
-     0.0668,
-     0.75
-    ],
-    "species": {
-     "N": 1.0
-    },
-    "u_iso": 0.02433
-   },
-   {
-    "label": "N3",
-    "xyz": [
-     0.2926,
-     0.2834,
-     0.75
-    ],
-    "species": {
-     "N": 1.0
-    },
-    "u_iso": 0.02267
-   },
-   {
-    "label": "N4",
-    "xyz": [
-     0.5,
-     0.289,
-     0.9513
-    ],
-    "species": {
-     "N": 1.0
-    },
-    "u_iso": 0.02033
-   },
-   {
-    "label": "H1",
-    "xyz": [
-     0.5894,
-     0.032,
-     0.75
-    ],
-    "species": {
-     "H": 0.5
-    },
-    "u_iso": 0.00037
-   },
-   {
-    "label": "H2",
-    "xyz": [
-     0.4553,
-     0.032,
-     0.8249
-    ],
-    "species": {
-     "H": 0.5
-    },
-    "u_iso": 0.00037
-   },
-   {
-    "label": "H3",
-    "xyz": [
-     0.2678,
-     0.1827,
-     0.75
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.00034
-   },
-   {
-    "label": "H4",
-    "xyz": [
-     0.2578,
-     0.3299,
-     0.8249
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.00034
-   },
-   {
-    "label": "H5",
-    "xyz": [
-     0.5,
-     0.189,
-     0.9775
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.00031
-   },
-   {
-    "label": "H6",
-    "xyz": [
-     0.4226,
-     0.3365,
-     0.984
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.00031
-   }
-  ]
- },
  "2300057": {
   "source": "Brenner, McCusker and Baerlocher, Journal of Applied Crystallography 35, 243-252 (2002), https://doi.org/10.1107/S0021889802001759",
   "note": "the CIF gives the symbol ?P? and no displacement parameters; the refinement in P212121 (p. 250, Table 3; Z = 4 by density, one molecule per asymmetric unit), U_iso of Table 3; H atoms were approximated by raised occupancies of their C and N atoms (1.17, 1.33, 1.50 for 1-3 H on C, 1.14 for H on N), here the C or N atom with its H atoms at the same position; O8 (ester oxygen) is typed C in the CIF, O in the article (formula C32H53N3O6)",
@@ -45269,392 +46080,6 @@
      "Br": 1.0
     },
     "u_iso": 0.02667
-   }
-  ]
- },
- "4030937": {
-  "source": "Chevrier et al., European Journal of Solid State and Inorganic Chemistry 35, 667-678 (1998), https://doi.org/10.1016/S0992-4361(99)80007-1",
-  "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
-  "cell": [
-   19.816,
-   7.563,
-   8.406,
-   90.0,
-   99.02,
-   90.0
-  ],
-  "operations": [
-   "-x, y, -z",
-   "-x, -y, -z",
-   "x, -y, z",
-   "x, y, z",
-   "-x+1/2, y+1/2, -z",
-   "-x+1/2, -y+1/2, -z",
-   "x+1/2, -y+1/2, z",
-   "x+1/2, y+1/2, z"
-  ],
-  "sites": {
-   "Sr": {
-    "omit": true
-   },
-   "Fe": {
-    "omit": true
-   },
-   "O": {
-    "omit": true
-   },
-   "N": {
-    "omit": true
-   },
-   "N1": {
-    "omit": true
-   },
-   "N2": {
-    "omit": true
-   },
-   "N3": {
-    "omit": true
-   },
-   "C1": {
-    "omit": true
-   },
-   "C2": {
-    "omit": true
-   },
-   "C3": {
-    "omit": true
-   },
-   "O4": {
-    "omit": true
-   },
-   "O1": {
-    "omit": true
-   },
-   "O2": {
-    "omit": true
-   },
-   "O3": {
-    "omit": true
-   },
-   "H41": {
-    "omit": true
-   },
-   "H11": {
-    "omit": true
-   },
-   "H12": {
-    "omit": true
-   },
-   "H21": {
-    "omit": true
-   },
-   "H22": {
-    "omit": true
-   },
-   "H31": {
-    "omit": true
-   },
-   "H321": {
-    "omit": true
-   },
-   "H322": {
-    "omit": true
-   },
-   "H421": {
-    "omit": true
-   },
-   "H422": {
-    "omit": true
-   }
-  },
-  "add": [
-   {
-    "label": "Sr1",
-    "xyz": [
-     0.1326,
-     0.0,
-     0.2953
-    ],
-    "species": {
-     "Sr": 1.0
-    },
-    "u_iso": 0.01646
-   },
-   {
-    "label": "Fe1",
-    "xyz": [
-     0.4123,
-     0.0,
-     0.2207
-    ],
-    "species": {
-     "Fe": 1.0
-    },
-    "u_iso": 0.01393
-   },
-   {
-    "label": "O1",
-    "xyz": [
-     0.5539,
-     0.0,
-     0.2642
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.03166
-   },
-   {
-    "label": "N1",
-    "xyz": [
-     0.4973,
-     0.0,
-     0.245
-    ],
-    "species": {
-     "N": 1.0
-    },
-    "u_iso": 0.019
-   },
-   {
-    "label": "N2",
-    "xyz": [
-     0.3953,
-     0.2856,
-     -0.044
-    ],
-    "species": {
-     "N": 1.0
-    },
-    "u_iso": 0.03293
-   },
-   {
-    "label": "N3",
-    "xyz": [
-     0.4037,
-     0.2889,
-     0.4739
-    ],
-    "species": {
-     "N": 1.0
-    },
-    "u_iso": 0.04053
-   },
-   {
-    "label": "N4",
-    "xyz": [
-     0.2559,
-     0.0,
-     0.1806
-    ],
-    "species": {
-     "N": 1.0
-    },
-    "u_iso": 0.03546
-   },
-   {
-    "label": "C1",
-    "xyz": [
-     0.4017,
-     0.1793,
-     0.0542
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.02153
-   },
-   {
-    "label": "C2",
-    "xyz": [
-     0.407,
-     0.18,
-     0.3802
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.0228
-   },
-   {
-    "label": "C3",
-    "xyz": [
-     0.3143,
-     0.0,
-     0.1937
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.019
-   },
-   {
-    "label": "O2",
-    "xyz": [
-     0.2879,
-     0.5,
-     0.1758
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.038
-   },
-   {
-    "label": "H1",
-    "xyz": [
-     0.2776,
-     0.5,
-     0.07
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.07599
-   },
-   {
-    "label": "H2",
-    "xyz": [
-     0.3298,
-     0.553,
-     0.194
-    ],
-    "species": {
-     "H": 0.5
-    },
-    "u_iso": 0.08232
-   },
-   {
-    "label": "O3",
-    "xyz": [
-     0.5028,
-     0.5,
-     0.245
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.02406
-   },
-   {
-    "label": "H3",
-    "xyz": [
-     0.4734,
-     0.4629,
-     0.15
-    ],
-    "species": {
-     "H": 0.5
-    },
-    "u_iso": 0.03293
-   },
-   {
-    "label": "H4",
-    "xyz": [
-     0.4771,
-     0.5,
-     0.324
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.05953
-   },
-   {
-    "label": "O4",
-    "xyz": [
-     0.7055,
-     0.209,
-     0.3549
-    ],
-    "species": {
-     "O": 0.667
-    },
-    "u_iso": 0.03546
-   },
-   {
-    "label": "H5",
-    "xyz": [
-     0.7343,
-     0.173,
-     0.277
-    ],
-    "species": {
-     "H": 0.667
-    },
-    "u_iso": 0.04813
-   },
-   {
-    "label": "H6",
-    "xyz": [
-     0.688,
-     0.097,
-     0.378
-    ],
-    "species": {
-     "H": 0.333
-    },
-    "u_iso": 0.05446
-   },
-   {
-    "label": "H7",
-    "xyz": [
-     0.739,
-     0.237,
-     0.461
-    ],
-    "species": {
-     "H": 0.333
-    },
-    "u_iso": 0.03546
-   },
-   {
-    "label": "O5",
-    "xyz": [
-     0.267,
-     0.434,
-     0.473
-    ],
-    "species": {
-     "O": 0.333
-    },
-    "u_iso": 0.05573
-   },
-   {
-    "label": "H8",
-    "xyz": [
-     0.281,
-     0.428,
-     0.372
-    ],
-    "species": {
-     "H": 0.333
-    },
-    "u_iso": 0.07472
-   },
-   {
-    "label": "H9",
-    "xyz": [
-     0.225,
-     0.356,
-     0.479
-    ],
-    "species": {
-     "H": 0.167
-    },
-    "u_iso": 0.02026
-   },
-   {
-    "label": "H10",
-    "xyz": [
-     0.239,
-     0.5,
-     0.481
-    ],
-    "species": {
-     "H": 0.333
-    },
-    "u_iso": 0.04179
    }
   ]
  },
@@ -49513,268 +49938,6 @@
    }
   ]
  },
- "4114575": {
-  "source": "Andrew S. Lipton et al., Journal of the American Chemical Society 124, 410-414 (2002), https://doi.org/10.1021/ja011701e",
-  "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
-  "cell": [
-   8.703,
-   7.154,
-   9.315,
-   90.0,
-   97.63,
-   90.0
-  ],
-  "operations": [
-   "x, -y+1/2, z+1/2",
-   "-x, -y, -z",
-   "-x, y+1/2, -z+1/2",
-   "x, y, z"
-  ],
-  "sites": {
-   "Zn(1)": {
-    "omit": true
-   },
-   "Zn(2)": {
-    "omit": true
-   },
-   "O(1)": {
-    "omit": true
-   },
-   "O(2)": {
-    "omit": true
-   },
-   "O(3)": {
-    "omit": true
-   },
-   "O(4)": {
-    "omit": true
-   },
-   "O(5)": {
-    "omit": true
-   },
-   "O(6)": {
-    "omit": true
-   },
-   "C(1)": {
-    "omit": true
-   },
-   "C(2)": {
-    "omit": true
-   },
-   "H(1)": {
-    "omit": true
-   },
-   "H(2)": {
-    "omit": true
-   },
-   "H(3)": {
-    "omit": true
-   },
-   "H(4)": {
-    "omit": true
-   },
-   "H(5)": {
-    "omit": true
-   },
-   "H(6)": {
-    "omit": true
-   }
-  },
-  "add": [
-   {
-    "label": "Zn1",
-    "xyz": [
-     1.0,
-     0.0,
-     1.0
-    ],
-    "species": {
-     "Zn": 1.0
-    },
-    "u_iso": 0.01913
-   },
-   {
-    "label": "Zn2",
-    "xyz": [
-     1.5,
-     0.5,
-     1.0
-    ],
-    "species": {
-     "Zn": 1.0
-    },
-    "u_iso": 0.02403
-   },
-   {
-    "label": "O1",
-    "xyz": [
-     1.2091,
-     0.1598,
-     0.9993
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.0277
-   },
-   {
-    "label": "O2",
-    "xyz": [
-     1.4355,
-     0.2219,
-     0.9221
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.03577
-   },
-   {
-    "label": "O3",
-    "xyz": [
-     1.0969,
-     -0.1047,
-     1.2026
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.0262
-   },
-   {
-    "label": "O4",
-    "xyz": [
-     1.0893,
-     -0.2729,
-     1.4008
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.026
-   },
-   {
-    "label": "O5",
-    "xyz": [
-     1.7184,
-     0.4753,
-     0.9288
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.029
-   },
-   {
-    "label": "O6",
-    "xyz": [
-     1.4132,
-     0.6081,
-     0.8017
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.04467
-   },
-   {
-    "label": "C1",
-    "xyz": [
-     1.3237,
-     0.1171,
-     0.9375
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.02933
-   },
-   {
-    "label": "C2",
-    "xyz": [
-     1.0362,
-     -0.2243,
-     1.2742
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.02633
-   },
-   {
-    "label": "H1",
-    "xyz": [
-     1.324,
-     0.013,
-     0.9
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.00048
-   },
-   {
-    "label": "H2",
-    "xyz": [
-     0.942,
-     -0.301,
-     1.204
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.00101
-   },
-   {
-    "label": "H3",
-    "xyz": [
-     1.7629,
-     0.4018,
-     0.9525
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.0008
-   },
-   {
-    "label": "H4",
-    "xyz": [
-     1.743,
-     0.5773,
-     0.9396
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.0008
-   },
-   {
-    "label": "H5",
-    "xyz": [
-     1.4891,
-     0.6397,
-     0.7442
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.0008
-   },
-   {
-    "label": "H6",
-    "xyz": [
-     1.3205,
-     0.6041,
-     0.7585
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.0008
-   }
-  ]
- },
  "4114913": {
   "source": "Xiqu Wang et al., Journal of the American Chemical Society 124, 7812-7820 (2002), https://doi.org/10.1021/ja020354l",
   "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -51719,311 +51882,6 @@
    }
   ]
  },
- "4300145": {
-  "source": "Xiandong Wang et al., Inorganic Chemistry 39, 136-140 (2000), https://doi.org/10.1021/ic9909274",
-  "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
-  "cell": [
-   6.703,
-   8.137,
-   9.801,
-   105.56,
-   105.58,
-   102.35
-  ],
-  "operations": [
-   "-x, -y, -z",
-   "x, y, z"
-  ],
-  "sites": {
-   "Fe(1)": {
-    "omit": true
-   },
-   "Fe(2)": {
-    "omit": true
-   },
-   "Mn(1)": {
-    "omit": true
-   },
-   "Mn(2)": {
-    "omit": true
-   },
-   "V(1)": {
-    "omit": true
-   },
-   "V(2)": {
-    "omit": true
-   },
-   "V(3)": {
-    "omit": true
-   },
-   "O(1)": {
-    "omit": true
-   },
-   "O(2)": {
-    "omit": true
-   },
-   "O(3)": {
-    "omit": true
-   },
-   "O(4)": {
-    "omit": true
-   },
-   "O(5)": {
-    "omit": true
-   },
-   "O(6)": {
-    "omit": true
-   },
-   "O(7)": {
-    "omit": true
-   },
-   "O(8)": {
-    "omit": true
-   },
-   "O(9)": {
-    "omit": true
-   },
-   "O(10)": {
-    "omit": true
-   },
-   "O(11)": {
-    "omit": true
-   },
-   "O(12)": {
-    "omit": true
-   }
-  },
-  "add": [
-   {
-    "label": "Fe1",
-    "xyz": [
-     0.1206,
-     0.5469,
-     -0.1076
-    ],
-    "species": {
-     "Fe": 1.0
-    },
-    "u_iso": 0.0049
-   },
-   {
-    "label": "Fe2",
-    "xyz": [
-     -0.545,
-     0.2924,
-     -0.516
-    ],
-    "species": {
-     "Fe": 1.0
-    },
-    "u_iso": 0.00513
-   },
-   {
-    "label": "Mn1",
-    "xyz": [
-     -0.5,
-     1.0,
-     0.0
-    ],
-    "species": {
-     "Mn": 1.0
-    },
-    "u_iso": 0.03267
-   },
-   {
-    "label": "Mn2",
-    "xyz": [
-     -0.2171,
-     0.7987,
-     0.2946
-    ],
-    "species": {
-     "Mn": 1.0
-    },
-    "u_iso": 0.0067
-   },
-   {
-    "label": "V1",
-    "xyz": [
-     -0.3961,
-     0.5903,
-     -0.1673
-    ],
-    "species": {
-     "V": 1.0
-    },
-    "u_iso": 0.00363
-   },
-   {
-    "label": "V2",
-    "xyz": [
-     0.2779,
-     0.8437,
-     0.2292
-    ],
-    "species": {
-     "V": 1.0
-    },
-    "u_iso": 0.0041
-   },
-   {
-    "label": "V3",
-    "xyz": [
-     0.0988,
-     0.7685,
-     0.6275
-    ],
-    "species": {
-     "V": 1.0
-    },
-    "u_iso": 0.00507
-   },
-   {
-    "label": "O1",
-    "xyz": [
-     -0.6316,
-     0.4669,
-     -0.1525
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.007
-   },
-   {
-    "label": "O2",
-    "xyz": [
-     0.487,
-     0.7853,
-     0.3361
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.01
-   },
-   {
-    "label": "O3",
-    "xyz": [
-     -0.149,
-     0.758,
-     0.4978
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.01333
-   },
-   {
-    "label": "O4",
-    "xyz": [
-     0.03,
-     0.7317,
-     0.2312
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.00767
-   },
-   {
-    "label": "O5",
-    "xyz": [
-     -0.68,
-     0.0603,
-     -0.6898
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.01
-   },
-   {
-    "label": "O6",
-    "xyz": [
-     -0.369,
-     0.8006,
-     -0.0834
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.00933
-   },
-   {
-    "label": "O7",
-    "xyz": [
-     0.233,
-     0.9812,
-     0.7608
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.018
-   },
-   {
-    "label": "O8",
-    "xyz": [
-     -0.168,
-     0.5345,
-     -0.0779
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.007
-   },
-   {
-    "label": "O9",
-    "xyz": [
-     -0.427,
-     0.5528,
-     -0.3569
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.00667
-   },
-   {
-    "label": "O10",
-    "xyz": [
-     0.2838,
-     0.7998,
-     0.0448
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.00733
-   },
-   {
-    "label": "O11",
-    "xyz": [
-     -0.262,
-     0.2852,
-     -0.5315
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.00967
-   },
-   {
-    "label": "O12",
-    "xyz": [
-     0.06,
-     0.6297,
-     -0.2748
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.013
-   }
-  ]
- },
  "4300146": {
   "source": "Xiandong Wang et al., Inorganic Chemistry 39, 136-140 (2000), https://doi.org/10.1021/ic9909274",
   "note": "the CIF's structure has 8 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii) and contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -52242,242 +52100,6 @@
      "O": 1.0
     },
     "u_iso": 0.00012
-   }
-  ]
- },
- "4300658": {
-  "source": "unknown authors, Inorganic Chemistry ,  (2006), https://doi.org/10.1021/ic051740h",
-  "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
-  "cell": [
-   5.0658,
-   10.333,
-   17.421,
-   90.0,
-   90.0,
-   90.0
-  ],
-  "operations": [
-   "x+1/2, y, -z+1/2",
-   "x, -y+1/2, z",
-   "-x+1/2, y+1/2, z+1/2",
-   "-x, -y, -z",
-   "-x+1/2, -y, z+1/2",
-   "-x, y+1/2, -z",
-   "x+1/2, -y+1/2, -z+1/2",
-   "x, y, z"
-  ],
-  "sites": {
-   "W(1)": {
-    "omit": true
-   },
-   "W(2)": {
-    "omit": true
-   },
-   "V(1)": {
-    "omit": true
-   },
-   "V(2)": {
-    "omit": true
-   },
-   "Mg(1)": {
-    "omit": true
-   },
-   "Mg(2)": {
-    "omit": true
-   },
-   "Mg(3)": {
-    "omit": true
-   },
-   "O(1)": {
-    "omit": true
-   },
-   "O(2)": {
-    "omit": true
-   },
-   "O(3)": {
-    "omit": true
-   },
-   "O(4)": {
-    "omit": true
-   },
-   "O(5)": {
-    "omit": true
-   },
-   "O(6)": {
-    "omit": true
-   },
-   "O(7)": {
-    "omit": true
-   }
-  },
-  "add": [
-   {
-    "label": "W1",
-    "xyz": [
-     0.2151,
-     0.75,
-     0.44372
-    ],
-    "species": {
-     "W": 0.462
-    },
-    "u_iso": 0.00011
-   },
-   {
-    "label": "W2",
-    "xyz": [
-     -0.2821,
-     0.47063,
-     0.34295
-    ],
-    "species": {
-     "W": 0.426
-    },
-    "u_iso": 0.00013
-   },
-   {
-    "label": "V1",
-    "xyz": [
-     0.2151,
-     0.75,
-     0.4437
-    ],
-    "species": {
-     "V": 0.538
-    },
-    "u_iso": 0.00011
-   },
-   {
-    "label": "V2",
-    "xyz": [
-     -0.2821,
-     0.4706,
-     0.343
-    ],
-    "species": {
-     "V": 0.574
-    },
-    "u_iso": 0.00013
-   },
-   {
-    "label": "Mg1",
-    "xyz": [
-     -0.2503,
-     0.5758,
-     0.52663
-    ],
-    "species": {
-     "Mg": 1.0
-    },
-    "u_iso": 0.01103
-   },
-   {
-    "label": "Mg2",
-    "xyz": [
-     -0.0947,
-     0.75,
-     0.2496
-    ],
-    "species": {
-     "Mg": 0.84
-    },
-    "u_iso": 0.036
-   },
-   {
-    "label": "Mg3",
-    "xyz": [
-     0.254,
-     0.25,
-     0.3026
-    ],
-    "species": {
-     "Mg": 1.0
-    },
-    "u_iso": 0.01467
-   },
-   {
-    "label": "O1",
-    "xyz": [
-     -0.0759,
-     0.3724,
-     0.2857
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.01767
-   },
-   {
-    "label": "O2",
-    "xyz": [
-     -0.3442,
-     0.6129,
-     0.297
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.014
-   },
-   {
-    "label": "O3",
-    "xyz": [
-     -0.0874,
-     0.5064,
-     0.424
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.013
-   },
-   {
-    "label": "O4",
-    "xyz": [
-     -0.5644,
-     0.3847,
-     0.3712
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.01367
-   },
-   {
-    "label": "O5",
-    "xyz": [
-     -0.0671,
-     0.75,
-     0.5066
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.01467
-   },
-   {
-    "label": "O6",
-    "xyz": [
-     0.4117,
-     0.885,
-     0.465
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.01133
-   },
-   {
-    "label": "O7",
-    "xyz": [
-     0.1446,
-     0.75,
-     0.3467
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.01733
    }
   ]
  },
@@ -53947,602 +53569,6 @@
     "species": {
      "O": 1.0
     }
-   }
-  ]
- },
- "4320812": {
-  "source": "Michael Brorson et al., Inorganic Chemistry 39, 1346-1350 (2000), https://doi.org/10.1021/ic9906656",
-  "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
-  "cell": [
-   19.605,
-   14.458,
-   13.627,
-   90.0,
-   118.94,
-   90.0
-  ],
-  "operations": [
-   "-x, y, -z",
-   "-x, -y, -z",
-   "x, -y, z",
-   "x, y, z",
-   "-x+1/2, y+1/2, -z",
-   "-x+1/2, -y+1/2, -z",
-   "x+1/2, -y+1/2, z",
-   "x+1/2, y+1/2, z"
-  ],
-  "sites": {
-   "W1": {
-    "omit": true
-   },
-   "W2": {
-    "omit": true
-   },
-   "S1": {
-    "omit": true
-   },
-   "S2": {
-    "omit": true
-   },
-   "S3": {
-    "omit": true
-   },
-   "O1": {
-    "omit": true
-   },
-   "C2": {
-    "omit": true
-   },
-   "O3": {
-    "omit": true
-   },
-   "O4": {
-    "omit": true
-   },
-   "C5": {
-    "omit": true
-   },
-   "O6": {
-    "omit": true
-   },
-   "O7": {
-    "omit": true
-   },
-   "C8": {
-    "omit": true
-   },
-   "O9": {
-    "omit": true
-   },
-   "O10": {
-    "omit": true
-   },
-   "C11": {
-    "omit": true
-   },
-   "O12": {
-    "omit": true
-   },
-   "O13": {
-    "omit": true
-   },
-   "C14": {
-    "omit": true
-   },
-   "O15": {
-    "omit": true
-   },
-   "O16": {
-    "omit": true
-   },
-   "C17": {
-    "omit": true
-   },
-   "O18": {
-    "omit": true
-   },
-   "K1": {
-    "omit": true
-   },
-   "K2": {
-    "omit": true
-   },
-   "K3": {
-    "omit": true
-   },
-   "K4": {
-    "omit": true
-   },
-   "K5": {
-    "omit": true
-   },
-   "O19": {
-    "omit": true
-   },
-   "O20": {
-    "omit": true
-   },
-   "C18": {
-    "omit": true
-   },
-   "O21": {
-    "omit": true
-   },
-   "H2": {
-    "omit": true
-   },
-   "H5": {
-    "omit": true
-   },
-   "H8": {
-    "omit": true
-   },
-   "H11": {
-    "omit": true
-   },
-   "H14": {
-    "omit": true
-   },
-   "H17": {
-    "omit": true
-   }
-  },
-  "add": [
-   {
-    "label": "W1",
-    "xyz": [
-     0.21784,
-     0.0,
-     0.06604
-    ],
-    "species": {
-     "W": 1.0
-    },
-    "u_iso": 0.02437
-   },
-   {
-    "label": "W2",
-    "xyz": [
-     0.30898,
-     0.09525,
-     0.26047
-    ],
-    "species": {
-     "W": 1.0
-    },
-    "u_iso": 0.02517
-   },
-   {
-    "label": "S1",
-    "xyz": [
-     0.2027,
-     0.0,
-     0.2268
-    ],
-    "species": {
-     "S": 1.0
-    },
-    "u_iso": 0.00033
-   },
-   {
-    "label": "S2",
-    "xyz": [
-     0.4179,
-     0.0,
-     0.3335
-    ],
-    "species": {
-     "S": 1.0
-    },
-    "u_iso": 0.00038
-   },
-   {
-    "label": "S3",
-    "xyz": [
-     0.3026,
-     0.1195,
-     0.089
-    ],
-    "species": {
-     "S": 1.0
-    },
-    "u_iso": 0.026
-   },
-   {
-    "label": "O1",
-    "xyz": [
-     0.1843,
-     0.0,
-     -0.109
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.03833
-   },
-   {
-    "label": "C1",
-    "xyz": [
-     0.2257,
-     0.0,
-     -0.1562
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.04
-   },
-   {
-    "label": "O2",
-    "xyz": [
-     0.2005,
-     0.0,
-     -0.2597
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.044
-   },
-   {
-    "label": "O3",
-    "xyz": [
-     0.1203,
-     0.0904,
-     0.0024
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.03767
-   },
-   {
-    "label": "C2",
-    "xyz": [
-     0.0985,
-     0.1578,
-     -0.0631
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.04967
-   },
-   {
-    "label": "O4",
-    "xyz": [
-     0.0363,
-     0.1971,
-     -0.1016
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.05267
-   },
-   {
-    "label": "O5",
-    "xyz": [
-     0.3171,
-     0.1143,
-     0.4216
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.03933
-   },
-   {
-    "label": "C3",
-    "xyz": [
-     0.3741,
-     0.1122,
-     0.5174
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.034
-   },
-   {
-    "label": "O6",
-    "xyz": [
-     0.3716,
-     0.1257,
-     0.6046
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.05767
-   },
-   {
-    "label": "O7",
-    "xyz": [
-     0.3884,
-     0.2098,
-     0.3222
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.03833
-   },
-   {
-    "label": "C4",
-    "xyz": [
-     0.4536,
-     0.2222,
-     0.3227
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.03333
-   },
-   {
-    "label": "O8",
-    "xyz": [
-     0.4987,
-     0.2846,
-     0.3708
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.04533
-   },
-   {
-    "label": "O9",
-    "xyz": [
-     0.2288,
-     0.2035,
-     0.2371
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.03933
-   },
-   {
-    "label": "C5",
-    "xyz": [
-     0.2096,
-     0.2753,
-     0.1785
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.04
-   },
-   {
-    "label": "O10",
-    "xyz": [
-     0.1594,
-     0.3315,
-     0.1717
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.05167
-   },
-   {
-    "label": "O11",
-    "xyz": [
-     0.0111,
-     0.0,
-     0.4036
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.05167
-   },
-   {
-    "label": "C6",
-    "xyz": [
-     0.0073,
-     0.0,
-     0.311
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.04467
-   },
-   {
-    "label": "O12",
-    "xyz": [
-     0.0656,
-     0.0,
-     0.2932
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.08067
-   },
-   {
-    "label": "K1",
-    "xyz": [
-     0.1624,
-     0.5,
-     0.2779
-    ],
-    "species": {
-     "K": 1.0
-    },
-    "u_iso": 0.055
-   },
-   {
-    "label": "K2",
-    "xyz": [
-     0.1057,
-     0.1961,
-     0.2881
-    ],
-    "species": {
-     "K": 1.0
-    },
-    "u_iso": 0.056
-   },
-   {
-    "label": "K3",
-    "xyz": [
-     0.1013,
-     0.1204,
-     0.5722
-    ],
-    "species": {
-     "K": 1.0
-    },
-    "u_iso": 0.04967
-   },
-   {
-    "label": "K4",
-    "xyz": [
-     0.0,
-     0.3463,
-     0.0
-    ],
-    "species": {
-     "K": 0.5
-    },
-    "u_iso": 0.03467
-   },
-   {
-    "label": "K5",
-    "xyz": [
-     -0.0107,
-     0.0,
-     -0.0364
-    ],
-    "species": {
-     "K": 0.5
-    },
-    "u_iso": 0.04467
-   },
-   {
-    "label": "O13",
-    "xyz": [
-     0.4943,
-     0.0,
-     0.1313
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.105
-   },
-   {
-    "label": "O14",
-    "xyz": [
-     0.7899,
-     0.1889,
-     0.4711
-    ],
-    "species": {
-     "O": 0.64
-    },
-    "u_iso": 0.001
-   },
-   {
-    "label": "C7",
-    "xyz": [
-     0.7987,
-     0.0,
-     0.5211
-    ],
-    "species": {
-     "C": 0.73
-    },
-    "u_iso": 0.00134
-   },
-   {
-    "label": "O15",
-    "xyz": [
-     0.8036,
-     0.0771,
-     0.518
-    ],
-    "species": {
-     "O": 0.36
-    },
-    "u_iso": 0.0008
-   },
-   {
-    "label": "H1",
-    "xyz": [
-     0.2806,
-     0.0,
-     -0.1093
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.00062
-   },
-   {
-    "label": "H2",
-    "xyz": [
-     0.1346,
-     0.1806,
-     -0.085
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.00073
-   },
-   {
-    "label": "H3",
-    "xyz": [
-     0.4236,
-     0.099,
-     0.5238
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.00052
-   },
-   {
-    "label": "H4",
-    "xyz": [
-     0.4673,
-     0.1793,
-     0.2823
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.00048
-   },
-   {
-    "label": "H5",
-    "xyz": [
-     0.2352,
-     0.2878,
-     0.136
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.00058
-   },
-   {
-    "label": "H6",
-    "xyz": [
-     -0.0432,
-     0.0,
-     0.2473
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.00079
    }
   ]
  },
@@ -133978,474 +133004,6 @@
     }
    }
   }
- },
- "8100581": {
-  "source": "Mosset and Bagieu-Beucher, Zeitschrift f\\\"ur Kristallographie - New Crystal Structures 217, 1-2 (2002), https://doi.org/10.1524/ncrs.2002.217.jg.1",
-  "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
-  "cell": [
-   10.4018,
-   4.1843,
-   10.2021,
-   90.0,
-   90.0,
-   90.0
-  ],
-  "operations": [
-   "x+1/2, y, -z+1/2",
-   "x, -y+1/2, z",
-   "-x+1/2, y+1/2, z+1/2",
-   "-x, -y, -z",
-   "-x+1/2, -y, z+1/2",
-   "-x, y+1/2, -z",
-   "x+1/2, -y+1/2, -z+1/2",
-   "x, y, z"
-  ],
-  "sites": {
-   "Hg(0)": {
-    "omit": true
-   },
-   "Cl(0)": {
-    "omit": true
-   },
-   "S(0)": {
-    "omit": true
-   },
-   "N(0)": {
-    "omit": true
-   },
-   "C(0)": {
-    "omit": true
-   }
-  },
-  "add": [
-   {
-    "label": "Hg1",
-    "xyz": [
-     0.35933,
-     0.25,
-     0.09528
-    ],
-    "species": {
-     "Hg": 1.0
-    },
-    "u_iso": 0.03155
-   },
-   {
-    "label": "Cl1",
-    "xyz": [
-     0.5821,
-     0.25,
-     0.126
-    ],
-    "species": {
-     "Cl": 1.0
-    },
-    "u_iso": 0.03517
-   },
-   {
-    "label": "S1",
-    "xyz": [
-     0.13712,
-     0.25,
-     0.0481
-    ],
-    "species": {
-     "S": 1.0
-    },
-    "u_iso": 0.0394
-   },
-   {
-    "label": "N1",
-    "xyz": [
-     0.1513,
-     0.25,
-     -0.2288
-    ],
-    "species": {
-     "N": 1.0
-    },
-    "u_iso": 0.04033
-   },
-   {
-    "label": "C1",
-    "xyz": [
-     0.1499,
-     0.25,
-     -0.1166
-    ],
-    "species": {
-     "C": 1.0
-    },
-    "u_iso": 0.032
-   }
-  ]
- },
- "8103003": {
-  "source": "Sofiane Souissi et al., Zeitschrift f\\\"ur Kristallographie - New Crystal Structures 224, 3 (2009)",
-  "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
-  "cell": [
-   8.034,
-   11.552,
-   9.061,
-   90.0,
-   113.06,
-   90.0
-  ],
-  "operations": [
-   "x, -y+1/2, z",
-   "-x, -y, -z",
-   "-x, y+1/2, -z",
-   "x, y, z"
-  ],
-  "sites": {
-   "Co1": {
-    "omit": true
-   },
-   "P1": {
-    "omit": true
-   },
-   "P2": {
-    "omit": true
-   },
-   "Na1": {
-    "omit": true
-   },
-   "Na2": {
-    "omit": true
-   },
-   "O1": {
-    "omit": true
-   },
-   "O2": {
-    "omit": true
-   },
-   "O3": {
-    "omit": true
-   },
-   "O4": {
-    "omit": true
-   },
-   "O5": {
-    "omit": true
-   },
-   "O6": {
-    "omit": true
-   },
-   "O7": {
-    "omit": true
-   },
-   "O8": {
-    "omit": true
-   },
-   "O9": {
-    "omit": true
-   },
-   "O10": {
-    "omit": true
-   },
-   "O11": {
-    "omit": true
-   },
-   "H1": {
-    "omit": true
-   },
-   "H2": {
-    "omit": true
-   },
-   "H3": {
-    "omit": true
-   },
-   "H4": {
-    "omit": true
-   },
-   "H5": {
-    "omit": true
-   },
-   "H6": {
-    "omit": true
-   },
-   "H7": {
-    "omit": true
-   }
-  },
-  "add": [
-   {
-    "label": "Co1",
-    "xyz": [
-     0.46976,
-     0.25,
-     0.73582
-    ],
-    "species": {
-     "Co": 1.0
-    },
-    "u_iso": 0.01453
-   },
-   {
-    "label": "P1",
-    "xyz": [
-     0.69126,
-     0.00258,
-     0.83021
-    ],
-    "species": {
-     "P": 1.0
-    },
-    "u_iso": 0.01657
-   },
-   {
-    "label": "P2",
-    "xyz": [
-     0.29709,
-     0.51021,
-     0.64828
-    ],
-    "species": {
-     "P": 1.0
-    },
-    "u_iso": 0.0162
-   },
-   {
-    "label": "Na1",
-    "xyz": [
-     0.0144,
-     0.25,
-     0.5541
-    ],
-    "species": {
-     "Na": 1.0
-    },
-    "u_iso": 0.02673
-   },
-   {
-    "label": "Na2",
-    "xyz": [
-     0.7572,
-     0.25,
-     1.0914
-    ],
-    "species": {
-     "Na": 1.0
-    },
-    "u_iso": 0.02707
-   },
-   {
-    "label": "O1",
-    "xyz": [
-     0.8341,
-     -0.0283,
-     0.7604
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.02573
-   },
-   {
-    "label": "O2",
-    "xyz": [
-     0.7305,
-     -0.0664,
-     0.98
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.02653
-   },
-   {
-    "label": "O3",
-    "xyz": [
-     0.6753,
-     0.13,
-     0.8492
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.0197
-   },
-   {
-    "label": "O4",
-    "xyz": [
-     0.1974,
-     0.5785,
-     0.4986
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.02483
-   },
-   {
-    "label": "O5",
-    "xyz": [
-     0.2522,
-     0.5615,
-     0.7862
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.0278
-   },
-   {
-    "label": "O6",
-    "xyz": [
-     0.2789,
-     0.3813,
-     0.6402
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.01923
-   },
-   {
-    "label": "O7",
-    "xyz": [
-     0.5062,
-     0.5429,
-     0.6922
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.0233
-   },
-   {
-    "label": "O8",
-    "xyz": [
-     0.4372,
-     0.25,
-     0.9581
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.02147
-   },
-   {
-    "label": "O9",
-    "xyz": [
-     0.5261,
-     0.25,
-     0.529
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.03467
-   },
-   {
-    "label": "O10",
-    "xyz": [
-     0.9969,
-     0.25,
-     0.8018
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.04133
-   },
-   {
-    "label": "O11",
-    "xyz": [
-     -0.0408,
-     0.75,
-     0.7064
-    ],
-    "species": {
-     "O": 1.0
-    },
-    "u_iso": 0.02967
-   },
-   {
-    "label": "H1",
-    "xyz": [
-     0.8362,
-     0.0237,
-     0.6704
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.0002
-   },
-   {
-    "label": "H2",
-    "xyz": [
-     0.2565,
-     0.511,
-     0.8683
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.0002
-   },
-   {
-    "label": "H3",
-    "xyz": [
-     0.3727,
-     0.1896,
-     0.9728
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.0002
-   },
-   {
-    "label": "H4",
-    "xyz": [
-     0.5867,
-     0.1979,
-     0.5062
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.0002
-   },
-   {
-    "label": "H5",
-    "xyz": [
-     0.9198,
-     0.25,
-     0.8387
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.0002
-   },
-   {
-    "label": "H6",
-    "xyz": [
-     1.1179,
-     0.188,
-     1.3023
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.0002
-   },
-   {
-    "label": "H7",
-    "xyz": [
-     0.094,
-     0.25,
-     0.8784
-    ],
-    "species": {
-     "H": 1.0
-    },
-    "u_iso": 0.0002
-   }
-  ]
  },
  "8104376": {
   "source": "Manickkavachagam and Rajaram, Zeitschrift fuer Kristallographie (149,1979-) 168, 179-185 (1984)",
