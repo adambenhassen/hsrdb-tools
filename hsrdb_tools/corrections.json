@@ -53226,6 +53226,18 @@
    }
   ]
  },
+ "4134236": {
+  "source": "Lyu, Gong, Lee, Gnanasekaran, Zhang, Wasson, Wang, Bai, Guo, Gianneschi and Farha, Journal of the American Chemical Society 142, 4609-4615 (2020), https://doi.org/10.1021/jacs.0c00542",
+  "note": "the CIF's a = 20.808 A contradicts the refined cell of Table S1 of the supporting information (p. S-15: P 2/m, a = 19.873, b = 11.962, c = 19.880 A, V = 4092 A^3, Rw 9.0%); the table gives no angle, so beta is the CIF's 120.0299 deg, which gives the table's volume; the CIF's coordinates fit the table's cell: with it the Zr6 octahedra of the three twin components (X, Y, Z, each at 0.33) are the same (diagonals 4.87, 4.87, 5.03 A; with the CIF's a, 4.89-5.28 A), and the C-H and ring C-C distances spread half as much; the article gives no occupancies (the linker atoms' free refinement, -29 to 45, is read as before)",
+  "cell": [
+   19.873,
+   11.962,
+   19.88,
+   90,
+   120.0299,
+   90
+  ]
+ },
  "4300146": {
   "source": "Xiandong Wang et al., Inorganic Chemistry 39, 136-140 (2000), https://doi.org/10.1021/ic9909274",
   "note": "the CIF's structure has 8 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii) and contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
