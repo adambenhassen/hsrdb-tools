@@ -3,6 +3,7 @@
 import math
 import re
 import sqlite3
+import statistics
 
 import gemmi
 import numpy as np
@@ -976,6 +977,15 @@ def test_corrections_file_is_well_formed():
     for cod, fix in entry._corrections().items():
         if not cod.startswith("_"):
             entry._check_fix(cod, fix)
+
+
+def test_corrections_give_displacements_in_u_not_b_over_8pi2():
+    # B values divided by 8 pi^2 twice (or U values read as B) leave a structure without thermal motion: no published
+    # structure of five or more atoms has a median U below 0.001 A^2 (10-31 release: 42 did, e.g. 9002436 at 5e-05)
+    for cod, fix in entry._corrections().items():
+        us = [a["u_iso"] for a in fix.get("add", []) if "u_iso" in a] if isinstance(fix, dict) else []
+        if len(us) >= 5:
+            assert statistics.median(us) >= 0.001, cod
 
 
 @pytest.mark.parametrize("change, message", [
