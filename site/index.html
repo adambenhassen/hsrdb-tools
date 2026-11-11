@@ -20,7 +20,7 @@
 })();
 </script>
 <title>COD for HighScore</title>
-<meta name="description" content="Reference databases for Malvern Panalytical HighScore 3.x and 4.x, calculated from the Crystallography Open Database: 533,950 entries, independently verified with cctbx.">
+<meta name="description" content="Reference databases for Malvern Panalytical HighScore 3.x and 4.x, calculated from the Crystallography Open Database: 533,980 entries, independently verified with cctbx.">
 <style>
 :root {
   color-scheme: light;
@@ -162,13 +162,13 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
 <main>
 <div class="wrap hero">
   <h1>The Crystallography Open Database, as HighScore reference patterns</h1>
-  <p class="lede">Calculated powder patterns and structure records for every usable entry of the <a href="https://www.crystallography.net/">Crystallography Open Database</a>, for Malvern Panalytical HighScore 3.x and 4.x and later. Built from the October 2026 COD, calculated independently of the official databases, and checked against <a href="https://cctbx.github.io/">cctbx</a>.</p>
+  <p class="lede">Calculated powder patterns and structure records for every usable entry of the <a href="https://www.crystallography.net/">Crystallography Open Database</a>, for Malvern Panalytical HighScore 3.x and 4.x and later. Built from the November 2026 COD, calculated independently of the official databases, and checked against <a href="https://cctbx.github.io/">cctbx</a>.</p>
   <ul class="badges" aria-label="Summary">
-    <li>COD, October 2026</li><li>Cu Kα₁</li><li>HighScore 3.x · 4.x+</li><li>Independent recalculation</li><li>Free to use</li>
+    <li>COD, November 2026</li><li>Cu Kα₁</li><li>HighScore 3.x · 4.x+</li><li>Independent recalculation</li><li>Free to use</li>
   </ul>
   <div class="stats">
-    <div class="stat"><b>533,950</b><span>entries in each database</span></div>
-    <div class="stat"><b>22,367</b><span>entries newer than the official COD 2024 database</span></div>
+    <div class="stat"><b>533,980</b><span>entries in each database</span></div>
+    <div class="stat"><b>22,397</b><span>entries newer than the official COD 2024 database</span></div>
     <div class="stat"><b>202</b><span>modulated structures with satellite reflections</span></div>
     <div class="stat"><b>0</b><span>calculation differences from cctbx</span></div>
   </div>
@@ -177,22 +177,22 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
 <section id="download">
   <div class="wrap">
     <h2>Download</h2>
-    <p class="release">Release <b data-release>2026-11-11</b>, built from the COD of October 2026 · <a href="#changelog">changelog</a></p>
+    <p class="release">Release <b data-release>2026-11-12</b>, built from the COD of November 2026 · <a href="#changelog">changelog</a></p>
     <p class="muted">Each archive holds one <code>.hsrdb</code> file (about 7 GB unpacked). Checksums are read from <a href="https://cod-dl.adambh.net/SHA256SUMS.txt">SHA256SUMS.txt</a>.</p>
     <p class="muted">The tool that builds these databases, with the list of corrections made from publications, is open source: <a href="https://github.com/adambenhassen/hsrdb-tools">source code on GitHub</a>.</p>
     <div class="downloads">
       <div class="card" data-kind="HS4x">
         <h3>HighScore 4.x and later</h3>
         <p class="meta">Structure records in the format of HighScore 4 (phase version 6).</p>
-        <div class="meta"><span class="fname mono">COD_2026_11_11_HS4x.7z</span> <span class="size"></span></div>
-        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_11_11_HS4x.7z" download>Download for HighScore 4.x</a>
+        <div class="meta"><span class="fname mono">COD_2026_11_12_HS4x.7z</span> <span class="size"></span></div>
+        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_11_12_HS4x.7z" download>Download for HighScore 4.x</a>
         <div class="sha"></div>
       </div>
       <div class="card" data-kind="HS3x">
         <h3>HighScore 3.x</h3>
         <p class="meta">The same entries with structure records in the HighScore 3 format (phase version 3).</p>
-        <div class="meta"><span class="fname mono">COD_2026_11_11_HS3x.7z</span> <span class="size"></span></div>
-        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_11_11_HS3x.7z" download>Download for HighScore 3.x</a>
+        <div class="meta"><span class="fname mono">COD_2026_11_12_HS3x.7z</span> <span class="size"></span></div>
+        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_11_12_HS3x.7z" download>Download for HighScore 3.x</a>
         <div class="sha"></div>
       </div>
     </div>
@@ -224,12 +224,12 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
           <li>Stored in the reference setting HighScore expects, in the same cell as the official databases (reduced monoclinic and triclinic cells, conventional orthorhombic axes).</li>
           <li>Split atoms next to special positions kept or merged by the CIF's own site symmetry, occupancies and density; dummy atoms (ring centroids) do not scatter.</li>
           <li>Modulated structures calculated from their superspace model, with satellites; the result is checked against the structure factors the refinement program lists in the CIF.</li>
-          <li>782 CIFs completed or corrected, each cited and marked in the entry: 500 from their original publications (or from the CIF's own statements), and 282 whose transcribed structure contradicts itself, with a corrected structure of the same publication; the CIF files themselves are never changed.</li>
+          <li>886 CIFs completed or corrected, each cited and marked in the entry: 604 from their original publications (or from the CIF's own statements), and 282 whose transcribed structure contradicts itself, with a corrected structure of the same publication; the CIF files themselves are never changed.</li>
         </ul>
       </div>
     </div>
     <p class="small muted">Every entry carries the cell, space group, unit-cell content, calculated density, I/Ic, the structure record (atoms, occupancies, displacement parameters, Wyckoff positions) and the literature reference, and belongs to the inorganic, organic, mineral and metallic subfiles as in the official databases.</p>
-    <p><a href="corrections.html">The 782 corrected CIFs, each with its problem, correction and source →</a></p>
+    <p><a href="corrections.html">The 886 corrected CIFs, each with its problem, correction and source →</a></p>
   </div>
 </section>
 
@@ -239,7 +239,7 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
     <div class="grid2">
       <div>
         <h3>Against cctbx</h3>
-        <p>Every pattern of COD was recalculated with <a href="https://cctbx.github.io/">cctbx</a>, an independent crystallographic library, in two ways: from the structure as read here (structure factors, form and displacement factors, multiplicities, Lorentz–polarisation), and from cctbx's own reading of the raw CIF (parsing, settings, site handling). The full run gave no calculation differences; each reading difference has a documented cause, such as cctbx treating dummy atoms as scatterers. The 323 entries this release changes were checked again (structure factors and patterns exactly as cctbx computes them), and so was the finished database.</p>
+        <p>Every pattern of COD was recalculated with <a href="https://cctbx.github.io/">cctbx</a>, an independent crystallographic library, in two ways: from the structure as read here (structure factors, form and displacement factors, multiplicities, Lorentz–polarisation), and from cctbx's own reading of the raw CIF (parsing, settings, site handling). The full run gave no calculation differences; each reading difference has a documented cause, such as cctbx treating dummy atoms as scatterers. The 238 entries this release changes or adds were checked again (structure factors exactly as cctbx computes them; patterns too for those not corrected from an article), and so was the finished database.</p>
         <p class="charttitle">Largest strong-line difference per entry, official lines (0–1000 scale)</p>
         <ul class="bars short">
           <li><span>Median</span><span class="track"><i style="width:1.2%"></i></span><b>12</b></li>
@@ -295,7 +295,7 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
           <tr><td>Dummy atoms (centroids)</td><td>counted as atoms</td><td>not scattering, not in the formula</td></tr>
           <tr><td>Physically invalid anisotropic tensors</td><td>used as given</td><td>replaced by the isotropic value</td></tr>
           <tr><td>Cyanide pseudo-atom <code>CN</code></td><td>carbon only</td><td>C and N on the site</td></tr>
-          <tr><td>COD content</td><td>May 2024</td><td>October 2026, including revisions</td></tr>
+          <tr><td>COD content</td><td>May 2024</td><td>November 2026, including revisions</td></tr>
         </tbody>
       </table>
     </div>
@@ -330,19 +330,19 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
       </div>
       <div>
         <h2>What is not included</h2>
-        <p>1,228 CIFs cannot give a pattern: 1,017 have no atom coordinates, 152 no symmetry, 46 no unit cell, and a few have symmetry or atom types that cannot be read without guessing. None of them is in the official COD 2024 database either. Each was checked; where the original article gives what the CIF lacks, the entry is built from it.</p>
+        <p>1,229 CIFs cannot give a pattern: 1,018 have no atom coordinates, 152 no symmetry, 46 no unit cell, and a few have symmetry or atom types that cannot be read without guessing. None of them is in the official COD 2024 database either. Each was checked; where the original article gives what the CIF lacks, the entry is built from it.</p>
         <p class="small muted" style="margin-bottom:0">Skipped CIFs by reason</p>
         <ul class="bars">
-          <li><span>No atom coordinates</span><span class="track"><i style="width:100%"></i></span><b>1,017</b></li>
+          <li><span>No atom coordinates</span><span class="track"><i style="width:100%"></i></span><b>1,018</b></li>
           <li><span>No usable symmetry</span><span class="track"><i style="width:16%"></i></span><b>162</b></li>
           <li><span>No valid unit cell</span><span class="track"><i style="width:4.5%"></i></span><b>46</b></li>
           <li><span>Atom type that is not an element</span><span class="track"><i style="width:0.2%"></i></span><b>2</b></li>
           <li><span>Operations do not fit the structure</span><span class="track"><i style="width:0.1%"></i></span><b>1</b></li>
         </ul>
-        <p class="charttitle">Skipped CIFs by decade of publication (432 more have no year)</p>
+        <p class="charttitle">Skipped CIFs by decade of publication (433 more have no year)</p>
         <ul class="cols"><li><b>1</b><i style="height:2px"></i><em>1910</em></li><li><b>13</b><i style="height:5px"></i><em>1920</em></li><li><b>201</b><i style="height:82px"></i><em>1930</em></li><li><b>43</b><i style="height:17px"></i><em>1940</em></li><li><b>38</b><i style="height:15px"></i><em>1950</em></li><li><b>13</b><i style="height:5px"></i><em>1960</em></li><li><b>12</b><i style="height:5px"></i><em>1970</em></li><li><b>12</b><i style="height:5px"></i><em>1980</em></li><li><b>208</b><i style="height:85px"></i><em>1990</em></li><li><b>246</b><i style="height:100px"></i><em>2000</em></li><li><b>8</b><i style="height:3px"></i><em>2010</em></li><li><b>1</b><i style="height:2px"></i><em>2020</em></li></ul>
         <p class="small muted">Five entries of the official database have no usable coordinates in their current CIFs (COD 2300247, 2300248, 2300253, 2300257, 5900030). They are included as the official database has them, and their entry comments say that they are not correct structures.</p>
-        <p><a href="skipped.html">All 1,228 skipped CIFs, with their references, DOIs and reasons →</a></p>
+        <p><a href="skipped.html">All 1,229 skipped CIFs, with their references, DOIs and reasons →</a></p>
       </div>
     </div>
   </div>
@@ -351,19 +351,26 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
 <section id="changelog">
   <div class="wrap changes">
     <h2>Changelog</h2>
-    <p class="muted">Each release is named by its build date, in the archive and in the database file HighScore shows: <code>COD_2026_11_11_HS4x.hsrdb</code>.</p>
+    <p class="muted">Each release is named by its build date, in the archive and in the database file HighScore shows: <code>COD_2026_11_12_HS4x.hsrdb</code>.</p>
     <div class="grid2">
       <div>
         <p class="charttitle">Corrected CIFs per release</p>
-        <ul class="bars short"><li><span>2026-11-11</span><span class="track"><i style="width:98.6%"></i></span><b>782</b></li><li><span>2026-11-10</span><span class="track"><i style="width:98.6%"></i></span><b>782</b></li><li><span>2026-10-31</span><span class="track"><i style="width:100%"></i></span><b>793</b></li><li><span>2026-10-30</span><span class="track"><i style="width:63.1%"></i></span><b>500</b></li><li><span>2026-10-29</span><span class="track"><i style="width:63.1%"></i></span><b>500</b></li><li><span>2026-10-15</span><span class="track"><i style="width:63.1%"></i></span><b>500</b></li><li><span>2026-10-04</span><span class="track"><i style="width:62.9%"></i></span><b>499</b></li><li><span>2026-10-03</span><span class="track"><i style="width:62.9%"></i></span><b>499</b></li><li><span>2026-09-30</span><span class="track"><i style="width:7.2%"></i></span><b>57</b></li></ul>
+        <ul class="bars short"><li><span>2026-11-12</span><span class="track"><i style="width:100%"></i></span><b>886</b></li><li><span>2026-11-11</span><span class="track"><i style="width:88.3%"></i></span><b>782</b></li><li><span>2026-11-10</span><span class="track"><i style="width:88.3%"></i></span><b>782</b></li><li><span>2026-10-31</span><span class="track"><i style="width:89.5%"></i></span><b>793</b></li><li><span>2026-10-30</span><span class="track"><i style="width:56.4%"></i></span><b>500</b></li><li><span>2026-10-29</span><span class="track"><i style="width:56.4%"></i></span><b>500</b></li><li><span>2026-10-15</span><span class="track"><i style="width:56.4%"></i></span><b>500</b></li><li><span>2026-10-04</span><span class="track"><i style="width:56.3%"></i></span><b>499</b></li><li><span>2026-10-03</span><span class="track"><i style="width:56.3%"></i></span><b>499</b></li><li><span>2026-09-30</span><span class="track"><i style="width:6.4%"></i></span><b>57</b></li></ul>
         <p class="small muted">CIFs whose structure the build completes or corrects from a cited source, listed on the <a href="corrections.html">corrections page</a>. Fewer from 2026-11-10: 12 no longer need a correction, because a new rule builds them from the CIF itself.</p>
       </div>
       <div>
         <p class="charttitle">Skipped CIFs per release</p>
-        <ul class="bars short"><li><span>2026-11-11</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-11-10</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-31</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-30</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-29</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-15</span><span class="track"><i style="width:73.5%"></i></span><b>1,227</b></li><li><span>2026-10-04</span><span class="track"><i style="width:73.4%"></i></span><b>1,225</b></li><li><span>2026-10-03</span><span class="track"><i style="width:73.3%"></i></span><b>1,224</b></li><li><span>2026-09-30</span><span class="track"><i style="width:100%"></i></span><b>1,669</b></li></ul>
+        <ul class="bars short"><li><span>2026-11-12</span><span class="track"><i style="width:73.6%"></i></span><b>1,229</b></li><li><span>2026-11-11</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-11-10</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-31</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-30</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-29</span><span class="track"><i style="width:73.6%"></i></span><b>1,228</b></li><li><span>2026-10-15</span><span class="track"><i style="width:73.5%"></i></span><b>1,227</b></li><li><span>2026-10-04</span><span class="track"><i style="width:73.4%"></i></span><b>1,225</b></li><li><span>2026-10-03</span><span class="track"><i style="width:73.3%"></i></span><b>1,224</b></li><li><span>2026-09-30</span><span class="track"><i style="width:100%"></i></span><b>1,669</b></li></ul>
         <p class="small muted">CIFs left out because they cannot be built (no coordinates, contradictory symmetry, and so on), listed on the <a href="skipped.html">skipped page</a>. Bars are scaled to the largest value in each chart.</p>
       </div>
     </div>
+    <h3>2026-11-12 <span>533,980 entries</span></h3>
+    <ul class="clean">
+      <li>104 more CIFs are corrected from their original articles (886 corrected CIFs in all): coordinates, occupancies, cells and space groups that contradict the CIF's own formula, density or bond lengths, and displacement parameters stored on another scale, among them the 26 BaCe<sub>1−x</sub>Pr<sub>x</sub>O<sub>3</sub> structures (COD 2106625–2106650), whose values were 100 times too large.</li>
+      <li>Anisotropic tensors that a CIF gives as B<sub>ij</sub> / 4 are read as such (divided by 2π²) where its B column gives every atom with a tensor 4 × U<sub>eq</sub> (21 entries), and a B column that holds U values is read as U where it gives those atoms their U<sub>eq</sub> (4 entries); the entry's comment names the reading.</li>
+      <li>Built from the COD mirror of 10 November 2026: 30 CIFs added to the COD since the previous mirror give entries (22,397 newer than the official COD 2024 database); one more unpublished deposit, without coordinates, is skipped (1,229 in all); the 80 CIFs the COD revised give the same patterns as before.</li>
+      <li>238 entries change or are new in all. The 2026-10-29, 2026-11-10 and 2026-11-11 archives are no longer offered.</li>
+    </ul>
     <h3>2026-11-11 <span>533,950 entries</span></h3>
     <ul class="clean">
       <li>Displacement parameters that a CIF gives as B under the U heading are read as B (divided by 8π²) where its values are impossible as U and its other values show the scale (257 entries); as U, every line beyond the first few vanished.</li>

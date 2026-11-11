@@ -20,7 +20,7 @@
 })();
 </script>
 <title>Bases de référence HighScore issues de la COD</title>
-<meta name="description" content="Bases de données de référence pour Malvern Panalytical HighScore 3.x et 4.x, calculées à partir de la Crystallography Open Database : 533 950 fiches, vérifiées indépendamment avec cctbx.">
+<meta name="description" content="Bases de données de référence pour Malvern Panalytical HighScore 3.x et 4.x, calculées à partir de la Crystallography Open Database : 533 980 fiches, vérifiées indépendamment avec cctbx.">
 <style>
 :root {
   color-scheme: light;
@@ -162,13 +162,13 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
 <main>
 <div class="wrap hero">
   <h1>La Crystallography Open Database en diagrammes de référence pour HighScore</h1>
-  <p class="lede">Diagrammes de poudre calculés et données structurales pour chaque fiche exploitable de la <a href="https://www.crystallography.net/">Crystallography Open Database</a>, pour Malvern Panalytical HighScore 3.x et 4.x et versions ultérieures. Construits à partir de la COD de octobre 2026, calculés indépendamment des bases officielles et vérifiés avec <a href="https://cctbx.github.io/">cctbx</a>.</p>
+  <p class="lede">Diagrammes de poudre calculés et données structurales pour chaque fiche exploitable de la <a href="https://www.crystallography.net/">Crystallography Open Database</a>, pour Malvern Panalytical HighScore 3.x et 4.x et versions ultérieures. Construits à partir de la COD de novembre 2026, calculés indépendamment des bases officielles et vérifiés avec <a href="https://cctbx.github.io/">cctbx</a>.</p>
   <ul class="badges" aria-label="Résumé">
-    <li>COD, octobre 2026</li><li>Cu Kα₁</li><li>HighScore 3.x · 4.x+</li><li>Recalcul indépendant</li><li>Libre d’utilisation</li>
+    <li>COD, novembre 2026</li><li>Cu Kα₁</li><li>HighScore 3.x · 4.x+</li><li>Recalcul indépendant</li><li>Libre d’utilisation</li>
   </ul>
   <div class="stats">
-    <div class="stat"><b>533 950</b><span>fiches dans chaque base</span></div>
-    <div class="stat"><b>22 367</b><span>fiches plus récentes que la base officielle COD 2024</span></div>
+    <div class="stat"><b>533 980</b><span>fiches dans chaque base</span></div>
+    <div class="stat"><b>22 397</b><span>fiches plus récentes que la base officielle COD 2024</span></div>
     <div class="stat"><b>202</b><span>structures modulées avec réflexions satellites</span></div>
     <div class="stat"><b>0</b><span>écart de calcul avec cctbx</span></div>
   </div>
@@ -177,22 +177,22 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
 <section id="download">
   <div class="wrap">
     <h2>Téléchargement</h2>
-    <p class="release">Version du <b data-release>2026-11-11</b>, construite à partir de la COD d’octobre 2026 · <a href="#changelog">historique des versions</a></p>
+    <p class="release">Version du <b data-release>2026-11-12</b>, construite à partir de la COD de novembre 2026 · <a href="#changelog">historique des versions</a></p>
     <p class="muted">Chaque archive contient un fichier <code>.hsrdb</code> (environ 7 Go une fois décompressé). Les sommes de contrôle proviennent de <a href="https://cod-dl.adambh.net/SHA256SUMS.txt">SHA256SUMS.txt</a>.</p>
     <p class="muted">L’outil qui construit ces bases, avec la liste des corrections faites à partir des publications, est libre : <a href="https://github.com/adambenhassen/hsrdb-tools">code source sur GitHub</a>.</p>
     <div class="downloads">
       <div class="card" data-kind="HS4x">
         <h3>HighScore 4.x et ultérieures</h3>
         <p class="meta">Données structurales au format de HighScore 4 (phase, version 6).</p>
-        <div class="meta"><span class="fname mono">COD_2026_11_11_HS4x.7z</span> <span class="size"></span></div>
-        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_11_11_HS4x.7z" download>Télécharger pour HighScore 4.x</a>
+        <div class="meta"><span class="fname mono">COD_2026_11_12_HS4x.7z</span> <span class="size"></span></div>
+        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_11_12_HS4x.7z" download>Télécharger pour HighScore 4.x</a>
         <div class="sha"></div>
       </div>
       <div class="card" data-kind="HS3x">
         <h3>HighScore 3.x</h3>
         <p class="meta">Les mêmes fiches, avec les données structurales au format de HighScore 3 (phase, version 3).</p>
-        <div class="meta"><span class="fname mono">COD_2026_11_11_HS3x.7z</span> <span class="size"></span></div>
-        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_11_11_HS3x.7z" download>Télécharger pour HighScore 3.x</a>
+        <div class="meta"><span class="fname mono">COD_2026_11_12_HS3x.7z</span> <span class="size"></span></div>
+        <a class="btn" href="https://cod-dl.adambh.net/COD_2026_11_12_HS3x.7z" download>Télécharger pour HighScore 3.x</a>
         <div class="sha"></div>
       </div>
     </div>
@@ -224,12 +224,12 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
           <li>Enregistrées dans le réglage de référence attendu par HighScore, avec la même maille que les bases officielles (mailles monocliniques et tricliniques réduites, axes orthorhombiques conventionnels).</li>
           <li>Atomes dédoublés près des positions spéciales conservés ou fusionnés selon la symétrie de site, les taux d’occupation et la densité donnés par le CIF ; les atomes fictifs (centroïdes de cycles) ne diffusent pas.</li>
           <li>Structures modulées calculées à partir de leur modèle en superespace, avec les satellites ; le résultat est comparé aux facteurs de structure que le programme d’affinement a inscrits dans le CIF.</li>
-          <li>782 CIF complétés ou corrigés, chacun cité et signalé dans sa fiche : 500 d’après leur publication d’origine (ou les indications du CIF lui-même), et 282 dont la structure transcrite se contredit, avec une structure corrigée de la même publication ; les fichiers CIF eux-mêmes ne sont jamais modifiés.</li>
+          <li>886 CIF complétés ou corrigés, chacun cité et signalé dans sa fiche : 604 d’après leur publication d’origine (ou les indications du CIF lui-même), et 282 dont la structure transcrite se contredit, avec une structure corrigée de la même publication ; les fichiers CIF eux-mêmes ne sont jamais modifiés.</li>
         </ul>
       </div>
     </div>
     <p class="small muted">Chaque fiche contient la maille, le groupe d’espace, le contenu de la maille, la densité calculée, I/Ic, les données structurales (atomes, taux d’occupation, paramètres de déplacement, positions de Wyckoff) et la référence bibliographique, et appartient aux sous-fichiers inorganique, organique, minéral et métallique comme dans les bases officielles.</p>
-    <p><a href="corrections.fr.html">Les 782 CIF corrigés, chacun avec son problème, sa correction et sa source →</a></p>
+    <p><a href="corrections.fr.html">Les 886 CIF corrigés, chacun avec son problème, sa correction et sa source →</a></p>
   </div>
 </section>
 
@@ -239,7 +239,7 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
     <div class="grid2">
       <div>
         <h3>Avec cctbx</h3>
-        <p>Tous les diagrammes de la COD ont été recalculés avec <a href="https://cctbx.github.io/">cctbx</a>, une bibliothèque cristallographique indépendante, de deux manières : à partir de la structure telle que lue ici (facteurs de structure, facteurs de diffusion et de déplacement, multiplicités, Lorentz–polarisation), et à partir de la lecture du CIF brut par cctbx (analyse du fichier, réglages, traitement des sites). Le calcul complet n’a donné aucun écart de calcul ; chaque écart de lecture a une cause documentée, par exemple cctbx qui traite les atomes fictifs comme des diffuseurs. Les 323 fiches que cette version modifie ont été vérifiées de nouveau (facteurs de structure et diagrammes exactement tels que cctbx les calcule), de même que la base terminée.</p>
+        <p>Tous les diagrammes de la COD ont été recalculés avec <a href="https://cctbx.github.io/">cctbx</a>, une bibliothèque cristallographique indépendante, de deux manières : à partir de la structure telle que lue ici (facteurs de structure, facteurs de diffusion et de déplacement, multiplicités, Lorentz–polarisation), et à partir de la lecture du CIF brut par cctbx (analyse du fichier, réglages, traitement des sites). Le calcul complet n’a donné aucun écart de calcul ; chaque écart de lecture a une cause documentée, par exemple cctbx qui traite les atomes fictifs comme des diffuseurs. Les 238 fiches que cette version modifie ou ajoute ont été vérifiées de nouveau (facteurs de structure exactement tels que cctbx les calcule ; diagrammes aussi pour celles qui ne sont pas corrigées d’après un article), de même que la base terminée.</p>
         <p class="charttitle">Plus grand écart sur une raie forte, par fiche, raies officielles (échelle 0–1000)</p>
         <ul class="bars short">
           <li><span>Médiane</span><span class="track"><i style="width:1.2%"></i></span><b>12</b></li>
@@ -295,7 +295,7 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
           <tr><td>Atomes fictifs (centroïdes)</td><td>comptés comme des atomes</td><td>ne diffusent pas, absents de la formule</td></tr>
           <tr><td>Tenseurs anisotropes physiquement impossibles</td><td>utilisés tels quels</td><td>remplacés par la valeur isotrope</td></tr>
           <tr><td>Pseudo-atome cyanure <code>CN</code></td><td>carbone seul</td><td>C et N sur le site</td></tr>
-          <tr><td>Contenu de la COD</td><td>mai 2024</td><td>octobre 2026, révisions comprises</td></tr>
+          <tr><td>Contenu de la COD</td><td>mai 2024</td><td>novembre 2026, révisions comprises</td></tr>
         </tbody>
       </table>
     </div>
@@ -330,19 +330,19 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
       </div>
       <div>
         <h2>Ce qui n’est pas inclus</h2>
-        <p>1 228 CIF ne permettent pas de calculer un diagramme : 1 017 n’ont pas de coordonnées atomiques, 152 pas de symétrie, 46 pas de maille, et quelques-uns ont une symétrie ou des types d’atomes illisibles sans deviner. Aucun ne figure non plus dans la base officielle COD 2024. Chacun a été examiné ; lorsque l’article d’origine donne ce qui manque au CIF, la fiche est construite à partir de lui.</p>
+        <p>1 229 CIF ne permettent pas de calculer un diagramme : 1 018 n’ont pas de coordonnées atomiques, 152 pas de symétrie, 46 pas de maille, et quelques-uns ont une symétrie ou des types d’atomes illisibles sans deviner. Aucun ne figure non plus dans la base officielle COD 2024. Chacun a été examiné ; lorsque l’article d’origine donne ce qui manque au CIF, la fiche est construite à partir de lui.</p>
         <p class="small muted" style="margin-bottom:0">CIF non retenus, par raison</p>
         <ul class="bars">
-          <li><span>Pas de coordonnées atomiques</span><span class="track"><i style="width:100%"></i></span><b>1 017</b></li>
+          <li><span>Pas de coordonnées atomiques</span><span class="track"><i style="width:100%"></i></span><b>1 018</b></li>
           <li><span>Pas de symétrie exploitable</span><span class="track"><i style="width:16%"></i></span><b>162</b></li>
           <li><span>Pas de maille valide</span><span class="track"><i style="width:4.5%"></i></span><b>46</b></li>
           <li><span>Type d’atome qui n’est pas un élément</span><span class="track"><i style="width:0.2%"></i></span><b>2</b></li>
           <li><span>Opérations incompatibles avec la structure</span><span class="track"><i style="width:0.1%"></i></span><b>1</b></li>
         </ul>
-        <p class="charttitle">CIF non retenus, par décennie de publication (432 autres n’ont pas d’année)</p>
+        <p class="charttitle">CIF non retenus, par décennie de publication (433 autres n’ont pas d’année)</p>
         <ul class="cols"><li><b>1</b><i style="height:2px"></i><em>1910</em></li><li><b>13</b><i style="height:5px"></i><em>1920</em></li><li><b>201</b><i style="height:82px"></i><em>1930</em></li><li><b>43</b><i style="height:17px"></i><em>1940</em></li><li><b>38</b><i style="height:15px"></i><em>1950</em></li><li><b>13</b><i style="height:5px"></i><em>1960</em></li><li><b>12</b><i style="height:5px"></i><em>1970</em></li><li><b>12</b><i style="height:5px"></i><em>1980</em></li><li><b>208</b><i style="height:85px"></i><em>1990</em></li><li><b>246</b><i style="height:100px"></i><em>2000</em></li><li><b>8</b><i style="height:3px"></i><em>2010</em></li><li><b>1</b><i style="height:2px"></i><em>2020</em></li></ul>
         <p class="small muted">Cinq fiches de la base officielle n’ont pas de coordonnées utilisables dans leur CIF actuel (COD 2300247, 2300248, 2300253, 2300257, 5900030). Elles sont reprises telles que la base officielle les contient, et leur commentaire indique qu’il ne s’agit pas de structures correctes.</p>
-        <p><a href="skipped.fr.html">Les 1 228 CIF non retenus, avec leurs références, DOI et raisons →</a></p>
+        <p><a href="skipped.fr.html">Les 1 229 CIF non retenus, avec leurs références, DOI et raisons →</a></p>
       </div>
     </div>
   </div>
@@ -351,19 +351,26 @@ header.top .wrap > div:nth-child(2) { display: flex; align-items: center; }
 <section id="changelog">
   <div class="wrap changes">
     <h2>Historique des versions</h2>
-    <p class="muted">Chaque version porte la date de sa construction, dans le nom de l’archive et dans celui du fichier de base affiché par HighScore : <code>COD_2026_11_11_HS4x.hsrdb</code>.</p>
+    <p class="muted">Chaque version porte la date de sa construction, dans le nom de l’archive et dans celui du fichier de base affiché par HighScore : <code>COD_2026_11_12_HS4x.hsrdb</code>.</p>
     <div class="grid2">
       <div>
         <p class="charttitle">CIF corrigés, par version</p>
-        <ul class="bars short"><li><span>2026-11-11</span><span class="track"><i style="width:98.6%"></i></span><b>782</b></li><li><span>2026-11-10</span><span class="track"><i style="width:98.6%"></i></span><b>782</b></li><li><span>2026-10-31</span><span class="track"><i style="width:100%"></i></span><b>793</b></li><li><span>2026-10-30</span><span class="track"><i style="width:63.1%"></i></span><b>500</b></li><li><span>2026-10-29</span><span class="track"><i style="width:63.1%"></i></span><b>500</b></li><li><span>2026-10-15</span><span class="track"><i style="width:63.1%"></i></span><b>500</b></li><li><span>2026-10-04</span><span class="track"><i style="width:62.9%"></i></span><b>499</b></li><li><span>2026-10-03</span><span class="track"><i style="width:62.9%"></i></span><b>499</b></li><li><span>2026-09-30</span><span class="track"><i style="width:7.2%"></i></span><b>57</b></li></ul>
+        <ul class="bars short"><li><span>2026-11-12</span><span class="track"><i style="width:100%"></i></span><b>886</b></li><li><span>2026-11-11</span><span class="track"><i style="width:88.3%"></i></span><b>782</b></li><li><span>2026-11-10</span><span class="track"><i style="width:88.3%"></i></span><b>782</b></li><li><span>2026-10-31</span><span class="track"><i style="width:89.5%"></i></span><b>793</b></li><li><span>2026-10-30</span><span class="track"><i style="width:56.4%"></i></span><b>500</b></li><li><span>2026-10-29</span><span class="track"><i style="width:56.4%"></i></span><b>500</b></li><li><span>2026-10-15</span><span class="track"><i style="width:56.4%"></i></span><b>500</b></li><li><span>2026-10-04</span><span class="track"><i style="width:56.3%"></i></span><b>499</b></li><li><span>2026-10-03</span><span class="track"><i style="width:56.3%"></i></span><b>499</b></li><li><span>2026-09-30</span><span class="track"><i style="width:6.4%"></i></span><b>57</b></li></ul>
         <p class="small muted">CIF dont la construction complète ou corrige la structure à partir d’une source citée, listés sur la <a href="corrections.fr.html">page des corrections</a>. Moins nombreux à partir de 2026-11-10 : 12 n’ont plus besoin de correction, car une nouvelle règle les construit à partir du CIF lui-même.</p>
       </div>
       <div>
         <p class="charttitle">CIF non retenus, par version</p>
-        <ul class="bars short"><li><span>2026-11-11</span><span class="track"><i style="width:73.6%"></i></span><b>1 228</b></li><li><span>2026-11-10</span><span class="track"><i style="width:73.6%"></i></span><b>1 228</b></li><li><span>2026-10-31</span><span class="track"><i style="width:73.6%"></i></span><b>1 228</b></li><li><span>2026-10-30</span><span class="track"><i style="width:73.6%"></i></span><b>1 228</b></li><li><span>2026-10-29</span><span class="track"><i style="width:73.6%"></i></span><b>1 228</b></li><li><span>2026-10-15</span><span class="track"><i style="width:73.5%"></i></span><b>1 227</b></li><li><span>2026-10-04</span><span class="track"><i style="width:73.4%"></i></span><b>1 225</b></li><li><span>2026-10-03</span><span class="track"><i style="width:73.3%"></i></span><b>1 224</b></li><li><span>2026-09-30</span><span class="track"><i style="width:100%"></i></span><b>1 669</b></li></ul>
+        <ul class="bars short"><li><span>2026-11-12</span><span class="track"><i style="width:73.6%"></i></span><b>1 229</b></li><li><span>2026-11-11</span><span class="track"><i style="width:73.6%"></i></span><b>1 228</b></li><li><span>2026-11-10</span><span class="track"><i style="width:73.6%"></i></span><b>1 228</b></li><li><span>2026-10-31</span><span class="track"><i style="width:73.6%"></i></span><b>1 228</b></li><li><span>2026-10-30</span><span class="track"><i style="width:73.6%"></i></span><b>1 228</b></li><li><span>2026-10-29</span><span class="track"><i style="width:73.6%"></i></span><b>1 228</b></li><li><span>2026-10-15</span><span class="track"><i style="width:73.5%"></i></span><b>1 227</b></li><li><span>2026-10-04</span><span class="track"><i style="width:73.4%"></i></span><b>1 225</b></li><li><span>2026-10-03</span><span class="track"><i style="width:73.3%"></i></span><b>1 224</b></li><li><span>2026-09-30</span><span class="track"><i style="width:100%"></i></span><b>1 669</b></li></ul>
         <p class="small muted">CIF écartés parce qu’ils ne peuvent pas être construits (pas de coordonnées, symétrie contradictoire, etc.), listés sur la <a href="skipped.fr.html">page des CIF non retenus</a>. Les barres sont à l’échelle de la plus grande valeur de chaque graphique.</p>
       </div>
     </div>
+    <h3>2026-11-12 <span>533 980 fiches</span></h3>
+    <ul class="clean">
+      <li>104 CIF de plus sont corrigés d’après leur article d’origine (886 CIF corrigés au total) : coordonnées, taux d’occupation, mailles et groupes d’espace qui contredisent la formule, la densité ou les longueurs de liaison du CIF lui-même, et paramètres de déplacement enregistrés à une autre échelle, dont les 26 structures BaCe<sub>1−x</sub>Pr<sub>x</sub>O<sub>3</sub> (COD 2106625–2106650), dont les valeurs étaient 100 fois trop grandes.</li>
+      <li>Les tenseurs anisotropes qu’un CIF donne comme B<sub>ij</sub> / 4 sont lus comme tels (divisés par 2π²) lorsque sa colonne B donne à chaque atome doté d’un tenseur 4 × U<sub>eq</sub> (21 fiches), et une colonne B qui contient des valeurs U est lue comme U lorsqu’elle donne à ces atomes leur U<sub>eq</sub> (4 fiches) ; le commentaire de la fiche nomme la lecture.</li>
+      <li>Construit à partir du miroir de la COD du 10 novembre 2026 : 30 CIF ajoutés à la COD depuis le miroir précédent donnent des fiches (22 397 plus récentes que la base officielle COD 2024) ; un autre dépôt non publié, sans coordonnées, est écarté (1 229 au total) ; les 80 CIF révisés par la COD donnent les mêmes diagrammes qu’auparavant.</li>
+      <li>238 fiches changent ou sont nouvelles au total. Les archives 2026-10-29, 2026-11-10 et 2026-11-11 ne sont plus proposées.</li>
+    </ul>
     <h3>2026-11-11 <span>533 950 fiches</span></h3>
     <ul class="clean">
       <li>Les paramètres de déplacement qu’un CIF donne comme B sous l’en-tête U sont lus comme des B (divisés par 8π²) lorsque ses valeurs sont impossibles comme U et que ses autres valeurs montrent l’échelle (257 fiches) ; lues comme U, toutes les raies au-delà des premières disparaissaient.</li>

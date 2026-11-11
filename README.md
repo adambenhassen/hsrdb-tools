@@ -30,7 +30,7 @@ Each line intensity is multiplicity × |F|² × Lorentz-polarisation, for the st
 | Atoms near special positions | symmetry images closer than 0.01 Å are one atom, placed exactly on the special position; images up to 0.4 Å apart are one atom when the CIF says so (site-symmetry order or multiplicity) or when they could not all be occupied (occupancy × images above 1.01, a margin for rounded occupancies); otherwise they are the separate positions of a split, disordered atom. Images of an atom on a special position that the CIF states as general count separately only if merging them contradicts the CIF's formula (or density) and counting them does not |
 | Dummy atoms | atoms flagged `dum` (e.g. ring centroids) do not scatter; they stay in the structure record, flagged |
 | Modulated structures | from the CIF's superspace description (msCIF, as JANA writes it): main and satellite reflections, each atom's scattering averaged over its internal coordinate with its displacement, occupancy and displacement-parameter functions; satellite reflections weaker than 0.5 on the 0–1000 scale are left out, and a satellite line carries hkl 0 0 0. The structure record holds the basic structure. Composites and functions specific to JANA are stored as the basic structure, as in COD24; see [Modulated structures](docs/differences/modulated.md) |
-| Non-atomic scatterers | where an article refined matter as a spherical shell (a water layer in zeolite cages), a [correction](docs/corrections.md) adds its atoms spread over the sphere, form factor n·f(q)·sin(qR)/(qR) as in FullProf; it scatters and counts in formula and density, but the structure record, which holds atoms only, leaves it out |
+| Non-atomic scatterers | where an article refined matter as a spherical shell (a water layer in zeolite cages) or as spread through a ball (water filling a cage), a [correction](docs/corrections.md) adds its atoms spread over the sphere, form factor n·f(q)·sin(qR)/(qR) as in FullProf, or through the ball, n·f(q)·3(sin qR − qR cos qR)/(qR)³; it scatters and counts in formula and density, but the structure record, which holds atoms only, leaves it out |
 | Lorentz-polarisation | (1 + cos²2θ)/(sin²θ cos θ): Bragg–Brentano geometry, no monochromator |
 | Lines | a reflection within 0.005° 2θ of the previous one joins its line; reflections of zero intensity are left out |
 | I/Ic | strongest line against corundum (COD 1000032), 50:50 by weight, same model |
@@ -100,7 +100,7 @@ Reports from HighScore Plus and 3.x users are welcome.
 
 ## How close is it to the official databases?
 
-A full build from COD (October 2026) gives 533,950 entries: every entry of the official COD24 database and 22,367 newer ones. 1,228 CIFs are skipped, mostly because they contain no atom coordinates (1,017) or no usable symmetry (162); none of them is in COD24.
+A full build from COD (November 2026) gives 533,980 entries: every entry of the official COD24 database and 22,397 newer ones. 1,229 CIFs are skipped, mostly because they contain no atom coordinates (1,018) or no usable symmetry (162); none of them is in COD24.
 
 Every entry of both databases passes `dev/audit_database.py` (valid peak lists, consistent metadata, element filters, and structure records that decode and re-encode identically). All 511,583 entries of the official COD24 database were compared:
 
@@ -111,11 +111,11 @@ Every entry of both databases passes `dev/audit_database.py` (valid peak lists, 
 | Space group | 99.47% |
 | Cell volume within 0.5% | 99.99% |
 | Element set | 99.89% |
-| I/Ic within 10% | 97.17% |
+| I/Ic within 10% | 97.08% |
 | All strong official lines present | 99.98% |
 | Largest strong-line intensity difference | median 12, 90th percentile 111 (scale 0–1000) |
 
-7% of entries have a strong line whose intensity differs by more than 150/1000. The main causes are the first two differences below. Almost all of the space-group difference (2,653 of 2,703 entries) is COD24's choice of enantiomorph, also below: the powder patterns are the same.
+7% of entries have a strong line whose intensity differs by more than 150/1000. The main causes are the first two differences below. Almost all of the space-group difference (2,653 of 2,707 entries) is COD24's choice of enantiomorph, also below: the powder patterns are the same.
 
 ## Independent verification
 
@@ -124,7 +124,7 @@ Every pattern is checked against [cctbx](https://cctbx.github.io), an independen
 - **Same structure**: cctbx calculates |F|² for the reflections of each stored pattern from the structure as hsrdb-tools reads it (same f′, f″). This checks structure factors, form factors, displacement factors, symmetry expansion, multiplicities and the Lorentz-polarisation factor.
 - **Own reading of the CIF**: cctbx reads the raw CIF with its own parser and symmetry handling, in the CIF's own setting, and calculates the lines. This checks parsing, settings and site handling.
 
-`dev/verify_explain.py` assigns every difference a cause or lists it as unexplained. The full run over all 533,275 CIFs of the build then current gave no calculation differences and no unexplained reading differences; for this release, the 31,317 CIFs whose entries changed since (corrections, modulated structures, recovered CIFs, and a sample of the cells now stored as COD24 stores them) were verified again with the final code, and against the finished database, with the same result (the corrected and modulated entries differ from cctbx's reading of the raw CIF by design). The known causes are cases where cctbx reads a CIF differently by design or by limitation (for example, it drops a whole displacement column when one value is `?`, and reads dummy atoms as scatterers); each one is listed in the script.
+`dev/verify_explain.py` assigns every difference a cause or lists it as unexplained. The full run over all 533,275 CIFs of the build then current gave no calculation differences and no unexplained reading differences; for this release, the 31,317 CIFs whose entries changed since (corrections, modulated structures, recovered CIFs, and a sample of the cells now stored as COD24 stores them) were verified again with the final code, and against the finished database, with the same result (the corrected and modulated entries differ from cctbx's reading of the raw CIF by design). The known causes are cases where cctbx reads a CIF differently by design or by limitation (for example, it drops a whole displacement column when one value is `?`, and reads dummy atoms as scatterers); each one is listed in the script. Each later release verifies again the entries it changes or adds, 238 in the release of 2026-11-12, with the same result.
 
 ## Differences from the official COD databases
 
@@ -138,7 +138,7 @@ Where hsrdb-tools deliberately does something different from the official COD24 
 | [Dummy atoms](docs/differences/dummy-atoms.md) (`calc_flag dum`: ring centroids, atoms with unknown positions; 438 CIFs) | counted as atoms (extra H, C or N in the formula) | not scattering and not in formula, density or element filters; kept, flagged, in the structure record | a dummy atom is a geometric point, not an atom |
 | [Physically invalid anisotropic tensors](docs/differences/invalid-adp.md) (about 2,800 CIFs) | used as given | replaced by the isotropic value | a tensor with a negative mean-square displacement gives unphysical intensities |
 | [Modulated structures](docs/differences/modulated.md) (202 CIFs) | the basic structure: main lines only, as if every atom sat at its average position | main and satellite lines from the CIF's superspace model; the structure factors agree with those the refinement program lists in the CIF (30 CIFs, R at most 0.9%) | the modulation changes a main line by 10/1000 or more in 147 of the first 198 and gives satellites of 10/1000 or more in 138, which a measured pattern shows |
-| [Corrections from publications](docs/corrections.md) (782 CIFs) | CIF as deposited: interlayer sites as iodine (COD 9002229), virtual atoms as cerium and tungsten (7201135); 282 CIFs whose transcribed structure contradicts itself | the article's model, with the CIF file unchanged and the entry marked; for the 282, a corrected structure of the same publication, not checked against the article | the article states what the CIF leaves out |
+| [Corrections from publications](docs/corrections.md) (886 CIFs) | CIF as deposited: interlayer sites as iodine (COD 9002229), virtual atoms as cerium and tungsten (7201135); 282 CIFs whose transcribed structure contradicts itself | the article's model, with the CIF file unchanged and the entry marked; for the 282, a corrected structure of the same publication, not checked against the article | the article states what the CIF leaves out |
 | Enantiomorphic space groups (P4₁ and P4₃, P3₁21 and P3₂21, P6₁22 and P6₅22, … ; about 2,650 entries) | always the first group of the pair, whatever the CIF states: 5,624 entries in P4₁, P3₁21, P6₁22, … and 2 in their mirror images | the group the CIF's listed operations, Hall symbol and symbol state | the mirror-image group describes the mirror-image crystal; both give the same powder pattern |
 | [Non-standard settings](docs/differences/non-standard-settings.md) (81 CIFs, e.g. `B 1 21/d 1`, supercells) | 29 of them included: 2 without their rhombohedral centring, 3 in the mirror-image space group (see enantiomorphic space groups) | all standardised from the CIF's own symmetry operations with spglib | see [Skipped CIFs](#skipped-cifs) |
 | COD content | May 2024 | the mirror you build from; about 30% of entries with large differences are CIFs COD revised after May 2024 | newer data |
@@ -152,11 +152,11 @@ Other known differences:
 
 ## Skipped CIFs
 
-A CIF is skipped when no correct pattern can be calculated from it. Every skipped CIF is listed with its reason in the build report (`<name>.skipped.tsv`); [docs/SKIPPED.md](docs/SKIPPED.md) lists those of the COD build with a download link each (`dev/skipped_md.py` writes it from the report). For COD (October 2026):
+A CIF is skipped when no correct pattern can be calculated from it. Every skipped CIF is listed with its reason in the build report (`<name>.skipped.tsv`); [docs/SKIPPED.md](docs/SKIPPED.md) lists those of the COD build with a download link each (`dev/skipped_md.py` writes it from the report). For COD (November 2026):
 
 | Reason | CIFs | Details |
 |---|---|---|
-| No atom coordinates | 1,017 | the CIF has a cell and symmetry but no atom positions (structure not determined, or coordinates only in the paper). Five CIFs of this kind whose official COD24 entries were built from unusable data (2300247, 2300248, 2300253, 2300257, 5900030) are included as COD24 has them, marked as not correct structures ([corrections](docs/corrections.md)) |
+| No atom coordinates | 1,018 | the CIF has a cell and symmetry but no atom positions (structure not determined, or coordinates only in the paper). Five CIFs of this kind whose official COD24 entries were built from unusable data (2300247, 2300248, 2300253, 2300257, 5900030) are included as COD24 has them, marked as not correct structures ([corrections](docs/corrections.md)) |
 | No symmetry information | 152 | neither symmetry operations nor a Hall or Hermann–Mauguin symbol; nearly all are empty entries from papers of 1926–1962, the rest modulated or composite structures whose superspace model the CIF lacks |
 | Invalid or ambiguous symbol, no operations | 10 | e.g. `Pbc2`, `?P?`, `unknown`, `P21 or P21/m`: cell-only entries (three are COD duplicates of built entries) and modulated structures without their superspace model, each checked against its article ([corrections](docs/corrections.md)) |
 | Symmetry operations that do not fit the structure | 1 | COD 2100427 |
