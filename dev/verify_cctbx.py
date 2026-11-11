@@ -269,7 +269,8 @@ def our_choices(xs, path, e):
 def powder(xs, indices, shells=()):
     """cctbx: multiplicity * Friedel-averaged |F|^2 * LP, and |F(h)|^2 alone, for the given indices. shells:
     sites.Shell scatterers, which cctbx has no form factor for: their term sum(n f(q)) * sin(qR)/(qR) *
-    exp(-2 pi^2 U / d^2) at each centre, with cctbx's IT92 form factors, is added to cctbx's structure factors."""
+    exp(-2 pi^2 U / d^2) at each centre (3 (sin(qR) - qR cos(qR)) / (qR)^3 in place of sin(qR)/(qR) for a filled
+    ball), with cctbx's IT92 form factors, is added to cctbx's structure factors."""
     cs = xs.crystal_symmetry()
     idx = flex.miller_index([tuple(int(v) for v in h) for h in indices])
     neg = flex.miller_index([tuple(-int(v) for v in h) for h in indices])
@@ -284,7 +285,8 @@ def powder(xs, indices, shells=()):
         stol = 1 / (2 * d)
         atoms = sum(n / len(sh.xyz) * (np.array([xray_scattering.it1992(el).fetch().at_stol(v) for v in stol])
                                        + complex(*anomalous(el))) for el, n in sh.per_cell.items())
-        term = atoms * np.sin(x) / x * np.exp(-2 * math.pi**2 * sh.u_iso / d**2)
+        shape = 3 * (np.sin(x) - x * np.cos(x)) / x**3 if sh.filled else np.sin(x) / x
+        term = atoms * shape * np.exp(-2 * math.pi**2 * sh.u_iso / d**2)
         phase = np.exp(2j * math.pi * (h @ sh.xyz.T)).sum(axis=1)
         fh, fm = fh + term * phase, fm + term * phase.conj()
     ih = np.abs(fh) ** 2
