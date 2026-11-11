@@ -57895,6 +57895,119 @@
    }
   ]
  },
+ "4323670": {
+  "source": "Sato, Kobayashi, Naito, Sakai and Kobayashi, Inorganic Chemistry 36, 5262-5269 (1997), https://doi.org/10.1021/ic970507j",
+  "note": "the CIF gives Se1 y = 0.9672 and S1 x = 0.7176 where Table 3b (p. 5264) prints 0.9372 and 0.7476, which give the Se1-C1, Ni-S1 and S1-C5 distances of Table 4b (p. 5265); S3 x = 0.4002, as printed, puts S3 3.04 A from Ni where Table 4b gives 2.171 A: 0.7002 (one digit) gives both S3 distances; the CIF's U of S3 is its z and its other displacement values differ from the article's (e.g. C11 0.17 A^2 for B 4.31); Ni y is the CIF's 0.5355, which gives the four Ni-S distances (Table 3b prints 0.5335); the Me2H2N cation (N, C11, C12) lies across an inversion centre (N-N 0.89 A) with one cation per cell (Z = 1): occupancy 0.5 (inferred from Z and the formula). Coordinates corrected as stated, every atom given the B_eq of Table 3b as U",
+  "sites": {
+   "Se1": {
+    "omit": true
+   },
+   "Se2": {
+    "u_iso": 0.046228
+   },
+   "Ni": {
+    "u_iso": 0.025077
+   },
+   "S1": {
+    "omit": true
+   },
+   "S2": {
+    "u_iso": 0.031156
+   },
+   "S3": {
+    "omit": true
+   },
+   "S4": {
+    "u_iso": 0.032676
+   },
+   "S5": {
+    "u_iso": 0.035209
+   },
+   "S6": {
+    "u_iso": 0.031663
+   },
+   "S7": {
+    "u_iso": 0.035969
+   },
+   "S8": {
+    "u_iso": 0.035969
+   },
+   "N": {
+    "species": {
+     "N": 0.5
+    },
+    "u_iso": 0.106767
+   },
+   "C1": {
+    "u_iso": 0.031916
+   },
+   "C2": {
+    "u_iso": 0.032549
+   },
+   "C3": {
+    "u_iso": 0.027103
+   },
+   "C4": {
+    "u_iso": 0.029003
+   },
+   "C5": {
+    "u_iso": 0.029763
+   },
+   "C6": {
+    "u_iso": 0.030776
+   },
+   "C11": {
+    "species": {
+     "C": 0.5
+    },
+    "u_iso": 0.054587
+   },
+   "C12": {
+    "species": {
+     "C": 0.5
+    },
+    "u_iso": 0.067252
+   }
+  },
+  "add": [
+   {
+    "label": "Se1",
+    "xyz": [
+     0.8767,
+     0.9372,
+     0.7585
+    ],
+    "species": {
+     "Se": 1.0
+    },
+    "u_iso": 0.047241
+   },
+   {
+    "label": "S1",
+    "xyz": [
+     0.7476,
+     0.6006,
+     0.5779
+    ],
+    "species": {
+     "S": 1.0
+    },
+    "u_iso": 0.03103
+   },
+   {
+    "label": "S3",
+    "xyz": [
+     0.7002,
+     0.434,
+     0.3668
+    ],
+    "species": {
+     "S": 1.0
+    },
+    "u_iso": 0.033436
+   }
+  ]
+ },
  "4326945": {
   "source": "Christopher C. Underwood et al., Inorganic Chemistry 50, 11825-11831 (2011), https://doi.org/10.1021/ic2019555",
   "note": "the CIF's structure has 9 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii) and contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
