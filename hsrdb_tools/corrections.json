@@ -2553,6 +2553,233 @@
    }
   ]
  },
+ "1011256": {
+  "source": "Taylor, Meek and Jackson, Zeitschrift fuer Kristallographie, Kristallgeometrie, Kristallphysik, Kristallchemie 84, 373-398 (1933), https://doi.org/10.1524/zkri.1933.84.1.373",
+  "note": "the CIF states P b n m (No. 62) where the article gives V_h^7 (No. 53); its setting P b m n reproduces every 'number in unit cell' of Table VI (p. 390), P b n m fails six of them; the CIF also gives Aq2 and O_B x = 0.393 and 0.363 where Table VI prints 145 deg (5.25 A, x = 0.4028) for both, and puts Si and Al (and Na and Ca) both fully on the shared sites. The structure is rebuilt from Table VI (pseudo-cell a = b = 13.0, c = 6.6 A; coordinates = the printed phase angles / 360) in P b m n, with the site contents of its footnotes: Si_I, Si_II and Al half Si, half Al; M1 half Na, half Ca; M2 Ca. The 1933 model is approximate (T-O 1.47-2.06 A as printed)",
+  "spacegroup": "P b m n",
+  "sites": {
+   "O1": {
+    "omit": true
+   },
+   "O2": {
+    "omit": true
+   },
+   "O3": {
+    "omit": true
+   },
+   "O4": {
+    "omit": true
+   },
+   "O5": {
+    "omit": true
+   },
+   "O6": {
+    "omit": true
+   },
+   "O7": {
+    "omit": true
+   },
+   "O8": {
+    "omit": true
+   },
+   "O9": {
+    "omit": true
+   },
+   "Si1": {
+    "omit": true
+   },
+   "Al1": {
+    "omit": true
+   },
+   "Si2": {
+    "omit": true
+   },
+   "Al2": {
+    "omit": true
+   },
+   "Si3": {
+    "omit": true
+   },
+   "Al3": {
+    "omit": true
+   },
+   "Na1": {
+    "omit": true
+   },
+   "Ca1": {
+    "omit": true
+   },
+   "Ca2": {
+    "omit": true
+   },
+   "H1": {
+    "omit": true
+   },
+   "O10": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "Aq1",
+    "xyz": [
+     0.0,
+     0.138889,
+     0.0
+    ],
+    "species": {
+     "O": 1.0
+    }
+   },
+   {
+    "label": "Aq2",
+    "xyz": [
+     0.402778,
+     0.0,
+     0.75
+    ],
+    "species": {
+     "O": 1.0
+    }
+   },
+   {
+    "label": "Aq3",
+    "xyz": [
+     0.111111,
+     0.0,
+     0.75
+    ],
+    "species": {
+     "O": 1.0
+    }
+   },
+   {
+    "label": "OA",
+    "xyz": [
+     0.0,
+     0.138889,
+     0.5
+    ],
+    "species": {
+     "O": 1.0
+    }
+   },
+   {
+    "label": "OB",
+    "xyz": [
+     0.402778,
+     0.0,
+     0.25
+    ],
+    "species": {
+     "O": 1.0
+    }
+   },
+   {
+    "label": "OC",
+    "xyz": [
+     0.166667,
+     0.194444,
+     0.75
+    ],
+    "species": {
+     "O": 1.0
+    }
+   },
+   {
+    "label": "OD",
+    "xyz": [
+     0.180556,
+     0.119444,
+     0.375
+    ],
+    "species": {
+     "O": 1.0
+    }
+   },
+   {
+    "label": "OE",
+    "xyz": [
+     0.305556,
+     0.138889,
+     0.0
+    ],
+    "species": {
+     "O": 1.0
+    }
+   },
+   {
+    "label": "OF",
+    "xyz": [
+     0.375,
+     0.194444,
+     0.375
+    ],
+    "species": {
+     "O": 1.0
+    }
+   },
+   {
+    "label": "SiI",
+    "xyz": [
+     0.25,
+     0.25,
+     0.875
+    ],
+    "species": {
+     "Si": 0.5,
+     "Al": 0.5
+    }
+   },
+   {
+    "label": "SiII",
+    "xyz": [
+     0.125,
+     0.194444,
+     0.5
+    ],
+    "species": {
+     "Si": 0.5,
+     "Al": 0.5
+    }
+   },
+   {
+    "label": "Al",
+    "xyz": [
+     0.305556,
+     0.125,
+     0.25
+    ],
+    "species": {
+     "Si": 0.5,
+     "Al": 0.5
+    }
+   },
+   {
+    "label": "M1",
+    "xyz": [
+     0.069444,
+     0.0,
+     0.25
+    ],
+    "species": {
+     "Na": 0.5,
+     "Ca": 0.5
+    }
+   },
+   {
+    "label": "M2",
+    "xyz": [
+     0.5,
+     0.0,
+     0.5
+    ],
+    "species": {
+     "Ca": 1.0
+    }
+   }
+  ]
+ },
  "1100481": {
   "source": "Krieger, Harms, Magull and Dehnicke, Zeitschrift f\u00fcr Naturforschung, B: A Journal of Chemical Sciences 52, 243-250 (1997), https://doi.org/10.1515/znb-1997-0218",
   "note": "the CIF lists, besides the asymmetric unit of [ZnBr(NPMe3)]4.CH2Cl2 (5) in P42/nmc, 43 rows that are symmetry images of it (labels ending in * and the F rows), so the build holds every atom four times (Zn32 per cell instead of Zn8 for Z = 2, Table I, p. 245); those rows are dropped. The solvent sites C3? and C4? are the C(L1) and C(L2) electron-density maxima the article refines as half-occupied C sites (footnote to Table I) and get occupancy 0.5; the methyl H atoms H1?-H3? of C1, which lies on the mirror plane, form two mirror-related orientations and get occupancy 0.5. The solvent is modelled as C only, as in the article, so the Cl of the formula is absent; the 0.5 for H1-H3 is inferred (C1 on the mirror plane), not printed",
