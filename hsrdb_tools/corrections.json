@@ -53228,7 +53228,7 @@
  },
  "4134236": {
   "source": "Lyu, Gong, Lee, Gnanasekaran, Zhang, Wasson, Wang, Bai, Guo, Gianneschi and Farha, Journal of the American Chemical Society 142, 4609-4615 (2020), https://doi.org/10.1021/jacs.0c00542",
-  "note": "the CIF's a = 20.808 A contradicts the refined cell of Table S1 of the supporting information (p. S-15: P 2/m, a = 19.873, b = 11.962, c = 19.880 A, V = 4092 A^3, Rw 9.0%); the table gives no angle, so beta is the CIF's 120.0299 deg, which gives the table's volume; the CIF's coordinates fit the table's cell: with it the Zr6 octahedra of the three twin components (X, Y, Z, each at 0.33) are the same (diagonals 4.87, 4.87, 5.03 A; with the CIF's a, 4.89-5.28 A), and the C-H and ring C-C distances spread half as much; the article gives no occupancies (the linker atoms' free refinement, -29 to 45, is read as before)",
+  "note": "the CIF's a = 20.808 A contradicts the refined cell of Table S1 of the supporting information (p. S-15: P 2/m, a = 19.873, b = 11.962, c = 19.880 A, V = 4092 A^3, Rw 9.0%); the table gives no angle, so beta is the CIF's 120.0299 deg, which gives the table's volume. The CIF's atoms are, to 0.00001, the single-crystal coordinates of the isoreticular NU-904 (COD 1550212; Lyu et al., Chem. Sci. 10, 1186 (2019), the article's ref. 51), whose cell has a = c and beta = 120 deg (19.638, 19.635 A, 119.994 deg): the table's cell keeps that shape, a = 20.808 A does not; with the table's cell the first lines are single (5.13, 7.38, 9.00, 10.27, 11.57 deg 2theta, Cu) like the measured pattern of Figure 2, while a = 20.808 A splits each into three, up to 0.45 deg apart. The refinement left the occupancy of every linker atom free (-29 to 45, uncertainties as large as the values, e.g. C3X -2(6), H1 45(19)); these 73 sites take the twin-component share 0.33 that the CIF gives its other atoms (NU-904: 1/3 for every atom), which gives two TCPB-Br2 linkers per Zr6 node (H 31.68 and Br 3.96 = 32 and 4 x 0.99; C 69.30 = 70 x 0.99, the carbon count of NU-904's model). Br stands on NU-904's amino-N site, 1.24-1.33 A from the nearest C (as published)",
   "cell": [
    19.873,
    11.962,
@@ -53236,7 +53236,374 @@
    90,
    120.0299,
    90
-  ]
+  ],
+  "sites": {
+   "C3X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H1": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C4X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H2": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C5X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C6X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H3": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C7X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H4": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C8X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C12X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H5": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C13X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H6": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C14X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C15X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H7": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C16X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H8": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C17X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C3Y": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H9": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C4Y": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H10": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C5Y": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C6Y": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H11": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C7Y": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H12": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C8Y": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C12Y": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H13": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C13Y": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H14": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C14Y": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C15Y": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H15": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C16Y": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H16": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C17Y": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C3Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H17": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C4Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H18": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C5Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C6Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H19": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C7Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H20": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C8Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C12Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H21": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C13Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H22": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C14Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C15Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H23": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C16Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "H24": {
+    "species": {
+     "H": 0.33
+    }
+   },
+   "C17Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C1F": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C2F": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "C9X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "N1X": {
+    "species": {
+     "Br": 0.33
+    }
+   },
+   "N1Y": {
+    "species": {
+     "Br": 0.33
+    }
+   },
+   "C18X": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "N2X": {
+    "species": {
+     "Br": 0.33
+    }
+   },
+   "C9Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "N1Z": {
+    "species": {
+     "Br": 0.33
+    }
+   },
+   "C18Y": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "N2Y": {
+    "species": {
+     "Br": 0.33
+    }
+   },
+   "C18Z": {
+    "species": {
+     "C": 0.33
+    }
+   },
+   "N2Z": {
+    "species": {
+     "Br": 0.33
+    }
+   }
+  }
  },
  "4300146": {
   "source": "Xiandong Wang et al., Inorganic Chemistry 39, 136-140 (2000), https://doi.org/10.1021/ic9909274",
