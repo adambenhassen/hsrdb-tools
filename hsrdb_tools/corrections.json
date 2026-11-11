@@ -141867,7 +141867,7 @@
   }
  },
  "9004859": {
-  "source": "Locock, Burns and Flynn, The Canadian Mineralogist 42, 973-996 (2004), https://doi.org/10.2113/gscanmin.42.4.973",
+  "source": "Locock, Burns, Duke and Flynn, The Canadian Mineralogist 42, 973-996 (2004), https://doi.org/10.2113/gscanmin.42.4.973",
   "note": "the CIF swaps the refined contents of the interlayer site O(4) of TlUAs: footnote 2 of Table 10 (p. 982) gives Tl(1) 0.252(2), O 0.748(2), the CIF has O 0.252 and Tl 0.748 (3 Tl per formula instead of 1); occupancies set from the footnote, coordinates kept",
   "sites": {
    "O4": {
