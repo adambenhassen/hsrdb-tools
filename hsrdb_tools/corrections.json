@@ -976,6 +976,34 @@
    }
   ]
  },
+ "1001841": {
+  "source": "Baud, Besse, Chevalier and Gasperin, Journal of Solid State Chemistry 29, 267-272 (1979), https://doi.org/10.1016/0022-4596(79)90232-9",
+  "note": "the CIF gives every x of Tableau I (p. 269) plus 1/4 but keeps the operations of C 1 1 21 with the 21 axis at x = 0, so La4 lies 0.29 A from a symmetry image of La10 and 18 La-O distances of Tableau III (p. 271-272) come out 4.6-5.1 A; the operations of C 1 1 21 with the origin moved by 1/4 along a restore the published structure. La5 x is printed 0.7652 where the La5-O26 and La5-O30 distances and the six La-O26-La5 and La-O30-La5 angles of Tableau III need 0.7552 (one digit; as printed they are 0.06-0.08 A and 2-3.5 deg off): La5 replaced with x = 0.7552 + 1/4 (no displacement parameters given, as for every other row of the CIF)",
+  "operations": [
+   "x,y,z",
+   "1/2-x,-y,1/2+z",
+   "1/2+x,1/2+y,z",
+   "-x,1/2-y,1/2+z"
+  ],
+  "sites": {
+   "La5": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "La5",
+    "xyz": [
+     0.0052,
+     0.2358,
+     0.1034
+    ],
+    "species": {
+     "La": 1.0
+    }
+   }
+  ]
+ },
  "1008164": {
   "source": "Garnier et al., Materials Research Bulletin 19, 407-414 (1984), https://doi.org/10.1016/0025-5408(84)90099-0",
   "note": "the CIF's structure has 4 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii); its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -11625,6 +11653,11 @@
     }
    }
   ]
+ },
+ "1529001": {
+  "source": "Willemin, Larionova, Bolvin, Donnadieu, Le Goff, Ruiz, Gu\u00e9rin and Henner, Polyhedron 24, 1033-1046 (2005), https://doi.org/10.1016/j.poly.2005.02.003",
+  "note": "the CIF states C 1 2/c 1, as Table 1 (p. 1035) prints for compound 3, but its coordinates (Mo1, Mn1, C1, N1, N5, O1, O2, O3, O5 at y = 0 or 1/2, Mn2 at 1/2,1/2,0) are those of C 1 2/m 1: with the c-glide the cell holds twice the atoms (density 3.15 instead of Dcalc 1.910 of Table 1; C1-N5 0.99 A, N1-N5 0.75 A), with the mirror it holds 8 x C3.5N4O2.25Mn0.75Mo0.5 (Table 1, Z = 8), gives density 1.910 and reproduces all 14 N11...C/N distances of Table 3 (p. 1042, N11 = N5 of the CIF) including their mirror-equivalent pairs; space group set to C 1 2/m 1",
+  "spacegroup": "C 1 2/m 1"
  },
  "1529749": {
   "source": "Cesbron et al., Canadian Mineralogist 25, 401-407 (1987)",
@@ -37187,6 +37220,128 @@
    }
   ]
  },
+ "2100989": {
+  "source": "Aguirre-Zamalloa, Madariaga, Couzi and Breczewski, Acta Crystallographica Section B 49, 691-698 (1993), https://doi.org/10.1107/S010876819300182X",
+  "note": "the CIF gives the disordered methyl C atoms of the 295 K structure without population parameters, so C(1) and C(2) build fully occupied (C 18 per cell instead of 8); population parameters 2/3 for C(1) and 1/3 for C(2) taken from Table 2 (p. 694), with the anisotropic U of Table 2 for all atoms, which the CIF lacks",
+  "sites": {
+   "C(1)": {
+    "species": {
+     "C": 0.6667
+    },
+    "aniso": {
+     "u11": 0.04,
+     "u22": 0.1,
+     "u33": 0.22,
+     "u12": -0.01,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "C(2)": {
+    "species": {
+     "C": 0.3333
+    },
+    "aniso": {
+     "u11": 0.17,
+     "u22": 0.17,
+     "u33": 0.03,
+     "u12": 0.06,
+     "u13": -0.06,
+     "u23": -0.04
+    }
+   },
+   "Cd": {
+    "aniso": {
+     "u11": 0.0437,
+     "u22": 0.0437,
+     "u33": 0.0165,
+     "u12": 0.0219,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "Br": {
+    "aniso": {
+     "u11": 0.0351,
+     "u22": 0.0472,
+     "u33": 0.0298,
+     "u12": 0.015,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "N": {
+    "aniso": {
+     "u11": 0.0308,
+     "u22": 0.0308,
+     "u33": 0.033,
+     "u12": 0.015,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   }
+  }
+ },
+ "2100991": {
+  "source": "Aguirre-Zamalloa, Madariaga, Couzi and Breczewski, Acta Crystallographica Section B 49, 691-698 (1993), https://doi.org/10.1107/S010876819300182X",
+  "note": "the CIF gives the 6W-model (Table 6, p. 698) methyl C atoms C(1)-C(4) without population parameters, so they build fully occupied (C 48 per cell instead of 8); population parameter 1/6 for each from Table 6, with the U values of Table 6 for all atoms, which the CIF lacks",
+  "sites": {
+   "C(1)": {
+    "species": {
+     "C": 0.1667
+    },
+    "u_iso": 0.07
+   },
+   "C(2)": {
+    "species": {
+     "C": 0.1667
+    },
+    "u_iso": 0.07
+   },
+   "C(3)": {
+    "species": {
+     "C": 0.1667
+    },
+    "u_iso": 0.08
+   },
+   "C(4)": {
+    "species": {
+     "C": 0.1667
+    },
+    "u_iso": 0.08
+   },
+   "Cd": {
+    "aniso": {
+     "u11": 0.0437,
+     "u22": 0.0437,
+     "u33": 0.016,
+     "u12": 0.022,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "Br": {
+    "aniso": {
+     "u11": 0.035,
+     "u22": 0.047,
+     "u33": 0.03,
+     "u12": 0.015,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "N": {
+    "aniso": {
+     "u11": 0.0288,
+     "u22": 0.0288,
+     "u33": 0.03,
+     "u12": 0.014,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   }
+  }
+ },
  "2101033": {
   "source": "Desgranges et al., Acta Crystallographica Section B 49, 812-817 (1993), https://doi.org/10.1107/S0108768193003556",
   "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -43310,6 +43465,58 @@
     "u_iso": 0.0181
    }
   ]
+ },
+ "2105681": {
+  "source": "Ishizawa, Matsushima, Hayashi and Ueki, Acta Crystallographica Section B 55, 726-735 (1999), https://doi.org/10.1107/S0108768199005108",
+  "note": "the CIF gives the interstitial-oxygen model (far-edge data) without site populations, so every split site builds fully occupied (Zr 32, O 56 per cell); populations from Table 2 (p. 729, interstitial oxygen model, far-edge column): O1 0.45, O2 0.067; Y at 4(a) 0.242 and Zr at 32(f) 0.758/8 from the composition Zr0.758Y0.242 (p. 731)",
+  "sites": {
+   "Zr": {
+    "species": {
+     "Zr": 0.09475
+    }
+   },
+   "Y": {
+    "species": {
+     "Y": 0.242
+    }
+   },
+   "O1": {
+    "species": {
+     "O": 0.45
+    }
+   },
+   "O2": {
+    "species": {
+     "O": 0.067
+    }
+   }
+  }
+ },
+ "2105682": {
+  "source": "Ishizawa, Matsushima, Hayashi and Ueki, Acta Crystallographica Section B 55, 726-735 (1999), https://doi.org/10.1107/S0108768199005108",
+  "note": "the CIF gives the interstitial-oxygen model (near-edge data) without site populations, so every split site builds fully occupied (Zr 32, O 56 per cell); populations from Table 2 (p. 729, interstitial oxygen model, near-edge column): O1 0.55, O2 0.053; Y at 4(a) 0.242 and Zr at 32(f) 0.758/8 from the composition Zr0.758Y0.242 (p. 731)",
+  "sites": {
+   "Zr": {
+    "species": {
+     "Zr": 0.09475
+    }
+   },
+   "Y": {
+    "species": {
+     "Y": 0.242
+    }
+   },
+   "O1": {
+    "species": {
+     "O": 0.55
+    }
+   },
+   "O2": {
+    "species": {
+     "O": 0.053
+    }
+   }
+  }
  },
  "2106066": {
   "source": "Stork-Blaisse and Romers, Acta Crystallographica B (24,1968-38,1982) 27, 386-392 (1971)",
@@ -140819,6 +141026,246 @@
    }
   ]
  },
+ "9004564": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal JVS4338 as site occupation factors scaled to the general position (0.478 and 0.308; total 6.288 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.14 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.956 and Pb(2) 0.616. Coordinates agree with Table 4 (p. 730) and the distances of Table 6 (p. 731); the U-O uranyl bonds near 1.8 A flagged as short are printed in Table 6.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.956
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.616
+    }
+   }
+  }
+ },
+ "9004565": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal JVS4331 as site occupation factors scaled to the general position (0.468 and 0.311; total 6.232 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.12 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.936 and Pb(2) 0.622. Coordinates agree with Table 4 (p. 730) and the distances of Table 6 (p. 731); the U-O uranyl bonds near 1.8 A flagged as short are printed in Table 6. Table 6 gives U(1)-O(6) 2.36 and U(1)-O(10) 2.40 A for this crystal; the Table 4 coordinates give 2.405 and 2.364 A (the two printed values appear interchanged).",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.936
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.622
+    }
+   }
+  }
+ },
+ "9004566": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal JVS901 as site occupation factors scaled to the general position (0.470 and 0.298; total 6.144 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.07 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.940 and Pb(2) 0.596. Coordinates agree with Table 4 (p. 730) and the distances of Table 6 (p. 731); the U-O uranyl bonds near 1.8 A flagged as short are printed in Table 6.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.94
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.596
+    }
+   }
+  }
+ },
+ "9004567": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal JVS4331(b) as site occupation factors scaled to the general position (0.471 and 0.309; total 6.240 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.12 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.942 and Pb(2) 0.618. Coordinates agree with Table 4 (p. 730) and the distances of Table 6 (p. 731); the U-O uranyl bonds near 1.8 A flagged as short are printed in Table 6.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.942
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.618
+    }
+   }
+  }
+ },
+ "9004568": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal JVS4332 as site occupation factors scaled to the general position (0.465 and 0.301; total 6.128 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.06 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.930 and Pb(2) 0.602. Coordinates agree with Table 4 (p. 730) and the distances of Table 6 (p. 731); the U-O uranyl bonds near 1.8 A flagged as short are printed in Table 6.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.93
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.602
+    }
+   }
+  }
+ },
+ "9004569": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal CMNMC81091 as site occupation factors scaled to the general position (0.475 and 0.316; total 6.328 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.16 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.950 and Pb(2) 0.632. Coordinates agree with Table 4 (p. 730) and the distances of Table 6 (p. 731); the U-O uranyl bonds near 1.8 A flagged as short are printed in Table 6.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.95
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.632
+    }
+   }
+  }
+ },
+ "9004570": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal CMNMC81092 as site occupation factors scaled to the general position (0.470 and 0.311; total 6.248 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.12 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.940 and Pb(2) 0.622. Coordinates agree with Table 4 (p. 730) and the distances of Table 6 (p. 731); the U-O uranyl bonds near 1.8 A flagged as short are printed in Table 6.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.94
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.622
+    }
+   }
+  }
+ },
+ "9004571": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal CMNMC81093 as site occupation factors scaled to the general position (0.485 and 0.299; total 6.272 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.14 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.970 and Pb(2) 0.598. Coordinates agree with Table 4 (p. 730) and the distances of Table 6 (p. 731); the U-O uranyl bonds near 1.8 A flagged as short are printed in Table 6.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.97
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.598
+    }
+   }
+  }
+ },
+ "9004572": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal CMNMC30059 as site occupation factors scaled to the general position (0.478 and 0.300; total 6.224 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.11 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.956 and Pb(2) 0.600. Coordinates agree with Table 4 (p. 730) and the distances of Table 6 (p. 731); the U-O uranyl bonds near 1.8 A flagged as short are printed in Table 6.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.956
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.6
+    }
+   }
+  }
+ },
+ "9004573": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal FC8 as site occupation factors scaled to the general position (0.454 and 0.297; total 6.008 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.00 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.908 and Pb(2) 0.594. Coordinates agree with Table 4 (p. 730) and the distances of Table 6 (p. 731); the U-O uranyl bonds near 1.8 A flagged as short are printed in Table 6.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.908
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.594
+    }
+   }
+  }
+ },
+ "9004574": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal M13067 as site occupation factors scaled to the general position (0.445 and 0.278; total 5.784 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 2.89 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.890 and Pb(2) 0.556. Coordinates agree with Table 4 (p. 730) (Table 6 gives no distances for this crystal); the U-O uranyl bonds near 1.8 A flagged as short follow from these coordinates.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.89
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.556
+    }
+   }
+  }
+ },
+ "9004575": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal FC5 as site occupation factors scaled to the general position (0.463 and 0.292; total 6.040 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.02 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.926 and Pb(2) 0.584. Coordinates agree with Table 4 (p. 730) (Table 6 gives no distances for this crystal); the U-O uranyl bonds near 1.8 A flagged as short follow from these coordinates.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.926
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.584
+    }
+   }
+  }
+ },
+ "9004576": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal FC11 as site occupation factors scaled to the general position (0.470 and 0.316; total 6.288 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.14 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.940 and Pb(2) 0.632. Coordinates agree with Table 4 (p. 730) (Table 6 gives no distances for this crystal); the U-O uranyl bonds near 1.8 A flagged as short follow from these coordinates.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.94
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.632
+    }
+   }
+  }
+ },
+ "9004577": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal M14266 as site occupation factors scaled to the general position (0.464 and 0.297; total 6.088 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.04 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.928 and Pb(2) 0.594. Coordinates agree with Table 4 (p. 730) (Table 6 gives no distances for this crystal); the U-O uranyl bonds near 1.8 A flagged as short follow from these coordinates.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 0.928
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.594
+    }
+   }
+  }
+ },
+ "9004578": {
+  "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
+  "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal SYN as site occupation factors scaled to the general position (0.520 and 0.312; total 6.656 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.33 per cell; its formula sum carries the same halving. The correction sets Pb(1) 1.040 and Pb(2) 0.624. Coordinates agree with Table 4 (p. 730) (Table 6 gives no distances for this crystal); the U-O uranyl bonds near 1.8 A flagged as short follow from these coordinates.",
+  "sites": {
+   "Pb(1)": {
+    "species": {
+     "Pb": 1.04
+    }
+   },
+   "Pb(2)": {
+    "species": {
+     "Pb": 0.624
+    }
+   }
+  }
+ },
  "9004591": {
   "source": "Li and Burns, The Canadian Mineralogist 38, 737-749 (2000), https://doi.org/10.2113/gscanmin.38.3.737",
   "note": "the CIF (synthetic crystal, a 13.938, b 16.638, c 14.672 A) gives Pb(1) and Pb(2) no occupancy, so both build fully occupied (1.0 Pb apfu); the article refines them at 0.063(5) and 0.434(4) for these mirror sites (Table 3, p. 739), stated as 13% and 87% occupied (p. 741-742), total 0.50 Pb apfu; occupancies 0.126 and 0.868 taken from Table 3 and the text",
@@ -144238,6 +144685,28 @@
      "O": 1.0
     },
     "u_iso": 0.035
+   }
+  ]
+ },
+ "9016348": {
+  "source": "Hassel, Zeitschrift f\u00fcr Kristallographie 64, 217-223 (1926), https://doi.org/10.1524/zkri.1926.64.1.217",
+  "note": "the article places the 8 Hg atoms of the cell (Z = 8 Hg(CN)2) on the eightfold position (1/4, u, 1/8), (u, 3/4, 7/8), (3/4, -u, 1/8), (-u, 1/4, 7/8) + I with u = 0.21 (pp. 222-223); in the standard I -4 2 d setting of the CIF the point (1/4, 0.21, 1/8) is a general position, so the CIF builds 16 Hg with Hg-Hg 0.77 A; the same eightfold set with a and b interchanged is (0.21, 1/4, 1/8), position 8d of the standard setting, which the correction uses; C and N are not located in the article",
+  "sites": {
+   "Hg1": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "Hg1",
+    "xyz": [
+     0.21,
+     0.25,
+     0.125
+    ],
+    "species": {
+     "Hg": 1.0
+    }
    }
   ]
  },
