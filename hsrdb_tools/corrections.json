@@ -978,7 +978,7 @@
  },
  "1001841": {
   "source": "Baud, Besse, Chevalier and Gasperin, Journal of Solid State Chemistry 29, 267-272 (1979), https://doi.org/10.1016/0022-4596(79)90232-9",
-  "note": "the CIF gives every x of Tableau I (p. 269) plus 1/4 but keeps the operations of C 1 1 21 with the 21 axis at x = 0, so La4 lies 0.29 A from a symmetry image of La10 and 18 La-O distances of Tableau III (p. 271-272) come out 4.6-5.1 A; the operations of C 1 1 21 with the origin moved by 1/4 along a restore the published structure. La5 x is printed 0.7652 where the La5-O26 and La5-O30 distances and the six La-O26-La5 and La-O30-La5 angles of Tableau III need 0.7552 (one digit; as printed they are 0.06-0.08 A and 2-3.5 deg off): La5 replaced with x = 0.7552 + 1/4 (no displacement parameters given, as for every other row of the CIF); the CIF has no displacement parameters: B of Tableau I (p. 269) set as u_iso = B / 8 pi^2 for all 48 atoms (O B fixed at 1.0 by the authors)",
+  "note": "the CIF gives every x of Tableau I (p. 269) plus 1/4 but keeps the operations of C 1 1 21 with the 21 axis at x = 0, so La4 lies 0.29 A from a symmetry image of La10 and 18 La-O distances of Tableau III (p. 271-272) come out 4.6-5.1 A; the operations of C 1 1 21 with the origin moved by 1/4 along a restore the published structure. La5 x is printed 0.7652 where the La5-O26 and La5-O30 distances and the six La-O26-La5 and La-O30-La5 angles of Tableau III need 0.7552 (one digit; as printed they are 0.06-0.08 A and 2-3.5 deg off): La5 replaced with x = 0.7552 + 1/4 (no displacement parameters given, as for every other row of the CIF); the CIF has no displacement parameters: B of Tableau I (p. 269) set as u_iso = B / 8 pi^2 for all 48 atoms (B of O(1)-O(24) fixed at 1.0 by the authors, p. 270; O(25)-O(32) refined)",
   "operations": [
    "x,y,z",
    "1/2-x,-y,1/2+z",
@@ -1148,7 +1148,7 @@
  },
  "1008094": {
   "source": "Klein and Reinen, Journal of Solid State Chemistry 32, 311-319 (1980), https://doi.org/10.1016/S0022-4596(80)80025-9",
-  "note": "Table I is given in the pseudocell [2a, 2b, 2c, gamma; Z = 32] (B2/b); footnote a: its sub-rows with the printed signs, (0 0 0; 1/2 0 1/2)+ and the Eq. (3) shifts give the positions (no further B2/b operations; the 2-fold would map the N2/N3 sub-rows onto each other). Converted with the printed matrix (2 -1 0 / 2 1 0 / 0 0 1) applied to the row vector (x y z): x' = 2x + 2y, y' = y - x, which gives the printed a', b'; the CIF applied it to the column vector (non-metric: Cs-O 1.32, O-O 0.14 A). The centring and Eq. (3) shifts become the small-cell translations (0 1/2 1/2), (1/2 1/4 3/4), (1/2 3/4 1/4), written out in P -1. N2 x 0.964(7) is read as 0.0964 (misprint, inferred) (Cu-N2 211.5 pm, Table II; N3 0.4036 = 0.5 - 0.0964). Pb printed B = 0.0(8): u_iso 0 as printed. Inferred: N2 x 0.0964, the row-vector reading of the matrix (it alone gives the printed a', b'), and P -1 (the N2, N3 and O3 sub-rows of Table I do not obey the printed B2/b); the result reproduces all 17 distances of Table II (p. 318) within 0.004 A with no impossible contacts",
+  "note": "Table I is given in the pseudocell [2a, 2b, 2c, gamma; Z = 32] (B2/b); footnote a: its sub-rows with the printed signs, (0 0 0; 1/2 0 1/2)+ and the Eq. (3) shifts give the positions (no further B2/b operations; the 2-fold would map the N2/N3 sub-rows onto each other). Converted with the printed matrix (2 -1 0 / 2 1 0 / 0 0 1) applied to the row vector (x y z): x' = 2x + 2y, y' = y - x, which gives the printed a', b'; the CIF applied it to the column vector (non-metric: Cs-O 1.32, O-O 0.14 A). The centring and Eq. (3) shifts become the small-cell translations (0 1/2 1/2), (1/2 1/4 3/4), (1/2 3/4 1/4), written out in P -1. N2 x 0.964(7) is read as 0.0964 (misprint, inferred) (Cu-N2 211.5 pm, Table II; N3 0.4036 = 0.5 - 0.0964). Pb printed B = 0.0(8): u_iso 0 as printed. Inferred: N2 x 0.0964, the row-vector reading of the matrix (it alone gives the printed a', b'), and P -1 (the N2, N3 and O3 sub-rows of Table I do not obey the printed B2/b); the result reproduces all 14 distances of Table II (p. 318; 17 comparisons, the three Cu-N for both Cu atoms) within 0.004 A with no impossible contacts",
   "spacegroup": "P -1",
   "sites": {
    "Cs1": {
@@ -10591,7 +10591,7 @@
  },
  "1525456": {
   "source": "Werner, Marinder and Magn\u00e9li, Materials Research Bulletin 13, 1371-1378 (1978), https://doi.org/10.1016/0025-5408(78)90128-9",
-  "note": "the CIF gives O2 occupancy 0.75, which the article does not state: Table 3 (p. 1375, study D, x = 0.25) lists O(2) in 4(j) as a fully occupied anion site; O2 set to full occupancy. The article does not locate F, so the anion sites are all modelled as O",
+  "note": "the CIF gives O2 occupancy 0.75, which the article does not state: Table 3 (p. 1375, study D, x = 0.25) lists O(2) in 4(j) without an occupancy (it prints one only for Ta(4), 0.5); O2 set to full occupancy. The article does not locate F, so the anion sites are all modelled as O",
   "sites": {
    "O2": {
     "species": {
@@ -13462,7 +13462,7 @@
  },
  "1529001": {
   "source": "Willemin, Larionova, Bolvin, Donnadieu, Le Goff, Ruiz, Gu\u00e9rin and Henner, Polyhedron 24, 1033-1046 (2005), https://doi.org/10.1016/j.poly.2005.02.003",
-  "note": "the CIF states C 1 2/c 1, as Table 1 (p. 1035) prints for compound 3, but its coordinates (Mo1, Mn1, C1, N1, N5, O1, O2, O3, O5 at y = 0 or 1/2, Mn2 at 1/2,1/2,0) are those of C 1 2/m 1: with the c-glide the cell holds twice the atoms (density 3.15 instead of Dcalc 1.910 of Table 1; C1-N5 0.99 A, N1-N5 0.75 A), with the mirror it holds 8 x C3.5N4O2.25Mn0.75Mo0.5 (Table 1, Z = 8), gives density 1.910 and reproduces all 14 N11...C/N distances of Table 3 (p. 1042, N11 = N5 of the CIF) including their mirror-equivalent pairs; space group set to C 1 2/m 1",
+  "note": "the CIF states C 1 2/c 1, as Table 1 (p. 1035) prints for compound 3, but its coordinates (Mo1, Mn1, C1, N1, N5, O1, O2, O3, O5 at y = 0 or 1/2, Mn2 at 1/2,1/2,0) are those of C 1 2/m 1: with the c-glide the cell holds twice the atoms (density 3.15 instead of Dcalc 1.910 of Table 1; C1-N5 0.99 A, N1-N5 0.75 A), with the mirror it holds 8 x C3.5N4O2.25Mn0.75Mo0.5 (Table 1, Z = 8), gives density 1.910 and reproduces the N11...C/N distances of Table 3 for compound 3 (p. 1042, N11 = N5 of the CIF; 24 rows with 14 distinct values, 10 of them printed twice for mirror-equivalent atoms); space group set to C 1 2/m 1",
   "spacegroup": "C 1 2/m 1"
  },
  "1529749": {
@@ -21616,7 +21616,7 @@
   ]
  },
  "1542126": {
-  "source": "Kapshukov, Volkov, Lebedev, Moskvitsev and Yakovlev, Zhurnal Strukturnoi Khimii 12, 94-98 (1971)",
+  "source": "Kapshukov, Volkov, Moskvichev, Lebedev and Yakovlev, Zhurnal Strukturnoi Khimii 12, 94-98 (1971)",
   "note": "read in the English translation, Journal of Structural Chemistry 12, 77-80 (1971), https://doi.org/10.1007/bf00744542, Table 2 (p. 78), compound I. The CIF gives O'''II (O4) z = +0.061 where Table 2 prints -0.061 (with +0.061 it lies 0.95 A from N1 as printed, CIF N2), and lacks the ammonium N (M, [0.313, 0.5, 0.159], added as M); both from Table 2. The printed z of N1 (0.13) and N2 (-0.107) give no N-O bond below 1.6 A; with the signs reversed they give the N-O distances of Table 3 (printed / built, A: O''_II - N_1 1.38 / 1.39; O'''_II - N_1 1.28 / 1.29; O'_III - N_1 1.17 / 1.08; O'_II - N_2 1.3 / 1.3; O''_III - N_2 1.22 / 1.24; O'''_III - N_2 1.15 / 1.16): misprinted signs, reversed. U = 0 in the CIF: B of Table 2 set as u_iso",
   "sites": {
    "U1": {
@@ -21896,7 +21896,7 @@
  },
  "1544874": {
   "source": "Tomeoka, Ohmasa and Sadanaga, Mineralogical Journal 10, 57-70 (1980), https://doi.org/10.2465/minerj.10.57",
-  "note": "the CIF's tensors are not U: they are the article's beta_ij (Table 2, p. 62, 'Atomic parameters of CB-359', exp[-(h^2 beta11 + ... + 2hl beta13)]) multiplied by a different factor on each axis (16.6, 20.1 and 15.0), and its B column (1.6-6.7) is not the table's B; the tensors are converted from the printed beta_ij (U_ij = beta_ij / (2 pi^2 a_i* a_j*)), which gives B_eq 1.7-6.6 A^2 against the table's isotropic B 1.7-7.3 A^2",
+  "note": "the CIF's tensors are not U: they are the article's beta_ij (Table 2, pp. 61-62: its caption on p. 61 defines them by exp[-(h^2 beta11 + k^2 beta22 + l^2 beta33 + 2hk beta12 + 2hl beta13 + 2kl beta23)], 'Atomic parameters of CB-359' are on p. 62) multiplied by a different factor on each axis (16.6, 20.1 and 15.0), and its B column (1.6-6.7) is not the table's B; the tensors are converted from the printed beta_ij (U_ij = beta_ij / (2 pi^2 a_i* a_j*)), which gives B_eq 1.7-6.6 A^2 against the table's isotropic B 1.7-7.3 A^2",
   "sites": {
    "Bi1": {
     "aniso": {
@@ -37748,7 +37748,7 @@
  },
  "2100730": {
   "source": "Edstr\u00f6m, Thomas and Farrington, Acta Crystallographica Section B 47, 635-643 (1991), https://doi.org/10.1107/S0108768191003075",
-  "note": "the CIF (y = 1.22, Table 2, p. 639) has no occupancies, so every partly occupied conduction-plane site is built full (30 Cd per cell instead of 1.22); the occupations of Table 2 are given: Cd(C) 0.129, Cd(D) 0.023, Cd(E) 0.011, Cd(F) 0.004, Al(1) 0.963, Al(5) 0.037, O(6) 0.037 and O(5) 1/3 (split over three 6(h) positions, text p. 637). The CIF gives Cd(D) z = 0.25 where Table 2 prints 0.26124 (text p. 637: D site shifted to z = 0.26); Cd(D) replaced with the Table 2 position. The CIF gives U = 0 for every atom: the spinel-block atoms, Al(5), O(6), Cd(E) and Cd(F) take the Ueq x 10^3 of Table 2, Cd(C) and O(5) their anisotropic beta x 10^4 converted to U, Cd(D) the equivalent isotropic U of its beta tensor; Table 2 prints Cd(D) y as 'x' (two readings), but also its site 12(k), of which (x, x, z) is no position (it generates 24): y = -x, the 12(k) position, kept (misprint)",
+  "note": "the CIF (y = 1.22, Table 2, p. 639) has no occupancies, so every partly occupied conduction-plane site is built full (30 Cd per cell instead of 1.22); the occupations of Table 2 are given: Cd(C) 0.129, Cd(D) 0.023, Cd(E) 0.011, Cd(F) 0.004, Al(1) 0.963, Al(5) 0.037, O(6) 0.037 and O(5) 1/3 (split over three 6(h) positions, text p. 637). The CIF gives Cd(D) z = 0.25 where Table 2 prints 0.26124 (text p. 637: D site shifted to z = 0.26); Cd(D) replaced with the Table 2 position. The CIF gives U = 0 for every atom: the spinel-block atoms, Al(5) and O(6) take the Ueq x 10^3 of Table 2; Cd(E) and Cd(F), refined isotropically (p. 637), are printed in the same column without a scale of their own (3.2 and 10.6) and are read as Ueq x 10^3 as well; Cd(C) and O(5) take their anisotropic beta x 10^4 converted to U, Cd(D) the equivalent isotropic U of its beta tensor; Table 2 prints Cd(D) y as 'x' (two readings), but also its site 12(k), of which (x, x, z) is no position (it generates 24): y = -x, the 12(k) position, kept (misprint)",
   "sites": {
    "Al(1)": {
     "u_iso": 0.0055,
@@ -37958,7 +37958,7 @@
  },
  "2100733": {
   "source": "Edstr\u00f6m, Thomas and Farrington, Acta Crystallographica Section B 47, 643-650 (1991), https://doi.org/10.1107/S0108768191003130",
-  "note": "the CIF (y = 0.41, Table 3 row 3, p. 647) has no occupancies, so the partly occupied conduction-plane sites are built full; given: Ag(1) 0.134, Ag(2) 0.056, Ag(3) 0.079, Cd(B) 0.069, Al(1) 0.963, Al(5) 0.037 and O(6) 0.037 (fractional occupations of Table 3, p. 647) and O(5) 1/3 (6(h) split position of the 2 O(5) per cell of Al11O17.11); the CIF also gives U = 0 for every atom: the spinel-block atoms, Al(5) and O(6) take the Ueq x 10^3 of Table 3, the Ag, Cd and O(5) rows their anisotropic beta x 10^4 of Table 3 converted to U",
+  "note": "the CIF (y = 0.41, Table 3 row 3, p. 647) has no occupancies, so the partly occupied conduction-plane sites are built full; given: Ag(1) 0.134, Ag(2) 0.056, Ag(3) 0.079, Cd(B) 0.069, Al(1) 0.963, Al(5) 0.037 and O(6) 0.037 (fractional occupations of Table 3, p. 647) and O(5) 1/3 (the 6(h) split position x, -x, 1/4, printed '6(g)' in this row of Table 3, of the 2 O(5) per cell of Al11O17.11); the CIF also gives U = 0 for every atom: the spinel-block atoms, Al(5) and O(6) take the Ueq x 10^3 of Table 3, the Ag, Cd and O(5) rows their anisotropic beta x 10^4 of Table 3 converted to U",
   "sites": {
    "Al(1)": {
     "u_iso": 0.0054,
@@ -50123,7 +50123,7 @@
  },
  "2310661": {
   "source": "Sedlacek and Dornberger-Schiff, Acta Crystallographica 18, 407-410 (1965), https://doi.org/10.1107/s0365110x65000907",
-  "note": "the coordinates of Tabelle 1 (p. 408) describe the Pmcn superposition structure whose V and O atoms repeat with the translations a/2 (t_s) and b/2 (t_b) given in the table, with the mirror planes at x = 1/8, 3/8 and the c-glide plane at y = 1/8 (p. 409); the CIF applies Pmcn of the full 7.38 x 33.6 x 7.16 A cell in the standard origin, which puts V and its mirror image 1.85 A apart and O3 0.56 A from V; the operations are those of Pmcn for the a/2, b/2, c subcell expressed in the full cell (x and y translations halved, with the centring translations a/2, b/2), which reproduces the distances of Tabelle 2 within 0.045 A; the atom rows and the Sr occupancy 0.5 are kept from the CIF; Tabelle 1 gives Sr only the translations a and c (t_b '-'), so applying a/2 and b/2 to Sr as well, with the CIF's occupancy 0.5, is inferred: it keeps Sr:V = 1:2; the result has Z = 8 in the 7.38 x 33.6 x 7.16 A cell (the CIF states Z = 4, which with these rows gives a density of 1.31)",
+  "note": "the coordinates of Tabelle 1 (p. 408) describe the Pmcn superposition structure whose V and O atoms repeat with the translations a/2 (t_s) and b/2 (t_b) given in the table, with the mirror plane at x = 1/8 or 5/8 and the c-glide plane at y = 1/8 (p. 409); the CIF applies Pmcn of the full 7.38 x 33.6 x 7.16 A cell in the standard origin, which puts V and its mirror image 1.85 A apart and O3 0.56 A from V; the operations are those of Pmcn for the a/2, b/2, c subcell expressed in the full cell (x and y translations halved, with the centring translations a/2, b/2), which reproduces the distances of Tabelle 2 within 0.045 A; the atom rows and the Sr occupancy 0.5 are kept from the CIF; Tabelle 1 gives Sr only the translations a and c (t_b '-'), so applying a/2 and b/2 to Sr as well, with the CIF's occupancy 0.5, is inferred: it keeps Sr:V = 1:2; the result has Z = 8 in the 7.38 x 33.6 x 7.16 A cell (the CIF states Z = 4, which with these rows gives a density of 1.31)",
   "operations": [
    "x,y,z",
    "-x,y+1/4,-z+1/2",
@@ -59452,7 +59452,7 @@
  },
  "4323670": {
   "source": "Sato, Kobayashi, Naito, Sakai and Kobayashi, Inorganic Chemistry 36, 5262-5269 (1997), https://doi.org/10.1021/ic970507j",
-  "note": "the CIF gives Se1 y = 0.9672 and S1 x = 0.7176 where Table 3b (p. 5264) prints 0.9372 and 0.7476, which give the Se1-C1, Ni-S1 and S1-C5 distances of Table 4b (p. 5265); S3 x = 0.4002, as printed, puts S3 3.04 A from Ni where Table 4b gives 2.171 A: 0.7002 (one digit) gives both S3 distances; the CIF's U of S3 is its z and its other displacement values differ from the article's (e.g. C11 0.17 A^2 for B 4.31); Ni y is the CIF's 0.5355, which gives the four Ni-S distances (Table 3b prints 0.5335); the Me2H2N cation (N, C11, C12) lies across an inversion centre (N-N 0.89 A) with one cation per cell (Z = 1): occupancy 0.5 (inferred from Z and the formula). Coordinates corrected as stated, every atom given the B_eq of Table 3b as U",
+  "note": "the CIF gives Se1 y = 0.9672 and S1 x = 0.7176 where Table 3b (p. 5264) prints 0.9372 and 0.7476, which give the 1.79, 2.165 and 1.71 A of Table 4b (p. 5265, printed there as Se1-C5, Ni-S1 and S1-C1; in the CIF's labelling the bonds are Se1-C1 and S1-C5); S3 x = 0.4002, as printed, puts S3 3.04 A from Ni where Table 4b gives 2.171 A: 0.7002 (one digit) gives both S3 distances; the CIF's U of S3 is its z and its other displacement values differ from the article's (e.g. C11 0.17 A^2 for B 4.31); Ni y is the CIF's 0.5355, which gives the four Ni-S distances (Table 3b prints 0.5335); the Me2H2N cation (N, C11, C12) lies across an inversion centre (N-N 0.89 A) with one cation per cell (Z = 1): occupancy 0.5 (inferred from Z and the formula). Coordinates corrected as stated, every atom given the B_eq of Table 3b as U",
   "sites": {
    "Se1": {
     "omit": true
@@ -66590,7 +66590,7 @@
  },
  "5910242": {
   "source": "Menyuk, Dwight and Wold, Journal of Applied Physics 36, 1088-1089 (1965), https://doi.org/10.1063/1.1714109",
-  "note": "the CIF (from Wyckoff, The Structure of Crystals 3, 76-79) lists every atom of the cell in origin choice 1 of F d -3 m while it states origin choice 2, gives one Cr row at 1/2 0 3/4 (no position of the structure) and the book's a = 10.045 A and u = 0.387; the original paper gives a = 10.110 A and a normal spinel (Mn tetrahedral, Cr octahedral) with sulfur u = 0.3876 (p. 1088), an origin-choice-1 value (as COD 9012044, a = 10.11 A); the structure is rebuilt from these: Mn 8a 0 0 0, Cr 16d 5/8 5/8 5/8, S 32e u u u",
+  "note": "the CIF (from Wyckoff, The Structure of Crystals 3, 76-79) lists every atom of the cell in origin choice 1 of F d -3 m while it states origin choice 2, gives one Cr row at 1/2 0 3/4 (no position of the structure) and the book's a = 10.045 A and u = 0.387; the original paper gives a = 10.110 A (p. 1088) and a normal spinel (Mn tetrahedral, Cr octahedral) with sulfur u = 0.3876 (p. 1089), an origin-choice-1 value (as COD 9012044, a = 10.11 A); the structure is rebuilt from these: Mn 8a 0 0 0, Cr 16d 5/8 5/8 5/8, S 32e u u u",
   "spacegroup": "F d -3 m:1",
   "sites": {
    "Mn1": {
@@ -139269,8 +139269,8 @@
   }
  },
  "7702612": {
-  "source": "Weymann-Schildknetch and Henry, Journal of the Chemical Society, Dalton Transactions 2425-2429 (2001), https://doi.org/10.1039/b103398k",
-  "note": "the CIF marks the isotropically refined atoms C4, C9-C12, C31, C32, C39 and C40 with '*' after their values ('16.7(9)*'), which do not read as numbers; the column is B (type Biso; the other atoms' values are 0.64-0.95 x 8 pi^2 U_eq of their tensors), so these atoms get U = B / 8 pi^2 (0.17-0.28 A^2; the text, p. 2425, notes the large displacement of the terminal groups)",
+  "source": "Weymann-Schildknetch and Henry, Journal of the Chemical Society, Dalton Transactions 2425-2428 (2001), https://doi.org/10.1039/b103398k",
+  "note": "the CIF marks the isotropically refined atoms C4, C9-C12, C31, C32, C39 and C40 with '*' after their values ('16.7(9)*'), which do not read as numbers; the column is B (type Biso; the other atoms' values are 0.64-0.95 x 8 pi^2 U_eq of their tensors), so these atoms get U = B / 8 pi^2 (0.17-0.28 A^2; the text, p. 2426, notes the large displacement of the terminal groups)",
   "sites": {
    "C4": {
     "u_iso": 0.211508
@@ -139303,7 +139303,7 @@
  },
  "8103759": {
   "source": "Krivovichev and Burns, Zeitschrift f\u00fcr Kristallographie 218, 568-574 (2003), https://doi.org/10.1524/zkri.218.8.568.20685",
-  "note": "The CIF applies the operations of C2/m, as stated on p. 570, to the 40 atoms of Table 2 (p. 570), which all lie on general positions: this doubles the content (U32 per cell instead of Z = 16 of Table 1, p. 569, Dcalc 4.20) and places symmetry images 0.17-0.9 A from other atoms (e.g. Cr3-Cr4 0.17 A, O13-O23 0.45 A). With Z = 16 each of the four U atoms must have multiplicity 4; of the C-centred groups of that order only C-1 (x,y,z; -x,-y,-z; plus C-centring, the centred setting of the P-1 structure described on p. 570) leaves no impossible contacts and gives complete UrO3(H2O)2 bipyramids and CrO4 tetrahedra with U-Oeq 2.31-2.37 A, U-H2O 2.42-2.48 A and bridging Cr-O 1.64-1.70 A (text pp. 570-571: 2.294-2.370, 2.432-2.521, 1.621-1.697 A). The correction replaces the symmetry operations by those of C-1; the coordinates equal Table 2. The CIF's Z = 32 also contradicts Table 1 (Z = 16); C-1 is inferred (the article states C2/m, which its own Z, Dcalc and atom table exclude); the CIF gives U_iso = 0 for every atom: U_eq of Table 2 (p. 570, A^2) set as u_iso for all 40 atoms",
+  "note": "The CIF applies the operations of C2/m, as stated on p. 570, to the 40 atoms of Table 2 (p. 570), which all lie on general positions: this doubles the content (U32 per cell instead of Z = 16 of Table 1, p. 569, Dcalc 4.20) and places symmetry images 0.17-0.9 A from other atoms (e.g. Cr3-Cr4 0.17 A, O13-O23 0.45 A). With Z = 16 each of the four U atoms must have multiplicity 4; of the C-centred groups of that order only C-1 (x,y,z; -x,-y,-z; plus C-centring; p. 570 says the structure was first determined in 'P1', then transformed to the C-centred cell and refined in C2/m) leaves no impossible contacts and gives complete UrO3(H2O)2 bipyramids and CrO4 tetrahedra with U-Oeq 2.31-2.37 A, U-H2O 2.42-2.48 A and bridging Cr-O 1.64-1.70 A (text pp. 570-571, ranges given for the article's three structures together: 2.294-2.370, 2.432-2.521, 1.621-1.697 A). The correction replaces the symmetry operations by those of C-1; the coordinates equal Table 2. The CIF's Z = 32 also contradicts Table 1 (Z = 16); C-1 is inferred (the article states C2/m, which its own Z, Dcalc and atom table exclude); the CIF gives U_iso = 0 for every atom: U_eq of Table 2 (p. 570, A^2) set as u_iso for all 40 atoms",
   "operations": [
    "x,y,z",
    "-x,-y,-z",
@@ -141141,7 +141141,7 @@
  },
  "9000563": {
   "source": "Dollase and Freeborn, American Mineralogist 62, 336-340 (1977)",
-  "note": "the CIF gives O1 and O2 occupancy 0.333; in P63mc O1 at (1/3, 0.720, 0.258) is a 12-fold general position carrying 2 O per cell (displaced off the 3-fold axis, p. 338) and O2 is disordered over two mirror-equivalent sites, half occupied (p. 337), so KAlSiO4 x Z = 2 needs O1 1/6 and O2 1/2; occupancies set accordingly, all coordinates as in Table 1 (p. 338)",
+  "note": "the CIF gives O1 and O2 occupancy 0.333; in P63mc O1 at (1/3, 0.720, 0.258) is a 12-fold general position carrying 2 O per cell (displaced off the 3-fold axis, p. 338) and O2 is disordered over two mirror-equivalent sites, half occupied (p. 337), so the cell's 2 KAlSiO4 (K2 Al2 Si2 O8) need O1 1/6 and O2 1/2; occupancies set accordingly, all coordinates as in Table 1 (p. 338)",
   "sites": {
    "O1": {
     "species": {
@@ -142653,7 +142653,7 @@
  },
  "9002431": {
   "source": "Fleet, Liu and Pan, American Mineralogist 85, 1437-1446 (2000), https://doi.org/10.2138/am-2000-1012",
-  "note": "the CIF gives Cl at (0, 0, z) (Wyckoff 4e of P63/m) fully occupied, i.e. 4 Cl per cell; the article's chlorapatite Ca10(PO4)6Cl2 (Table 1, p. 1439: Cl 2.00 per 16 cations, ideal stoichiometry assumed for the refinement) has 2 Cl per cell, disordered above and below z = 1/4 (p. 1437) over the 4e pair; Cl occupancy set to 0.5 (La-ClAp column of Table 3, p. 1439); the remaining Cl-Cl 0.75 A pair is this split site, never both occupied",
+  "note": "the CIF gives Cl at (0, 0, z) (Wyckoff 4e of P63/m) fully occupied, i.e. 4 Cl per cell; the article's chlorapatite Ca10(PO4)6Cl2 (Table 1, p. 1439: Cl 2.00 per 16 cations, ideal stoichiometry assumed for the refinement) has 2 Cl per cell, disordered above and below z = 1/4 (p. 1437) over the 4e pair; Cl occupancy set to 0.5, the 2 Cl per cell on the fourfold 4e position (Cl z in the La-ClAp column of Table 3, p. 1439, which prints no occupancy); the remaining Cl-Cl 0.75 A pair is this split site, never both occupied",
   "sites": {
    "Cl": {
     "species": {
@@ -142664,7 +142664,7 @@
  },
  "9002432": {
   "source": "Fleet, Liu and Pan, American Mineralogist 85, 1437-1446 (2000), https://doi.org/10.2138/am-2000-1012",
-  "note": "the CIF gives Cl at (0, 0, z) (Wyckoff 4e of P63/m) fully occupied, i.e. 4 Cl per cell; the article's chlorapatite Ca10(PO4)6Cl2 (Table 1, p. 1439: Cl 2.00 per 16 cations, ideal stoichiometry assumed for the refinement) has 2 Cl per cell, disordered above and below z = 1/4 (p. 1437) over the 4e pair; Cl occupancy set to 0.5 (Nd-ClAp column of Table 3, p. 1439); the remaining Cl-Cl 0.75 A pair is this split site, never both occupied",
+  "note": "the CIF gives Cl at (0, 0, z) (Wyckoff 4e of P63/m) fully occupied, i.e. 4 Cl per cell; the article's chlorapatite Ca10(PO4)6Cl2 (Table 1, p. 1439: Cl 1.99 per 16 cations, ideal stoichiometry assumed for the refinement) has 2 Cl per cell, disordered above and below z = 1/4 (p. 1437) over the 4e pair; Cl occupancy set to 0.5, the 2 Cl per cell on the fourfold 4e position (Cl z in the Nd-ClAp column of Table 3, p. 1439, which prints no occupancy); the remaining Cl-Cl 0.75 A pair is this split site, never both occupied",
   "sites": {
    "Cl": {
     "species": {
@@ -143679,7 +143679,7 @@
  },
  "9004552": {
   "source": "Burns and Hill, The Canadian Mineralogist 38, 175-181 (2000), https://doi.org/10.2113/gscanmin.38.1.175",
-  "note": "the CIF gives Sr1 and Sr2 fully occupied, and its aniso loop gives the O, H2O and OH12 rows non-tensor values (1, 8, 9, 5, 7, 5, 3, 3, 3, 7, 1 in U11, zeros elsewhere) that override their isotropic U; the text (pp. 178-179) gives refined Sr occupancies 0.88(1) and 0.53(1) (formula Sr2.82(H2O)2[(UO2)4O3.82(OH)3.18]2, Z = 2); Sr occupancies set to these, and the bogus anion tensors cleared so the CIF's U_iso (equal to the Ueq of Table 3, p. 178) applies; coordinates equal Table 3; the flagged U-O pairs are the uranyl bonds of Table 5 (1.81-1.84 A)",
+  "note": "the CIF gives Sr1 and Sr2 fully occupied, and its aniso loop gives the O, H2O and OH12 rows non-tensor values (1, 8, 9, 5, 7, 5, 3, 3, 3, 7, 1 in U11, zeros elsewhere) that override their isotropic U; the text (pp. 178-179) gives refined Sr occupancies 0.88(1) and 0.53(1) (formula Sr2.82(H2O)2[(UO2)4O3.82(OH)3.18]2, Z = 2); Sr occupancies set to these, and the bogus anion tensors cleared so the CIF's U_iso (equal to the Ueq of Table 3, p. 178) applies; coordinates equal Table 3; the flagged U-O pairs are the uranyl bonds of Table 5 (1.81-1.85 A)",
   "sites": {
    "Sr1": {
     "species": {
@@ -144061,7 +144061,7 @@
  },
  "9004623": {
   "source": "Krivovichev and Burns, The Canadian Mineralogist 39, 207-214 (2001), https://doi.org/10.2113/gscanmin.39.1.207",
-  "note": "the CIF gives Cs2 no occupancy, so it builds fully occupied (Cs3 per formula, Cs2-Cs2 0.5 x 3.34 A pairs both filled); Table 2 (p. 209) gives Cs(2) s.o.f. = 0.5 and the text (p. 211) states the M(2) occupancy is 0.5 with only one of each pair of symmetry-related M(2) sites occupied locally; Cs2 occupancy 0.5 taken from Table 2",
+  "note": "the CIF gives Cs2 no occupancy, so it builds fully occupied (Cs3 per formula, Cs2-Cs2 0.5 x 3.34 A pairs both filled); Table 2 (p. 209) gives Cs(2) s.o.f. = 0.5 and the text (p. 210) states the M(2) occupancy is 0.5 with only one of each pair of symmetry-related M(2) sites occupied locally; Cs2 occupancy 0.5 taken from Table 2",
   "sites": {
    "Cs2": {
     "species": {
@@ -145532,7 +145532,7 @@
  },
  "9013069": {
   "source": "Rieder, Crelling, Sustai, Drabek, Weiss and Klementova, International Journal of Coal Geology 71, 115-121 (2007), https://doi.org/10.1016/j.coal.2006.07.003",
-  "note": "the article gives anisotropic temperature factors B_ij in A^2 (Table 2, p. 120, synthetic As-free pyrite: Fe 0.70, S 0.78, B12 0.00 and 0.01); the CIF's U_ij (1.04-1.16, S U33 the Fe value) are about 120 times too large; U_ij = B_ij / 8 pi^2, with U13 = U23 = U12 as the 3-fold site symmetry requires",
+  "note": "the article gives anisotropic temperature factors B_ij (Table 2, p. 120, printed without a unit and read as A^2; synthetic As-free pyrite: Fe 0.70, S 0.78, B12 0.00 and 0.01); the CIF's U_ij (1.04-1.16, S U33 the Fe value) are about 120 times too large; U_ij = B_ij / 8 pi^2, with U13 = U23 = U12 as the 3-fold site symmetry requires",
   "sites": {
    "Fe": {
     "aniso": {
@@ -145558,7 +145558,7 @@
  },
  "9013070": {
   "source": "Rieder, Crelling, Sustai, Drabek, Weiss and Klementova, International Journal of Coal Geology 71, 115-121 (2007), https://doi.org/10.1016/j.coal.2006.07.003",
-  "note": "the article gives anisotropic temperature factors B_ij in A^2 (Table 2, p. 120, synthetic As-pyrite: Fe 0.77, S 0.82, B12 0.01 and -0.01); the CIF's U_ij (1.15-1.22) are about 150 times too large; U_ij = B_ij / 8 pi^2 (As as S, on the same site), with U13 = U23 = U12 as the 3-fold site symmetry requires",
+  "note": "the article gives anisotropic temperature factors B_ij (Table 2, p. 120, printed without a unit and read as A^2; synthetic As-pyrite: Fe 0.77, S 0.82, B12 0.01 and -0.01); the CIF's U_ij (1.15-1.22) are about 150 times too large; U_ij = B_ij / 8 pi^2 (As as S, on the same site), with U13 = U23 = U12 as the 3-fold site symmetry requires",
   "sites": {
    "Fe": {
     "aniso": {
