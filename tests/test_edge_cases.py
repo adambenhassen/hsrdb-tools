@@ -1398,6 +1398,32 @@ def test_spherical_shell_scatterer(tmp_path, monkeypatch):
     th = np.arcsin(pattern.CU_KA1 / (2 * d))
     want = 2 * np.abs(na + shell) ** 2 * (1 + np.cos(2 * th) ** 2) / (np.sin(th) ** 2 * np.cos(th))
     assert got == pytest.approx(want, rel=1e-6)  # gemmi's IT92 sum is float32
+    # a CIF that gives the shell centre U = 0 (faujasite, COD 1531892): the correction's u_iso is the shell's
+    fixes["1234567"]["sites"]["SPS"]["u_iso"] = 0.02
+    e = build(tmp_path, cif(rows.replace("0.8 0.02", "0.8 0.0"), sg="P 1", a=10, b=11, c=12))
+    assert pattern._intensities(e.structure, hkl, d, pattern.CU_KA1, e.scattering) == pytest.approx(want, rel=1e-6)
+    # water filling a cage, spread throughout the ball (faujasite, COD 1531892): uniform-sphere form factor
+    fixes["1234567"]["sites"]["SPS"]["shell"]["filled"] = True
+    e = build(tmp_path, cif(rows.replace("0.8 0.02", "0.8 0.0"), sg="P 1", a=10, b=11, c=12))
+    ball = atoms * 3 * (np.sin(qr) - qr * np.cos(qr)) / qr**3 * np.exp(-2 * math.pi**2 * 0.02 / d**2) \
+        * np.exp(1j * math.pi * hkl.sum(axis=1))
+    want = 2 * np.abs(na + ball) ** 2 * (1 + np.cos(2 * th) ** 2) / (np.sin(th) ** 2 * np.cos(th))
+    assert pattern._intensities(e.structure, hkl, d, pattern.CU_KA1, e.scattering) == pytest.approx(want, rel=1e-6)
+    fixes["1234567"]["sites"]["SPS"]["occupancy_factor"] = 2.0
+    with pytest.raises(ValueError, match="shell needs radius and per_cell only"):
+        build(tmp_path, cif(rows, sg="P 1", a=10, b=11, c=12))
+
+
+def test_two_shell_scatterers_on_one_centre(tmp_path, monkeypatch):
+    """A water ball and a K+ shell in the same cage (faujasite, COD 1531892): two scatterers, not one listed twice."""
+    fixes = {"1234567": {"source": "s", "note": "n", "sites": {
+        "W": {"shell": {"radius": 5.0, "per_cell": {"O": 2.0, "H": 4.0}, "filled": True}, "u_iso": 0.1},
+        "K9": {"shell": {"radius": 4.0, "per_cell": {"K": 1.5}}, "u_iso": 0.1}}}}
+    monkeypatch.setattr(entry, "_corrections", lambda: fixes)
+    # the CIF's formula leaves the K out, as one of the two would be if they were one atom listed twice
+    e = build(tmp_path, cif("Na1 Na 0 0 0 1 0.01\nW O 0.5 0.5 0.5 1 0.0\nK9 K 0.5 0.5 0.5 1 0.0\n", sg="P 1", a=10, b=11, c=12,
+                            extra="_chemical_formula_sum 'Na O2'\n_cell_formula_units_Z 1\n"))
+    assert e.formula == "Na1.00 O2.00 H4.00 K1.50" and e.shell_sites == (1, 2)
 
 
 def test_group_correction_replaces_a_site_by_its_atoms(tmp_path, monkeypatch):
@@ -1406,6 +1432,12 @@ def test_group_correction_replaces_a_site_by_its_atoms(tmp_path, monkeypatch):
     e = build(tmp_path, cif("O1 O 0.1 0.2 0.3 1 0.01\nC1 C 0.3 0.1 0.2 0.5 0.02\n", sg="P 1", a=5, b=6, c=7))
     assert [s.label for s in e.structure.sites] == ["O1", "C1", "C1_H1", "C1_H2", "C1_H3"]
     assert e.formula == "O1.00 C0.50 H1.50" and e.site_rows == [0, 1, 1, 1, 1]
+    # the atoms of one group are not one atom listed twice, even when the CIF's formula counts them once (a
+    # disordered nitrite as N + 2 O at its centroid, the CIF's formula N O: COD 7209346)
+    fixes["1234567"]["sites"] = {"N1": {"group": {"N": 1, "O": 2}}}
+    e = build(tmp_path, cif("K1 K 0.1 0.2 0.3 1 0.01\nN1 N 0.3 0.1 0.2 1 0.02\n", sg="P 1", a=5, b=6, c=7,
+                            extra="_chemical_formula_sum 'K N O'\n_cell_formula_units_Z 1\n"))
+    assert e.formula == "K1.00 N1.00 O2.00" and e.site_rows == [0, 1, 1, 1]
 
 
 @pytest.mark.parametrize("label, formula, element", [

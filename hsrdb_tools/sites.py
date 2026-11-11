@@ -15,12 +15,14 @@ SPECIAL_POSITION_TOLERANCE = 0.4  # Å; images this close are also one atom if t
 class Shell:
     """Atoms spread evenly over a sphere, refined as one scatterer (FullProf's SPHS/SASH: a rotating C60 molecule,
     a disordered water layer lining a cage): at each centre, form factor sum(n f_element(q)) * sin(qR)/(qR) with
-    q = 2 pi / d and isotropic displacement u_iso. per_cell: its atoms per unit cell (formula, density); each
-    of the len(xyz) centres carries per_cell / len(xyz) of them."""
+    q = 2 pi / d and isotropic displacement u_iso; filled: the atoms spread evenly throughout the ball of radius R
+    instead (water filling a zeolite cage), form factor 3 (sin(qR) - qR cos(qR)) / (qR)^3. per_cell: its atoms per
+    unit cell (formula, density); each of the len(xyz) centres carries per_cell / len(xyz) of them."""
     xyz: np.ndarray  # (n, 3) fractional coordinates of the centres in [0, 1)
     radius: float  # Å
     u_iso: float  # Å²
     per_cell: dict  # element -> atoms per unit cell
+    filled: bool = False  # atoms throughout the ball, not on its surface
 
 
 @dataclass

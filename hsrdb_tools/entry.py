@@ -140,9 +140,12 @@ def _check_fix(cod_id, fix):
             raise ValueError(f"corrections.json: COD {cod_id} {label}: keys {sorted(change)}")
         if set(change.get("aniso", {})) - set(_ANISO):
             raise ValueError(f"corrections.json: COD {cod_id} {label}: aniso keys {sorted(change['aniso'])}")
-        if "shell" in change and (set(change) != {"shell"} or set(change["shell"]) != {"radius", "per_cell"}
-                                  or not change["shell"]["radius"] > 0):
-            raise ValueError(f"corrections.json: COD {cod_id} {label}: shell needs radius and per_cell only")
+        if "shell" in change and (not set(change) <= {"shell", "u_iso"}
+                                  or not {"radius", "per_cell"} <= set(change["shell"]) <= {"radius", "per_cell", "filled"}
+                                  or not change["shell"]["radius"] > 0
+                                  or change["shell"].get("filled", False) not in (True, False)):
+            raise ValueError(f"corrections.json: COD {cod_id} {label}: shell needs radius and per_cell only "
+                             "(and optionally filled, u_iso)")
         if "shell" in change:
             elements(change["shell"]["per_cell"], f"{label} shell")
         if "occupancy_factor" in change and not change["occupancy_factor"] > 0:
@@ -215,7 +218,8 @@ def _apply_corrections(st, cod_id):
     isotropic U in A^2, for a CIF that lacks it), "stand_in" (true: the
     species or group only stand in for the scattering of something else, such as guest molecules refined as
     single atoms, and do not count in formula, density, I/Ic and element lists), "shell" (the site is the centre
-    of a spherical shell scatterer, sites.Shell: radius in Å and per_cell, the atoms spread over its shells), "omit"
+    of a spherical shell scatterer, sites.Shell: radius in Å and per_cell, the atoms spread over its shells, and
+    optionally filled: true for atoms throughout the ball; with "u_iso" only, the shell's published isotropic U), "omit"
     (true: the row is no atom, e.g. a ring centroid without a type, and is left out).
     "types", per type symbol: a
     group as above. "omit_types": type symbols of sites that are no atoms (e.g. interatomic scatterers for bonding
@@ -1161,7 +1165,11 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge
     symbol = _symbol_group(block) if stated and not symbol_only and not corrected_symmetry else None
     symbol_conflict = symbol is not None and symbol.number != st.spacegroup.number
     setting.constrain_cell(st)
-    duplicates = {} if modulated else sites.image_sites(st)  # sites listed twice: images of an earlier site
+    # sites listed twice: images of an earlier site (not the atoms of one row's group scatterer, e.g. a nitrite's 2 O,
+    # nor the placeholders of shell scatterers sharing a centre, e.g. a water ball and a K+ shell in one cage)
+    duplicates = {} if modulated else {j: i for j, i in sites.image_sites(st).items()
+                                       if site_rows[j] is None or site_rows[j] != site_rows[i]
+                                       and not {site_rows[j], site_rows[i]} & set(shell_specs)}
     image_rows = tuple(site_rows[k] for k in sorted(duplicates) if site_rows[k] is not None)
     merged_labels = []
     if merge_images:
@@ -1177,7 +1185,8 @@ def _from_cif(path, cod_id=None, symbol_only=False, separate_stated=False, merge
     dummy = np.array([r is not None and r < len(flags) and flags[r] == "dum" for r in site_rows], dtype=bool)
     shell_sites = {k: shell_specs[r] for k, r in enumerate(site_rows) if r in shell_specs}
     shells = tuple(
-        sites.Shell(images.xyz[images.site == k], spec["radius"], st.sites[k].u_iso, spec["per_cell"])
+        sites.Shell(images.xyz[images.site == k], spec["radius"], st.sites[k].u_iso, spec["per_cell"],
+                    spec.get("filled", False))
         for k, spec in shell_sites.items())
     real = ~(dummy | np.isin(np.arange(len(site_rows)), list(shell_sites)))[images.site]
     atoms = sites.Images(images.site[real], images.xyz[real], images.ucart[real], shells=shells)

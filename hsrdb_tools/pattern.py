@@ -66,12 +66,13 @@ def _intensities(st, hkl, d, wavelength, images, chunk=2048):
         phase = np.exp(2j * math.pi * (h @ images.xyz.T))
         w = occ * f[:, el_index] * t
         fp, fm = np.sum(w * phase, axis=1), np.sum(w * phase.conj(), axis=1)  # F(h), F(-h)
-        for sh in images.shells:  # atoms on spherical shells: sum(n f) * sin(qR)/(qR), q = 2 pi / d
+        for sh in images.shells:  # atoms on spherical shells: sum(n f) * sin(qR)/(qR), q = 2 pi / d (or in balls)
             dd = d[lo:lo + chunk]
             qr = 2 * math.pi * sh.radius / dd
             atoms = sum(n / len(sh.xyz) * (_f0(el, stol2) + complex(*_anomalous(el, wavelength)))
                         for el, n in sh.per_cell.items())
-            fs = atoms * np.sin(qr) / qr * np.exp(-2 * math.pi**2 * sh.u_iso / dd**2)
+            shape = 3 * (np.sin(qr) - qr * np.cos(qr)) / qr**3 if sh.filled else np.sin(qr) / qr
+            fs = atoms * shape * np.exp(-2 * math.pi**2 * sh.u_iso / dd**2)
             ph = np.exp(2j * math.pi * (h @ sh.xyz.T)).sum(axis=1)
             fp, fm = fp + fs * ph, fm + fs * ph.conj()
         F2[lo:lo + chunk] = (np.abs(fp) ** 2 + np.abs(fm) ** 2) / 2
