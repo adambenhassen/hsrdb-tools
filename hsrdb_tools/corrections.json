@@ -978,7 +978,7 @@
  },
  "1001841": {
   "source": "Baud, Besse, Chevalier and Gasperin, Journal of Solid State Chemistry 29, 267-272 (1979), https://doi.org/10.1016/0022-4596(79)90232-9",
-  "note": "the CIF gives every x of Tableau I (p. 269) plus 1/4 but keeps the operations of C 1 1 21 with the 21 axis at x = 0, so La4 lies 0.29 A from a symmetry image of La10 and 18 La-O distances of Tableau III (p. 271-272) come out 4.6-5.1 A; the operations of C 1 1 21 with the origin moved by 1/4 along a restore the published structure. La5 x is printed 0.7652 where the La5-O26 and La5-O30 distances and the six La-O26-La5 and La-O30-La5 angles of Tableau III need 0.7552 (one digit; as printed they are 0.06-0.08 A and 2-3.5 deg off): La5 replaced with x = 0.7552 + 1/4 (no displacement parameters given, as for every other row of the CIF)",
+  "note": "the CIF gives every x of Tableau I (p. 269) plus 1/4 but keeps the operations of C 1 1 21 with the 21 axis at x = 0, so La4 lies 0.29 A from a symmetry image of La10 and 18 La-O distances of Tableau III (p. 271-272) come out 4.6-5.1 A; the operations of C 1 1 21 with the origin moved by 1/4 along a restore the published structure. La5 x is printed 0.7652 where the La5-O26 and La5-O30 distances and the six La-O26-La5 and La-O30-La5 angles of Tableau III need 0.7552 (one digit; as printed they are 0.06-0.08 A and 2-3.5 deg off): La5 replaced with x = 0.7552 + 1/4 (no displacement parameters given, as for every other row of the CIF); the CIF has no displacement parameters: B of Tableau I (p. 269) set as u_iso = B / 8 pi^2 for all 48 atoms (O B fixed at 1.0 by the authors)",
   "operations": [
    "x,y,z",
    "1/2-x,-y,1/2+z",
@@ -988,6 +988,147 @@
   "sites": {
    "La5": {
     "omit": true
+   },
+   "Re1": {
+    "u_iso": 0.00127
+   },
+   "Re2": {
+    "u_iso": 0.00127
+   },
+   "Re3": {
+    "u_iso": 0.0038
+   },
+   "Re4": {
+    "u_iso": 0.00507
+   },
+   "La1": {
+    "u_iso": 0.00633
+   },
+   "La2": {
+    "u_iso": 0.0076
+   },
+   "La3": {
+    "u_iso": 0.00127
+   },
+   "La4": {
+    "u_iso": 0.00253
+   },
+   "La6": {
+    "u_iso": 0.00253
+   },
+   "La7": {
+    "u_iso": 0.01013
+   },
+   "La8": {
+    "u_iso": 0.00127
+   },
+   "La9": {
+    "u_iso": 0.0076
+   },
+   "La10": {
+    "u_iso": 0.00127
+   },
+   "La11": {
+    "u_iso": 0.0038
+   },
+   "La12": {
+    "u_iso": 0.00633
+   },
+   "O1": {
+    "u_iso": 0.01267
+   },
+   "O2": {
+    "u_iso": 0.01267
+   },
+   "O3": {
+    "u_iso": 0.01267
+   },
+   "O4": {
+    "u_iso": 0.01267
+   },
+   "O5": {
+    "u_iso": 0.01267
+   },
+   "O6": {
+    "u_iso": 0.01267
+   },
+   "O7": {
+    "u_iso": 0.01267
+   },
+   "O8": {
+    "u_iso": 0.01267
+   },
+   "O9": {
+    "u_iso": 0.01267
+   },
+   "O10": {
+    "u_iso": 0.01267
+   },
+   "O11": {
+    "u_iso": 0.01267
+   },
+   "O12": {
+    "u_iso": 0.01267
+   },
+   "O13": {
+    "u_iso": 0.01267
+   },
+   "O14": {
+    "u_iso": 0.01267
+   },
+   "O15": {
+    "u_iso": 0.01267
+   },
+   "O16": {
+    "u_iso": 0.01267
+   },
+   "O17": {
+    "u_iso": 0.01267
+   },
+   "O18": {
+    "u_iso": 0.01267
+   },
+   "O19": {
+    "u_iso": 0.01267
+   },
+   "O20": {
+    "u_iso": 0.01267
+   },
+   "O21": {
+    "u_iso": 0.01267
+   },
+   "O22": {
+    "u_iso": 0.01267
+   },
+   "O23": {
+    "u_iso": 0.01267
+   },
+   "O24": {
+    "u_iso": 0.01267
+   },
+   "O25": {
+    "u_iso": 0.00887
+   },
+   "O26": {
+    "u_iso": 0.0076
+   },
+   "O27": {
+    "u_iso": 0.00127
+   },
+   "O28": {
+    "u_iso": 0.0076
+   },
+   "O29": {
+    "u_iso": 0.00887
+   },
+   "O30": {
+    "u_iso": 0.01267
+   },
+   "O31": {
+    "u_iso": 0.00887
+   },
+   "O32": {
+    "u_iso": 0.00887
    }
   },
   "add": [
@@ -1000,7 +1141,1169 @@
     ],
     "species": {
      "La": 1.0
-    }
+    },
+    "u_iso": 0.01013
+   }
+  ]
+ },
+ "1008094": {
+  "source": "Klein and Reinen, Journal of Solid State Chemistry 32, 311-319 (1980), https://doi.org/10.1016/S0022-4596(80)80025-9",
+  "note": "Table I is given in the pseudocell [2a, 2b, 2c, gamma; Z = 32] (B2/b); footnote a: its sub-rows with the printed signs, (0 0 0; 1/2 0 1/2)+ and the Eq. (3) shifts give the positions (no further B2/b operations; the 2-fold would map the N2/N3 sub-rows onto each other). Converted with the printed matrix (2 -1 0 / 2 1 0 / 0 0 1) applied to the row vector (x y z): x' = 2x + 2y, y' = y - x, which gives the printed a', b'; the CIF applied it to the column vector (non-metric: Cs-O 1.32, O-O 0.14 A). The centring and Eq. (3) shifts become the small-cell translations (0 1/2 1/2), (1/2 1/4 3/4), (1/2 3/4 1/4), written out in P -1. N2 x 0.964(7) is read as 0.0964 (misprint, inferred) (Cu-N2 211.5 pm, Table II; N3 0.4036 = 0.5 - 0.0964). Pb printed B = 0.0(8): u_iso 0 as printed. Inferred: N2 x 0.0964, the row-vector reading of the matrix (it alone gives the printed a', b'), and P -1 (the N2, N3 and O3 sub-rows of Table I do not obey the printed B2/b); the result reproduces all 17 distances of Table II (p. 318) within 0.004 A with no impossible contacts",
+  "spacegroup": "P -1",
+  "sites": {
+   "Cs1": {
+    "omit": true
+   },
+   "Cs2": {
+    "omit": true
+   },
+   "Pb1": {
+    "omit": true
+   },
+   "Pb2": {
+    "omit": true
+   },
+   "Cu1": {
+    "omit": true
+   },
+   "Cu2": {
+    "omit": true
+   },
+   "N1": {
+    "omit": true
+   },
+   "N2": {
+    "omit": true
+   },
+   "N3": {
+    "omit": true
+   },
+   "N4": {
+    "omit": true
+   },
+   "N5": {
+    "omit": true
+   },
+   "N6": {
+    "omit": true
+   },
+   "O1": {
+    "omit": true
+   },
+   "O2": {
+    "omit": true
+   },
+   "O3": {
+    "omit": true
+   },
+   "O4": {
+    "omit": true
+   },
+   "O5": {
+    "omit": true
+   },
+   "O6": {
+    "omit": true
+   },
+   "O7": {
+    "omit": true
+   },
+   "O8": {
+    "omit": true
+   },
+   "O9": {
+    "omit": true
+   },
+   "O10": {
+    "omit": true
+   },
+   "O11": {
+    "omit": true
+   },
+   "O12": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "Csa1",
+    "xyz": [
+     0.5,
+     0.0,
+     0.125
+    ],
+    "species": {
+     "Cs": 1.0
+    },
+    "u_iso": 0.01646
+   },
+   {
+    "label": "Csa2",
+    "xyz": [
+     0.5,
+     0.5,
+     0.625
+    ],
+    "species": {
+     "Cs": 1.0
+    },
+    "u_iso": 0.01646
+   },
+   {
+    "label": "Csa3",
+    "xyz": [
+     0.0,
+     0.25,
+     0.875
+    ],
+    "species": {
+     "Cs": 1.0
+    },
+    "u_iso": 0.01646
+   },
+   {
+    "label": "Csa4",
+    "xyz": [
+     0.0,
+     0.75,
+     0.375
+    ],
+    "species": {
+     "Cs": 1.0
+    },
+    "u_iso": 0.01646
+   },
+   {
+    "label": "Csb1",
+    "xyz": [
+     0.5,
+     0.5,
+     0.125
+    ],
+    "species": {
+     "Cs": 1.0
+    },
+    "u_iso": 0.01646
+   },
+   {
+    "label": "Csb2",
+    "xyz": [
+     0.5,
+     0.0,
+     0.625
+    ],
+    "species": {
+     "Cs": 1.0
+    },
+    "u_iso": 0.01646
+   },
+   {
+    "label": "Csb3",
+    "xyz": [
+     0.0,
+     0.75,
+     0.875
+    ],
+    "species": {
+     "Cs": 1.0
+    },
+    "u_iso": 0.01646
+   },
+   {
+    "label": "Csb4",
+    "xyz": [
+     0.0,
+     0.25,
+     0.375
+    ],
+    "species": {
+     "Cs": 1.0
+    },
+    "u_iso": 0.01646
+   },
+   {
+    "label": "Pba1",
+    "xyz": [
+     0.0,
+     0.0,
+     0.25
+    ],
+    "species": {
+     "Pb": 1.0
+    },
+    "u_iso": 0.0
+   },
+   {
+    "label": "Pba2",
+    "xyz": [
+     0.0,
+     0.5,
+     0.75
+    ],
+    "species": {
+     "Pb": 1.0
+    },
+    "u_iso": 0.0
+   },
+   {
+    "label": "Pba3",
+    "xyz": [
+     0.5,
+     0.25,
+     0.0
+    ],
+    "species": {
+     "Pb": 1.0
+    },
+    "u_iso": 0.0
+   },
+   {
+    "label": "Pba4",
+    "xyz": [
+     0.5,
+     0.75,
+     0.5
+    ],
+    "species": {
+     "Pb": 1.0
+    },
+    "u_iso": 0.0
+   },
+   {
+    "label": "Cua1",
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "species": {
+     "Cu": 1.0
+    },
+    "u_iso": 0.0228
+   },
+   {
+    "label": "Cua2",
+    "xyz": [
+     0.0,
+     0.5,
+     0.5
+    ],
+    "species": {
+     "Cu": 1.0
+    },
+    "u_iso": 0.0228
+   },
+   {
+    "label": "Cua3",
+    "xyz": [
+     0.5,
+     0.25,
+     0.75
+    ],
+    "species": {
+     "Cu": 1.0
+    },
+    "u_iso": 0.0228
+   },
+   {
+    "label": "Cub1",
+    "xyz": [
+     0.0,
+     0.5,
+     0.0
+    ],
+    "species": {
+     "Cu": 1.0
+    },
+    "u_iso": 0.0228
+   },
+   {
+    "label": "Cub2",
+    "xyz": [
+     0.0,
+     0.0,
+     0.5
+    ],
+    "species": {
+     "Cu": 1.0
+    },
+    "u_iso": 0.0228
+   },
+   {
+    "label": "Cub3",
+    "xyz": [
+     0.5,
+     0.75,
+     0.75
+    ],
+    "species": {
+     "Cu": 1.0
+    },
+    "u_iso": 0.0228
+   },
+   {
+    "label": "N1a1",
+    "xyz": [
+     0.0,
+     0.0,
+     0.0969
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.01013
+   },
+   {
+    "label": "N1a2",
+    "xyz": [
+     0.0,
+     0.5,
+     0.5969
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.01013
+   },
+   {
+    "label": "N1a3",
+    "xyz": [
+     0.5,
+     0.25,
+     0.8469
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.01013
+   },
+   {
+    "label": "N1a4",
+    "xyz": [
+     0.5,
+     0.75,
+     0.3469
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.01013
+   },
+   {
+    "label": "N1b1",
+    "xyz": [
+     0.0,
+     0.5,
+     0.0969
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.01013
+   },
+   {
+    "label": "N1b2",
+    "xyz": [
+     0.0,
+     0.0,
+     0.5969
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.01013
+   },
+   {
+    "label": "N1b3",
+    "xyz": [
+     0.5,
+     0.75,
+     0.8469
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.01013
+   },
+   {
+    "label": "N1b4",
+    "xyz": [
+     0.5,
+     0.25,
+     0.3469
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.01013
+   },
+   {
+    "label": "N2a1",
+    "xyz": [
+     0.1928,
+     0.9036,
+     0.0
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.00887
+   },
+   {
+    "label": "N2a2",
+    "xyz": [
+     0.1928,
+     0.4036,
+     0.5
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.00887
+   },
+   {
+    "label": "N2a3",
+    "xyz": [
+     0.6928,
+     0.1536,
+     0.75
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.00887
+   },
+   {
+    "label": "N2a4",
+    "xyz": [
+     0.6928,
+     0.6536,
+     0.25
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.00887
+   },
+   {
+    "label": "N2b1",
+    "xyz": [
+     0.21,
+     0.395,
+     0.0
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.0114
+   },
+   {
+    "label": "N2b2",
+    "xyz": [
+     0.21,
+     0.895,
+     0.5
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.0114
+   },
+   {
+    "label": "N2b3",
+    "xyz": [
+     0.71,
+     0.645,
+     0.75
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.0114
+   },
+   {
+    "label": "N2b4",
+    "xyz": [
+     0.71,
+     0.145,
+     0.25
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.0114
+   },
+   {
+    "label": "N3a1",
+    "xyz": [
+     0.21,
+     0.105,
+     0.0
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.0114
+   },
+   {
+    "label": "N3a2",
+    "xyz": [
+     0.21,
+     0.605,
+     0.5
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.0114
+   },
+   {
+    "label": "N3a3",
+    "xyz": [
+     0.71,
+     0.355,
+     0.75
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.0114
+   },
+   {
+    "label": "N3a4",
+    "xyz": [
+     0.71,
+     0.855,
+     0.25
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.0114
+   },
+   {
+    "label": "N3b1",
+    "xyz": [
+     0.8072,
+     0.4036,
+     0.0
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.00887
+   },
+   {
+    "label": "N3b2",
+    "xyz": [
+     0.8072,
+     0.9036,
+     0.5
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.00887
+   },
+   {
+    "label": "N3b3",
+    "xyz": [
+     0.3072,
+     0.6536,
+     0.75
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.00887
+   },
+   {
+    "label": "N3b4",
+    "xyz": [
+     0.3072,
+     0.1536,
+     0.25
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.00887
+   },
+   {
+    "label": "O1a1",
+    "xyz": [
+     0.098,
+     0.049,
+     0.1251
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1a2",
+    "xyz": [
+     0.098,
+     0.549,
+     0.6251
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1a3",
+    "xyz": [
+     0.598,
+     0.299,
+     0.8751
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1a4",
+    "xyz": [
+     0.598,
+     0.799,
+     0.3751
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1b1",
+    "xyz": [
+     0.902,
+     0.951,
+     0.1251
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1b2",
+    "xyz": [
+     0.902,
+     0.451,
+     0.6251
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1b3",
+    "xyz": [
+     0.402,
+     0.201,
+     0.8751
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1b4",
+    "xyz": [
+     0.402,
+     0.701,
+     0.3751
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1c1",
+    "xyz": [
+     0.098,
+     0.549,
+     0.1251
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1c2",
+    "xyz": [
+     0.098,
+     0.049,
+     0.6251
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1c3",
+    "xyz": [
+     0.598,
+     0.799,
+     0.8751
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1c4",
+    "xyz": [
+     0.598,
+     0.299,
+     0.3751
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1d1",
+    "xyz": [
+     0.902,
+     0.451,
+     0.1251
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1d2",
+    "xyz": [
+     0.902,
+     0.951,
+     0.6251
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1d3",
+    "xyz": [
+     0.402,
+     0.701,
+     0.8751
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O1d4",
+    "xyz": [
+     0.402,
+     0.201,
+     0.3751
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2a1",
+    "xyz": [
+     0.2588,
+     0.8706,
+     0.9502
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2a2",
+    "xyz": [
+     0.2588,
+     0.3706,
+     0.4502
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2a3",
+    "xyz": [
+     0.7588,
+     0.1206,
+     0.7002
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2a4",
+    "xyz": [
+     0.7588,
+     0.6206,
+     0.2002
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2b1",
+    "xyz": [
+     0.2588,
+     0.8706,
+     0.0498
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2b2",
+    "xyz": [
+     0.2588,
+     0.3706,
+     0.5498
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2b3",
+    "xyz": [
+     0.7588,
+     0.1206,
+     0.7998
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2b4",
+    "xyz": [
+     0.7588,
+     0.6206,
+     0.2998
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2c1",
+    "xyz": [
+     0.2588,
+     0.3706,
+     0.0498
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2c2",
+    "xyz": [
+     0.2588,
+     0.8706,
+     0.5498
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2c3",
+    "xyz": [
+     0.7588,
+     0.6206,
+     0.7998
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2c4",
+    "xyz": [
+     0.7588,
+     0.1206,
+     0.2998
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2d1",
+    "xyz": [
+     0.2588,
+     0.3706,
+     0.9502
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2d2",
+    "xyz": [
+     0.2588,
+     0.8706,
+     0.4502
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2d3",
+    "xyz": [
+     0.7588,
+     0.6206,
+     0.7002
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O2d4",
+    "xyz": [
+     0.7588,
+     0.1206,
+     0.2002
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.00253
+   },
+   {
+    "label": "O3a1",
+    "xyz": [
+     0.355,
+     0.0841,
+     0.0
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3a2",
+    "xyz": [
+     0.355,
+     0.5841,
+     0.5
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3a3",
+    "xyz": [
+     0.855,
+     0.3341,
+     0.75
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3a4",
+    "xyz": [
+     0.855,
+     0.8341,
+     0.25
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3b1",
+    "xyz": [
+     0.1682,
+     0.1775,
+     0.0
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3b2",
+    "xyz": [
+     0.1682,
+     0.6775,
+     0.5
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3b3",
+    "xyz": [
+     0.6682,
+     0.4275,
+     0.75
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3b4",
+    "xyz": [
+     0.6682,
+     0.9275,
+     0.25
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3c1",
+    "xyz": [
+     0.8318,
+     0.3225,
+     0.0
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3c2",
+    "xyz": [
+     0.8318,
+     0.8225,
+     0.5
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3c3",
+    "xyz": [
+     0.3318,
+     0.5725,
+     0.75
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3c4",
+    "xyz": [
+     0.3318,
+     0.0725,
+     0.25
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3d1",
+    "xyz": [
+     0.645,
+     0.4159,
+     0.0
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3d2",
+    "xyz": [
+     0.645,
+     0.9159,
+     0.5
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3d3",
+    "xyz": [
+     0.145,
+     0.6659,
+     0.75
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
+   },
+   {
+    "label": "O3d4",
+    "xyz": [
+     0.145,
+     0.1659,
+     0.25
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.0152
    }
   ]
  },
@@ -1291,6 +2594,24 @@
     "u_iso": 0.02567
    }
   ]
+ },
+ "1009027": {
+  "source": "Muller, Baudour, Madigou, Bouree, Kiat, Favotto and Roubin, Acta Crystallographica Section B 55, 8-16 (1999), https://doi.org/10.1107/s0108768198005758",
+  "note": "the CIF (the 720 K model of Table 4, p. 13, Ti at z = 0.54 over 6f) has no displacement parameters; B_iso of Table 4 at 720 K: Pb 4.11, Hf/Ti 1.15, O 2.55 A^2, set as u_iso (COD 2003128, the same data, gives U 0.052(4), 0.014(5), 0.014(5), 0.032(2))",
+  "sites": {
+   "Pb1": {
+    "u_iso": 0.05205
+   },
+   "Hf1": {
+    "u_iso": 0.01456
+   },
+   "Ti1": {
+    "u_iso": 0.01456
+   },
+   "O1": {
+    "u_iso": 0.0323
+   }
+  }
  },
  "1010057": {
   "source": "Kolkmeijer et al., Proceedings of the Koninklijke Nederlandse Academie van Wetenschappen 23, 644-653 (1920)",
@@ -11806,6 +13127,78 @@
    }
   ]
  },
+ "1527783": {
+  "source": "McColm, Steadman and Wilson, Journal of Solid State Chemistry 23, 33-42 (1978), https://doi.org/10.1016/0022-4596(78)90051-8",
+  "note": "the CIF gives U = 0 for every atom; Table III (p. 38) gives U for W1-W6 and one U for the 16 O atoms (printed once beside a brace): set as u_iso",
+  "sites": {
+   "W1": {
+    "u_iso": 0.0049
+   },
+   "W2": {
+    "u_iso": 0.0058
+   },
+   "W3": {
+    "u_iso": 0.0088
+   },
+   "W4": {
+    "u_iso": 0.0092
+   },
+   "W5": {
+    "u_iso": 0.0055
+   },
+   "W6": {
+    "u_iso": 0.0085
+   },
+   "O1": {
+    "u_iso": 0.0057
+   },
+   "O2": {
+    "u_iso": 0.0057
+   },
+   "O3": {
+    "u_iso": 0.0057
+   },
+   "O4": {
+    "u_iso": 0.0057
+   },
+   "O5": {
+    "u_iso": 0.0057
+   },
+   "O6": {
+    "u_iso": 0.0057
+   },
+   "O7": {
+    "u_iso": 0.0057
+   },
+   "O8": {
+    "u_iso": 0.0057
+   },
+   "O9": {
+    "u_iso": 0.0057
+   },
+   "O10": {
+    "u_iso": 0.0057
+   },
+   "O11": {
+    "u_iso": 0.0057
+   },
+   "O12": {
+    "u_iso": 0.0057
+   },
+   "O13": {
+    "u_iso": 0.0057
+   },
+   "O14": {
+    "u_iso": 0.0057
+   },
+   "O15": {
+    "u_iso": 0.0057
+   },
+   "O16": {
+    "u_iso": 0.0057
+   }
+  }
+ },
  "1528356": {
   "source": "Bindi, Pet\u0159\u00ed\u010dek, Withers, Zoppi and Bonazzi, Journal of Solid State Chemistry 179, 729-738 (2006), https://doi.org/10.1016/j.jssc.2005.11.031",
   "note": "the CIF gives every site occupancy 1 and U = 0; Table 4 (p. 735, superstructure at 873 K) gives the A sites as split, partly occupied Ba (site scattering A1 56, A2 28, A3 21.6, A4 11.5 electrons; Ba = 56), so the build placed full Ba atoms 0.49 A (A2-A2), 2.14 A (A3-A4) and 2.19 A (A3-A3) apart; Ba2, Ba3 and Ba4 get Ba occupancies 0.5, 0.3857 and 0.2054 (site scattering / 56) and all sites the displacement parameters of Table 4 (anisotropic for the cations, minus signs read from the page, U_iso for O); coordinates as in the CIF, which equal Table 4. The formula (A,vacancy)20B18O53 (p. 734) counts A sites, not Ba atoms, so the content has Ba 68.4 per cell instead of 160",
@@ -13274,6 +14667,67 @@
     "u_iso": 0.00421
    }
   ]
+ },
+ "1531892": {
+  "source": "Mortier and Bosmans, The Journal of Physical Chemistry 75, 3327-3334 (1971), https://doi.org/10.1021/j100690a022",
+  "note": "Table III (p. 3329, KF 54.7) models the water of the large and sodalite cages as molecules spread randomly throughout spheres at 8(b) and 8(a) (217.0 H2O, R 5.75 A; 24.0 H2O, R 2.3 A) and the unlocated K+ as spread over the surface of a sphere at 8(b) (19.98 K, R 5.1 A), each B 10.0 A^2 (p. 3330); the CIF puts point atoms there instead (O5, O6, K4 with occupancy 2.5): these become the article's sphere scatterers (water filled balls, K a shell). U = 0 in the CIF: B of Table III set as u_iso (O3 printed 0.0, kept)",
+  "sites": {
+   "Al1": {
+    "u_iso": 0.02356
+   },
+   "Si1": {
+    "u_iso": 0.02356
+   },
+   "O1": {
+    "u_iso": 0.05079
+   },
+   "O2": {
+    "u_iso": 0.04787
+   },
+   "O4": {
+    "u_iso": 0.0233
+   },
+   "K1": {
+    "u_iso": 0.13412
+   },
+   "K2": {
+    "u_iso": 0.04838
+   },
+   "K3": {
+    "u_iso": 0.02799
+   },
+   "O5": {
+    "shell": {
+     "radius": 5.75,
+     "per_cell": {
+      "O": 217.0,
+      "H": 434.0
+     },
+     "filled": true
+    },
+    "u_iso": 0.12665
+   },
+   "O6": {
+    "shell": {
+     "radius": 2.3,
+     "per_cell": {
+      "O": 24.0,
+      "H": 48.0
+     },
+     "filled": true
+    },
+    "u_iso": 0.12665
+   },
+   "K4": {
+    "shell": {
+     "radius": 5.1,
+     "per_cell": {
+      "K": 19.98
+     }
+    },
+    "u_iso": 0.12665
+   }
+  }
  },
  "1532218": {
   "source": "Voronin et al., Nuclear Instruments & Methods in Physics Research A 470, 202-209 (2001)",
@@ -17753,6 +19207,33 @@
    }
   ]
  },
+ "1540064": {
+  "source": "Hazen, Finger, Agrawal, McKinstry and Perrotta, Journal of Materials Research 2, 329-337 (1987), https://doi.org/10.1557/jmr.1987.0329",
+  "note": "the CIF gives U = 0 for every atom; Table I (p. 330, 270 C column) gives B for every site: set as u_iso = B / 8 pi^2 (Si1 shares the P site and its value)",
+  "sites": {
+   "Na1": {
+    "u_iso": 0.09499
+   },
+   "Na2": {
+    "u_iso": 0.04559
+   },
+   "Zr1": {
+    "u_iso": 0.00963
+   },
+   "P1": {
+    "u_iso": 0.01165
+   },
+   "Si1": {
+    "u_iso": 0.01165
+   },
+   "O1": {
+    "u_iso": 0.02837
+   },
+   "O2": {
+    "u_iso": 0.02242
+   }
+  }
+ },
  "1540199": {
   "source": "Kalychak et al., Soviet Physics, Crystallography (= Kristallografiya) 30, 344-345 (1985)",
   "note": "the CIF's structure has 6 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii); its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -20131,6 +21612,92 @@
      "O": 1.0
     },
     "u_iso": 0.00228
+   }
+  ]
+ },
+ "1542126": {
+  "source": "Kapshukov, Volkov, Lebedev, Moskvitsev and Yakovlev, Zhurnal Strukturnoi Khimii 12, 94-98 (1971)",
+  "note": "read in the English translation, Journal of Structural Chemistry 12, 77-80 (1971), https://doi.org/10.1007/bf00744542, Table 2 (p. 78), compound I. The CIF gives O'''II (O4) z = +0.061 where Table 2 prints -0.061 (with +0.061 it lies 0.95 A from N1 as printed, CIF N2), and lacks the ammonium N (M, [0.313, 0.5, 0.159], added as M); both from Table 2. The printed z of N1 (0.13) and N2 (-0.107) give no N-O bond below 1.6 A; with the signs reversed they give the N-O distances of Table 3 (printed / built, A: O''_II - N_1 1.38 / 1.39; O'''_II - N_1 1.28 / 1.29; O'_III - N_1 1.17 / 1.08; O'_II - N_2 1.3 / 1.3; O''_III - N_2 1.22 / 1.24; O'''_III - N_2 1.15 / 1.16): misprinted signs, reversed. U = 0 in the CIF: B of Table 2 set as u_iso",
+  "sites": {
+   "U1": {
+    "u_iso": 0.00101
+   },
+   "O1": {
+    "u_iso": 0.02343
+   },
+   "O2": {
+    "u_iso": 0.05053
+   },
+   "O3": {
+    "u_iso": 0.04116
+   },
+   "O4": {
+    "omit": true
+   },
+   "O5": {
+    "u_iso": 0.04901
+   },
+   "O6": {
+    "u_iso": 0.02558
+   },
+   "O7": {
+    "u_iso": 0.06295
+   },
+   "N2": {
+    "omit": true
+   },
+   "N3": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "O4",
+    "xyz": [
+     0.085,
+     0.273,
+     -0.061
+    ],
+    "species": {
+     "O": 1.0
+    },
+    "u_iso": 0.03356
+   },
+   {
+    "label": "N2",
+    "xyz": [
+     0.194,
+     0.26,
+     -0.13
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.04737
+   },
+   {
+    "label": "N3",
+    "xyz": [
+     -0.282,
+     0.283,
+     0.107
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.03065
+   },
+   {
+    "label": "M",
+    "xyz": [
+     0.313,
+     0.5,
+     0.159
+    ],
+    "species": {
+     "N": 1.0
+    },
+    "u_iso": 0.02204
    }
   ]
  },
@@ -36262,7 +37829,7 @@
  },
  "2100730": {
   "source": "Edstr\u00f6m, Thomas and Farrington, Acta Crystallographica Section B 47, 635-643 (1991), https://doi.org/10.1107/S0108768191003075",
-  "note": "the CIF (y = 1.22, Table 2, p. 639) has no occupancies, so every partly occupied conduction-plane site is built full (30 Cd per cell instead of 1.22); the occupations of Table 2 are given: Cd(C) 0.129, Cd(D) 0.023, Cd(E) 0.011, Cd(F) 0.004, Al(1) 0.963, Al(5) 0.037, O(6) 0.037 and O(5) 1/3 (split over three 6(h) positions, text p. 637). The CIF gives Cd(D) z = 0.25 where Table 2 prints 0.26124 (text p. 637: D site shifted to z = 0.26); Cd(D) replaced with the Table 2 position. The CIF gives U = 0 for every atom: the spinel-block atoms, Al(5), O(6), Cd(E) and Cd(F) take the Ueq x 10^3 of Table 2, Cd(C) and O(5) their anisotropic beta x 10^4 converted to U, Cd(D) the equivalent isotropic U of its beta tensor",
+  "note": "the CIF (y = 1.22, Table 2, p. 639) has no occupancies, so every partly occupied conduction-plane site is built full (30 Cd per cell instead of 1.22); the occupations of Table 2 are given: Cd(C) 0.129, Cd(D) 0.023, Cd(E) 0.011, Cd(F) 0.004, Al(1) 0.963, Al(5) 0.037, O(6) 0.037 and O(5) 1/3 (split over three 6(h) positions, text p. 637). The CIF gives Cd(D) z = 0.25 where Table 2 prints 0.26124 (text p. 637: D site shifted to z = 0.26); Cd(D) replaced with the Table 2 position. The CIF gives U = 0 for every atom: the spinel-block atoms, Al(5), O(6), Cd(E) and Cd(F) take the Ueq x 10^3 of Table 2, Cd(C) and O(5) their anisotropic beta x 10^4 converted to U, Cd(D) the equivalent isotropic U of its beta tensor; Table 2 prints Cd(D) y as 'x' (two readings), but also its site 12(k), of which (x, x, z) is no position (it generates 24): y = -x, the 12(k) position, kept (misprint)",
   "sites": {
    "Al(1)": {
     "u_iso": 0.0055,
@@ -48635,6 +50202,44 @@
    }
   ]
  },
+ "2310661": {
+  "source": "Sedlacek and Dornberger-Schiff, Acta Crystallographica 18, 407-410 (1965), https://doi.org/10.1107/s0365110x65000907",
+  "note": "the coordinates of Tabelle 1 (p. 408) describe the Pmcn superposition structure whose V and O atoms repeat with the translations a/2 (t_s) and b/2 (t_b) given in the table, with the mirror planes at x = 1/8, 3/8 and the c-glide plane at y = 1/8 (p. 409); the CIF applies Pmcn of the full 7.38 x 33.6 x 7.16 A cell in the standard origin, which puts V and its mirror image 1.85 A apart and O3 0.56 A from V; the operations are those of Pmcn for the a/2, b/2, c subcell expressed in the full cell (x and y translations halved, with the centring translations a/2, b/2), which reproduces the distances of Tabelle 2 within 0.045 A; the atom rows and the Sr occupancy 0.5 are kept from the CIF; Tabelle 1 gives Sr only the translations a and c (t_b '-'), so applying a/2 and b/2 to Sr as well, with the CIF's occupancy 0.5, is inferred: it keeps Sr:V = 1:2; the result has Z = 8 in the 7.38 x 33.6 x 7.16 A cell (the CIF states Z = 4, which with these rows gives a density of 1.31)",
+  "operations": [
+   "x,y,z",
+   "-x,y+1/4,-z+1/2",
+   "-x+1/4,-y+1/4,z+1/2",
+   "x+1/4,-y,-z",
+   "-x,-y,-z",
+   "x,-y+3/4,z+1/2",
+   "x+3/4,y+3/4,-z+1/2",
+   "-x+3/4,y,z",
+   "x+1/2,y,z",
+   "-x+1/2,y+1/4,-z+1/2",
+   "-x+3/4,-y+1/4,z+1/2",
+   "x+3/4,-y,-z",
+   "-x+1/2,-y,-z",
+   "x+1/2,-y+3/4,z+1/2",
+   "x+1/4,y+3/4,-z+1/2",
+   "-x+1/4,y,z",
+   "x,y+1/2,z",
+   "-x,y+3/4,-z+1/2",
+   "-x+1/4,-y+3/4,z+1/2",
+   "x+1/4,-y+1/2,-z",
+   "-x,-y+1/2,-z",
+   "x,-y+1/4,z+1/2",
+   "x+3/4,y+1/4,-z+1/2",
+   "-x+3/4,y+1/2,z",
+   "x+1/2,y+1/2,z",
+   "-x+1/2,y+3/4,-z+1/2",
+   "-x+3/4,-y+3/4,z+1/2",
+   "x+3/4,-y+1/2,-z",
+   "-x+1/2,-y+1/2,-z",
+   "x+1/2,-y+1/4,z+1/2",
+   "x+1/4,y+1/4,-z+1/2",
+   "-x+1/4,y+1/2,z"
+  ]
+ },
  "2310906": {
   "source": "Giessen and Grant, Acta Crystallographica (1,1948-23,1967) 17, 615-616 (1964)",
   "note": "the CIF's structure has 36 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii); its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -49926,6 +51531,37 @@
     "u_iso": 0.02667
    }
   ]
+ },
+ "4031501": {
+  "source": "van Tets and Adrian, Journal of Inorganic and Nuclear Chemistry 39, 1607-1610 (1977), https://doi.org/10.1016/0022-1902(77)80111-5",
+  "note": "the CIF gives U = 0 for every atom; Table 1 (p. 1608, dihydrate) gives U for O1-O4 and N and, in its footnote, the anisotropic U of the U atom: set as u_iso and aniso",
+  "sites": {
+   "U1": {
+    "aniso": {
+     "u11": 0.0185,
+     "u22": 0.014,
+     "u33": 0.0125,
+     "u12": 0.002,
+     "u13": 0.0002,
+     "u23": 0.0015
+    }
+   },
+   "O1": {
+    "u_iso": 0.025
+   },
+   "O2": {
+    "u_iso": 0.018
+   },
+   "O3": {
+    "u_iso": 0.024
+   },
+   "N1": {
+    "u_iso": 0.024
+   },
+   "O4": {
+    "u_iso": 0.033
+   }
+  }
  },
  "4031646": {
   "source": "Ellert et al., Russian Journal of Inorganic Chemistry (= Zhurnal Neorganicheskoi Khimii) 19, 1548-1551 (1974)",
@@ -136686,6 +138322,37 @@
    }
   }
  },
+ "7209346": {
+  "source": "Bremm and Jansen, Zeitschrift f\u00fcr Naturforschung B 48, 230-232 (1993), https://doi.org/10.1515/znb-1993-0217",
+  "note": "the CIF gives U = 0 for every atom; Tab. II (p. 231) gives U_eq for K1-K3, Ag and O: set as u_iso. The nitrite groups are orientationally disordered and only their centroid is located (p. 230: four nitrite groups per cell, refined as one pseudo-atom of 24 electrons); the CIF puts one N (N1) and one O (O2) on the centroid, which leaves out half the nitrite O (formula K5AgO2(NO2)2): the centroid is one N + 2 O group scatterer at N1 and O2 is left out. Its U is not printed: u_iso 0.006333 (B 0.5 A^2, the value for a missing one, inferred)",
+  "sites": {
+   "K1": {
+    "u_iso": 0.035
+   },
+   "K2": {
+    "u_iso": 0.045
+   },
+   "K3": {
+    "u_iso": 0.037
+   },
+   "Ag1": {
+    "u_iso": 0.018
+   },
+   "O1": {
+    "u_iso": 0.022
+   },
+   "N1": {
+    "group": {
+     "N": 1,
+     "O": 2
+    },
+    "u_iso": 0.006333
+   },
+   "O2": {
+    "omit": true
+   }
+  }
+ },
  "7212939": {
   "source": "Handoko and Goh, Green Chemistry 12, 680 (2010), https://doi.org/10.1039/b923840a",
   "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -137717,13 +139384,279 @@
  },
  "8103759": {
   "source": "Krivovichev and Burns, Zeitschrift f\u00fcr Kristallographie 218, 568-574 (2003), https://doi.org/10.1524/zkri.218.8.568.20685",
-  "note": "The CIF applies the operations of C2/m, as stated on p. 570, to the 40 atoms of Table 2 (p. 570), which all lie on general positions: this doubles the content (U32 per cell instead of Z = 16 of Table 1, p. 569, Dcalc 4.20) and places symmetry images 0.17-0.9 A from other atoms (e.g. Cr3-Cr4 0.17 A, O13-O23 0.45 A). With Z = 16 each of the four U atoms must have multiplicity 4; of the C-centred groups of that order only C-1 (x,y,z; -x,-y,-z; plus C-centring, the centred setting of the P-1 structure described on p. 570) leaves no impossible contacts and gives complete UrO3(H2O)2 bipyramids and CrO4 tetrahedra with U-Oeq 2.31-2.37 A, U-H2O 2.42-2.48 A and bridging Cr-O 1.64-1.70 A (text pp. 570-571: 2.294-2.370, 2.432-2.521, 1.621-1.697 A). The correction replaces the symmetry operations by those of C-1; the coordinates equal Table 2. The CIF's Z = 32 also contradicts Table 1 (Z = 16); C-1 is inferred (the article states C2/m, which its own Z, Dcalc and atom table exclude)",
+  "note": "The CIF applies the operations of C2/m, as stated on p. 570, to the 40 atoms of Table 2 (p. 570), which all lie on general positions: this doubles the content (U32 per cell instead of Z = 16 of Table 1, p. 569, Dcalc 4.20) and places symmetry images 0.17-0.9 A from other atoms (e.g. Cr3-Cr4 0.17 A, O13-O23 0.45 A). With Z = 16 each of the four U atoms must have multiplicity 4; of the C-centred groups of that order only C-1 (x,y,z; -x,-y,-z; plus C-centring, the centred setting of the P-1 structure described on p. 570) leaves no impossible contacts and gives complete UrO3(H2O)2 bipyramids and CrO4 tetrahedra with U-Oeq 2.31-2.37 A, U-H2O 2.42-2.48 A and bridging Cr-O 1.64-1.70 A (text pp. 570-571: 2.294-2.370, 2.432-2.521, 1.621-1.697 A). The correction replaces the symmetry operations by those of C-1; the coordinates equal Table 2. The CIF's Z = 32 also contradicts Table 1 (Z = 16); C-1 is inferred (the article states C2/m, which its own Z, Dcalc and atom table exclude); the CIF gives U_iso = 0 for every atom: U_eq of Table 2 (p. 570, A^2) set as u_iso for all 40 atoms",
   "operations": [
    "x,y,z",
    "-x,-y,-z",
    "x+1/2,y+1/2,z",
    "-x+1/2,-y+1/2,-z"
-  ]
+  ],
+  "sites": {
+   "U1": {
+    "u_iso": 0.0132
+   },
+   "U2": {
+    "u_iso": 0.0132
+   },
+   "U3": {
+    "u_iso": 0.0134
+   },
+   "U4": {
+    "u_iso": 0.0135
+   },
+   "Cr1": {
+    "u_iso": 0.0173
+   },
+   "Cr2": {
+    "u_iso": 0.017
+   },
+   "Cr3": {
+    "u_iso": 0.0158
+   },
+   "Cr4": {
+    "u_iso": 0.0163
+   },
+   "O1": {
+    "u_iso": 0.024
+   },
+   "O2": {
+    "u_iso": 0.024
+   },
+   "O3": {
+    "u_iso": 0.028
+   },
+   "O4": {
+    "u_iso": 0.03
+   },
+   "O5": {
+    "u_iso": 0.032
+   },
+   "O6": {
+    "u_iso": 0.033
+   },
+   "O7": {
+    "u_iso": 0.03
+   },
+   "O8": {
+    "u_iso": 0.034
+   },
+   "O9": {
+    "u_iso": 0.026
+   },
+   "O10": {
+    "u_iso": 0.031
+   },
+   "O11": {
+    "u_iso": 0.037
+   },
+   "O12": {
+    "u_iso": 0.028
+   },
+   "O13": {
+    "u_iso": 0.028
+   },
+   "O14": {
+    "u_iso": 0.021
+   },
+   "O15": {
+    "u_iso": 0.028
+   },
+   "O16": {
+    "u_iso": 0.026
+   },
+   "O17": {
+    "u_iso": 0.024
+   },
+   "O18": {
+    "u_iso": 0.026
+   },
+   "O19": {
+    "u_iso": 0.03
+   },
+   "O20": {
+    "u_iso": 0.024
+   },
+   "O21": {
+    "u_iso": 0.028
+   },
+   "O22": {
+    "u_iso": 0.032
+   },
+   "O23": {
+    "u_iso": 0.027
+   },
+   "O24": {
+    "u_iso": 0.029
+   },
+   "O25": {
+    "u_iso": 0.03
+   },
+   "O26": {
+    "u_iso": 0.033
+   },
+   "O27": {
+    "u_iso": 0.055
+   },
+   "O28": {
+    "u_iso": 0.05
+   },
+   "O29": {
+    "u_iso": 0.03
+   },
+   "O30": {
+    "u_iso": 0.025
+   },
+   "O31": {
+    "u_iso": 0.036
+   },
+   "O32": {
+    "u_iso": 0.035
+   }
+  }
+ },
+ "8103825": {
+  "source": "Krivovichev and Burns, Zeitschrift f\u00fcr Kristallographie 218, 725-732 (2003), https://doi.org/10.1524/zkri.218.11.725.20298",
+  "note": "the CIF gives U_iso = 0 for every atom (no thermal damping); Table 4 (p. 728) gives U_eq (10^4 x A^2) for all 46 atoms: set as u_iso",
+  "sites": {
+   "U1": {
+    "u_iso": 0.0185
+   },
+   "U2": {
+    "u_iso": 0.0224
+   },
+   "U3": {
+    "u_iso": 0.0203
+   },
+   "Cr1": {
+    "u_iso": 0.0211
+   },
+   "Cr2": {
+    "u_iso": 0.02
+   },
+   "Cr3": {
+    "u_iso": 0.0212
+   },
+   "Cr4": {
+    "u_iso": 0.0241
+   },
+   "Cr5": {
+    "u_iso": 0.0497
+   },
+   "K1": {
+    "u_iso": 0.0476
+   },
+   "K2": {
+    "u_iso": 0.0481
+   },
+   "K3": {
+    "u_iso": 0.1
+   },
+   "K4": {
+    "u_iso": 0.117
+   },
+   "O1": {
+    "u_iso": 0.027
+   },
+   "O2": {
+    "u_iso": 0.03
+   },
+   "O3": {
+    "u_iso": 0.025
+   },
+   "O4": {
+    "u_iso": 0.031
+   },
+   "O5": {
+    "u_iso": 0.032
+   },
+   "O6": {
+    "u_iso": 0.033
+   },
+   "O7": {
+    "u_iso": 0.025
+   },
+   "O8": {
+    "u_iso": 0.022
+   },
+   "O9": {
+    "u_iso": 0.024
+   },
+   "O10": {
+    "u_iso": 0.032
+   },
+   "O11": {
+    "u_iso": 0.042
+   },
+   "O12": {
+    "u_iso": 0.028
+   },
+   "O13": {
+    "u_iso": 0.034
+   },
+   "O14": {
+    "u_iso": 0.032
+   },
+   "O15": {
+    "u_iso": 0.029
+   },
+   "O16": {
+    "u_iso": 0.034
+   },
+   "O17": {
+    "u_iso": 0.028
+   },
+   "O18": {
+    "u_iso": 0.026
+   },
+   "O19": {
+    "u_iso": 0.028
+   },
+   "O20": {
+    "u_iso": 0.037
+   },
+   "O21": {
+    "u_iso": 0.051
+   },
+   "O22": {
+    "u_iso": 0.042
+   },
+   "O23": {
+    "u_iso": 0.06
+   },
+   "O24": {
+    "u_iso": 0.036
+   },
+   "O25": {
+    "u_iso": 0.071
+   },
+   "O26": {
+    "u_iso": 0.037
+   },
+   "O27": {
+    "u_iso": 0.085
+   },
+   "O28": {
+    "u_iso": 0.05
+   },
+   "O29": {
+    "u_iso": 0.034
+   },
+   "O30": {
+    "u_iso": 0.088
+   },
+   "O31": {
+    "u_iso": 0.072
+   },
+   "O32": {
+    "u_iso": 0.085
+   },
+   "O33": {
+    "u_iso": 0.11
+   },
+   "O34": {
+    "u_iso": 0.1
+   }
+  }
  },
  "8104376": {
   "source": "Manickkavachagam and Rajaram, Zeitschrift fuer Kristallographie (149,1979-) 168, 179-185 (1984)",
@@ -139624,6 +141557,18 @@
     "u_iso": 0.01225
    }
   ]
+ },
+ "9000857": {
+  "source": "Harlow, American Mineralogist 67, 975-996 (1982)",
+  "note": "the CIF gives no displacement parameter for the M site (Na 0.75 + K 0.25): its Table 4 (p. 980) beta tensor has beta11 = 0 (not positive definite) and is left out; u_iso from the B equiv. 2.89 A^2 of the anisotropic M model, Table 9 (p. 992)",
+  "sites": {
+   "Na": {
+    "u_iso": 0.0366
+   },
+   "K": {
+    "u_iso": 0.0366
+   }
+  }
  },
  "9000863": {
   "source": "Treiman and Peacor, American Mineralogist 67, 1029-1034 (1982)",
@@ -142647,10 +144592,82 @@
  },
  "9010566": {
   "source": "McDonald, Grice and Chao, The Canadian Mineralogist 38, 649-656 (2000), https://doi.org/10.2113/gscanmin.38.3.649",
-  "note": "the CIF gives the coordinates of Table 3 (p. 651) with the axes permuted (CIF x, y, z = Table 3 y, z, x) but leaves Mn3 at 0, 1/2, 0 unpermuted, which puts Mn3 2.35 A from Ba2; Mn3 at Table 3 (0, 1/2, 0) is 1/2, 0, 0 in the CIF axes, which gives the Mn3-O distances of Table 4; Mn3 replaced, U from Table 3",
+  "note": "the CIF gives the coordinates of Table 3 (p. 651) with the axes permuted (CIF x, y, z = Table 3 y, z, x) but leaves Mn3 at 0, 1/2, 0 unpermuted, which puts Mn3 2.35 A from Ba2; Mn3 at Table 3 (0, 1/2, 0) is 1/2, 0, 0 in the CIF axes, which gives the Mn3-O distances of Table 4; Mn3 replaced, U from Table 3; the CIF has no displacement parameters: U_eq of Table 3 (10^4 x A^2) set as u_iso for every atom",
   "sites": {
    "Mn3": {
     "omit": true
+   },
+   "Ba1": {
+    "u_iso": 0.0189
+   },
+   "Ba2": {
+    "u_iso": 0.013
+   },
+   "Mn1": {
+    "u_iso": 0.0126
+   },
+   "Mn2": {
+    "u_iso": 0.0098
+   },
+   "Ti": {
+    "u_iso": 0.0069
+   },
+   "Fe": {
+    "u_iso": 0.0069
+   },
+   "Si1": {
+    "u_iso": 0.0044
+   },
+   "Si2": {
+    "u_iso": 0.0047
+   },
+   "P": {
+    "u_iso": 0.0156
+   },
+   "S": {
+    "u_iso": 0.0156
+   },
+   "Si": {
+    "u_iso": 0.0156
+   },
+   "O1": {
+    "u_iso": 0.0297
+   },
+   "O2": {
+    "u_iso": 0.0144
+   },
+   "O3": {
+    "u_iso": 0.0168
+   },
+   "O4": {
+    "u_iso": 0.0169
+   },
+   "O5": {
+    "u_iso": 0.0162
+   },
+   "O6": {
+    "u_iso": 0.0186
+   },
+   "O7": {
+    "u_iso": 0.0179
+   },
+   "O8": {
+    "u_iso": 0.0089
+   },
+   "O9": {
+    "u_iso": 0.01
+   },
+   "O10": {
+    "u_iso": 0.0218
+   },
+   "O-H11": {
+    "u_iso": 0.0135
+   },
+   "O12": {
+    "u_iso": 0.0073
+   },
+   "O13": {
+    "u_iso": 0.039
    }
   },
   "add": [
