@@ -2553,6 +2553,156 @@
    }
   ]
  },
+ "1100481": {
+  "source": "Krieger, Harms, Magull and Dehnicke, Zeitschrift f\u00fcr Naturforschung, B: A Journal of Chemical Sciences 52, 243-250 (1997), https://doi.org/10.1515/znb-1997-0218",
+  "note": "the CIF lists, besides the asymmetric unit of [ZnBr(NPMe3)]4.CH2Cl2 (5) in P42/nmc, 43 rows that are symmetry images of it (labels ending in * and the F rows), so the build holds every atom four times (Zn32 per cell instead of Zn8 for Z = 2, Table I, p. 245); those rows are dropped. The solvent sites C3? and C4? are the C(L1) and C(L2) electron-density maxima the article refines as half-occupied C sites (footnote to Table I) and get occupancy 0.5; the methyl H atoms H1?-H3? of C1, which lies on the mirror plane, form two mirror-related orientations and get occupancy 0.5. The solvent is modelled as C only, as in the article, so the Cl of the formula is absent; the 0.5 for H1-H3 is inferred (C1 on the mirror plane), not printed",
+  "sites": {
+   "Zn1F": {
+    "omit": true
+   },
+   "Br1F": {
+    "omit": true
+   },
+   "N1L*": {
+    "omit": true
+   },
+   "N1J*": {
+    "omit": true
+   },
+   "Zn1J*": {
+    "omit": true
+   },
+   "Br1J*": {
+    "omit": true
+   },
+   "N1C*": {
+    "omit": true
+   },
+   "Zn1I*": {
+    "omit": true
+   },
+   "Br1I*": {
+    "omit": true
+   },
+   "P1J*": {
+    "omit": true
+   },
+   "C1J*": {
+    "omit": true
+   },
+   "C2J*": {
+    "omit": true
+   },
+   "H4J*": {
+    "omit": true
+   },
+   "H5J*": {
+    "omit": true
+   },
+   "H6J*": {
+    "omit": true
+   },
+   "C2O*": {
+    "omit": true
+   },
+   "H4O*": {
+    "omit": true
+   },
+   "H5O*": {
+    "omit": true
+   },
+   "H6O*": {
+    "omit": true
+   },
+   "C2F": {
+    "omit": true
+   },
+   "H4F": {
+    "omit": true
+   },
+   "H5F": {
+    "omit": true
+   },
+   "H6F": {
+    "omit": true
+   },
+   "P1C*": {
+    "omit": true
+   },
+   "C1C*": {
+    "omit": true
+   },
+   "C2C*": {
+    "omit": true
+   },
+   "H4C*": {
+    "omit": true
+   },
+   "H5C*": {
+    "omit": true
+   },
+   "H6C*": {
+    "omit": true
+   },
+   "C2I*": {
+    "omit": true
+   },
+   "H4I*": {
+    "omit": true
+   },
+   "H5I*": {
+    "omit": true
+   },
+   "H6I*": {
+    "omit": true
+   },
+   "P1L*": {
+    "omit": true
+   },
+   "C1L*": {
+    "omit": true
+   },
+   "C2L*": {
+    "omit": true
+   },
+   "H4L*": {
+    "omit": true
+   },
+   "H5L*": {
+    "omit": true
+   },
+   "H6L*": {
+    "omit": true
+   },
+   "C2E*": {
+    "omit": true
+   },
+   "H4E*": {
+    "omit": true
+   },
+   "H5E*": {
+    "omit": true
+   },
+   "H6E*": {
+    "omit": true
+   },
+   "C3?": {
+    "occupancy_factor": 0.5
+   },
+   "C4?": {
+    "occupancy_factor": 0.5
+   },
+   "H1?": {
+    "occupancy_factor": 0.5
+   },
+   "H2?": {
+    "occupancy_factor": 0.5
+   },
+   "H3?": {
+    "occupancy_factor": 0.5
+   }
+  }
+ },
  "1100511": {
   "source": "Riese et al., Zeitschrift fuer Anorganische und Allgemeine Chemie 625, 1494-1499 (1999), https://doi.org/10.1002/(sici)1521-3749(199909)625:9<1494::aid-zaac1494>3.0.co;2-u",
   "note": "the CIF's structure contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -53764,6 +53914,66 @@
     "u_iso": 0.012
    }
   ]
+ },
+ "4119772": {
+  "source": "Lapidus, Halder, Chupas and Chapman, Journal of the American Chemical Society 135, 7621-7628 (2013), https://doi.org/10.1021/ja4012707",
+  "note": "the CIF types all four cyanide sites C1-C4 as C, giving Zn8 C32 per cell against the formula Zn(CN)2 x 8; the article describes the bridges as disordered cyanide with Zn(C/N)4 tetrahedra; each site is read as half C and half N (inferred from that description: the coordinates are in the supporting information, not in the article)",
+  "sites": {
+   "C1": {
+    "species": {
+     "C": 0.5,
+     "N": 0.5
+    }
+   },
+   "C2": {
+    "species": {
+     "C": 0.5,
+     "N": 0.5
+    }
+   },
+   "C3": {
+    "species": {
+     "C": 0.5,
+     "N": 0.5
+    }
+   },
+   "C4": {
+    "species": {
+     "C": 0.5,
+     "N": 0.5
+    }
+   }
+  }
+ },
+ "4119773": {
+  "source": "Lapidus, Halder, Chupas and Chapman, Journal of the American Chemical Society 135, 7621-7628 (2013), https://doi.org/10.1021/ja4012707",
+  "note": "the CIF types all four cyanide sites C1-C4 as C, giving Zn8 C32 per cell against the formula Zn(CN)2 x 8; the article describes the bridges as disordered cyanide with Zn(C/N)4 tetrahedra; each site is read as half C and half N (inferred from that description: the coordinates are in the supporting information, not in the article)",
+  "sites": {
+   "C1": {
+    "species": {
+     "C": 0.5,
+     "N": 0.5
+    }
+   },
+   "C2": {
+    "species": {
+     "C": 0.5,
+     "N": 0.5
+    }
+   },
+   "C3": {
+    "species": {
+     "C": 0.5,
+     "N": 0.5
+    }
+   },
+   "C4": {
+    "species": {
+     "C": 0.5,
+     "N": 0.5
+    }
+   }
+  }
  },
  "4123960": {
   "source": "Loiseau et al., Journal of the American Chemical Society 123, 9642-9651 (2001)",
@@ -137001,6 +137211,16 @@
    }
   }
  },
+ "8103759": {
+  "source": "Krivovichev and Burns, Zeitschrift f\u00fcr Kristallographie 218, 568-574 (2003), https://doi.org/10.1524/zkri.218.8.568.20685",
+  "note": "The CIF applies the operations of C2/m, as stated on p. 570, to the 40 atoms of Table 2 (p. 570), which all lie on general positions: this doubles the content (U32 per cell instead of Z = 16 of Table 1, p. 569, Dcalc 4.20) and places symmetry images 0.17-0.9 A from other atoms (e.g. Cr3-Cr4 0.17 A, O13-O23 0.45 A). With Z = 16 each of the four U atoms must have multiplicity 4; of the C-centred groups of that order only C-1 (x,y,z; -x,-y,-z; plus C-centring, the centred setting of the P-1 structure described on p. 570) leaves no impossible contacts and gives complete UrO3(H2O)2 bipyramids and CrO4 tetrahedra with U-Oeq 2.31-2.37 A, U-H2O 2.42-2.48 A and bridging Cr-O 1.64-1.70 A (text pp. 570-571: 2.294-2.370, 2.432-2.521, 1.621-1.697 A). The correction replaces the symmetry operations by those of C-1; the coordinates equal Table 2. The CIF's Z = 32 also contradicts Table 1 (Z = 16); C-1 is inferred (the article states C2/m, which its own Z, Dcalc and atom table exclude)",
+  "operations": [
+   "x,y,z",
+   "-x,-y,-z",
+   "x+1/2,y+1/2,z",
+   "-x+1/2,-y+1/2,-z"
+  ]
+ },
  "8104376": {
   "source": "Manickkavachagam and Rajaram, Zeitschrift fuer Kristallographie (149,1979-) 168, 179-185 (1984)",
   "note": "the CIF's structure has 4 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii); its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -141941,6 +142161,81 @@
      "Mn": 1.0
     },
     "u_iso": 0.0179
+   }
+  ]
+ },
+ "9010644": {
+  "source": "Peeters, Vochten and Blaton, The Canadian Mineralogist 46, 173-182 (2008), https://doi.org/10.3749/canmin.46.1.173",
+  "note": "the CIF takes the interlayer occupancies from the refined values of Table 3 (p. 177), read as site fractions, instead of the final model of Table 6 (p. 177) with ideal occupancies (text p. 176), and gives K U = 89.0; occupancies set from Table 6 (K, Ni1, Wat10 (O10) 0.5; Ni2 and Wat12 (O12) on the twofold axis printed 0.25 and 0.50 in the convention that counts a full special site as 0.5, i.e. site fractions 0.5 and 1, as needed for K0.5Ni0.75[(UO2)2SO4O2].3H2O with Z = 8 and the 50% Me1 / 50% K-Me2 cells of p. 179) and K U = 0.089 from Table 6; reading the printed 0.25 and 0.50 of the twofold-axis sites as half-site fractions is inferred from the formula and Z",
+  "sites": {
+   "K": {
+    "species": {
+     "K": 0.5
+    },
+    "u_iso": 0.089
+   },
+   "Ni1": {
+    "species": {
+     "Ni": 0.5
+    }
+   },
+   "Ni2": {
+    "species": {
+     "Ni": 0.5
+    }
+   },
+   "Wat10": {
+    "species": {
+     "O": 0.5
+    }
+   },
+   "Wat12": {
+    "species": {
+     "O": 1.0
+    }
+   }
+  }
+ },
+ "9010645": {
+  "source": "Peeters, Vochten and Blaton, The Canadian Mineralogist 46, 173-182 (2008), https://doi.org/10.3749/canmin.46.1.173",
+  "note": "the CIF gives K y = 250.0 (Table 7, p. 178: 0.250(2)), which puts K 1.4-2.5 A from S, O and U, and takes the interlayer occupancies from the refined values of Table 3 (p. 177), read as site fractions, instead of the final model of Table 7 with ideal occupancies (text p. 176); K replaced with Table 7's row, occupancies set from Table 7 (K, Zn1, Wat10 (O10) 0.5; Zn2 and Wat12 (O12) on the twofold axis printed 0.25 and 0.50 in the convention that counts a full special site as 0.5, i.e. site fractions 0.5 and 1, as needed for K0.5Zn0.75[(UO2)2SO4O2].3H2O with Z = 8 and the 50% Me1 / 50% K-Me2 cells of p. 179); reading the printed 0.25 and 0.50 of the twofold-axis sites as half-site fractions is inferred from the formula and Z",
+  "sites": {
+   "K": {
+    "omit": true
+   },
+   "Zn1": {
+    "species": {
+     "Zn": 0.5
+    }
+   },
+   "Zn2": {
+    "species": {
+     "Zn": 0.5
+    }
+   },
+   "Wat10": {
+    "species": {
+     "O": 0.5
+    }
+   },
+   "Wat12": {
+    "species": {
+     "O": 1.0
+    }
+   }
+  },
+  "add": [
+   {
+    "label": "K",
+    "xyz": [
+     0.1923,
+     0.25,
+     0.4001
+    ],
+    "species": {
+     "K": 0.5
+    },
+    "u_iso": 0.0309
    }
   ]
  },
