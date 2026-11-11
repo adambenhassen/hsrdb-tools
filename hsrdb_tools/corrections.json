@@ -29244,7 +29244,7 @@
  },
  "2001629": {
   "source": "Ravikumar, Acta Crystallographica Section C 49, 1180-1182 (1993), https://doi.org/10.1107/S0108270192013076",
-  "note": "Table 1 (p. 1181) gives U_eq of C, O and F as 39-113 with the heading 'A^2 x 10^4', and the CIF stores these numbers as U; read as U x 10^3 (0.039-0.113 A^2): as x 10^4 they would be 0.0039-0.0113 A^2 at 294 K, a fifth to a fifteenth of the H atoms' U = 0.06 A^2, at which the text (p. 1180) fixed all H atoms (the CIF gives them no value); the heading's 10^4 is read as a misprint: the 50%-probability ellipsoids of Fig. 1 (p. 1181) are about 0.6 A across (C(3), against its 1.375 A bond to C(2)), as U = 0.054 A^2 gives (0.71 A); x 10^4 would draw them 0.22 A across",
+  "note": "Table 1 (p. 1181) gives U_eq of C, O and F as 39-113 with the heading 'A^2 x 10^4', and the CIF stores these numbers as U; read as U x 10^3 (0.039-0.113 A^2): the heading's 10^4 is read as a misprint, because the 50%-probability ellipsoids of Fig. 1 (p. 1181) are about 0.6 A across (C(3), against its 1.375 A bond to C(2)), as U = 0.054 A^2 gives (0.71 A), while x 10^4 (0.0039-0.0113 A^2 at 294 K) would draw them 0.23 A across. The H atoms ride on their C atoms (p. 1181); neither the article nor the CIF gives them a displacement parameter, and they keep the value for a missing one",
   "sites": {
    "F(1)": {
     "u_iso": 0.113
@@ -29317,87 +29317,6 @@
    },
    "C(22)": {
     "u_iso": 0.077
-   },
-   "H1A": {
-    "u_iso": 0.06
-   },
-   "H2A": {
-    "u_iso": 0.06
-   },
-   "H3A": {
-    "u_iso": 0.06
-   },
-   "H5A": {
-    "u_iso": 0.06
-   },
-   "H6A": {
-    "u_iso": 0.06
-   },
-   "H7A": {
-    "u_iso": 0.06
-   },
-   "H8A": {
-    "u_iso": 0.06
-   },
-   "H10A": {
-    "u_iso": 0.06
-   },
-   "H14A": {
-    "u_iso": 0.06
-   },
-   "H16A": {
-    "u_iso": 0.06
-   },
-   "H16B": {
-    "u_iso": 0.06
-   },
-   "H16C": {
-    "u_iso": 0.06
-   },
-   "H17A": {
-    "u_iso": 0.06
-   },
-   "H17B": {
-    "u_iso": 0.06
-   },
-   "H17C": {
-    "u_iso": 0.06
-   },
-   "H18A": {
-    "u_iso": 0.06
-   },
-   "H18B": {
-    "u_iso": 0.06
-   },
-   "H18C": {
-    "u_iso": 0.06
-   },
-   "H20A": {
-    "u_iso": 0.06
-   },
-   "H20B": {
-    "u_iso": 0.06
-   },
-   "H20C": {
-    "u_iso": 0.06
-   },
-   "H21A": {
-    "u_iso": 0.06
-   },
-   "H21B": {
-    "u_iso": 0.06
-   },
-   "H21C": {
-    "u_iso": 0.06
-   },
-   "H22A": {
-    "u_iso": 0.06
-   },
-   "H22B": {
-    "u_iso": 0.06
-   },
-   "H22C": {
-    "u_iso": 0.06
    }
   }
  },
