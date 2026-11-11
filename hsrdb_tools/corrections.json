@@ -2082,6 +2082,42 @@
    }
   ]
  },
+ "1010618": {
+  "source": "Br\u00e4kken, Zeitschrift f\u00fcr Kristallographie, Kristallgeometrie, Kristallphysik, Kristallchemie 78, 484-489 (1931), https://doi.org/10.1524/zkri.1931.78.1.484",
+  "note": "the CIF gives W2 z = +1/16 and O6 y = +7/32 where the WO3 positions on p. 488 print W (1/4, 17/32, -1/16) and O (1/4, -7/32, 0) (overbarred; the overbars are lost in the CIF): as given W2 lies 1.43 A from O6 and O6 0.46 A from O5; W2 and O6 replaced by the printed values, which put every O midway between two W (W-O 1.85-1.91 A, text p. 488: 1.86-1.91 A)",
+  "sites": {
+   "W2": {
+    "omit": true
+   },
+   "O6": {
+    "omit": true
+   }
+  },
+  "add": [
+   {
+    "label": "W2",
+    "xyz": [
+     0.25,
+     0.53125,
+     -0.0625
+    ],
+    "species": {
+     "W": 1.0
+    }
+   },
+   {
+    "label": "O6",
+    "xyz": [
+     0.25,
+     -0.21875,
+     0.0
+    ],
+    "species": {
+     "O": 1.0
+    }
+   }
+  ]
+ },
  "1010854": {
   "source": "Wyckoff, Journal of the American Chemical Society 44, 1239-1245 (1922), https://doi.org/10.1021/ja01427a007",
   "note": "the CIF gives no atoms; the 1922 structure of NiCl2.6NH3 (p. 1241): isomorphous with (NH4)2PtCl6, Ni at 0 0 0, Cl at 1/4 1/4 1/4, N at u 0 0 with u = 0.24 (the article bounds it between 0.227 and 0.245, so Ni-N 2.42 A is approximate); H not placed; no displacement parameters",
@@ -137904,6 +137940,11 @@
    }
   ]
  },
+ "9000129": {
+  "source": "Ross, Evans and Appleman, American Mineralogist 49, 1603-1621 (1964)",
+  "note": "the CIF gives P 4/n origin choice 1 (Hall P 4ab -1ab) but the coordinates of Table 4 (p. 1610) are referred to the origin at the inversion centre (footnote: P4/n, No. 85b, origin at -1), i.e. origin choice 2; in origin choice 1 the atoms overlap (U1-U1 1.77 A, O4 0.13 A from U2); with origin choice 2 the cell holds Cu(UO2)2(PO4)2.8H2O with Z = 2 (Table 1, p. 1605) and reproduces the bond lengths of Table 5 (p. 1612)",
+  "spacegroup": "P 4/n:2"
+ },
  "9000265": {
   "source": "Moore, American Mineralogist 57, 397-410 (1972)",
   "note": "the CIF's structure has 12 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii); its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -140022,6 +140063,28 @@
   ],
   "scattering_only": true
  },
+ "9002431": {
+  "source": "Fleet, Liu and Pan, American Mineralogist 85, 1437-1446 (2000), https://doi.org/10.2138/am-2000-1012",
+  "note": "the CIF gives Cl at (0, 0, z) (Wyckoff 4e of P63/m) fully occupied, i.e. 4 Cl per cell; the article's chlorapatite Ca10(PO4)6Cl2 (Table 1, p. 1439: Cl 2.00 per 16 cations, ideal stoichiometry assumed for the refinement) has 2 Cl per cell, disordered above and below z = 1/4 (p. 1437) over the 4e pair; Cl occupancy set to 0.5 (La-ClAp column of Table 3, p. 1439); the remaining Cl-Cl 0.75 A pair is this split site, never both occupied",
+  "sites": {
+   "Cl": {
+    "species": {
+     "Cl": 0.5
+    }
+   }
+  }
+ },
+ "9002432": {
+  "source": "Fleet, Liu and Pan, American Mineralogist 85, 1437-1446 (2000), https://doi.org/10.2138/am-2000-1012",
+  "note": "the CIF gives Cl at (0, 0, z) (Wyckoff 4e of P63/m) fully occupied, i.e. 4 Cl per cell; the article's chlorapatite Ca10(PO4)6Cl2 (Table 1, p. 1439: Cl 2.00 per 16 cations, ideal stoichiometry assumed for the refinement) has 2 Cl per cell, disordered above and below z = 1/4 (p. 1437) over the 4e pair; Cl occupancy set to 0.5 (Nd-ClAp column of Table 3, p. 1439); the remaining Cl-Cl 0.75 A pair is this split site, never both occupied",
+  "sites": {
+   "Cl": {
+    "species": {
+     "Cl": 0.5
+    }
+   }
+  }
+ },
  "9002436": {
   "source": "Kunz et al., American Mineralogist 85, 1465-1473 (2000)",
   "note": "the CIF's structure has 4 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii); its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -141026,6 +141089,132 @@
    }
   ]
  },
+ "9004552": {
+  "source": "Burns and Hill, The Canadian Mineralogist 38, 175-181 (2000), https://doi.org/10.2113/gscanmin.38.1.175",
+  "note": "the CIF gives Sr1 and Sr2 fully occupied, and its aniso loop gives the O, H2O and OH12 rows non-tensor values (1, 8, 9, 5, 7, 5, 3, 3, 3, 7, 1 in U11, zeros elsewhere) that override their isotropic U; the text (pp. 178-179) gives refined Sr occupancies 0.88(1) and 0.53(1) (formula Sr2.82(H2O)2[(UO2)4O3.82(OH)3.18]2, Z = 2); Sr occupancies set to these, and the bogus anion tensors cleared so the CIF's U_iso (equal to the Ueq of Table 3, p. 178) applies; coordinates equal Table 3; the flagged U-O pairs are the uranyl bonds of Table 5 (1.81-1.84 A)",
+  "sites": {
+   "Sr1": {
+    "species": {
+     "Sr": 0.88
+    }
+   },
+   "Sr2": {
+    "species": {
+     "Sr": 0.53
+    }
+   },
+   "O1": {
+    "aniso": {
+     "u11": 0.0,
+     "u22": 0.0,
+     "u33": 0.0,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "O2": {
+    "aniso": {
+     "u11": 0.0,
+     "u22": 0.0,
+     "u33": 0.0,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "Wat3": {
+    "aniso": {
+     "u11": 0.0,
+     "u22": 0.0,
+     "u33": 0.0,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "O4": {
+    "aniso": {
+     "u11": 0.0,
+     "u22": 0.0,
+     "u33": 0.0,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "O5": {
+    "aniso": {
+     "u11": 0.0,
+     "u22": 0.0,
+     "u33": 0.0,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "O6": {
+    "aniso": {
+     "u11": 0.0,
+     "u22": 0.0,
+     "u33": 0.0,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "O7": {
+    "aniso": {
+     "u11": 0.0,
+     "u22": 0.0,
+     "u33": 0.0,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "O8": {
+    "aniso": {
+     "u11": 0.0,
+     "u22": 0.0,
+     "u33": 0.0,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "O9": {
+    "aniso": {
+     "u11": 0.0,
+     "u22": 0.0,
+     "u33": 0.0,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "O11": {
+    "aniso": {
+     "u11": 0.0,
+     "u22": 0.0,
+     "u33": 0.0,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "O-H12": {
+    "aniso": {
+     "u11": 0.0,
+     "u22": 0.0,
+     "u33": 0.0,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   }
+  }
+ },
  "9004564": {
   "source": "Li and Burns, The Canadian Mineralogist 38, 727-735 (2000), https://doi.org/10.2113/gscanmin.38.3.727",
   "note": "Table 3 (p. 729) gives the Pb(1) and Pb(2) occupancies of crystal JVS4338 as site occupation factors scaled to the general position (0.478 and 0.308; total 6.288 Pb per cell = 8 x their sum; abstract p. 727: Pb(1) 89-100 %, Pb(2) 57-63 % occupied). The CIF uses them as occupancies, which halves Pb to 3.14 per cell; its formula sum carries the same halving. The correction sets Pb(1) 0.956 and Pb(2) 0.616. Coordinates agree with Table 4 (p. 730) and the distances of Table 6 (p. 731); the U-O uranyl bonds near 1.8 A flagged as short are printed in Table 6.",
@@ -141308,6 +141497,18 @@
     }
    }
   }
+ },
+ "9004915": {
+  "source": "Locock, Burns and Flynn, The Canadian Mineralogist 43, 721-733 (2005), https://doi.org/10.2113/gscanmin.43.2.721",
+  "note": "the CIF gives beta = 90.52 deg where Table 12 (p. 729) and the text (p. 726) give 90.05(2) deg for the revised P21/c cell of meta-uranocircite II (a 9.882, b 16.868, c 9.789 A); cell taken from Table 12; coordinates equal Table 12; the flagged U-O pairs (1.75-1.81 A) are the uranyl bonds",
+  "cell": [
+   9.882,
+   16.868,
+   9.789,
+   90.0,
+   90.05,
+   90.0
+  ]
  },
  "9005585": {
   "source": "Brigatti et al., European Journal of Mineralogy 15, 349-355 (2003), https://doi.org/10.1127/0935-1221/2003/0015-0349",
