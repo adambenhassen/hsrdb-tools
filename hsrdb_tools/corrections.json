@@ -19097,6 +19097,152 @@
    }
   }
  },
+ "1544874": {
+  "source": "Tomeoka, Ohmasa and Sadanaga, Mineralogical Journal 10, 57-70 (1980), https://doi.org/10.2465/minerj.10.57",
+  "note": "the CIF's tensors are not U: they are the article's beta_ij (Table 2, p. 62, 'Atomic parameters of CB-359', exp[-(h^2 beta11 + ... + 2hl beta13)]) multiplied by a different factor on each axis (16.6, 20.1 and 15.0), and its B column (1.6-6.7) is not the table's B; the tensors are converted from the printed beta_ij (U_ij = beta_ij / (2 pi^2 a_i* a_j*)), which gives B_eq 1.7-6.6 A^2 against the table's isotropic B 1.7-7.3 A^2",
+  "sites": {
+   "Bi1": {
+    "aniso": {
+     "u11": 0.053924,
+     "u22": 0.030209,
+     "u33": 0.046294,
+     "u12": 0.0,
+     "u13": -0.025919,
+     "u23": 0.0
+    }
+   },
+   "Bi2": {
+    "aniso": {
+     "u11": 0.019687,
+     "u22": 0.064376,
+     "u33": 0.020456,
+     "u12": 0.0,
+     "u13": 0.0048,
+     "u23": 0.0
+    }
+   },
+   "Bi3": {
+    "aniso": {
+     "u11": 0.019687,
+     "u22": 0.037883,
+     "u33": 0.021532,
+     "u12": 0.0,
+     "u13": 0.00288,
+     "u23": 0.0
+    }
+   },
+   "Cu1": {
+    "aniso": {
+     "u11": 0.037661,
+     "u22": 0.127622,
+     "u33": 0.047371,
+     "u12": 0.0,
+     "u13": -0.014399,
+     "u23": 0.0
+    }
+   },
+   "Cu2": {
+    "aniso": {
+     "u11": 0.024822,
+     "u22": 0.037964,
+     "u33": 0.055984,
+     "u12": 0.0,
+     "u13": -0.00672,
+     "u23": 0.0
+    }
+   },
+   "Cu3": {
+    "aniso": {
+     "u11": 0.017119,
+     "u22": 0.02084,
+     "u33": 0.080746,
+     "u12": 0.0,
+     "u13": 0.0048,
+     "u23": 0.0
+    }
+   },
+   "Cu4": {
+    "aniso": {
+     "u11": 0.125823,
+     "u22": 0.027463,
+     "u33": 0.122734,
+     "u12": 0.0,
+     "u13": 0.086396,
+     "u23": 0.0
+    }
+   },
+   "Cu5": {
+    "aniso": {
+     "u11": 0.028246,
+     "u22": 0.054118,
+     "u33": 0.075363,
+     "u12": 0.0,
+     "u13": 0.014399,
+     "u23": 0.0
+    }
+   },
+   "Cu6": {
+    "aniso": {
+     "u11": 0.021398,
+     "u22": 0.179317,
+     "u33": 0.038758,
+     "u12": 0.0,
+     "u13": -0.014399,
+     "u23": 0.0
+    }
+   },
+   "S1": {
+    "aniso": {
+     "u11": 0.022254,
+     "u22": 0.046606,
+     "u33": 0.022609,
+     "u12": 0.0,
+     "u13": 0.00192,
+     "u23": 0.0
+    }
+   },
+   "S2": {
+    "aniso": {
+     "u11": 0.023966,
+     "u22": 0.020274,
+     "u33": 0.022609,
+     "u12": 0.0,
+     "u13": 0.00192,
+     "u23": 0.0
+    }
+   },
+   "S3": {
+    "aniso": {
+     "u11": 0.021398,
+     "u22": 0.017124,
+     "u33": 0.025839,
+     "u12": 0.0,
+     "u13": 0.0048,
+     "u23": 0.0
+    }
+   },
+   "S4": {
+    "aniso": {
+     "u11": 0.022254,
+     "u22": 0.017205,
+     "u33": 0.037682,
+     "u12": 0.0,
+     "u13": 0.0048,
+     "u23": 0.0
+    }
+   },
+   "S5": {
+    "aniso": {
+     "u11": 0.021398,
+     "u22": 0.01777,
+     "u33": 0.038758,
+     "u12": 0.0,
+     "u13": 0.00192,
+     "u23": 0.0
+    }
+   }
+  }
+ },
  "1545186": {
   "source": "Perez, de Resende, Salim and Schmal, The Journal of Physical Chemistry C 121, 2755-2761 (2017), https://doi.org/10.1021/acs.jpcc.6b11111",
   "note": "site SPS of type SASH is the FullProf spherical-shell scatterer the article uses for the water layer lining the supercages (pp. 2758-2760): centred at 3/8,3/8,3/8, radius 4.2 A, its atoms scattering as n f(q) sin(qR)/(qR) (FullProf SASH); NaY.300H2O at 323 K: Zs = 1601 electrons per cell (Table 3), taken as 160.1 H2O (Zs/10, p. 2760); the shell is not an atom and is left out of the structure record",
@@ -25775,6 +25921,60 @@
    }
   ]
  },
+ "2001127": {
+  "source": "Yufit, Struchkov, Lukin, Kozhushkov and Zefirov, Acta Crystallographica Section C 49, 2049-2051 (1993), https://doi.org/10.1107/S0108270192012800",
+  "note": "Table 1 (p. 2050) gives U_eq of the C atoms in A^2 x 10^3 (24-33); the CIF stores these numbers as U, so the C atoms get U / 1000; the H values (2-4, refined isotropically, not printed in the article) are read as B, as before",
+  "sites": {
+   "C(1)": {
+    "u_iso": 0.025
+   },
+   "C(2)": {
+    "u_iso": 0.024
+   },
+   "C(3)": {
+    "u_iso": 0.031
+   },
+   "C(4)": {
+    "u_iso": 0.033
+   },
+   "C(5)": {
+    "u_iso": 0.027
+   },
+   "C(6)": {
+    "u_iso": 0.032
+   },
+   "C(7)": {
+    "u_iso": 0.033
+   },
+   "H(11)": {
+    "u_iso": 0.037995
+   },
+   "H(12)": {
+    "u_iso": 0.037995
+   },
+   "H(3)": {
+    "u_iso": 0.050661
+   },
+   "H(41)": {
+    "u_iso": 0.02533
+   },
+   "H(42)": {
+    "u_iso": 0.037995
+   },
+   "H(61)": {
+    "u_iso": 0.037995
+   },
+   "H(62)": {
+    "u_iso": 0.050661
+   },
+   "H(71)": {
+    "u_iso": 0.050661
+   },
+   "H(72)": {
+    "u_iso": 0.050661
+   }
+  }
+ },
  "2001192": {
   "source": "Guesdon et al., Acta Crystallographica Section C 49, 1877-1879 (1993), https://doi.org/10.1107/S0108270193004287",
   "note": "the CIF's structure has 2 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii) and contradicts its own formula; its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -26244,6 +26444,165 @@
     }
    }
   ]
+ },
+ "2001629": {
+  "source": "Ravikumar, Acta Crystallographica Section C 49, 1180-1182 (1993), https://doi.org/10.1107/S0108270192013076",
+  "note": "Table 1 (p. 1181) gives U_eq of C, O and F as 39-113 with the heading 'A^2 x 10^4', and the CIF stores these numbers as U; read as U x 10^3 (0.039-0.113 A^2): as x 10^4 they would be 0.0039-0.0113 A^2 at 294 K, a fifth to a fifteenth of the H atoms' U = 0.06 A^2, at which the text (p. 1180) fixed all H atoms (the CIF gives them no value); the heading's 10^4 is read as a misprint (inferred, not stated by the article)",
+  "sites": {
+   "F(1)": {
+    "u_iso": 0.113
+   },
+   "O(1)": {
+    "u_iso": 0.068
+   },
+   "C(1)": {
+    "u_iso": 0.067
+   },
+   "C(2)": {
+    "u_iso": 0.063
+   },
+   "C(3)": {
+    "u_iso": 0.054
+   },
+   "C(4)": {
+    "u_iso": 0.047
+   },
+   "C(5)": {
+    "u_iso": 0.059
+   },
+   "C(6)": {
+    "u_iso": 0.066
+   },
+   "C(7)": {
+    "u_iso": 0.05
+   },
+   "C(8)": {
+    "u_iso": 0.054
+   },
+   "C(9)": {
+    "u_iso": 0.043
+   },
+   "C(10)": {
+    "u_iso": 0.046
+   },
+   "C(11)": {
+    "u_iso": 0.039
+   },
+   "C(12)": {
+    "u_iso": 0.041
+   },
+   "C(13)": {
+    "u_iso": 0.044
+   },
+   "C(14)": {
+    "u_iso": 0.045
+   },
+   "C(15)": {
+    "u_iso": 0.054
+   },
+   "C(16)": {
+    "u_iso": 0.071
+   },
+   "C(17)": {
+    "u_iso": 0.076
+   },
+   "C(18)": {
+    "u_iso": 0.08
+   },
+   "C(19)": {
+    "u_iso": 0.047
+   },
+   "C(20)": {
+    "u_iso": 0.08
+   },
+   "C(21)": {
+    "u_iso": 0.066
+   },
+   "C(22)": {
+    "u_iso": 0.077
+   },
+   "H1A": {
+    "u_iso": 0.06
+   },
+   "H2A": {
+    "u_iso": 0.06
+   },
+   "H3A": {
+    "u_iso": 0.06
+   },
+   "H5A": {
+    "u_iso": 0.06
+   },
+   "H6A": {
+    "u_iso": 0.06
+   },
+   "H7A": {
+    "u_iso": 0.06
+   },
+   "H8A": {
+    "u_iso": 0.06
+   },
+   "H10A": {
+    "u_iso": 0.06
+   },
+   "H14A": {
+    "u_iso": 0.06
+   },
+   "H16A": {
+    "u_iso": 0.06
+   },
+   "H16B": {
+    "u_iso": 0.06
+   },
+   "H16C": {
+    "u_iso": 0.06
+   },
+   "H17A": {
+    "u_iso": 0.06
+   },
+   "H17B": {
+    "u_iso": 0.06
+   },
+   "H17C": {
+    "u_iso": 0.06
+   },
+   "H18A": {
+    "u_iso": 0.06
+   },
+   "H18B": {
+    "u_iso": 0.06
+   },
+   "H18C": {
+    "u_iso": 0.06
+   },
+   "H20A": {
+    "u_iso": 0.06
+   },
+   "H20B": {
+    "u_iso": 0.06
+   },
+   "H20C": {
+    "u_iso": 0.06
+   },
+   "H21A": {
+    "u_iso": 0.06
+   },
+   "H21B": {
+    "u_iso": 0.06
+   },
+   "H21C": {
+    "u_iso": 0.06
+   },
+   "H22A": {
+    "u_iso": 0.06
+   },
+   "H22B": {
+    "u_iso": 0.06
+   },
+   "H22C": {
+    "u_iso": 0.06
+   }
+  }
  },
  "2002132": {
   "source": "Cuno and Mueller-Buschbaum, Zeitschrift fuer Anorganische und Allgemeine Chemie 572, 95-101 (1989), https://doi.org/10.1002/zaac.19895720111",
@@ -30169,6 +30528,42 @@
    },
    "C(8)": {
     "occupancy_factor": 0.5
+   }
+  }
+ },
+ "2004916": {
+  "source": "Fedorov, Mironov, Fedin, Imoto and Saito, Acta Crystallographica Section C 52, 1065-1067 (1996), https://doi.org/10.1107/S0108270195016763",
+  "note": "Table 1 (p. 1066) gives U_eq in A^2 (Re 0.0030, Te 0.0050, S 0.006) as the CIF's U_iso column does, but the CIF's tensors are 100 times larger (Re U11 0.30); tensors divided by 100, which gives the table's U_eq",
+  "sites": {
+   "Re": {
+    "aniso": {
+     "u11": 0.003,
+     "u22": 0.003,
+     "u33": 0.003,
+     "u12": -0.0001,
+     "u13": -0.0001,
+     "u23": -0.0001
+    }
+   },
+   "Te": {
+    "aniso": {
+     "u11": 0.005,
+     "u22": 0.005,
+     "u33": 0.005,
+     "u12": 0.0003,
+     "u13": 0.0003,
+     "u23": 0.0003
+    }
+   },
+   "S": {
+    "aniso": {
+     "u11": 0.006,
+     "u22": 0.006,
+     "u33": 0.006,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    }
    }
   }
  },
@@ -51281,6 +51676,42 @@
     "u_iso": 0.005
    }
   ]
+ },
+ "4113064": {
+  "source": "Blasco, Corma, D\u00edaz-Caba\u00f1as, Rey, Rius, Sastre and Vidal-Moya, Journal of the American Chemical Society 126, 13414-13423 (2004), https://doi.org/10.1021/ja047990z",
+  "note": "the article states the refined overall thermal coefficient of this calcined sample as B = 35(1) A^2 (p. 13416, 'which reflects the rapid decay of the diffraction peaks'); the CIF (type Biso) stores 35 in its U column; U = 35 / 8 pi^2 = 0.443 A^2 for every atom",
+  "sites": {
+   "Ge1": {
+    "u_iso": 0.44328
+   },
+   "Si1": {
+    "u_iso": 0.44328
+   },
+   "Ge2": {
+    "u_iso": 0.44328
+   },
+   "Si2": {
+    "u_iso": 0.44328
+   },
+   "Si3": {
+    "u_iso": 0.44328
+   },
+   "O1": {
+    "u_iso": 0.44328
+   },
+   "O2": {
+    "u_iso": 0.44328
+   },
+   "O3": {
+    "u_iso": 0.44328
+   },
+   "O4": {
+    "u_iso": 0.44328
+   },
+   "O5": {
+    "u_iso": 0.44328
+   }
+  }
  },
  "4114913": {
   "source": "Xiqu Wang et al., Journal of the American Chemical Society 124, 7812-7820 (2002), https://doi.org/10.1021/ja020354l",
@@ -122068,6 +122499,36 @@
    }
   ]
  },
+ "6000643": {
+  "source": "Horstmann, Irran and Schnick, Zeitschrift fur Anorganische und Allgemeine Chemie 624, 620-628 (1998), https://doi.org/10.1002/(SICI)1521-3749(199804)624:4<620::AID-ZAAC620>3.0.CO;2-K",
+  "note": "Table 2a (p. 623) gives U_iso in pm^2 (P 36, N 17); the CIF stores these numbers as A^2; U = value / 10^4 (0.0036 and 0.0017 A^2)",
+  "sites": {
+   "P(1)": {
+    "u_iso": 0.0036
+   },
+   "P(2)": {
+    "u_iso": 0.0036
+   },
+   "P(3)": {
+    "u_iso": 0.0036
+   },
+   "N(1)": {
+    "u_iso": 0.0017
+   },
+   "N(2)": {
+    "u_iso": 0.0017
+   },
+   "N(3)": {
+    "u_iso": 0.0017
+   },
+   "N(4)": {
+    "u_iso": 0.0017
+   },
+   "N(5)": {
+    "u_iso": 0.0017
+   }
+  }
+ },
  "6000644": {
   "source": "Jensen, Norby, Hanson, Simonsen, Skou, Stein and B\u00f8yed, Journal of Materials Chemistry 8, 969-975 (1998), https://doi.org/10.1039/A707130B",
   "note": "the CIF gives no atoms; the single-crystal structure of \u03b1-LiZnAsO\u2084, Table 3 (p. 971), space group R3 (No. 146, hexagonal setting, Z=18), U(eq) as printed",
@@ -134732,6 +135193,39 @@
    }
   }
  },
+ "7702612": {
+  "source": "Weymann-Schildknetch and Henry, Journal of the Chemical Society, Dalton Transactions 2425-2429 (2001), https://doi.org/10.1039/b103398k",
+  "note": "the CIF marks the isotropically refined atoms C4, C9-C12, C31, C32, C39 and C40 with '*' after their values ('16.7(9)*'), which do not read as numbers; the column is B (type Biso; the other atoms' values are 0.64-0.95 x 8 pi^2 U_eq of their tensors), so these atoms get U = B / 8 pi^2 (0.17-0.28 A^2; the text, p. 2425, notes the large displacement of the terminal groups)",
+  "sites": {
+   "C4": {
+    "u_iso": 0.211508
+   },
+   "C9": {
+    "u_iso": 0.202642
+   },
+   "C10": {
+    "u_iso": 0.189977
+   },
+   "C11": {
+    "u_iso": 0.189977
+   },
+   "C12": {
+    "u_iso": 0.189977
+   },
+   "C31": {
+    "u_iso": 0.173513
+   },
+   "C32": {
+    "u_iso": 0.227973
+   },
+   "C39": {
+    "u_iso": 0.278633
+   },
+   "C40": {
+    "u_iso": 0.240638
+   }
+  }
+ },
  "8104376": {
   "source": "Manickkavachagam and Rajaram, Zeitschrift fuer Kristallographie (149,1979-) 168, 179-185 (1984)",
   "note": "the CIF's structure has 4 impossible contacts (atoms closer than 0.7 x the sum of their covalent radii); its atoms are replaced by a corrected structure of the same publication (cell, symmetry operations and atoms), which gives the CIF's formula and no impossible contacts; not checked against the article",
@@ -140027,6 +140521,68 @@
     "u_iso": 0.27863
    }
   ]
+ },
+ "9013069": {
+  "source": "Rieder, Crelling, Sustai, Drabek, Weiss and Klementova, International Journal of Coal Geology 71, 115-121 (2007), https://doi.org/10.1016/j.coal.2006.07.003",
+  "note": "the article gives anisotropic temperature factors B_ij in A^2 (Table 2, p. 120, synthetic As-free pyrite: Fe 0.70, S 0.78, B12 0.00 and 0.01); the CIF's U_ij (1.04-1.16, S U33 the Fe value) are about 120 times too large; U_ij = B_ij / 8 pi^2, with U13 = U23 = U12 as the 3-fold site symmetry requires",
+  "sites": {
+   "Fe": {
+    "aniso": {
+     "u11": 0.008866,
+     "u22": 0.008866,
+     "u33": 0.008866,
+     "u12": 0.0,
+     "u13": 0.0,
+     "u23": 0.0
+    }
+   },
+   "S": {
+    "aniso": {
+     "u11": 0.009879,
+     "u22": 0.009879,
+     "u33": 0.009879,
+     "u12": 0.000127,
+     "u13": 0.000127,
+     "u23": 0.000127
+    }
+   }
+  }
+ },
+ "9013070": {
+  "source": "Rieder, Crelling, Sustai, Drabek, Weiss and Klementova, International Journal of Coal Geology 71, 115-121 (2007), https://doi.org/10.1016/j.coal.2006.07.003",
+  "note": "the article gives anisotropic temperature factors B_ij in A^2 (Table 2, p. 120, synthetic As-pyrite: Fe 0.77, S 0.82, B12 0.01 and -0.01); the CIF's U_ij (1.15-1.22) are about 150 times too large; U_ij = B_ij / 8 pi^2 (As as S, on the same site), with U13 = U23 = U12 as the 3-fold site symmetry requires",
+  "sites": {
+   "Fe": {
+    "aniso": {
+     "u11": 0.009752,
+     "u22": 0.009752,
+     "u33": 0.009752,
+     "u12": 0.000127,
+     "u13": 0.000127,
+     "u23": 0.000127
+    }
+   },
+   "S": {
+    "aniso": {
+     "u11": 0.010385,
+     "u22": 0.010385,
+     "u33": 0.010385,
+     "u12": -0.000127,
+     "u13": -0.000127,
+     "u23": -0.000127
+    }
+   },
+   "As": {
+    "aniso": {
+     "u11": 0.010385,
+     "u22": 0.010385,
+     "u33": 0.010385,
+     "u12": -0.000127,
+     "u13": -0.000127,
+     "u23": -0.000127
+    }
+   }
+  }
  },
  "9014698": {
   "source": "Pauling, Journal of the American Chemical Society 46, 2738-2751 (1924), https://doi.org/10.1021/ja01677a019",
